@@ -244,12 +244,7 @@ footer .links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;ma
 footer .links a{padding:6px 0;display:inline-block}
 footer .legal{margin-top:14px;border-top:1px solid var(--line);padding-top:14px;font-size:.88rem}
 
-/* cookie notice */
 [hidden]{display:none!important}
-.cookie{max-width:var(--col);margin:6px auto 0;padding:10px 20px;display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;font-size:.9rem;color:var(--ink-soft);line-height:1.45}
-.cookie p{margin:0;max-width:52ch}
-.cookie a{color:var(--ink)}
-.cookie button{font:inherit;font-weight:700;cursor:pointer;border:1px solid var(--ink);background:var(--white);color:var(--ink);border-radius:100px;padding:6px 16px;min-height:38px}
 
 /* accessibility widget */
 .a11y-btn{position:fixed;left:14px;bottom:calc(84px + env(safe-area-inset-bottom));z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--ink);cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;padding:0}
@@ -279,17 +274,12 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 <body>
 <a class="skip" href="#main">דילוג לתוכן</a>
 
-<div class="topbar">"איפה הייתי לפני שנה, ואיפה אני היום. זה לא להאמין." · בוגרת הליווי</div>
+<div class="topbar">כבר 4,700 אמהות הפסיקו לנחש והתחילו לבנות רשת ביטחון כלכלית למשפחה שלהן</div>
 
 <div class="wrap">
   <header class="site">
     <a href="#" aria-label="אמא משקיעה"><img src="assets/logo.png" alt="אמא משקיעה" width="180" height="46"></a>
   </header>
-</div>
-
-<div class="cookie" id="cookie" hidden>
-  <p>הדף משתמש בקובצי מדידה (Meta Pixel) לשיפור החוויה והשיווק. המשך הגלישה מהווה הסכמה. <a href="privacy.html">למדיניות הפרטיות</a></p>
-  <button type="button" id="cookieOk">הבנתי</button>
 </div>
 
 <main id="main">
@@ -665,6 +655,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 <footer>
   <div class="wrap">
     <div><strong style="color:var(--ink)">אמא משקיעה · עדי סומך</strong> · עוסק מורשה 204151658 · <a href="mailto:mominvest10x@gmail.com">mominvest10x@gmail.com</a></div>
+    <p style="margin:10px 0 0">הדף משתמש בקובצי מדידה כדי שנדע מה באמת עוזר לך. הכל מפורט כאן:</p>
     <div class="links">
       <a href="terms.html">תקנון ומדיניות ביטולים</a>
       <a href="privacy.html">מדיניות פרטיות</a>
@@ -736,14 +727,6 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     function update(){ var on = heroSeen && !priceVisible; sticky.classList.toggle('on', on); sticky.setAttribute('aria-hidden', on ? 'false':'true'); sticky.querySelector('a').tabIndex = on ? 0 : -1; }
     new IntersectionObserver(function(es){ es.forEach(function(e){ heroSeen = !e.isIntersecting && e.boundingClientRect.bottom < 0; }); update(); }, {threshold:0}).observe(hero);
     if (price) new IntersectionObserver(function(es){ es.forEach(function(e){ priceVisible = e.isIntersecting; }); update(); }, {threshold:.25}).observe(price);
-  }
-
-  /* 4) הודעת קוקיז/פיקסל */
-  var ck = document.getElementById('cookie'), ckOk = document.getElementById('cookieOk');
-  if (ck && ckOk){
-    var seen = false; try{ seen = localStorage.getItem('mm_cookie_ok') === '1'; }catch(e){}
-    if (!seen) ck.hidden = false;
-    ckOk.addEventListener('click', function(){ ck.hidden = true; try{ localStorage.setItem('mm_cookie_ok','1'); }catch(e){} });
   }
 
   /* 5) ווידג'ט נגישות */
