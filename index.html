@@ -80,8 +80,8 @@ header.site img{height:46px;width:auto}
 .hero h1 .accent{color:var(--pink)}
 .pill-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;font-size:.98rem;font-weight:700;margin-top:16px}
 .pill-facts span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pink);margin-left:8px;vertical-align:middle}
-.hero-illo{margin:34px auto 0;border-radius:28px;overflow:hidden;background:#FFF7E8;max-width:520px}
-.hero-illo img{width:100%;height:auto}
+.hero-photo{width:min(300px,78vw);height:min(300px,78vw);border-radius:50%;overflow:hidden;margin:34px auto 0;border:6px solid var(--white);box-shadow:var(--shadow)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 
 /* check lists (centered) */
 .checks{list-style:none;margin:0;padding:0;display:grid;gap:12px;justify-items:center}
@@ -108,6 +108,9 @@ header.site img{height:46px;width:auto}
 .msg blockquote span{color:var(--lime)}
 .msg .exp{margin:26px auto 0;font-size:clamp(1.1rem,2.6vw,1.25rem);line-height:1.6;max-width:40ch;color:#EDEBF5}
 .msg .exp strong{color:#fff}
+.msg .then{margin:30px auto 0;max-width:440px}
+.msg .then img{border-radius:22px;width:100%}
+.msg .then figcaption{color:#EDEBF5;font-size:.95rem;margin-top:10px}
 
 /* method */
 .method .compass{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:26px 0 6px}
@@ -124,6 +127,10 @@ header.site img{height:46px;width:auto}
 .jars .j1{background:var(--pink-soft)}.jars .j2{background:#F3F5CF}.jars .j3{background:var(--sky)}
 .jars-illo{max-width:300px;margin:26px auto 0}
 .method .quiet{font-size:1.1rem;color:var(--ink);max-width:36ch;margin:26px auto 0}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px auto 0;max-width:520px;padding:6px 0}
+.strip img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;border:4px solid var(--white);box-shadow:var(--shadow)}
+.strip img:nth-child(1){transform:rotate(-2.5deg)}
+.strip img:nth-child(3){transform:rotate(2.5deg)}
 .method .quiet strong{display:block;font-size:1.2rem;margin-bottom:6px}
 
 /* roadmap */
@@ -162,6 +169,30 @@ header.site img{height:46px;width:auto}
 .phones figure{margin:0}
 .phones figcaption{margin-top:12px;font-size:1rem;color:var(--ink-soft);max-width:280px;margin-inline:auto}
 
+/* mockup extras */
+.mock figcaption{margin-top:12px;font-size:1rem;color:var(--ink-soft);max-width:340px;margin-inline:auto}
+.laptop{margin:32px auto 0;max-width:560px}
+.laptop .lid{background:#191A2E;border-radius:18px 18px 6px 6px;padding:12px 12px 0;position:relative}
+.laptop .lid::before{content:"";position:absolute;top:5px;left:50%;width:6px;height:6px;border-radius:50%;background:#3a3b55;transform:translateX(-50%)}
+.laptop .lid img{width:100%;border-radius:8px 8px 0 0;display:block}
+.laptop .base{height:14px;margin:0 -16px;background:linear-gradient(#2c2d47,#191A2E);border-radius:0 0 16px 16px;box-shadow:0 14px 30px -18px rgba(25,26,46,.5)}
+.mock-sub{margin:40px 0 0;font-weight:700;font-size:1.1rem}
+.mock-cards{display:grid;gap:26px;margin-top:40px}
+@media(min-width:700px){.mock-cards{grid-template-columns:1fr 1fr;align-items:start}}
+.mock-cards figure{margin:0}
+.wa-head{background:#075E54;color:#fff;padding:10px 14px;display:flex;gap:10px;align-items:center;text-align:right;border-radius:22px 22px 0 0}
+.wa-av{width:38px;height:38px;border-radius:50%;object-fit:cover;object-position:50% 15%;margin:0;flex:0 0 38px}
+.wa-head b{display:block;font-size:.98rem;line-height:1.2}
+.wa-head small{opacity:.85;font-size:.8rem}
+.wa-body{background:#ECE5DD;padding:14px 12px 16px;display:grid;gap:8px;justify-items:start;border-radius:0 0 22px 22px;text-align:right;border:1px solid var(--line);border-top:0}
+.wa-body .m{background:#fff;border-radius:12px 12px 12px 2px;padding:8px 12px;font-size:.95rem;line-height:1.45;max-width:90%;box-shadow:0 1px 1px rgba(0,0,0,.08)}
+.wa-body .m b{display:block;color:#075E54;font-size:.85rem}
+.meet-card{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:22px 22px 20px;text-align:right;display:grid;gap:8px;box-shadow:var(--shadow)}
+.meet-lbl{font-size:.8rem;letter-spacing:.14em;font-weight:700;color:var(--pink)}
+.meet-card > b{font-size:1.08rem}
+.meet-card ul{margin:0;padding-right:18px;font-size:.98rem;line-height:1.55}
+.meet-time{font-size:.9rem;color:var(--ink-soft)}
+
 /* testimonials */
 .testi{background:var(--white)}
 .vids{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
@@ -191,6 +222,8 @@ header.site img{height:46px;width:auto}
 .facts div{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:14px 10px}
 .facts b{display:block;font-size:1.55rem;font-weight:900;letter-spacing:-.02em;line-height:1.1}
 .facts span{font-size:.9rem;color:var(--ink-soft);line-height:1.35;display:block;margin-top:4px}
+.bio-photo{width:min(260px,70vw);height:min(260px,70vw);border-radius:50%;overflow:hidden;margin:30px auto 0;border:6px solid var(--white);box-shadow:var(--shadow)}
+.bio-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
 
 /* included */
 .inc{display:grid;gap:12px;margin-top:28px}
@@ -235,6 +268,8 @@ header.site img{height:46px;width:auto}
 /* closing */
 .close{background:var(--pink-soft)}
 .close h2{margin-bottom:26px}
+.close-photo{width:min(240px,64vw);height:min(240px,64vw);border-radius:50%;overflow:hidden;margin:0 auto 26px;border:6px solid var(--white);box-shadow:var(--shadow)}
+.close-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
 .wa-link{display:inline-block;margin-top:22px;font-size:.98rem;color:var(--ink-soft);text-decoration:underline;text-underline-offset:4px;padding:10px;min-height:44px}
 
 /* footer */
@@ -293,8 +328,8 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <a class="btn" data-cta="hero" data-pay="three" href="https://secure.cardcom.solutions/EA/EA5/PfVKpHAWbkSkjaKi8CcWrg/PaymentSP">אני מצטרפת לליווי</a>
     <div class="pill-facts"><span>יוצאות לדרך יום שני 5.10</span><span>30 מקומות</span><span>3 × 999 ₪</span></div>
     <p class="micro"><strong>אחריות מלאה:</strong> עברת את הליווי, הגעת למפגשים, ולא יצאת עם מפת דרכים ברורה? החזר מלא, בלי שאלות.</p>
-    <div class="hero-illo">
-      <img src="assets/illo-family.webp" alt="איור: אמא, אבא ושני ילדים בונים ארמון חול בחוף, ולידם עציץ עם שתיל שצומחים עליו מטבעות" width="1200" height="800" fetchpriority="high">
+    <div class="hero-photo">
+      <img src="assets/ph-family.webp" alt="עדי סומך עם מני, אלה ואביב" width="900" height="1200" fetchpriority="high">
     </div>
   </div>
 </section>
@@ -328,6 +363,10 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <p>ביטחון שנשען רק על המשכורת הוא ביטחון של דבר אחד.<br>ברגע שההכנסה נעצרת, אין מה שיגבה אותה.</p>
       <p style="margin:0"><strong>לקח לי סגר אחד להבין את זה על הבשר.</strong><br>חיסכון לבד הוא לא רשת ביטחון.<br>רשת ביטחון בונים מכסף שעובד.</p>
     </div>
+    <figure class="then">
+      <img src="assets/ph-2020.webp" alt="עדי ומני על הספה בבית, מרץ 2020, בהיריון הראשון ובסגר הראשון" width="1200" height="901" loading="lazy">
+      <figcaption>מרץ 2020. הריון ראשון, סגר ראשון, ואפס הכנסות. זאת אני.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -354,6 +393,11 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <div class="jars-illo"><img src="assets/illo-jars.webp" alt="איור: שלושה כדי זכוכית עם מטבעות, ורוד, ליים וכחול" width="1200" height="800" loading="lazy"></div>
     <p class="quiet"><strong>ככה אף שקל לא יושב סתם.</strong>ואף שקל לא בסיכון שלא מתאים לזמן שלו. הכסף לחופשה של הקיץ לא נוגע בכסף של הפרישה. והכסף של הפרישה לא מפחיד אותך, כי הוא בבית הנכון.</p>
     <p class="quiet"><strong>גם ליהנות מהיום. וגם לבנות עתיד.</strong>הילדים שלך לא צריכים אמא קדושה מעונה. הם צריכים אמא שיודעת איפה הכסף שלה, ולכן מוציאה בלי רגשות אשמה.</p>
+    <div class="strip" aria-label="תמונות מהחיים">
+      <img src="assets/ph-pool.webp" alt="מני ואלה בבריכה" width="600" height="1067" loading="lazy">
+      <img src="assets/ph-sunset.webp" alt="עדי עם הילדים על חוף בשקיעה בתאילנד" width="600" height="1067" loading="lazy">
+      <img src="assets/ph-paris.webp" alt="עדי ומני מול מגדל אייפל" width="600" height="1067" loading="lazy">
+    </div>
     <p class="quiet" style="margin-bottom:0"><strong>פעם אחת. ולא נוגעות.</strong>מנגנון, לא הימור. בלי מסחר, בלי מעקב יומי. את מגדירה פעם אחת, והשליטה נשארת אצלך: להגדיל, להקטין או לעצור, לפי החיים.</p>
   </div>
 </section>
@@ -438,12 +482,20 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   </div>
 </section>
 
-<!-- ========== האזור האישי ========== -->
-<section class="mock">
+<!-- ========== מוקאפ הליווי ========== -->
+<section class="mock" id="mock">
   <div class="wrap">
-    <span class="tag">הדמיה של האזור האישי · נתונים לדוגמה</span>
+    <span class="tag">הדמיה · נתונים לדוגמה</span>
     <h2>ככה נראה הליווי מבפנים</h2>
-    <p class="lead">האזור האישי שלך אומר לך בדיוק איפה את, ומה הצעד הבא. אחד. לא רשימה של עשרים.</p>
+    <p class="lead">מפגש לייב בשבוע, אזור אישי שמלווה אותך כל יום, קבוצה שעונה, ופגישה אישית עם איש מקצוע.</p>
+
+    <figure class="laptop">
+      <div class="lid"><img src="assets/mock-live.webp" alt="שקף ממפגש לייב: 28 יום, צעד אחד בכל פעם, השבועות של הליווי" width="1280" height="720" loading="lazy"></div>
+      <div class="base"></div>
+      <figcaption>מפגש הלייב השבועי. ימי שני ב-20:00, ומוקלט למי שפספסה.</figcaption>
+    </figure>
+
+    <p class="mock-sub">והאזור האישי שלך, בטלפון:</p>
     <div class="phones">
       <figure>
         <div class="phone"><div class="scr"><img src="assets/jhome.webp" alt="מסך הבית של האזור האישי: יום 10 מתוך 28, הצעד הבא שלי, וארבעת השלבים ממפות מגינות מחלקות מפעילות" width="500" height="1300" loading="lazy"></div></div>
@@ -456,6 +508,26 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <figure>
         <div class="phone"><div class="scr"><img src="assets/jjars.webp" alt="מסך שלושת הכדים: כד קרוב, כד בינוני, כד ארוך, לכל שקל תפקיד" width="500" height="1300" loading="lazy"></div></div>
         <figcaption>שלושת הכדים. לכל שקל תפקיד, ולכל שקל בית.</figcaption>
+      </figure>
+    </div>
+
+    <div class="mock-cards">
+      <figure class="wa-mock">
+        <div class="wa-head"><img src="assets/adi.webp" class="wa-av" alt="" width="800" height="1200" loading="lazy"><div><b>קבוצת הליווי · אמא משקיעה</b><small>עדי, הצוות והמשתתפות</small></div></div>
+        <div class="wa-body">
+          <div class="m"><b>עדי</b>בוקר טוב 💛 השבוע: ציד האוצר. הצעד של היום באזור האישי לוקח 10 דקות. מי שמצאה קופה שכוחה, כתבי לי כאן.</div>
+          <div class="m"><b>עדי</b>ומי שנתקעת מול טופס, שולחת צילום מסך ופותרות יחד. אף אחת לא נשארת תקועה.</div>
+        </div>
+        <figcaption>קבוצת הליווי: שאלות, חיזוקים, ומענה שלי ושל הצוות.</figcaption>
+      </figure>
+      <figure class="meet">
+        <div class="meet-card">
+          <span class="meet-lbl">פגישה אישית 1:1</span>
+          <b>עמית ביטון · סוכן ביטוח פנסיוני</b>
+          <ul><li>מסלקה פנסיונית: מה יש לך היום</li><li>בדיקת דמי ניהול וכיסויים</li><li>פתיחת מה שצריך והורדת הוראת הקבע</li></ul>
+          <span class="meet-time">שבוע 3 · בזום · את מקבלת סיכום כתוב</span>
+        </div>
+        <figcaption>הפגישה שבה הבירוקרטיה נעשית, ואת מקבלת בהירות.</figcaption>
       </figure>
     </div>
   </div>
@@ -548,6 +620,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <div><b>200+</b><span>תיקי השקעות שנפתחו</span></div>
       <div><b>7M+ ₪</b><span>מושקעים על ידי הקהילה</span></div>
     </div>
+    <div class="bio-photo"><img src="assets/ph-baby.webp" alt="עדי מרימה את התינוקת שלה על חוף" width="800" height="1423" loading="lazy"></div>
   </div>
 </section>
 
@@ -643,6 +716,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 <!-- ========== סגירה ========== -->
 <section class="close">
   <div class="wrap">
+    <div class="close-photo"><img src="assets/ph-beach.webp" alt="עדי הולכת על החוף עם הבת שלה" width="800" height="1422" loading="lazy"></div>
     <h2>בעוד 28 יום הכסף שלך עובד.<br>או שעוד חודש עבר.</h2>
     <a class="btn" data-cta="closing" data-pay="three" href="https://secure.cardcom.solutions/EA/EA5/PfVKpHAWbkSkjaKi8CcWrg/PaymentSP">אני מצטרפת לליווי</a>
     <p class="micro">3 × 999 ₪ · או 2,800 ₪ בתשלום אחד · יוצאות לדרך 5.10</p>
