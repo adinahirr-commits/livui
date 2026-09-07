@@ -929,6 +929,9 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     function update(){ var on = heroSeen && !priceVisible; sticky.classList.toggle('on', on); sticky.setAttribute('aria-hidden', on ? 'false':'true'); sticky.querySelector('a').tabIndex = on ? 0 : -1; }
     new IntersectionObserver(function(es){ es.forEach(function(e){ heroSeen = !e.isIntersecting && e.boundingClientRect.bottom < 0; }); update(); }, {threshold:0}).observe(hero);
     if (price) new IntersectionObserver(function(es){ es.forEach(function(e){ priceVisible = e.isIntersecting; }); update(); }, {threshold:.25}).observe(price);
+    var joinSec=document.getElementById('join'); var joinVisible=false;
+    if (joinSec) new IntersectionObserver(function(es){ es.forEach(function(e){ joinVisible = e.isIntersecting; }); update(); }, {threshold:.15}).observe(joinSec);
+    var _u=update; update=function(){ var on = heroSeen && !priceVisible && !joinVisible; sticky.classList.toggle('on', on); sticky.setAttribute('aria-hidden', on ? 'false':'true'); sticky.querySelector('a').tabIndex = on ? 0 : -1; };
   }
 
   /* 5) ווידג'ט נגישות */
@@ -949,6 +952,17 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !panel.hidden){ panel.hidden=true; btn.setAttribute('aria-expanded','false'); btn.focus(); } });
     apply();
   })();
+
+  /* 6a) כפתורי "לשריין מקום": קפיצה מיידית לטופס (בלי גלילה חלקה של 25 אלף פיקסלים) */
+  document.querySelectorAll('a[href="#join"]').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      var j=document.getElementById('join'); if(!j) return;
+      ev.preventDefault();
+      j.scrollIntoView({behavior:'auto',block:'start'});
+      try{ history.replaceState(null,'','#join'); }catch(e){}
+      var first=document.getElementById('j-name'); if(first && !document.getElementById('joinForm').hidden){ setTimeout(function(){ first.focus({preventScroll:true}); },50); }
+    });
+  });
 
   /* 6b) טופס שריון מקום → סמוב → שלב תשלום */
   (function(){
