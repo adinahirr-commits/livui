@@ -253,17 +253,64 @@ header.site img{height:46px;width:auto}
 .fit .checks li{font-size:1.02rem}
 .fit.alt .ck{background:var(--sky)}
 
-/* faq · chat */
+/* compass visual */
+.compass-visual{margin:22px auto 0;max-width:420px;background:#0b1b3a;border-radius:24px;padding:18px 18px 16px;color:#fff}
+.compass-visual img{width:min(250px,66vw);margin:0 auto}
+.compass-visual figcaption{margin-top:10px;font-size:1rem;color:#EDEBF5;line-height:1.5}
+.station .ex{margin:10px 0 0;font-size:.98rem;color:var(--ink-soft);max-width:32ch;background:var(--white);position:relative;z-index:1;padding:0 6px;line-height:1.55}
+.station .ex small{display:block;font-size:.85rem;margin-top:2px}
+
+/* calculator */
+.calc{background:var(--white)}
+.calc-form{display:grid;gap:14px;margin-top:28px;text-align:right}
+.calc-form label{display:grid;gap:6px;background:var(--canvas);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.calc-form .q{font-weight:700;font-size:1rem}
+.calc-form .in{display:flex;align-items:center;gap:10px}
+.calc-form input{flex:1;min-width:0;font:inherit;font-size:1.25rem;font-weight:800;color:var(--ink);background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;min-height:48px;text-align:center;font-variant-numeric:tabular-nums}
+.calc-form input:focus{border-color:var(--vista);outline:none;box-shadow:0 0 0 3px rgba(140,158,255,.35)}
+.calc-form .in b{font-size:1rem;color:var(--ink-soft);min-width:40px;text-align:center}
+.calc-out{display:grid;gap:14px;margin-top:22px}
+@media(min-width:560px){.calc-out{grid-template-columns:1fr 1fr}}
+.res{border-radius:20px;padding:20px 16px;border:1px solid var(--line)}
+.res small{display:block;font-weight:700;font-size:.95rem;margin-bottom:6px}
+.res b{display:block;font-size:clamp(1.9rem,8vw,2.6rem);font-weight:900;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+.res > span{display:block;font-size:.9rem;color:var(--ink-soft);margin-top:6px}
+.res span span{display:inline}
+.res.save{background:#FDECEC}.res.save b{color:#C62828}
+.res.inv{background:#E8F5EC}.res.inv b{color:#1E8E3E}
+.calc-diff{margin:18px 0 0;font-size:1.15rem;font-weight:700}
+.calc-diff b{font-size:1.4rem;font-weight:900;color:var(--ink)}
+.calc-note{font-size:.88rem;color:var(--ink-soft);margin:14px auto 0;max-width:46ch;line-height:1.5}
+
+/* faq · interactive chat */
 .faq{background:var(--white)}
-.chat{display:flex;flex-direction:column;gap:14px;margin-top:30px;text-align:right}
-.chat .q{align-self:flex-end;max-width:86%;background:var(--pink-soft);border-radius:18px 18px 18px 4px;padding:12px 16px;font-weight:700;font-size:1.05rem;line-height:1.5}
+.chatbox{background:var(--canvas);border:1px solid var(--line);border-radius:24px;overflow:hidden;margin-top:28px;box-shadow:var(--shadow);text-align:right}
+.chat-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--ink);color:#fff}
+.chat-av{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 15%;margin:0;flex:0 0 44px;border:2px solid #fff}
+.chat-head b{display:block;font-size:1.05rem;line-height:1.2}
+.chat-head small{opacity:.85;font-size:.85rem}
+.online{margin-right:auto;font-size:.8rem;display:flex;align-items:center;gap:6px;opacity:.9}
+.online i{width:8px;height:8px;border-radius:50%;background:var(--lime);display:inline-block}
+.chat{display:flex;flex-direction:column;gap:12px;padding:16px 14px;max-height:440px;overflow-y:auto;scroll-behavior:smooth}
+.chat .q{align-self:flex-end;max-width:86%;background:var(--pink-soft);border-radius:18px 18px 18px 4px;padding:10px 14px;font-weight:700;font-size:1rem;line-height:1.5}
 .chat .q p{margin:0}
-.chat .ans{align-self:flex-start;display:flex;gap:10px;align-items:flex-end;max-width:94%}
-.chat .av{width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:50% 15%;flex:0 0 36px;margin:0}
-.chat .b{background:var(--canvas);border:1px solid var(--line);border-radius:18px 18px 4px 18px;padding:12px 16px;font-size:1.02rem;line-height:1.6}
+.chat .ans{align-self:flex-start;display:flex;gap:8px;align-items:flex-end;max-width:94%}
+.chat .av{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:50% 15%;flex:0 0 32px;margin:0}
+.chat .b{background:var(--white);border:1px solid var(--line);border-radius:18px 18px 4px 18px;padding:10px 14px;font-size:1rem;line-height:1.6;min-width:60px}
 .chat .b p{margin:0 0 .6em}
 .chat .b p:last-child{margin:0}
 .chat .b strong{font-weight:800}
+.typing{display:inline-flex;gap:4px;align-items:center;height:18px}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--ink-soft);opacity:.5;animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.2s}.typing i:nth-child(3){animation-delay:.4s}
+@keyframes blink{0%,80%,100%{opacity:.3}40%{opacity:1}}
+.chat-chips{padding:12px 14px 16px;border-top:1px solid var(--line);background:var(--white)}
+.chat-chips p{margin:0 0 10px;font-size:.85rem;color:var(--ink-soft);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{font:inherit;font-size:.95rem;font-weight:600;color:var(--ink);background:var(--canvas);border:1px solid var(--line);border-radius:100px;padding:9px 14px;min-height:42px;cursor:pointer;text-align:right;transition:background .15s,transform .15s}
+.chips button:hover{background:var(--pink-soft)}
+.chips button.asked{opacity:.55}
+@media(prefers-reduced-motion:reduce){.typing i{animation:none}.chat{scroll-behavior:auto}}
 
 /* closing */
 .close{background:var(--pink-soft)}
@@ -383,6 +430,10 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <div><i>3</i><b>נקודת מוצא</b><small>מה כבר יש לך היום. וכאן מגלות שיש יותר ממה שחשבת</small></div>
       <div><i>4</i><b>אסטרטגיה</b><small>המסלול שמחבר. והוראת קבע שרצה לעבר המטרות</small></div>
     </div>
+    <figure class="compass-visual">
+      <img src="assets/compass.webp" alt="איור המצפן: חזון בראש, ואז מטרות, נקודת מוצא ואסטרטגיה לאורך המסלול" width="570" height="555" loading="lazy">
+      <figcaption>מצפן לא אומר לאן ללכת. הוא נותן כיוון, כך שכל צעד הוא צעד נכון.</figcaption>
+    </figure>
 
     <p class="principle">והעיקרון שמריץ הכל:<br>כל שקל מקבל <span>תפקיד</span>.<br>וכל שקל מקבל <span>בית</span>.</p>
     <div class="jars" aria-label="שלושת הכדים">
@@ -402,6 +453,27 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   </div>
 </section>
 
+<!-- ========== מחשבון ========== -->
+<section class="calc" id="calc">
+  <div class="wrap">
+    <span class="eyebrow">מחשבון</span>
+    <h2>חיסכון מול השקעה. על המספרים שלך.</h2>
+    <p class="lead">שני את המספרים, ותראי מה הזמן עושה לכסף שלא נוגעות בו.</p>
+    <form class="calc-form" onsubmit="return false" aria-label="מחשבון חיסכון מול השקעה">
+      <label><span class="q">כמה יש לך עכשיו לשים, להערכתך?</span><span class="in"><input type="number" id="c-start" value="20000" min="0" step="1000" inputmode="numeric"><b>₪</b></span></label>
+      <label><span class="q">כמה תוכלי להוסיף כל חודש, להערכתך?</span><span class="in"><input type="number" id="c-monthly" value="500" min="0" step="50" inputmode="numeric"><b>₪</b></span></label>
+      <label><span class="q">לכמה שנים תוכלי להשקיע?</span><span class="in"><input type="number" id="c-years" value="30" min="1" max="50" step="1" inputmode="numeric"><b>שנים</b></span></label>
+      <label><span class="q">לאיזו תשואה שנתית אנחנו מכוונות?</span><span class="in"><input type="number" id="c-rate" value="8" min="0" max="20" step="0.5" inputmode="decimal"><b>%</b></span></label>
+    </form>
+    <div class="calc-out" aria-live="polite">
+      <div class="res save"><small>אם רק תחסכי את הכסף</small><b id="r-save">200,000 ₪</b><span>אותו כסף, בלי תשואה</span></div>
+      <div class="res inv"><small>אם תשקיעי אותו</small><b id="r-inv">964,000 ₪</b><span>בהנחת <span id="r-rate">8</span>% בשנה, ריבית דריבית</span></div>
+    </div>
+    <p class="calc-diff">ההבדל בין חיסכון להשקעה: <b id="r-diff">764,000 ₪</b></p>
+    <p class="calc-note">הדמיה חישובית להמחשה בלבד, בסכומים מעוגלים. תשואת העבר אינה מבטיחה תשואה עתידית, והתוצאה בפועל תלויה במסלול שתבחרי ובתנאי השוק.</p>
+  </div>
+</section>
+
 <!-- ========== מפת הדרכים ========== -->
 <section class="road" id="road">
   <div class="wrap">
@@ -415,13 +487,14 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <span class="when">היערכות</span>
         <h3>ציד האוצר: מוצאות כספים אבודים</h3>
         <p>עוד לפני שמדברות על השקעות. תשלומים שלא שמת לב שקיימים, קופות וקרנות ממקומות עבודה ישנים, החזרי מס ומענקים שמגיעים לך ולא ביקשת.</p>
-        <div class="have">כסף פנוי שלא ידעת שיש לך. בממוצע: 20,000 ₪.</div>
+        <div class="have">כל הכסף הפנוי שלך, גם זה שלא ידעת על קיומו.</div>
+        <p class="ex">לאלומה מצאנו מעל 200,000 ש״ח בקופה שהיא לא ידעה על קיומה. לרוב אנחנו מוצאות בממוצע 20,000 ש״ח אבודים בקופות נסתרות.</p>
       </li>
       <li class="station">
         <div class="pic"><img src="assets/step-stage-map.webp" alt="" width="640" height="640" loading="lazy"></div>
         <span class="when">שבוע 1 · ממפות</span>
         <h3>מיפוי הכספים הקיימים</h3>
-        <p>כל הכסף על השולחן: עו"ש, פיקדונות, קופות, פנסיה, קרן השתלמות. בלי אקסל, באזור האישי שלך. ורק אז חזון, ו-3 מטרות עם סכום ותאריך. כי עכשיו, כשיודעות כמה באמת יש, המטרות נהיות אמיתיות.</p>
+        <p>כל הכסף על השולחן: עו"ש, פיקדונות, קופות, פנסיה, קרן השתלמות. באזור האישי שלך. ואז חזון, ו-3 מטרות עם סכום ותאריך. כי עכשיו, כשיודעות כמה באמת יש, המטרות נהיות אמיתיות.</p>
         <div class="have">תמונה מלאה של הכסף שלך, ו-3 מטרות כתובות.</div>
       </li>
       <li class="station">
@@ -435,7 +508,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <div class="pic"><img src="assets/step-stage-split.webp" alt="" width="640" height="640" loading="lazy"></div>
         <span class="when">שבוע 2 · מחלקות</span>
         <h3>תכנון לפי שיטת הכדים</h3>
-        <p>מחלקות את מה שנשאר לשלושת הכדים: חירום, טווח קרוב, טווח רחוק. לכל שקל תפקיד ובית. ובמקביל, הרצאת יועץ ההשקעות ומערכת המענה שלו, כדי שתביני מספיק כדי לבחור מסלול בעצמך.</p>
+        <p>מחלקות את מה שנשאר לשלושת הכדים: חירום, טווח קרוב, טווח רחוק. לכל שקל תפקיד ובית. ובמקביל, הרצאת יועץ ההשקעות ומערכת המענה שלו, כדי שתצליחי לבנות מסלול אידיאלי למשפחה שלך.</p>
         <div class="have">תוכנית חלוקה אישית, שאת מבינה ומסכימה איתה.</div>
       </li>
       <li class="station">
@@ -450,7 +523,8 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <span class="when">שבוע 4 · יום 28</span>
         <h3>המנגנון עובד. לבד.</h3>
         <p>ההוראה הראשונה יורדת. את בודקת אחת לכמה זמן, ומעדכנת רק כשהחיים משתנים. ולייב סיום, עם משפט אחד שאת אומרת על עצמך: אני אמא משקיעה.</p>
-        <div class="have">רשת ביטחון למשפחה. פעילה.</div>
+        <div class="have">רשת ביטחון למשפחה. פעילה. רצה ועובדת גם כשאת ישנה.</div>
+        <p class="ex">גם 500 ₪ הפקדה בחודש יכולים להפוך למעל חצי מיליון לילד שלך. <small>(בהנחת תשואה שנתית ממוצעת של 8%, לאורך 30 שנה)</small></p>
       </li>
     </ol>
   </div>
@@ -682,33 +756,35 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   </div>
 </section>
 
-<!-- ========== שאלות נפוצות · צ'אט ========== -->
+<!-- ========== שאלות נפוצות · צ'אט אינטראקטיבי ========== -->
 <section class="faq" id="faq">
   <div class="wrap">
-    <span class="eyebrow">בלי פילטרים</span>
-    <h2>השאלות שאת באמת שואלת את עצמך</h2>
-    <p class="lead">ככה זה נשמע כשאת כותבת לי בווטסאפ.</p>
-    <div class="chat" aria-label="שאלות ותשובות">
-      <div class="q"><p>"זה מסובך מדי בשבילי. אני אסתבך ואוותר."</p></div>
-      <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p>ככה חשבו רוב הנשים שעברו כאן.</p><p>ולכן הליווי בנוי בדיוק הפוך: צעד אחד קטן בכל שבוע, בשפה של אמא, ואזור אישי שאומר לך מה הצעד הבא. אחד.</p><p>ואת החלק שנתפס "מסובך", הטפסים והפתיחה, עושים <strong>ביחד עם אנשי המקצוע</strong>. את לא נשארת שם לבד.</p></div></div>
-      <div class="q"><p>"אין לי מספיק כסף כדי להתחיל."</p></div>
-      <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p>הוראת קבע מתחילה גם ב-<strong>100 ₪</strong> בחודש.</p><p>ועוד לפני זה יש ציד אוצר: ממפות מה שכבר יש לך. רוב הנשים מגלות יותר ממה שחשבו, לפעמים גם קופות שכוחות.</p><p>את הכסף לפעולה מוצאים בתהליך. בלי צנע ובלי לוותר על החיים של היום.</p></div></div>
-      <div class="q"><p>"חסר לי ידע. אני לא מבינה כלום בהשקעות."</p></div>
-      <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p>מצוין. זו בדיוק נקודת הפתיחה שהליווי בנוי לה.</p><p>את מקבלת את הידע בפשטות: מה זה מדד, מה זו קרן סל, למה פיזור ופשטות מנצחים. הרצאה של יועץ השקעות, ומערכת שעונה לך על כל שאלה, בכל שעה.</p><p>והסוד האמיתי? את לא צריכה להיות מומחית. את צריכה <strong>הוראת קבע אחת שרצה</strong>. בזה מסיימות.</p></div></div>
-      <div class="q"><p>"זו לא תקופה מתאימה בשבילי."</p></div>
-      <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p>את המשפט הזה אמרת לעצמך גם בשנה שעברה. 🙂</p><p>ובינתיים, בהשקעה לטווח ארוך, כל שנתיים של המתנה יכולות לעלות <strong>מעל 100,000 ₪</strong> בתוצאה הסופית.</p><p>הליווי דורש בערך שעה בשבוע, למשך 4 שבועות. תקופה מתאימה יותר מזו לא באמת מגיעה.</p></div></div>
-      <div class="q"><p>"אין לי זמן ללייבים."</p></div>
-      <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p><strong>4</strong> לייבים, בימי שני ב-20:00, וכולם מוקלטים.</p><p>כל השאר בזמן שלך: צעד יומי באזור האישי של 5 עד 10 דקות, ופגישה אישית אחת שנקבעת לנוחות שלך.</p></div></div>
-      <div class="q"><p>"תגידי לי במה להשקיע?"</p></div>
-      <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p><strong>אני לא. ובכוונה.</strong> המלצה אישית על נייר ערך היא תפקיד של מי שיש לו רישיון לזה.</p><p>ובדיוק בשביל זה יש בליווי יועץ השקעות: הרצאה, מערכת מענה, ומפגש שאלות ותשובות. שם שואלים את השאלות האישיות, ומקבלים תשובות ממי שמותר לו לענות.</p><p>התפקיד שלי: שתביני את המפה, תבחרי בביטחון, ותפעלי דרך המסילות הנכונות.</p></div></div>
-      <div class="q"><p>"מתי זה מתחיל, וכמה זמן זה?"</p></div>
-      <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p>המחזור הקרוב יוצא לדרך ביום שני <strong>5.10</strong>, מיד אחרי החגים, ונמשך <strong>28</strong> יום.</p><p>הלייבים בימי שני ב-20:00. ושבוע ההיערכות שלך מתחיל כבר ברגע ההצטרפות: כניסה לאזור האישי, שאלון קצר, וציד האוצר.</p></div></div>
-      <div class="q"><p>"2,997 ₪ וזהו? בלי הפתעות?"</p></div>
-      <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p>כן. <strong>3 תשלומים של 999 ₪</strong>, או 2,800 ₪ בתשלום אחד. הכל כלול.</p><p>4 הלייבים, האזור האישי, הפגישה עם הסוכן הפנסיוני, ההרצאה והמענה של יועץ ההשקעות, ומפגש השאלות.</p><p>ומה שתחליטי להשקיע? נכנס לתיק שלך, על שמך, ונשאר שלך.</p></div></div>
-      <div class="q"><p>"אצלנו בבית בעלי דואג לזה."</p></div>
-      <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p>נהדר שיש מישהו שמתעסק בזה. אבל ביטחון כלכלי אמיתי הוא לא שמישהו אחר מבין בשבילך. הוא שגם את יודעת מה יש לכם, ולמה.</p><p>לירון, בוגרת: בעלה בנדל"ן, קיבל את כל ההחלטות. היום הם מחליטים יחד, וקנו עוד דירה שהיא חסמה מפחד.</p><p>וזו בדרך כלל השיחה הכי טובה שהייתה לזוג על כסף.</p></div></div>
-      <div class="q"><p>"ומה אם איתקע באמצע?"</p></div>
-      <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p>יש לך אזור אישי שתמיד מראה לך את הפעולה הבאה האחת, לייב כל שבוע, ואנשי מקצוע שעושים איתך את החלק הגדול.</p><p>ואם בסוף הליווי לא יצאת עם מפת דרכים ברורה? <strong>החזר מלא.</strong></p><p>אין פה אף שלב שבו את לבד. דאגתי לזה.</p></div></div>
+    <span class="eyebrow">שאלות נפוצות</span>
+    <h2>יש לך שאלות? אני כאן בשבילך</h2>
+    <div class="chatbox">
+      <div class="chat-head">
+        <img src="assets/adi.webp" class="chat-av" alt="" width="800" height="1200" loading="lazy">
+        <div><b>עדי סומך</b><small>מייסדת אמא משקיעה</small></div>
+        <span class="online"><i></i>מחוברת</span>
+      </div>
+      <div class="chat" id="chatLog" aria-live="polite">
+        <div class="ans"><img src="assets/adi.webp" alt="" class="av" width="800" height="1200" loading="lazy"><div class="b"><p>היי, אני עדי 💛 יש לך שאלות? לחצי על אחת מהשאלות למטה ואני אענה לך אישית.</p></div></div>
+      </div>
+      <div class="chat-chips">
+        <p>לחצי על שאלה כדי לשאול:</p>
+        <div class="chips" id="chatChips">
+        <button type="button" data-q="0">"זה מסובך מדי בשבילי. אני אסתבך ואוותר."</button>
+        <button type="button" data-q="1">"אין לי מספיק כסף כדי להתחיל."</button>
+        <button type="button" data-q="2">"חסר לי ידע. אני לא מבינה כלום בהשקעות."</button>
+        <button type="button" data-q="3">"זו לא תקופה מתאימה בשבילי."</button>
+        <button type="button" data-q="4">"אין לי זמן ללייבים."</button>
+        <button type="button" data-q="5">"תגידי לי במה להשקיע?"</button>
+        <button type="button" data-q="6">"מתי זה מתחיל, וכמה זמן זה?"</button>
+        <button type="button" data-q="7">"2,997 ₪ וזהו? בלי הפתעות?"</button>
+        <button type="button" data-q="8">"אצלנו בבית בעלי דואג לזה."</button>
+        <button type="button" data-q="9">"ומה אם איתקע באמצע?"</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -820,6 +896,62 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     panel.addEventListener('click', function(e){ var b=e.target.closest('[data-a11y]'); if(!b) return; var k=b.getAttribute('data-a11y'); if(k==='reset'){ state={}; } else { state[k]=!state[k]; } apply(); });
     document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !panel.hidden){ panel.hidden=true; btn.setAttribute('aria-expanded','false'); btn.focus(); } });
     apply();
+  })();
+
+  /* 7) מחשבון חיסכון מול השקעה */
+  (function(){
+    var ids=['c-start','c-monthly','c-years','c-rate']; var els=ids.map(function(i){return document.getElementById(i)});
+    if(els.some(function(e){return !e})) return;
+    function fmt(x){ x=Math.round(x/1000)*1000; return x.toLocaleString('he-IL')+' ₪'; }
+    function calc(){
+      var P=+els[0].value||0, M=+els[1].value||0, Y=Math.max(0,+els[2].value||0), r=(+els[3].value||0)/100;
+      var n=Math.round(Y*12), i=r/12;
+      var save=P+M*n;
+      var inv = i>0 ? P*Math.pow(1+i,n) + M*((Math.pow(1+i,n)-1)/i) : save;
+      document.getElementById('r-save').textContent=fmt(save);
+      document.getElementById('r-inv').textContent=fmt(inv);
+      document.getElementById('r-diff').textContent=fmt(Math.max(0,inv-save));
+      document.getElementById('r-rate').textContent=(+els[3].value||0).toLocaleString('he-IL');
+    }
+    els.forEach(function(e){ e.addEventListener('input',calc); e.addEventListener('change',calc); });
+    calc();
+  })();
+
+  /* 8) צ'אט שאלות אינטראקטיבי */
+  (function(){
+    var QA=[{"q": "\"זה מסובך מדי בשבילי. אני אסתבך ואוותר.\"", "a": ["ככה חשבו רוב הנשים שעברו כאן.", "ולכן הליווי בנוי בדיוק הפוך: צעד אחד קטן בכל שבוע, בשפה של אמא, ואזור אישי שאומר לך מה הצעד הבא. אחד.", "ואת החלק שנתפס \"מסובך\", הטפסים והפתיחה, עושים <strong>ביחד עם אנשי המקצוע</strong>. את לא נשארת שם לבד."]}, {"q": "\"אין לי מספיק כסף כדי להתחיל.\"", "a": ["הוראת קבע מתחילה גם ב-<strong>100 ₪</strong> בחודש.", "ועוד לפני זה יש ציד אוצר: ממפות מה שכבר יש לך. רוב הנשים מגלות יותר ממה שחשבו, לפעמים גם קופות שכוחות.", "את הכסף לפעולה מוצאים בתהליך. בלי צנע ובלי לוותר על החיים של היום."]}, {"q": "\"חסר לי ידע. אני לא מבינה כלום בהשקעות.\"", "a": ["מצוין. זו בדיוק נקודת הפתיחה שהליווי בנוי לה.", "את מקבלת את הידע בפשטות: מה זה מדד, מה זו קרן סל, למה פיזור ופשטות מנצחים. הרצאה של יועץ השקעות, ומערכת שעונה לך על כל שאלה, בכל שעה.", "והסוד האמיתי? את לא צריכה להיות מומחית. את צריכה <strong>הוראת קבע אחת שרצה</strong>. בזה מסיימות."]}, {"q": "\"זו לא תקופה מתאימה בשבילי.\"", "a": ["את המשפט הזה אמרת לעצמך גם בשנה שעברה. 🙂", "ובינתיים, בהשקעה לטווח ארוך, כל שנתיים של המתנה יכולות לעלות <strong>מעל 100,000 ₪</strong> בתוצאה הסופית.", "הליווי דורש בערך שעה בשבוע, למשך 4 שבועות. תקופה מתאימה יותר מזו לא באמת מגיעה."]}, {"q": "\"אין לי זמן ללייבים.\"", "a": ["<strong>4</strong> לייבים, בימי שני ב-20:00, וכולם מוקלטים.", "כל השאר בזמן שלך: צעד יומי באזור האישי של 5 עד 10 דקות, ופגישה אישית אחת שנקבעת לנוחות שלך."]}, {"q": "\"תגידי לי במה להשקיע?\"", "a": ["<strong>אני לא. ובכוונה.</strong> המלצה אישית על נייר ערך היא תפקיד של מי שיש לו רישיון לזה.", "ובדיוק בשביל זה יש בליווי יועץ השקעות: הרצאה, מערכת מענה, ומפגש שאלות ותשובות. שם שואלים את השאלות האישיות, ומקבלים תשובות ממי שמותר לו לענות.", "התפקיד שלי: שתביני את המפה, תבחרי בביטחון, ותפעלי דרך המסילות הנכונות."]}, {"q": "\"מתי זה מתחיל, וכמה זמן זה?\"", "a": ["המחזור הקרוב יוצא לדרך ביום שני <strong>5.10</strong>, מיד אחרי החגים, ונמשך <strong>28</strong> יום.", "הלייבים בימי שני ב-20:00. ושבוע ההיערכות שלך מתחיל כבר ברגע ההצטרפות: כניסה לאזור האישי, שאלון קצר, וציד האוצר."]}, {"q": "\"2,997 ₪ וזהו? בלי הפתעות?\"", "a": ["כן. <strong>3 תשלומים של 999 ₪</strong>, או 2,800 ₪ בתשלום אחד. הכל כלול.", "4 הלייבים, האזור האישי, הפגישה עם הסוכן הפנסיוני, ההרצאה והמענה של יועץ ההשקעות, ומפגש השאלות.", "ומה שתחליטי להשקיע? נכנס לתיק שלך, על שמך, ונשאר שלך."]}, {"q": "\"אצלנו בבית בעלי דואג לזה.\"", "a": ["נהדר שיש מישהו שמתעסק בזה. אבל ביטחון כלכלי אמיתי הוא לא שמישהו אחר מבין בשבילך. הוא שגם את יודעת מה יש לכם, ולמה.", "לירון, בוגרת: בעלה בנדל\"ן, קיבל את כל ההחלטות. היום הם מחליטים יחד, וקנו עוד דירה שהיא חסמה מפחד.", "וזו בדרך כלל השיחה הכי טובה שהייתה לזוג על כסף."]}, {"q": "\"ומה אם איתקע באמצע?\"", "a": ["יש לך אזור אישי שתמיד מראה לך את הפעולה הבאה האחת, לייב כל שבוע, ואנשי מקצוע שעושים איתך את החלק הגדול.", "ואם בסוף הליווי לא יצאת עם מפת דרכים ברורה? <strong>החזר מלא.</strong>", "אין פה אף שלב שבו את לבד. דאגתי לזה."]}];
+    var log=document.getElementById('chatLog'), chips=document.getElementById('chatChips');
+    if(!log||!chips) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var busy=false;
+    function scrollEnd(){ log.scrollTop=log.scrollHeight; }
+    function el(tag,cls,html){ var d=document.createElement(tag); if(cls) d.className=cls; if(html!=null) d.innerHTML=html; return d; }
+    function answer(item, done){
+      var wrap=el('div','ans'); var av=el('img','av'); av.src=document.querySelector('.chat-head .chat-av').src; av.alt=''; wrap.appendChild(av);
+      var b=el('div','b','<span class="typing" aria-label="עדי כותבת"><i></i><i></i><i></i></span>'); wrap.appendChild(b); log.appendChild(wrap); scrollEnd();
+      setTimeout(function(){
+        b.innerHTML='';
+        var k=0;
+        function nextPara(){
+          if(k>=item.a.length){ done(); return; }
+          var p=el('p'); b.appendChild(p);
+          var full=item.a[k++]; 
+          if(reduce){ p.innerHTML=full; scrollEnd(); nextPara(); return; }
+          // type plain text, then swap in the formatted html
+          var tmp=el('div',null,full); var text=tmp.textContent; var c=0;
+          var t=setInterval(function(){ c+=2; p.textContent=text.slice(0,c); scrollEnd(); if(c>=text.length){ clearInterval(t); p.innerHTML=full; scrollEnd(); setTimeout(nextPara,220);} },14);
+        }
+        nextPara();
+      }, reduce?50:700);
+    }
+    chips.addEventListener('click', function(e){
+      var btn=e.target.closest('button[data-q]'); if(!btn||busy) return;
+      var item=QA[+btn.getAttribute('data-q')]; if(!item) return;
+      busy=true; btn.classList.add('asked');
+      log.appendChild(el('div','q','<p>'+item.q+'</p>')); scrollEnd();
+      answer(item, function(){ busy=false; });
+      try{ if(window.gtag) gtag('event','faq_question',{question:item.q.slice(0,60)}); }catch(err){}
+    });
   })();
 
   /* 6) סרטוני עדויות: טעינה רק בלחיצה */
