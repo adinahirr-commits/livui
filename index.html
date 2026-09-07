@@ -235,6 +235,25 @@ header.site img{height:46px;width:auto}
 .inc-row p{margin:0;font-size:1.02rem;line-height:1.55}
 .inc-foot{margin:24px auto 0;font-size:1.12rem;font-weight:700;max-width:30ch}
 
+/* bonus · חלון 24 שעות */
+.bonus{padding-top:0}
+.bonus-card{background:var(--ink);color:#fff;border-radius:28px;padding:clamp(28px,5vw,44px) clamp(18px,4vw,34px);box-shadow:var(--shadow)}
+.bonus-card .eyebrow{color:var(--lime);margin-bottom:10px}
+.bonus-card h2{font-size:clamp(1.55rem,4.8vw,2.15rem)}
+.bonus-name{font-size:1.15rem;font-weight:800;color:var(--lime);margin:18px 0 0}
+.bonus-sub{color:#C9C7D6;font-size:.98rem;margin:4px auto 0;max-width:36ch}
+.bonus-body{color:#EDEBF5;font-size:1.06rem;line-height:1.6;margin:14px auto 0;max-width:38ch}
+.clock{display:flex;justify-content:center;gap:10px;margin:26px 0 0}
+.clock div{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:16px;min-width:88px;padding:12px 6px}
+.clock b{display:block;font-size:clamp(1.8rem,7.5vw,2.4rem);font-weight:900;line-height:1;font-variant-numeric:tabular-nums}
+.clock small{display:block;font-size:.8rem;color:#C9C7D6;margin-top:7px;letter-spacing:.06em}
+.bonus-when{color:#fff;font-weight:700;font-size:1.05rem;margin:18px auto 0;max-width:34ch}
+.bonus .btn{margin-top:6px}
+html.a11y-contrast .bonus-card{border:1px solid #000}
+html.a11y-contrast .bonus-name{color:#ffe600}
+html.a11y-contrast .bonus-sub,html.a11y-contrast .clock small{color:#fff}
+html.a11y-contrast .clock div{background:#000;border-color:#fff}
+
 /* price */
 .price{background:var(--white)}
 .price-card{background:var(--canvas);border:1px solid var(--line);border-radius:28px;padding:clamp(26px,5vw,44px) clamp(18px,4vw,36px);box-shadow:var(--shadow)}
@@ -734,12 +753,32 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <div class="inc-row"><span class="n">1</span><h3>4 מפגשי לייב שבועיים</h3><small>ימי שני ב-20:00: 5.10, 12.10, 19.10, 26.10. מוקלטים.</small><p>שלב אחד בכל שבוע, ביחד, עם מקום לשאלות. פספסת? ההקלטה מחכה לך.</p></div>
       <div class="inc-row"><span class="n">2</span><h3>אזור אישי שמלווה אותך</h3><small>עם כל הנתונים שלך, במקום אחד</small><p>את נכנסת ורואה בדיוק מה הצעד הבא. לא צריך לזכור כלום. לא צריך לחפש כלום.</p></div>
       <div class="inc-row"><span class="n">3</span><h3>פגישה אישית 1:1 עם עמית ביטון</h3><small>סוכן ביטוח פנסיוני, מהצוות של אמא משקיעה</small><p>מוציא מסלקה, בודק דמי ניהול, ומסדר את הפנסיה והביטוחים. את מקבלת בהירות, הוא עושה את הבירוקרטיה.</p></div>
-      <div class="inc-row"><span class="n">4</span><h3>מערכת המענה של יועץ ההשקעות</h3><small>מבוססת בינה מלאכותית, פותחה על ידי יועץ השקעות בעל רישיון</small><!-- TODO (עדי): שם המערכת + שם היועץ --><p>תשובה ישירה ואובייקטיבית, בכל שעה, על איך בונים תמהיל תיק ומה ההבדל בין האפשרויות. ומאחורי המערכת עומד יועץ ההשקעות עצמו, למה שמעבר למה שכתוב.</p></div>
-      <div class="inc-row"><span class="n">5</span><h3>הרצאה של יועץ ההשקעות</h3><small>בתוך התוכנית</small><p>המושגים נהיים ברורים. מסלולים, מדדים, דמי ניהול, בשפה של אמא.</p></div>
-      <div class="inc-row"><span class="n">6</span><h3>בונוס: מפגש שאלות ותשובות</h3><small>עם יועץ ההשקעות</small><p>השאלות שלך, שנענות לפני שאת חותמת על משהו.</p></div>
-      <div class="inc-row"><span class="n">7</span><h3>הטבה על פתיחת תיק השקעות עצמאי</h3><small>למי שרוצה</small><!-- TODO (עדי): פרטי ההטבה --><p>למי שבוחרת במסלול העצמאי. הפרטים המלאים בתוך התוכנית.</p></div>
+      <div class="inc-row"><span class="n">4</span><h3>הרצאה של יועץ ההשקעות</h3><small>בתוך התוכנית</small><p>המושגים נהיים ברורים. מסלולים, מדדים, דמי ניהול, בשפה של אמא.</p></div>
+      <div class="inc-row"><span class="n">5</span><h3>בונוס: מפגש שאלות ותשובות</h3><small>עם יועץ ההשקעות</small><p>השאלות שלך, שנענות לפני שאת חותמת על משהו.</p></div>
+      <div class="inc-row"><span class="n">6</span><h3>הטבה על פתיחת תיק השקעות עצמאי</h3><small>למי שרוצה</small><!-- TODO (עדי): פרטי ההטבה --><p>למי שבוחרת במסלול העצמאי. הפרטים המלאים בתוך התוכנית.</p></div>
     </div>
     <p class="inc-foot">את מקבלת את ההחלטות. הצוות עוזר לך לבצע אותן. ואף שלב לא לבד.</p>
+  </div>
+</section>
+
+<!-- ========== בונוס · חלון 24 שעות ========== -->
+<section class="bonus" id="bonus">
+  <div class="wrap">
+    <div class="bonus-card">
+      <span class="eyebrow">בונוס · ל-24 השעות הקרובות</span>
+      <h2>סוכן AI אישי שפותח על ידי יועץ השקעות מוסמך</h2>
+      <p class="bonus-name">מערכת המענה של יועץ ההשקעות</p>
+      <p class="bonus-sub">מבוססת בינה מלאכותית, פותחה על ידי יועץ השקעות בעל רישיון</p>
+      <!-- TODO (עדי): שם המערכת + שם היועץ -->
+      <p class="bonus-body">תשובה ישירה ואובייקטיבית, בכל שעה, על איך בונים תמהיל תיק ומה ההבדל בין האפשרויות. ומאחורי המערכת עומד יועץ ההשקעות עצמו, למה שמעבר למה שכתוב.</p>
+      <div class="clock" id="bonusClock" aria-hidden="true">
+        <div><b id="cdH">24</b><small>שעות</small></div>
+        <div><b id="cdM">00</b><small>דקות</small></div>
+        <div><b id="cdS">00</b><small>שניות</small></div>
+      </div>
+      <p class="bonus-when">הבונוס פתוח ל-24 השעות הקרובות. שריינת מקום בזמן, הוא נכנס איתך לליווי.</p>
+      <a class="btn" data-cta="bonus" href="#join">אני רוצה את הבונוס ואת המקום שלי</a>
+    </div>
   </div>
 </section>
 
@@ -755,6 +794,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <p class="seats">30 מקומות בלבד</p>
       <p class="alt">או <b>2,800 ₪ בתשלום אחד</b> · הנחה מיידית של 197 ₪</p>
       <ul class="pfacts">
+        <li id="bonusFact"><b>בונוס ל-24 השעות הקרובות.</b>סוכן ה-AI של יועץ ההשקעות, נכנס איתך לליווי.</li>
         <li><b>זה המחיר הנמוך ביותר שהליווי הזה יהיה.</b>במחזורים הבאים הוא עולה.</li>
         <li><b>30 מקומות בלבד.</b>בגלל הפגישות האישיות עם אנשי המקצוע, אי אפשר יותר.</li>
         <li><b>יוצאות לדרך יום שני 5.10.</b>מיד אחרי החגים. עד סוף אוקטובר המנגנון שלך עובד.</li>
@@ -1072,6 +1112,49 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       f.appendChild(ifr);
     });
   });
+
+  /* 7) שעון הבונוס · 24 שעות */
+  (function(){
+    var sec = document.getElementById('bonus');
+    var H = document.getElementById('cdH'), M = document.getElementById('cdM'), S = document.getElementById('cdS');
+    if(!sec || !H || !M || !S) return;
+    var fact = document.getElementById('bonusFact');
+
+    /* דדליין קבוע לכל המבקרות: שימי כאן תאריך ISO, למשל '2026-09-09T22:00:00+03:00'.
+       ריק = חלון של 24 שעות לכל מבקרת, מרגע הכניסה הראשונה שלה לדף. */
+    var FIXED = '';
+
+    var DAY = 864e5, KEY = 'mm_bonus_until', now = Date.now(), until = 0;
+    if (FIXED) {
+      until = new Date(FIXED).getTime();
+    } else {
+      try { until = parseInt(localStorage.getItem(KEY) || '0', 10) || 0; } catch(e){}
+      if (!until || until - now > DAY) {
+        until = now + DAY;
+        try { localStorage.setItem(KEY, String(until)); } catch(e){}
+      }
+    }
+
+    function pad(n){ return n < 10 ? '0' + n : '' + n; }
+    var t;
+    function tick(){
+      var left = until - Date.now();
+      if (left <= 0) {
+        sec.hidden = true;
+        if (fact) fact.hidden = true;
+        if (t) clearInterval(t);
+        return;
+      }
+      var s = Math.floor(left / 1000);
+      H.textContent = pad(Math.floor(s / 3600));
+      M.textContent = pad(Math.floor(s / 60) % 60);
+      S.textContent = pad(s % 60);
+    }
+    tick();
+    t = setInterval(tick, 1000);
+    document.addEventListener('visibilitychange', function(){ if (!document.hidden) tick(); });
+  })();
+
 })();
 </script>
 </body>
