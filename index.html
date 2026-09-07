@@ -253,33 +253,37 @@ header.site img{height:46px;width:auto}
 .fit .checks li{font-size:1.02rem}
 .fit.alt .ck{background:var(--sky)}
 
-/* compass visual */
-.compass-visual{margin:22px auto 0;max-width:420px;background:#0b1b3a;border-radius:24px;padding:18px 18px 16px;color:#fff}
-.compass-visual img{width:min(250px,66vw);margin:0 auto}
-.compass-visual figcaption{margin-top:10px;font-size:1rem;color:#EDEBF5;line-height:1.5}
 .station .ex{margin:10px 0 0;font-size:.98rem;color:var(--ink-soft);max-width:32ch;background:var(--white);position:relative;z-index:1;padding:0 6px;line-height:1.55}
 .station .ex small{display:block;font-size:.85rem;margin-top:2px}
 
 /* calculator */
 .calc{background:var(--white)}
-.calc-form{display:grid;gap:14px;margin-top:28px;text-align:right}
-.calc-form label{display:grid;gap:6px;background:var(--canvas);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
-.calc-form .q{font-weight:700;font-size:1rem}
-.calc-form .in{display:flex;align-items:center;gap:10px}
-.calc-form input{flex:1;min-width:0;font:inherit;font-size:1.25rem;font-weight:800;color:var(--ink);background:var(--white);border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;min-height:48px;text-align:center;font-variant-numeric:tabular-nums}
-.calc-form input:focus{border-color:var(--vista);outline:none;box-shadow:0 0 0 3px rgba(140,158,255,.35)}
-.calc-form .in b{font-size:1rem;color:var(--ink-soft);min-width:40px;text-align:center}
-.calc-out{display:grid;gap:14px;margin-top:22px}
-@media(min-width:560px){.calc-out{grid-template-columns:1fr 1fr}}
-.res{border-radius:20px;padding:20px 16px;border:1px solid var(--line)}
-.res small{display:block;font-weight:700;font-size:.95rem;margin-bottom:6px}
-.res b{display:block;font-size:clamp(1.9rem,8vw,2.6rem);font-weight:900;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
-.res > span{display:block;font-size:.9rem;color:var(--ink-soft);margin-top:6px}
+.calc-card{background:var(--canvas);border:1px solid var(--line);border-radius:28px;padding:clamp(18px,4vw,30px);margin-top:28px;box-shadow:var(--shadow);text-align:right}
+.calc-form{display:grid}
+.calc-form label{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.calc-form label:last-child{border-bottom:0}
+.calc-form .q{font-weight:700;font-size:1rem;line-height:1.35;flex:1}
+.calc-form .in{display:flex;align-items:center;gap:6px;flex:0 0 auto}
+.calc-form input{width:112px;font:inherit;font-size:1.15rem;font-weight:800;color:var(--ink);background:var(--white);border:1.5px solid var(--line);border-radius:100px;padding:8px 12px;min-height:46px;text-align:center;font-variant-numeric:tabular-nums;-moz-appearance:textfield}
+.calc-form input::-webkit-outer-spin-button,.calc-form input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.calc-form input:focus{border-color:var(--pink);outline:none;box-shadow:0 0 0 3px var(--pink-soft)}
+.calc-form .in b{font-size:.9rem;color:var(--ink-soft);min-width:34px;text-align:center}
+.calc-out{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px;text-align:center}
+.res{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:16px 10px 14px}
+.res small{display:block;font-weight:700;font-size:.92rem;margin-bottom:6px;color:var(--ink-soft)}
+.res b{display:block;font-size:clamp(1.35rem,5.6vw,2rem);font-weight:900;letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
+.res > span{display:block;font-size:.82rem;color:var(--ink-soft);margin-top:6px;line-height:1.35}
 .res span span{display:inline}
-.res.save{background:#FDECEC}.res.save b{color:#C62828}
-.res.inv{background:#E8F5EC}.res.inv b{color:#1E8E3E}
-.calc-diff{margin:18px 0 0;font-size:1.15rem;font-weight:700}
-.calc-diff b{font-size:1.4rem;font-weight:900;color:var(--ink)}
+.res.save b{color:#B23A48}
+.res.inv b{color:#1F7A4D}
+.res.inv{border-color:#CFE7D6;background:#F3FAF5}
+.bars{display:grid;gap:8px;margin-top:16px}
+.bar{height:14px;border-radius:100px;background:var(--white);border:1px solid var(--line);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:100px;transition:width .35s}
+.bar.save i{background:#E8B4BB}
+.bar.inv i{background:linear-gradient(90deg,var(--lime),#7FC796)}
+.calc-diff{margin:16px 0 0;font-size:1.05rem;font-weight:700;text-align:center;background:var(--pink-soft);border-radius:100px;padding:10px 16px}
+.calc-diff b{font-size:1.25rem;font-weight:900}
 .calc-note{font-size:.88rem;color:var(--ink-soft);margin:14px auto 0;max-width:46ch;line-height:1.5}
 
 /* faq · interactive chat */
@@ -430,10 +434,6 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <div><i>3</i><b>נקודת מוצא</b><small>מה כבר יש לך היום. וכאן מגלות שיש יותר ממה שחשבת</small></div>
       <div><i>4</i><b>אסטרטגיה</b><small>המסלול שמחבר. והוראת קבע שרצה לעבר המטרות</small></div>
     </div>
-    <figure class="compass-visual">
-      <img src="assets/compass.webp" alt="איור המצפן: חזון בראש, ואז מטרות, נקודת מוצא ואסטרטגיה לאורך המסלול" width="570" height="555" loading="lazy">
-      <figcaption>מצפן לא אומר לאן ללכת. הוא נותן כיוון, כך שכל צעד הוא צעד נכון.</figcaption>
-    </figure>
 
     <p class="principle">והעיקרון שמריץ הכל:<br>כל שקל מקבל <span>תפקיד</span>.<br>וכל שקל מקבל <span>בית</span>.</p>
     <div class="jars" aria-label="שלושת הכדים">
@@ -459,17 +459,23 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <span class="eyebrow">מחשבון</span>
     <h2>חיסכון מול השקעה. על המספרים שלך.</h2>
     <p class="lead">שני את המספרים, ותראי מה הזמן עושה לכסף שלא נוגעות בו.</p>
-    <form class="calc-form" onsubmit="return false" aria-label="מחשבון חיסכון מול השקעה">
-      <label><span class="q">כמה יש לך עכשיו לשים, להערכתך?</span><span class="in"><input type="number" id="c-start" value="20000" min="0" step="1000" inputmode="numeric"><b>₪</b></span></label>
-      <label><span class="q">כמה תוכלי להוסיף כל חודש, להערכתך?</span><span class="in"><input type="number" id="c-monthly" value="500" min="0" step="50" inputmode="numeric"><b>₪</b></span></label>
-      <label><span class="q">לכמה שנים תוכלי להשקיע?</span><span class="in"><input type="number" id="c-years" value="30" min="1" max="50" step="1" inputmode="numeric"><b>שנים</b></span></label>
-      <label><span class="q">לאיזו תשואה שנתית אנחנו מכוונות?</span><span class="in"><input type="number" id="c-rate" value="8" min="0" max="20" step="0.5" inputmode="decimal"><b>%</b></span></label>
-    </form>
-    <div class="calc-out" aria-live="polite">
-      <div class="res save"><small>אם רק תחסכי את הכסף</small><b id="r-save">200,000 ₪</b><span>אותו כסף, בלי תשואה</span></div>
-      <div class="res inv"><small>אם תשקיעי אותו</small><b id="r-inv">964,000 ₪</b><span>בהנחת <span id="r-rate">8</span>% בשנה, ריבית דריבית</span></div>
+    <div class="calc-card">
+      <form class="calc-form" onsubmit="return false" aria-label="מחשבון חיסכון מול השקעה">
+        <label><span class="q">כמה יש לך עכשיו לשים, להערכתך?</span><span class="in"><input type="number" id="c-start" value="20000" min="0" step="1000" inputmode="numeric"><b>₪</b></span></label>
+        <label><span class="q">כמה תוכלי להוסיף כל חודש, להערכתך?</span><span class="in"><input type="number" id="c-monthly" value="500" min="0" step="50" inputmode="numeric"><b>₪</b></span></label>
+        <label><span class="q">לכמה שנים תוכלי להשקיע?</span><span class="in"><input type="number" id="c-years" value="30" min="1" max="50" step="1" inputmode="numeric"><b>שנים</b></span></label>
+        <label><span class="q">לאיזו תשואה שנתית אנחנו מכוונות?</span><span class="in"><input type="number" id="c-rate" value="8" min="0" max="20" step="0.5" inputmode="decimal"><b>%</b></span></label>
+      </form>
+      <div class="calc-out" aria-live="polite">
+        <div class="res save"><small>אם רק תחסכי</small><b id="r-save">200,000 ₪</b><span>אותו כסף, בלי תשואה</span></div>
+        <div class="res inv"><small>אם תשקיעי</small><b id="r-inv">964,000 ₪</b><span>ב-<span id="r-rate">8</span>% בשנה, ריבית דריבית</span></div>
+      </div>
+      <div class="bars" aria-hidden="true">
+        <div class="bar save"><i id="b-save" style="width:21%"></i></div>
+        <div class="bar inv"><i id="b-inv" style="width:100%"></i></div>
+      </div>
+      <p class="calc-diff">ההבדל בין חיסכון להשקעה: <b id="r-diff">764,000 ₪</b></p>
     </div>
-    <p class="calc-diff">ההבדל בין חיסכון להשקעה: <b id="r-diff">764,000 ₪</b></p>
     <p class="calc-note">הדמיה חישובית להמחשה בלבד, בסכומים מעוגלים. תשואת העבר אינה מבטיחה תשואה עתידית, והתוצאה בפועל תלויה במסלול שתבחרי ובתנאי השוק.</p>
   </div>
 </section>
@@ -530,32 +536,6 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   </div>
 </section>
 
-<!-- ========== מה יש לך ביד בסוף ========== -->
-<section class="outcome">
-  <div class="wrap">
-    <span class="eyebrow">ככה זה נראה ביום 28</span>
-    <h2>לא תוכנית במגירה. מנגנון שעובד.</h2>
-    <ul class="checks pink out-list">
-      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>הכסף מחולק ומושקע</b> בצורה שמתאימה לך, למטרות שלך ולזמן של כל מטרה.</span></li>
-      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>רשת ביטחון למשפחה:</b> קרן חירום, מספיק בעו"ש, כסף שמושקע לילדים לטווח ארוך, וכסף שצבוע למטרה ספציפית.</span></li>
-      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>הוראת קבע להשקעות</b> שיורדת כל חודש, בסכום שמתאים לך. תמיד אפשר להגדיל, להקטין או לעצור.</span></li>
-      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>ואת מבינה מה את עושה ולמה.</b> ועושה את זה בפועל.</span></li>
-    </ul>
-    <div class="flow" aria-label="לאן הולך הכסף">
-      <div class="lbl">לאן הולך הכסף</div>
-      <div class="top">המשכורת נכנסת</div>
-      <ul class="branches">
-        <li>מה שצריך לחודש<small>נשאר בעו"ש</small></li>
-        <li>קרן חירום<small>זמינה, לא נוגעים</small></li>
-        <li>כסף לילדים<small>טווח רחוק</small></li>
-        <li>כסף צבוע למטרה<small>דירה, לימודים, חופשה</small></li>
-        <li>הוראת קבע להשקעות<small>כל חודש, אוטומטית</small></li>
-      </ul>
-      <p class="note">החלוקה משתנה מאישה לאישה. זה בדיוק מה שבונים בליווי, על המספרים שלך.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ========== מוקאפ הליווי ========== -->
 <section class="mock" id="mock">
   <div class="wrap">
@@ -603,6 +583,32 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         </div>
         <figcaption>הפגישה שבה הבירוקרטיה נעשית, ואת מקבלת בהירות.</figcaption>
       </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ========== מה יש לך ביד בסוף ========== -->
+<section class="outcome">
+  <div class="wrap">
+    <span class="eyebrow">ככה זה נראה ביום 28</span>
+    <h2>לא תוכנית במגירה. מנגנון שעובד.</h2>
+    <ul class="checks pink out-list">
+      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>הכסף מחולק ומושקע</b> בצורה שמתאימה לך, למטרות שלך ולזמן של כל מטרה.</span></li>
+      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>רשת ביטחון למשפחה:</b> קרן חירום, מספיק בעו"ש, כסף שמושקע לילדים לטווח ארוך, וכסף שצבוע למטרה ספציפית.</span></li>
+      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>הוראת קבע להשקעות</b> שיורדת כל חודש, בסכום שמתאים לך. תמיד אפשר להגדיל, להקטין או לעצור.</span></li>
+      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>ואת מבינה מה את עושה ולמה.</b> ועושה את זה בפועל.</span></li>
+    </ul>
+    <div class="flow" aria-label="לאן הולך הכסף">
+      <div class="lbl">לאן הולך הכסף</div>
+      <div class="top">המשכורת נכנסת</div>
+      <ul class="branches">
+        <li>מה שצריך לחודש<small>נשאר בעו"ש</small></li>
+        <li>קרן חירום<small>זמינה, לא נוגעים</small></li>
+        <li>כסף לילדים<small>טווח רחוק</small></li>
+        <li>כסף צבוע למטרה<small>דירה, לימודים, חופשה</small></li>
+        <li>הוראת קבע להשקעות<small>כל חודש, אוטומטית</small></li>
+      </ul>
+      <p class="note">החלוקה משתנה מאישה לאישה. זה בדיוק מה שבונים בליווי, על המספרים שלך.</p>
     </div>
   </div>
 </section>
@@ -912,6 +918,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       document.getElementById('r-inv').textContent=fmt(inv);
       document.getElementById('r-diff').textContent=fmt(Math.max(0,inv-save));
       document.getElementById('r-rate').textContent=(+els[3].value||0).toLocaleString('he-IL');
+      var mx=Math.max(save,inv,1); var bs=document.getElementById('b-save'), bi=document.getElementById('b-inv'); if(bs) bs.style.width=Math.max(3,Math.round(save/mx*100))+'%'; if(bi) bi.style.width=Math.max(3,Math.round(inv/mx*100))+'%';
     }
     els.forEach(function(e){ e.addEventListener('input',calc); e.addEventListener('change',calc); });
     calc();
