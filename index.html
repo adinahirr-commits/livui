@@ -252,7 +252,8 @@ header.site img{height:46px;width:auto}
 .join-form label{display:grid;gap:6px;font-weight:700;font-size:.95rem}
 .join-form input{font:inherit;font-size:1.1rem;padding:14px 16px;min-height:54px;border:1.5px solid var(--line);border-radius:16px;background:var(--white);color:var(--ink);width:100%}
 .join-form input:focus{border-color:var(--pink);outline:none;box-shadow:0 0 0 3px var(--pink-soft)}
-.join-form .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.join-form{position:relative}
+.join-form .hp{position:absolute;top:0;left:0;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0);pointer-events:none}
 .join-form .btn{justify-self:center;margin-top:6px}
 .join-form .seats,.join-form .micro{text-align:center}
 .join-form button[disabled]{opacity:.7;cursor:wait}
