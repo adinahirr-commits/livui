@@ -797,22 +797,22 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   </div>
 </section>
 
-<!-- ========== בונוס · חלון 24 שעות ========== -->
+<!-- ========== בונוס · נסגר 9.9 בשעה 22:00 (ראה FIXED בסקריפט) ========== -->
 <section class="bonus" id="bonus">
   <div class="wrap">
     <div class="bonus-card">
-      <span class="eyebrow">בונוס · ל-24 השעות הקרובות</span>
+      <span class="eyebrow">בונוס · עד יום רביעי ב-22:00</span>
       <h2>סוכן AI אישי שפותח על ידי יועץ השקעות מוסמך</h2>
       <p class="bonus-name">מערכת המענה של יועץ ההשקעות</p>
       <p class="bonus-sub">מבוססת בינה מלאכותית, פותחה על ידי יועץ השקעות בעל רישיון</p>
       <!-- TODO (עדי): שם המערכת + שם היועץ -->
       <p class="bonus-body">תשובה ישירה ואובייקטיבית, בכל שעה, על איך בונים תמהיל תיק ומה ההבדל בין האפשרויות. ומאחורי המערכת עומד יועץ ההשקעות עצמו, למה שמעבר למה שכתוב.</p>
       <div class="clock" id="bonusClock" aria-hidden="true">
-        <div><b id="cdH">24</b><small>שעות</small></div>
+        <div><b id="cdH">00</b><small>שעות</small></div>
         <div><b id="cdM">00</b><small>דקות</small></div>
         <div><b id="cdS">00</b><small>שניות</small></div>
       </div>
-      <p class="bonus-when">הבונוס פתוח ל-24 השעות הקרובות. שריינת מקום בזמן, הוא נכנס איתך לליווי.</p>
+      <p class="bonus-when">הבונוס פתוח עד יום רביעי ב-22:00. שריינת מקום בזמן, הוא נכנס איתך לליווי.</p>
       <a class="btn" data-cta="bonus" href="#join">אני רוצה את הבונוס ואת המקום שלי</a>
     </div>
   </div>
@@ -830,7 +830,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <p class="seats">30 מקומות בלבד</p>
       <p class="alt">או <b>2,800 ₪ בתשלום אחד</b> · הנחה מיידית של 197 ₪</p>
       <ul class="pfacts">
-        <li id="bonusFact"><b>בונוס ל-24 השעות הקרובות.</b>סוכן ה-AI של יועץ ההשקעות, נכנס איתך לליווי.</li>
+        <li id="bonusFact"><b>בונוס עד יום רביעי ב-22:00.</b>סוכן ה-AI של יועץ ההשקעות, נכנס איתך לליווי.</li>
         <li><b>זה המחיר הנמוך ביותר שהליווי הזה יהיה.</b>במחזורים הבאים הוא עולה.</li>
         <li><b>30 מקומות בלבד.</b>בגלל הפגישות האישיות עם אנשי המקצוע, אי אפשר יותר.</li>
         <li><b>יוצאות לדרך יום שני 5.10.</b>מיד אחרי החגים. עד סוף אוקטובר המנגנון שלך עובד.</li>
@@ -1175,7 +1175,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 
     /* דדליין קבוע לכל המבקרות: שימי כאן תאריך ISO, למשל '2026-09-09T22:00:00+03:00'.
        ריק = חלון של 24 שעות לכל מבקרת, מרגע הכניסה הראשונה שלה לדף. */
-    var FIXED = '';
+    var FIXED = '2026-09-09T22:00:00+03:00';
 
     var DAY = 864e5, KEY = 'mm_bonus_until', now = Date.now(), until = 0;
     if (FIXED) {
