@@ -4,22 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>הליווי של אמא משקיעה · 28 יום לכסף שעובד</title>
-<meta name="description" content="תוך 28 יום הכסף של המשפחה שלך מחולק, מושקע, ועובד. שיטת המצפן: ציד האוצר, מיפוי, קרן חירום, שלושת הכדים, והוראת קבע שרצה. יוצאות לדרך 5.10. 30 מקומות.">
+<meta name="description" content="איך כל אמא צעירה יכולה להפוך כמה מאות שקלים בחודש להון משפחתי של מיליונים ולסדר את העתיד של הילדים והמשפחה שלה. תכנית של 28 ימים. יוצאות לדרך 5.10. 30 מקומות.">
 <link rel="canonical" href="https://livui.mominvest.co.il/">
 
 <!-- Open Graph · תצוגה מקדימה בווטסאפ -->
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
 <meta property="og:site_name" content="אמא משקיעה">
-<meta property="og:title" content="הליווי של אמא משקיעה · 28 יום לכסף שעובד">
-<meta property="og:description" content="בלי לוותר על החוויות והפאן של היום, בלי לקרוא דו״חות פיננסיים ואקסלים מסובכים, ובלי להתעסק ולהסתבך עם זה כל חודש מחדש. יוצאות לדרך 5.10, 30 מקומות.">
+<meta property="og:title" content="״אמא משקיעה״ · מכמה מאות שקלים בחודש להון משפחתי">
+<meta property="og:description" content="תכנית של 28 ימים שעוזרת לנשים להתחיל להשקיע בשוק ההון בדרך הכי בטוחה שיש, בלי לסכן חסכונות ובצורה אוטומטית שדורשת כמעט 0 התעסקות. יוצאות לדרך 5.10, 30 מקומות.">
 <meta property="og:url" content="https://livui.mominvest.co.il/">
 <meta property="og:image" content="https://livui.mominvest.co.il/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="הליווי של אמא משקיעה · 28 יום לכסף שעובד">
-<meta name="twitter:description" content="בלי לוותר על החוויות והפאן של היום, בלי לקרוא דו״חות פיננסיים ואקסלים מסובכים, ובלי להתעסק ולהסתבך עם זה כל חודש מחדש.">
+<meta name="twitter:title" content="״אמא משקיעה״ · מכמה מאות שקלים בחודש להון משפחתי">
+<meta name="twitter:description" content="תכנית של 28 ימים שעוזרת לנשים להתחיל להשקיע בשוק ההון בדרך הכי בטוחה שיש, בלי לסכן חסכונות ובצורה אוטומטית שדורשת כמעט 0 התעסקות.">
 <meta name="twitter:image" content="https://livui.mominvest.co.il/assets/og.jpg">
 <meta name="theme-color" content="#FBFAF7">
 <link rel="icon" href="assets/logo.png">
@@ -115,6 +115,8 @@ header.site img{height:46px;width:auto}
 .hero{padding-top:clamp(22px,4vw,44px)}
 .hero .sub{font-size:clamp(1.15rem,3vw,1.35rem);font-weight:500;color:var(--ink-soft);margin:16px auto 26px;line-height:1.5;max-width:32ch}
 .hero h1 .accent{color:var(--pink)}
+/* הכותרת הראשית רחבה מהעמודה בדסקטופ, כדי לא להישבר ל-6 שורות */
+@media(min-width:820px){.hero h1{width:min(880px,92vw);margin-inline:auto;font-size:clamp(2.6rem,3.9vw,3.35rem)}}
 .pill-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;font-size:.98rem;font-weight:700;margin-top:16px}
 .pill-facts span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pink);margin-left:8px;vertical-align:middle}
 .hero-photo{width:min(300px,78vw);height:min(300px,78vw);border-radius:50%;overflow:hidden;margin:34px auto 0;border:6px solid var(--white);box-shadow:var(--shadow)}
@@ -148,6 +150,59 @@ header.site img{height:46px;width:auto}
 .msg .then{margin:30px auto 0;max-width:440px}
 .msg .then img{border-radius:22px;width:100%}
 .msg .then figcaption{color:#EDEBF5;font-size:.95rem;margin-top:10px}
+
+/* eyebrow ארוך: משפט שלם, בלי הריווח של תווית */
+.eyebrow.long{letter-spacing:0;font-size:1rem;font-weight:600;color:var(--ink-soft);max-width:34ch;margin-inline:auto;line-height:1.5}
+.eyebrow.long em{font-style:italic;color:var(--pink);font-weight:700}
+
+/* שם המותג מתחת לכותרת */
+.brandline{font-size:clamp(1.5rem,4.6vw,2.1rem);font-weight:900;letter-spacing:-.02em;margin:18px 0 0;color:var(--ink)}
+.brandline::before,.brandline::after{content:"";display:inline-block;width:26px;height:3px;border-radius:3px;background:var(--lime);vertical-align:middle;margin:0 12px}
+
+/* היה לי ככה / יש לי ככה */
+.ba{padding-top:clamp(28px,5vw,44px)}
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:26px 0 0}
+@media(min-width:520px){.ba-grid{gap:16px}}
+.ba-grid figure{margin:0}
+.ba-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;border:5px solid var(--white);box-shadow:var(--shadow)}
+.ba-grid figcaption{font-size:.92rem;color:var(--ink-soft);line-height:1.45;margin-top:10px}
+.ba-grid figcaption b{display:block;color:var(--ink);font-size:1rem;margin-bottom:2px}
+.ba-grid figure:last-child figcaption b{color:var(--pink)}
+
+/* הסיפור */
+.story{background:var(--white)}
+.bignum{background:var(--ink);color:#fff;border-radius:var(--r-card);padding:26px 22px;margin:0 auto;font-size:clamp(1.35rem,4.4vw,1.85rem);font-weight:900;line-height:1.25;letter-spacing:-.02em}
+.bignum.soft{background:var(--pink-soft);color:var(--ink);font-size:clamp(1.15rem,3.6vw,1.45rem);margin-top:14px}
+.story .steps{font-size:1.1rem;line-height:1.7;margin:30px auto 0;max-width:40ch}
+.story .became{font-size:clamp(1.15rem,3.2vw,1.35rem);line-height:1.6;margin:26px auto 0;max-width:36ch}
+.story .became em{display:block;font-style:normal;font-weight:900;font-size:clamp(1.5rem,4.6vw,2rem);color:var(--pink);letter-spacing:-.02em;margin-bottom:8px}
+
+/* היופי בהשקעות + שלוש המסגורים */
+.easy h2{max-width:22ch;margin-inline:auto}
+.reframe{display:grid;gap:12px;margin:30px 0 0}
+.reframe div{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:18px 16px;box-shadow:var(--shadow)}
+.reframe b{display:block;font-size:1.08rem;line-height:1.4;color:var(--ink-soft);font-weight:600}
+.reframe span{display:block;font-size:1.2rem;font-weight:800;color:var(--ink);margin-top:6px}
+.reframe div:nth-child(1) span{color:var(--pink)}
+.reframe div:nth-child(2) span{color:#6E7A1A}
+.reframe div:nth-child(3) span{color:#4353B8}
+
+/* מה אפשר היום */
+.today{background:var(--white)}
+.today h2{font-size:clamp(1.35rem,3.9vw,1.9rem);line-height:1.4;max-width:30ch;margin-inline:auto}
+.today h2 mark{background:linear-gradient(transparent 62%,var(--lime) 62%);color:inherit;padding:0 2px;white-space:nowrap}
+.today .cape{font-size:clamp(1.15rem,3.2vw,1.35rem);font-weight:700;line-height:1.6;margin:28px auto 0;max-width:34ch}
+.nots{list-style:none;margin:26px auto 0;padding:0;display:grid;gap:10px;max-width:38ch}
+.nots li{background:var(--pink-soft);border-radius:14px;padding:14px 16px;font-weight:700;font-size:1.05rem;line-height:1.45}
+
+/* חשיפת התכנית */
+.introp{background:var(--ink);color:#fff}
+.introp .brandline{color:#fff;margin:0}
+.introp .brandline::before,.introp .brandline::after{background:var(--lime)}
+.introp .first{font-size:clamp(1.2rem,3.4vw,1.5rem);font-weight:700;line-height:1.55;margin:24px auto 0;max-width:34ch;color:#fff}
+.introp .first b{color:var(--lime);font-weight:900}
+.introp .btn{margin-top:28px}
+.introp .seats{color:#fff}
 
 /* method */
 .method .compass{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:26px 0 6px}
@@ -442,7 +497,7 @@ footer .legal{margin-top:14px;border-top:1px solid var(--line);padding-top:14px;
 html.a11y-bigtext{font-size:112.5%}
 html.a11y-contrast{--canvas:#fff;--white:#fff;--ink:#000;--ink-soft:#222;--pink:#b0125f;--pink-soft:#fff;--lime:#ffe600;--sky:#fff;--line:#000}
 html.a11y-contrast .btn,html.a11y-contrast .station .when{color:#fff}
-html.a11y-contrast .chat .q,html.a11y-contrast .station .have,html.a11y-contrast .jars div,html.a11y-contrast .pain .inner,html.a11y-contrast .close{border:1px solid #000}
+html.a11y-contrast .chat .q,html.a11y-contrast .station .have,html.a11y-contrast .jars div,html.a11y-contrast .pain .inner,html.a11y-contrast .close,html.a11y-contrast .bignum.soft,html.a11y-contrast .nots li{border:1px solid #000}
 html.a11y-links a{text-decoration:underline!important;text-underline-offset:3px}
 html.a11y-noanim *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
 
@@ -470,16 +525,48 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 <!-- ========== HERO ========== -->
 <section class="hero" id="top">
   <div class="wrap">
-    <span class="eyebrow">הליווי המלא של אמא משקיעה:</span>
-    <h1>תוך 28 יום הכסף של המשפחה שלך <span class="accent">מחולק, מושקע, ועובד.</span> גם כשאת ישנה.</h1>
-    <p class="sub">בלי לוותר על החוויות והפאן של היום, בלי לקרוא דו״חות פיננסיים ואקסלים מסובכים, ובלי להתעסק ולהסתבך עם זה כל חודש מחדש.</p>
+    <p class="eyebrow long"><em>לאמהות שרוצות ביטחון כלכלי אמיתי אבל פוחדות לאבד את מה שחסכו…</em></p>
+    <h1>איך כל אמא צעירה יכולה להפוך כמה מאות שקלים בחודש <span class="accent">להון משפחתי של מיליונים</span> ולסדר את העתיד של הילדים והמשפחה שלה</h1>
+    <p class="brandline">״אמא משקיעה״</p>
+    <p class="sub">תכנית של 28 ימים שעוזרת לנשים להתחיל להשקיע בשוק ההון בדרך הכי בטוחה שיש (כיום ב-2026) בלי לסכן חסכונות ובצורה אוטומטית שדורשת כמעט 0 התעסקות</p>
     <a class="btn" data-cta="hero" href="#join">אני רוצה לשריין מקום בליווי</a>
     <p class="seats">30 מקומות בלבד</p>
     <div class="pill-facts"><span>יוצאות לדרך יום שני 5.10</span><span>3 × 999 ₪</span></div>
     <p class="micro"><strong>אחריות מלאה:</strong> עברת את הליווי, הגעת למפגשים, ולא יצאת עם מפת דרכים ברורה? החזר מלא, בלי שאלות.</p>
-    <div class="hero-photo">
-      <img src="assets/ph-family.webp" alt="עדי סומך עם מני, אלה ואביב" width="900" height="1200" fetchpriority="high">
+  </div>
+</section>
+
+<!-- ========== היה לי ככה. יש לי ככה. ========== -->
+<section class="ba">
+  <div class="wrap">
+    <h2>היה לי ככה. יש לי ככה.</h2>
+    <div class="ba-grid">
+      <figure>
+        <img src="assets/ph-2020.webp" alt="עדי ומני על הספה בבית, מרץ 2020, בהיריון הראשון ובסגר הראשון" width="1200" height="901" fetchpriority="high">
+        <figcaption><b>מרץ 2020</b>הריון ראשון, סגר ראשון, ואפס הכנסות. זאת אני.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/ph-family.webp" alt="עדי סומך עם מני, אלה ואביב" width="900" height="1200" fetchpriority="high">
+        <figcaption><b>היום</b>הפכתי לאמא שמשקיעה.</figcaption>
+      </figure>
     </div>
+  </div>
+</section>
+
+<!-- ========== הסיפור ========== -->
+<section class="story">
+  <div class="wrap">
+    <p class="bignum">250,000 שקל שנפלו עלינו ״מהשמיים״</p>
+<!-- ===== ממתין מעדי: תמונה שלה מראה למצלמה את הטלפון עם הסכום שהיא הראתה לבעלה.
+     להדביק כאן:  <figure class="shot"><img src="assets/shot-250k.webp" alt="..." width="" height="" loading="lazy"></figure>  ===== -->
+
+    <p class="bignum soft">ב-6 שנים האחרונות הכנסתי כל חודש בין מאות ל-אלפי שקלים אקסטרה כל חודש בלי לעשות כלום ושום דבר…</p>
+<!-- ===== ממתין מעדי: צילומי מסך של חודשים עוקבים.
+     להדביק כאן:  <div class="strip"><img src="assets/shot-m1.webp" ...><img src="assets/shot-m2.webp" ...><img src="assets/shot-m3.webp" ...></div>  ===== -->
+
+    <p class="steps">זה התחיל מלמצוא כספים ״אבודים״ שסתם נזלו בלי ששמתי לב,<br>זה המשיך מלשים הוראות קבע קטנות של 100 פה 100 שם בהשקעות,<br>וזה הגיע למצב שאני מסדרת את העתיד של הבנות שלי ומראה למעל 20,000 נשים ישראליות איך לעשות את זה בעצמן…</p>
+
+    <p class="became"><em>הפכתי לאמא שמשקיעה.</em>משקיעה את הכסף כדי להשקיע בעצמי, בבנות, בבעלי וכדי לבנות רשת בטחון מדהימה למשפחה שלי.</p>
   </div>
 </section>
 
@@ -504,6 +591,18 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   </div>
 </section>
 
+<!-- ========== היופי בהשקעות ========== -->
+<section class="easy">
+  <div class="wrap">
+    <h2>היופי בתחום ההשקעות הוא שלא צריך לעשות הרבה כדי להתחיל לייצר כסף.</h2>
+    <div class="reframe">
+      <div><b>רוב הנשים מפחדות לסכן כסף של המשפחה</b><span>ולא צריך.</span></div>
+      <div><b>הן מרגישות שזה סופר טכני</b><span>וזה פשוט לא נכון.</span></div>
+      <div><b>הן חושבות שזה התעסקות</b><span>ודווקא זה הכי הרבה תמורה בהכי פחות זמן.</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ========== המסר ========== -->
 <section class="msg">
   <div class="wrap">
@@ -512,10 +611,29 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <p>ביטחון שנשען רק על המשכורת הוא ביטחון של דבר אחד.<br>ברגע שההכנסה נעצרת, אין מה שיגבה אותה.</p>
       <p style="margin:0"><strong>לקח לי סגר אחד להבין את זה על הבשר.</strong><br>חיסכון לבד הוא לא רשת ביטחון.<br>רשת ביטחון בונים מכסף שעובד.</p>
     </div>
-    <figure class="then">
-      <img src="assets/ph-2020.webp" alt="עדי ומני על הספה בבית, מרץ 2020, בהיריון הראשון ובסגר הראשון" width="1200" height="901" loading="lazy">
-      <figcaption>מרץ 2020. הריון ראשון, סגר ראשון, ואפס הכנסות. זאת אני.</figcaption>
-    </figure>
+  </div>
+</section>
+
+<!-- ========== מה אפשר היום ========== -->
+<section class="today">
+  <div class="wrap">
+    <h2>היום נשים יכולות לסדר את המשפחה שלהן ואפילו לצבור הון של מאות אלפי שקלים רק מלקחת <mark>300 שקל בחודש</mark> שהן שמות על בגדים שהן לא צריכות, ולעשות הוראת קבע שלוקחת <mark>פחות מ-3 דקות</mark> לעשות.</h2>
+    <p class="cape">את יכולה להיות ״הגיבורת על״ של המשפחה,<br>זאת ששינתה את העתיד של המשפחה בלי לקחת ממה שיש היום…</p>
+    <ul class="nots">
+      <li>את לא צריכה לגעת בכסף שיש לך ולבעלך בעובר ושב…</li>
+      <li>את לא צריכה לגעת בכסף שחסכתם לדירה…</li>
+      <li>את לא צריכה להצטמצם…</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== חשיפת התכנית ========== -->
+<section class="introp">
+  <div class="wrap">
+    <p class="brandline">״אמא משקיעה״</p>
+    <p class="first">יצרתי את התכנית הראשונה בישראל שעוזרת לנשים למצוא <b>כספים אבודים של בין 200-1,000 שקל בחודש</b> ולגלגל את הכסף הזה להון משפחתי של מיליונים…</p>
+    <a class="btn" data-cta="intro" href="#join">אני רוצה לשריין מקום בליווי</a>
+    <p class="seats">30 מקומות בלבד</p>
   </div>
 </section>
 
