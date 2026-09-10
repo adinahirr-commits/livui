@@ -172,6 +172,13 @@ header.site img{height:46px;width:auto}
 
 /* roadmap */
 .road{background:var(--white)}
+.arc{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px;margin:24px 0 6px}
+.arc .s{display:inline-flex;align-items:center;gap:6px}
+.arc .p{background:var(--pink-soft);border-radius:999px;padding:9px 14px;font-weight:800;font-size:clamp(1rem,3.8vw,1.25rem);line-height:1.2;white-space:nowrap}
+.arc .p.last{background:var(--pink);color:#fff}
+.arc i{font-style:normal;color:var(--pink);font-weight:800;font-size:1.05rem;line-height:1}
+@media(min-width:480px){.arc{gap:8px}.arc .s{gap:8px}.arc .p{padding:9px 18px}}
+.arc-note{margin:10px 0 0;font-size:.98rem;color:var(--ink-soft)}
 .learn .lead{margin-bottom:4px}
 .learn-grid{display:grid;grid-template-columns:1fr;gap:10px;margin:26px 0 0}
 @media(min-width:620px){.learn-grid{grid-template-columns:repeat(2,1fr)}}
@@ -578,6 +585,11 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <span class="eyebrow">מה עוברות בליווי</span>
     <h2>28 יום. שלב אחרי שלב.</h2>
     <p class="lead">כל שלב כאן הוא פעולה שעשית. לא שיעור שצפית בו.</p>
+
+    <div class="arc" aria-label="כל הדרך בשלוש מילים: ממפות, מחלקות, משקיעות">
+      <span class="p">ממפות</span><span class="s"><i aria-hidden="true">←</i><span class="p">מחלקות</span></span><span class="s"><i aria-hidden="true">←</i><span class="p last">משקיעות</span></span>
+    </div>
+    <p class="arc-note">כל הדרך בשלוש מילים. עכשיו בפירוט:</p>
 
     <ol class="timeline">
       <li class="station">
