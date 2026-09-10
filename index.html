@@ -381,7 +381,10 @@ html.a11y-contrast .clock div{background:#000;border-color:#fff}
 .join-form{position:relative}
 .join-form .hp{position:absolute;top:0;left:0;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0);pointer-events:none}
 .join-form .btn{justify-self:center;margin-top:6px}
-.join-form .seats,.join-form .micro{text-align:center}
+.join-form .seats,.join-form .micro,.join-form .price-note{text-align:center}
+.price-note{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin:4px 0 0;font-size:1rem;color:var(--ink-soft)}
+.price-note b{color:var(--ink);font-weight:800;font-size:1.05rem}
+.price-note svg{color:#1F7A4D;flex:0 0 18px}
 .join-form button[disabled]{opacity:.7;cursor:wait}
 .join-err{margin:0;text-align:center;color:#B23A48;font-weight:700;font-size:.95rem}
 .pay-step{margin-top:26px;background:var(--white);border:1px solid var(--line);border-radius:24px;padding:24px 18px;box-shadow:var(--shadow)}
@@ -929,6 +932,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <label><span>הטלפון שלך</span><input type="tel" id="j-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="050-0000000" required></label>
       <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button type="submit" class="btn" id="joinBtn" data-cta="join-form">ממשיכה לשריון המקום</button>
+      <p class="price-note"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h1zm2 0h6V8a3 3 0 0 0-6 0v2z" fill="currentColor"/></svg><b>3 תשלומים של 999 ₪</b><span>· תשלום מאובטח</span></p>
       <p class="seats">30 מקומות בלבד</p>
       <p class="join-err" id="joinErr" role="alert" hidden></p>
       <p class="micro">הפרטים נשמרים אצלי בלבד, כדי שאוכל לחזור אלייך אם משהו נתקע בדרך.</p>
