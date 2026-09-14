@@ -76,6 +76,7 @@ fbq('init','1820166155346211');fbq('track','PageView');
 <style>
 :root{
   --canvas:#FBFAF7; --white:#fff; --ink:#191A2E; --ink-soft:#6B6B7B;
+  --band-cream:#F8F1E6; --band-gray:#EEF0F6; --band-white:#FFFFFF; --soft:var(--canvas);
   --pink:#EF55A5; --pink-text:#C8317F; --pink-soft:#FCE1EF; --lime:#CCD537; --vista:#8C9EFF; --sky:#BEE0F2; --line:#ECE7DF;
   --r-card:22px; --shadow:0 18px 40px -28px rgba(25,26,46,.18);
   --col:640px;
@@ -258,7 +259,7 @@ header.site img{height:46px;width:auto}
 
 /* outcome */
 .out-list{margin:22px 0 30px}
-.flow{background:var(--canvas);border:1px solid var(--line);border-radius:var(--r-card);padding:26px 18px;max-width:420px;margin:0 auto}
+.flow{background:var(--soft);border:1px solid var(--line);border-radius:var(--r-card);padding:26px 18px;max-width:420px;margin:0 auto}
 .flow .lbl{font-size:.85rem;font-weight:700;letter-spacing:.14em;color:var(--ink-soft);margin-bottom:14px}
 .flow .top{display:inline-block;background:var(--ink);color:#fff;border-radius:100px;padding:10px 22px;font-weight:800}
 .branches{list-style:none;margin:0;padding:18px 0 0;position:relative;display:grid;gap:12px;justify-items:center}
@@ -306,7 +307,7 @@ header.site img{height:46px;width:auto}
 .vids{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px}
 @media(min-width:700px){.vids{grid-template-columns:repeat(3,1fr);gap:18px}}
 @media(max-width:699px){.vids .vid:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 7px);justify-self:center}}
-.vid{background:var(--canvas);border:1px solid var(--line);border-radius:18px;padding:10px 10px 14px;display:flex;flex-direction:column;gap:10px}
+.vid{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:10px 10px 14px;display:flex;flex-direction:column;gap:10px}
 .vid .frame{position:relative;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:var(--ink)}
 .vid .frame img{width:100%;height:100%;object-fit:cover}
 .vid .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -317,7 +318,7 @@ header.site img{height:46px;width:auto}
 .vid blockquote b{display:block;margin-top:6px;font-size:.95rem;color:var(--ink-soft);font-weight:700}
 .wall-title{margin-top:56px}
 .wall{display:grid;gap:18px;margin-top:26px}
-.wa{background:var(--canvas);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:0}
+.wa{background:var(--soft);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:0}
 .wa img{width:100%}
 .wa figcaption{padding:12px 16px;font-size:1rem;font-weight:500}
 
@@ -363,7 +364,7 @@ html.a11y-contrast .clock div{background:#000;border-color:#fff}
 
 /* price */
 .price{background:var(--white)}
-.price-card{background:var(--canvas);border:1px solid var(--line);border-radius:28px;padding:clamp(26px,5vw,44px) clamp(18px,4vw,36px);box-shadow:var(--shadow)}
+.price-card{background:var(--soft);border:1px solid var(--line);border-radius:28px;padding:clamp(26px,5vw,44px) clamp(18px,4vw,36px);box-shadow:var(--shadow)}
 .price-card .full{color:var(--ink-soft);font-size:1rem}
 .price-card .big{font-size:clamp(2.3rem,9vw,3.4rem);font-weight:900;letter-spacing:-.02em;line-height:1.1;margin:8px 0 4px}
 .price-card .total{font-size:1.15rem;font-weight:700;margin-bottom:22px}
@@ -418,7 +419,7 @@ html.a11y-contrast .clock div{background:#000;border-color:#fff}
 
 /* calculator */
 .calc{background:var(--white)}
-.calc-card{background:var(--canvas);border:1px solid var(--line);border-radius:28px;padding:clamp(18px,4vw,30px);margin-top:28px;box-shadow:var(--shadow);text-align:right}
+.calc-card{background:var(--soft);border:1px solid var(--line);border-radius:28px;padding:clamp(18px,4vw,30px);margin-top:28px;box-shadow:var(--shadow);text-align:right}
 .calc-form{display:grid}
 .calc-form label{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
 .calc-form label:last-child{border-bottom:0}
@@ -448,7 +449,7 @@ html.a11y-contrast .clock div{background:#000;border-color:#fff}
 
 /* faq · interactive chat */
 .faq{background:var(--white)}
-.chatbox{background:var(--canvas);border:1px solid var(--line);border-radius:24px;overflow:hidden;margin-top:28px;box-shadow:var(--shadow);text-align:center}
+.chatbox{background:var(--soft);border:1px solid var(--line);border-radius:24px;overflow:hidden;margin-top:28px;box-shadow:var(--shadow);text-align:center}
 .chat-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--ink);color:#fff}
 .chat-av{width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:50% 15%;margin:0;flex:0 0 44px;border:2px solid #fff}
 .chat-head b{display:block;font-size:1.05rem;line-height:1.2}
@@ -540,6 +541,19 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   .mockup{margin-top:20px}
   .wrap{padding:0 18px}
 }
+
+/* ===== רצועות רקע מתחלפות (מור וייצמן 14.9: "כל הדף באותו הצבע, זה קשוח") ===== */
+.band-cream{background:var(--band-cream)}
+.band-gray{background:var(--band-gray)}
+.band-white{background:var(--band-white)}
+.band-cream,.band-gray{--soft:var(--white)}
+.band-white{--soft:var(--canvas)}
+.circles{display:flex;justify-content:center;gap:clamp(10px,3vw,22px);margin:30px auto 0;flex-wrap:wrap}
+.circles img{width:clamp(96px,26vw,168px);height:clamp(96px,26vw,168px);border-radius:50%;object-fit:cover;object-position:50% 30%;border:6px solid var(--white);box-shadow:var(--shadow);max-width:100%}
+.circles img:nth-child(2){transform:translateY(14px)}
+.circles.two img{width:clamp(130px,38vw,220px);height:clamp(130px,38vw,220px)}
+.circle-one{width:min(240px,64vw);height:min(240px,64vw);border-radius:50%;overflow:hidden;margin:28px auto 6px;border:6px solid var(--white);box-shadow:var(--shadow)}
+.circle-one img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 </style>
 </head>
 <body>
@@ -547,29 +561,24 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 
 <div class="topbar">כבר 4,700 אמהות הפסיקו לנחש והתחילו לבנות רשת ביטחון כלכלית למשפחה שלהן</div>
 
-<div class="wrap">
-  <header class="site">
-    <a href="#" aria-label="אמא משקיעה"><img src="assets/logo.png" alt="אמא משקיעה" width="180" height="46"></a>
-  </header>
-</div>
 
 <main id="main">
 
 <!-- ========== HERO ========== -->
-<section class="hero" id="top">
+<section class="hero band-cream" id="top">
   <div class="wrap">
     <p class="eyebrow long"><em>לאמהות שרוצות ביטחון כלכלי אמיתי אבל פוחדות לאבד את מה שחסכו…</em></p>
     <h1>איך כל אמא צעירה יכולה להפוך כמה מאות שקלים בחודש <span class="accent">להון משפחתי של מיליונים</span> ולסדר את העתיד של הילדים והמשפחה שלה</h1>
     <p class="brandline">״אמא משקיעה״</p>
     <figure class="mockup">
-      <img src="assets/mockup-livui.webp" alt="הליווי של אמא משקיעה: מפגש הלייב על המחשב, האזור האישי בטלפון, ועדי סומך" width="1600" height="1065" fetchpriority="high">
+      <img src="assets/mockup-livui.webp?v=2" alt="הליווי של אמא משקיעה: מפגש לייב על שלושת הכדים במחשב, האזור האישי בטלפון, ועדי סומך" width="1600" height="1065" fetchpriority="high">
     </figure>
     <p class="sub">תכנית של 28 ימים שעוזרת לנשים להתחיל להשקיע בשוק ההון בדרך הכי בטוחה שיש (כיום ב-2026) בלי לסכן חסכונות ובצורה אוטומטית שדורשת כמעט 0 התעסקות</p>
   </div>
 </section>
 
 <!-- ========== הסיפור ========== -->
-<section class="story">
+<section class="story band-cream">
   <div class="wrap">
     <p class="bignum">ב-6 שנים האחרונות הכנסתי כל חודש בין מאות ל-אלפי שקלים אקסטרה כל חודש בלי לעשות כלום ושום דבר…</p>
 <!-- ===== ממתין מעדי: צילומי מסך של חודשים עוקבים.
@@ -578,11 +587,16 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <p class="steps"><span>זה התחיל מלמצוא כספים ״אבודים״ שסתם נזלו בלי ששמתי לב,</span><span>זה המשיך מלשים הוראות קבע קטנות של 100 פה 100 שם בהשקעות,</span><span>וזה הגיע למצב שאני מסדרת את העתיד של הבנות שלי ומראה למעל 20,000 נשים ישראליות איך לעשות את זה בעצמן…</span></p>
 
     <p class="became"><em>הפכתי לאמא שמשקיעה.</em>משקיעה את הכסף כדי להשקיע בעצמי, בבנות, בבעלי וכדי לבנות רשת בטחון מדהימה למשפחה שלי.</p>
+    <div class="circles" aria-label="מהחיים של עדי והמשפחה">
+      <img src="assets/ph-paris.webp" alt="עדי ומני בפריז, מול מגדל אייפל" width="600" height="1067" loading="lazy">
+      <img src="assets/ph-pool.webp" alt="מני והבת בבריכה" width="600" height="1067" loading="lazy">
+      <img src="assets/ph-sunset.webp" alt="עדי והבנות על החוף בשקיעה" width="600" height="1067" loading="lazy">
+    </div>
   </div>
 </section>
 
 <!-- ========== היופי בהשקעות ========== -->
-<section class="easy">
+<section class="easy band-white">
   <div class="wrap">
     <h2>היופי בתחום ההשקעות הוא שלא צריך לעשות הרבה כדי להתחיל לייצר כסף.</h2>
     <div class="reframe">
@@ -594,9 +608,10 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מה אפשר היום ========== -->
-<section class="today">
+<section class="today band-white">
   <div class="wrap">
     <h2>היום נשים יכולות לסדר את המשפחה שלהן ואפילו לצבור הון של מאות אלפי שקלים רק מלקחת <mark>300 שקל בחודש</mark> שהן שמות על בגדים שהן לא צריכות, ולעשות הוראת קבע שלוקחת <mark>פחות מ-3 דקות</mark> לעשות.</h2>
+    <div class="circle-one"><img src="assets/ph-family.webp" alt="עדי, מני והבנות" width="900" height="1200" loading="lazy"></div>
     <p class="cape"><span>את יכולה להיות ״הגיבורת על״ של המשפחה,</span><span>זאת ששינתה את העתיד של המשפחה בלי לקחת ממה שיש היום…</span></p>
     <ul class="nots">
       <li>את לא צריכה לגעת בכסף שיש לך ולבעלך בעובר ושב…</li>
@@ -607,7 +622,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== חשיפת התכנית ========== -->
-<section class="introp">
+<section class="introp band-white">
   <div class="wrap">
     <p class="brandline">״אמא משקיעה״</p>
     <p class="first">יצרתי את התכנית הראשונה בישראל שעוזרת לנשים למצוא <b>כספים אבודים של בין <span dir="ltr">200-1,000</span> שקל בחודש</b> ולגלגל את הכסף הזה להון משפחתי של מיליונים…</p>
@@ -615,7 +630,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מפת הדרכים ========== -->
-<section class="road" id="road">
+<section class="road band-gray" id="road">
   <div class="wrap">
     <span class="eyebrow">מה עוברות בליווי</span>
     <h2>28 יום. שלב אחרי שלב.</h2>
@@ -677,7 +692,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מה לומדות בדרך ========== -->
-<section class="learn" id="learn">
+<section class="learn band-gray" id="learn">
   <div class="wrap">
     <span class="eyebrow">וכן, גם לומדות</span>
     <h2>ומה לומדות בדרך?</h2>
@@ -708,14 +723,14 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מוקאפ הליווי ========== -->
-<section class="mock" id="mock">
+<section class="mock band-gray" id="mock">
   <div class="wrap">
     <span class="tag">הדמיה · נתונים לדוגמה</span>
     <h2>ככה נראה הליווי מבפנים</h2>
     <p class="lead">מפגש לייב בשבוע, אזור אישי שמלווה אותך כל יום, קבוצה שעונה, ופגישה אישית עם איש מקצוע.</p>
 
     <figure class="laptop">
-      <div class="lid"><img src="assets/mock-live.webp" alt="שקף ממפגש לייב: 28 יום, צעד אחד בכל פעם, השבועות של הליווי" width="1280" height="720" loading="lazy"></div>
+      <div class="lid"><img src="assets/mock-live.webp?v=2" alt="מפגש לייב: עדי מלמדת את שלושת הכדים" width="1280" height="720" loading="lazy"></div>
       <div class="base"></div>
       <figcaption>מפגש הלייב השבועי. ימי שני ב-20:00, ומוקלט למי שפספסה.</figcaption>
     </figure>
@@ -759,7 +774,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מה יש לך ביד בסוף ========== -->
-<section class="outcome">
+<section class="outcome band-cream">
   <div class="wrap">
     <span class="eyebrow">ככה זה נראה ביום 28</span>
     <h2>לא תוכנית במגירה. מנגנון שעובד.</h2>
@@ -785,7 +800,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== עדויות ========== -->
-<section class="testi" id="testimonials">
+<section class="testi band-cream" id="testimonials">
   <div class="wrap">
     <span class="eyebrow">מהשטח</span>
     <h2>תשמעי אותן רגע. הן היו בדיוק במקום שלך.</h2>
@@ -851,7 +866,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מי מאחורי הליווי ========== -->
-<section class="bio">
+<section class="bio band-white">
   <div class="wrap">
     <div class="avatar"><img src="assets/adi.webp" alt="עדי סומך" width="800" height="1200" loading="lazy"></div>
     <span class="eyebrow">נעים להכיר</span>
@@ -867,12 +882,15 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <div><b>200+</b><span>תיקי השקעות שנפתחו</span></div>
       <div><b>7M+ ₪</b><span>מושקעים על ידי הקהילה</span></div>
     </div>
-    <div class="bio-photo"><img src="assets/ph-baby.webp" alt="עדי מרימה את התינוקת שלה על חוף" width="800" height="1423" loading="lazy"></div>
+    <div class="circles two">
+      <img src="assets/ph-2020.webp" alt="עדי בהיריון הראשון, 2020" width="1200" height="902" loading="lazy">
+      <img src="assets/ph-baby.webp" alt="עדי מרימה את התינוקת שלה על חוף" width="800" height="1423" loading="lazy">
+    </div>
   </div>
 </section>
 
 <!-- ========== מה כלול ========== -->
-<section class="included" id="included">
+<section class="included band-white" id="included">
   <div class="wrap">
     <span class="eyebrow">מה בדיוק כלול</span>
     <h2>מה את מקבלת בליווי</h2>
@@ -891,7 +909,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== בונוס · נסגר 9.9 בשעה 22:00 (ראה FIXED בסקריפט) ========== -->
-<section class="bonus" id="bonus">
+<section class="bonus band-white" id="bonus">
   <div class="wrap">
     <div class="bonus-card">
       <span class="eyebrow">בונוס · עד יום רביעי ב-22:00</span>
@@ -912,7 +930,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מחיר ========== -->
-<section class="price" id="price">
+<section class="price band-white" id="price">
   <div class="wrap">
     <div class="price-card">
       <span class="eyebrow">ההשקעה שלך</span>
@@ -934,7 +952,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== שריון מקום · טופס ========== -->
-<section class="join" id="join">
+<section class="join band-gray" id="join">
   <div class="wrap">
     <span class="eyebrow">שריון מקום</span>
     <h2>שרייני את המקום שלך</h2>
@@ -968,7 +986,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== למי זה מתאים ========== -->
-<section class="fitsec">
+<section class="fitsec band-gray">
   <div class="wrap">
     <span class="eyebrow">רגע של כנות</span>
     <h2>איך תדעי אם זה הרגע המדויק בשבילך?</h2>
@@ -988,7 +1006,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== שאלות נפוצות · צ'אט אינטראקטיבי ========== -->
-<section class="faq" id="faq">
+<section class="faq band-gray" id="faq">
   <div class="wrap">
     <span class="eyebrow">שאלות נפוצות</span>
     <h2>יש לך שאלות? אני כאן בשבילך</h2>
