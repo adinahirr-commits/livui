@@ -641,6 +641,54 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 .branches li:nth-child(4){--tint:var(--t-pink);--acc:var(--a-pink)}
 .branches li:nth-child(5){--tint:var(--lime);--acc:var(--lime);font-weight:800}
 .branches li:nth-child(5) small{color:var(--ink);font-weight:600}
+
+/* ===== "מה את מקבלת": מוקאפ לכל חלק, ופחות רעש (עדי 14.9: פשטות, ביטחון, בהירות) ===== */
+.inc-demo{margin:10px auto 0;font-size:.9rem;color:var(--ink-soft)}
+.inc-vis figcaption{display:none}
+.inc-vis .proof .wa{max-width:340px}
+.inc-vis .proof-lbl{margin-bottom:8px}
+.inc-row p{max-width:38ch;margin-inline:auto}
+.scr-mock{aspect-ratio:16/10;background:#FFF8EF;border-radius:8px 8px 0 0;display:grid;grid-template-rows:auto auto auto 1fr;justify-items:center;align-content:start;gap:8px;padding:14px 12px 0;overflow:hidden}
+.scr-pill{background:var(--pink);color:var(--ink);font-size:.72rem;font-weight:800;border-radius:100px;padding:3px 10px}
+.scr-mock b{font-size:clamp(.95rem,3.6vw,1.2rem);line-height:1.2}
+.scr-chips{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
+.scr-chips span{background:var(--white);border:1px solid var(--line);border-radius:100px;padding:2px 10px;font-size:.72rem;font-weight:700}
+.scr-mock img{width:auto;height:100%;max-height:120px;align-self:end}
+.qa-mock{margin:0;width:100%;max-width:400px;background:var(--white);border-radius:22px;padding:18px 16px;display:grid;gap:12px}
+.qa-head b{display:block;font-size:1.05rem}
+.qa-head small{display:block;color:var(--ink-soft);font-size:.88rem;margin:0}
+.qa-mock ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.qa-mock li{background:var(--t-pink);border-radius:16px 16px 4px 16px;padding:10px 14px;font-size:.95rem;line-height:1.45;font-weight:500}
+.qa-mock li:nth-child(2){background:var(--t-sky)}
+.qa-mock li:nth-child(3){background:var(--t-vista)}
+.phones.one{display:grid;justify-items:center;overflow:visible;padding:0}
+.phones.one figure{flex:none;width:100%}
+.phones.one .phone{max-width:230px}
+.acct-mock{height:100%;background:var(--white);display:grid;align-content:start;gap:10px;padding:34px 16px 16px;text-align:right}
+.acct-top{font-weight:900;font-size:1rem;text-align:center}
+.acct-bar{height:8px;border-radius:100px;background:var(--line);overflow:hidden}
+.acct-bar i{display:block;height:100%;width:62%;background:var(--lime);border-radius:100px}
+.acct-mock small{font-size:.8rem;color:var(--ink-soft);text-align:center}
+.acct-mock ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:8px}
+.acct-mock li{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.9rem;font-weight:700;color:var(--ink-soft)}
+.acct-mock li::before{content:"";flex:0 0 18px;height:18px;border-radius:50%;border:2px solid var(--line)}
+.acct-mock li.done{color:var(--ink)}
+.acct-mock li.done::before{background:var(--lime);border-color:var(--lime)}
+.acct-mock li.now{border-color:var(--pink);color:var(--ink)}
+.acct-mock li.now::before{border-color:var(--pink)}
+.lib-mock{width:100%;max-width:460px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(min-width:560px){.lib-mock{grid-template-columns:repeat(3,1fr)}}
+.lib-t{border-radius:18px;padding:14px 10px;display:grid;justify-items:center;gap:4px;background:var(--white)}
+.lib-t b{font-size:.95rem;line-height:1.25}
+.lib-t small{font-size:.78rem;color:var(--ink-soft);margin:0}
+.lib-play{width:30px;height:30px;border-radius:50%;background:var(--ink);position:relative;margin-bottom:2px}
+.lib-play::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-35%,-50%);border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent #fff}
+.lib-t.t-sky .lib-play{background:#5FA9CF}.lib-t.t-vista .lib-play{background:#6F80E8}.lib-t.t-lime .lib-play{background:#9CA31F}.lib-t.t-pink .lib-play{background:var(--pink)}
+
+.inc-row .meet-lbl{display:none}
+.inc-vis .proof .wa{max-width:300px}
+.scr-mock{grid-template-rows:auto auto auto minmax(0,1fr);padding-bottom:6px}
+.scr-mock img{height:100%;max-height:none;width:auto;object-fit:contain;align-self:stretch}
 </style>
 </head>
 <body>
@@ -951,6 +999,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <span class="eyebrow">מה בדיוק כלול</span>
     <h2>מה את מקבלת בליווי</h2>
     <p class="lead">בשורה אחת: בונות לך תוכנית השקעות פשוטה וכמה שיותר אוטומטית, כדי שהכסף יהיה מחולק ויעבוד בשבילך בלי שתצטרכי להתעסק בזה כמעט בכלל.<br>28 יום. 4 שלבים. וצוות של אנשי מקצוע שעושה איתך את הדרך.</p>
+    <p class="inc-demo">המסכים כאן הם הדמיה, עם נתונים לדוגמה.</p>
     <div class="inc">
       <div class="inc-row"><span class="n">1</span><h3>4 מפגשי לייב שבועיים</h3><small>ימי שני ב-20:00: 5.10, 12.10, 19.10, 26.10. מוקלטים.</small><p>הליווי עובר בלייב כולו, שלב אחד בכל שבוע, ביחד, עם מקום לשאלות. וכל מפגש מוקלט, עולה לך לפורטל, ונשאר שלך. בתקופה עמוסה את משלימה בקצב שלך.</p><div class="inc-vis"><figure class="laptop">
       <div class="lid"><img src="assets/mock-live.webp?v=2" alt="מפגש לייב: עדי מלמדת את שלושת הכדים" width="1280" height="720" loading="lazy"></div>
@@ -967,7 +1016,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
       <figure class="wa"><img src="assets/wa-t-group.webp?v=u1" alt="הודעה: המוח שלי מתפוצץ ואני מתה על זה. מרגיש באמת שיש קבוצת בנות איכותית וסביבה מקדמת" width="900" height="567" loading="lazy"><figcaption>קבוצת בנות איכותית וסביבה מקדמת.</figcaption></figure>
     </div></div></div></div>
-      <div class="inc-row"><span class="n">2</span><h3>אזור אישי שמלווה אותך</h3><small>עם כל הנתונים שלך, במקום אחד</small><p>את נכנסת ורואה בדיוק מה הצעד הבא. לא צריך לזכור כלום. לא צריך לחפש כלום.</p><div class="inc-vis"><span class="tag">הדמיה · נתונים לדוגמה</span><div class="phones">
+      <div class="inc-row"><span class="n">2</span><h3>אזור אישי שמלווה אותך</h3><small>עם כל הנתונים שלך, במקום אחד</small><p>את נכנסת ורואה בדיוק מה הצעד הבא. לא צריך לזכור כלום. לא צריך לחפש כלום.</p><div class="inc-vis"><div class="phones">
       <figure>
         <div class="phone"><div class="scr"><img src="assets/jhome.webp" alt="מסך הבית של האזור האישי: יום 10 מתוך 28, הצעד הבא שלי, וארבעת השלבים ממפות מגינות מחלקות מפעילות" width="500" height="1300" loading="lazy"></div></div>
         <figcaption>יום 10 מתוך 28. ארבעה שלבים, ומה שהושלם מסומן. והצעד הבא שלך: אחד.</figcaption>
@@ -990,14 +1039,14 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         </div>
         <figcaption>הפגישה שבה הבירוקרטיה נעשית, ואת מקבלת בהירות.</figcaption>
       </figure></div></div>
-      <div class="inc-row"><span class="n">4</span><h3>הרצאה של יועץ ההשקעות</h3><small>בתוך התוכנית</small><p>המושגים נהיים ברורים. מסלולים, מדדים, דמי ניהול, בשפה של אמא.</p><div class="inc-vis">
+      <div class="inc-row"><span class="n">4</span><h3>הרצאה של יועץ ההשקעות</h3><small>בתוך התוכנית</small><p>המושגים נהיים ברורים. מסלולים, מדדים, דמי ניהול, בשפה של אמא.</p><div class="inc-vis"><figure class="laptop"><div class="lid"><div class="scr-mock lecture"><span class="scr-pill">הרצאה · יועץ ההשקעות</span><b>מה זה מדד? ומה זו קרן סל?</b><div class="scr-chips"><span>מדד</span><span>קרן סל</span><span>דמי ניהול</span><span>טווח</span></div><img src="assets/step-stage-split.webp" alt="" width="640" height="640" loading="lazy"></div></div><div class="base"></div></figure>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items two">
       <figure class="wa"><img src="assets/wa-t-tik.webp?v=u1" alt="הודעה: מאז ההרצאה קיבלתי אומץ ופתחנו תיק בחברת השקעות ומשקיעים את כל הכסף שהצטבר בחיסכון ובעו״ש" width="900" height="765" loading="lazy"><figcaption>אחרי ההרצאה: פתחו תיק, והכסף שישב בעו״ש התחיל לעבוד.</figcaption></figure>
       <figure class="wa"><img src="assets/wa-t-hila.webp?v=u1" alt="הודעה: היי עדי! קודם כל רוצה להגיד לך תודה על הקורס הזה. אני שמחה מאוד שנרשמתי! והוא ממש בנוי בצורה גאונית. אני עוד overwhelmed ולא ממש מצליחה לנסח משהו קצת יותר קונקרטי, אבל אני כבר רואה איך זה פתח לי עולם שלם." width="900" height="729" loading="lazy"><figcaption>"בנוי בצורה גאונית. פתח לי עולם שלם."</figcaption></figure>
     </div></div></div></div>
-      <div class="inc-row"><span class="n">5</span><h3>בונוס: מפגש שאלות ותשובות</h3><small>עם יועץ ההשקעות</small><p>השאלות שלך, שנענות לפני שאת חותמת על משהו.</p></div>
-      <div class="inc-row"><span class="n">6</span><h3>פתיחת תיק השקעות עצמאי, עם ליווי</h3><small>והטבה על הפתיחה, למי שרוצה</small><p>מי שרוצה פותחת תיק עצמאי, ולא נשארת עם זה לבד: מענה אישי מ-IBI על הצד הטכני של פתיחת התיק, ומענה של יועץ ההשקעות על איך מרכיבים אותו מבפנים, התמהיל עצמו.</p></div>
-      <div class="inc-row"><span class="n">7</span><h3>בונוס: ספריית התכנים של אמא משקיעה</h3><small>שיעורי עומק עם אנשי מקצוע, לפי נושאים</small><p>שוק ההון, נדל״ן בארץ ובחו״ל, קריפטו, מוצרים פנסיוניים, תודעה, התנהלות פיננסית ועוד. נפתחת לך, ואת צופה בזמן שלך במה שמעניין אותך.</p><div class="inc-vis">
+      <div class="inc-row"><span class="n">5</span><h3>בונוס: מפגש שאלות ותשובות</h3><small>עם יועץ ההשקעות</small><p>השאלות שלך, שנענות לפני שאת חותמת על משהו.</p><div class="inc-vis"><figure class="qa-mock"><ul><li>יש לנו כסף בעו״ש ובקופת גמל. איך יודעים איפה נכון שיהיה?</li><li>באיזה גיל כדאי להוריד את הסיכון בחיסכון לכל ילד?</li><li>אני לא מבינה את הדוחות. להזיז את הכסף? ולאן?</li></ul></figure></div></div>
+      <div class="inc-row"><span class="n">6</span><h3>פתיחת תיק השקעות עצמאי, עם ליווי</h3><small>והטבה על הפתיחה, למי שרוצה</small><p>מי שרוצה פותחת תיק עצמאי, ולא נשארת עם זה לבד: מענה אישי מ-IBI על הצד הטכני של פתיחת התיק, ומענה של יועץ ההשקעות על איך מרכיבים אותו מבפנים, התמהיל עצמו.</p><div class="inc-vis"><div class="phones one"><figure><div class="phone"><div class="scr"><div class="acct-mock"><span class="acct-top">פתיחת תיק השקעות</span><div class="acct-bar"><i></i></div><small>שלב 3 מתוך 4</small><ul><li class="done">פרטים אישיים</li><li class="done">אימות זהות</li><li class="now">חתימה דיגיטלית</li><li>הפקדה ראשונה</li></ul></div></div></div></figure></div></div></div>
+      <div class="inc-row"><span class="n">7</span><h3>בונוס: ספריית התכנים של אמא משקיעה</h3><small>שיעורי עומק עם אנשי מקצוע, לפי נושאים</small><p>שוק ההון, נדל״ן בארץ ובחו״ל, קריפטו, מוצרים פנסיוניים, תודעה, התנהלות פיננסית ועוד. נפתחת לך, ואת צופה בזמן שלך במה שמעניין אותך.</p><div class="inc-vis"><figure class="laptop"><div class="lid"><img src="assets/mock-library.webp" alt="ספריית התכנים של אמא משקיעה: שיעורי עומק בווידאו לפי נושאים, השקעות, כסף, התפתחות ונדל״ן" width="1280" height="800" loading="lazy"></div><div class="base"></div></figure>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
       <figure class="wa"><img src="assets/wa-t-shave.webp?v=u1" alt="הודעה: לא משנה כמה כסף שמתי על הקורס הזה, מבחינתי קיבלתי מתנה. כל שיעור מרחיב את הידע והתודעה" width="900" height="917" loading="lazy"><figcaption>"לא משנה כמה שילמתי. קיבלתי מתנה."</figcaption></figure>
     </div></div></div></div>
