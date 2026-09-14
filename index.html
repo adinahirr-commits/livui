@@ -117,7 +117,7 @@ header.site img{height:46px;width:auto}
 .hero .sub{font-size:clamp(1.15rem,3vw,1.35rem);font-weight:500;color:var(--ink-soft);margin:16px auto 26px;line-height:1.5;max-width:32ch}
 .hero h1 .accent{color:var(--pink)}
 /* הכותרת הראשית רחבה מהעמודה בדסקטופ, כדי לא להישבר ל-6 שורות */
-@media(min-width:820px){.hero h1{width:min(880px,92vw);margin-inline:auto;font-size:clamp(2.6rem,3.9vw,3.35rem)}}
+@media(min-width:820px){.hero h1{width:min(880px,92vw);margin-inline:calc(50% - min(440px,46vw));font-size:clamp(2.6rem,3.9vw,3.35rem)}}
 .pill-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 18px;font-size:.98rem;font-weight:700;margin-top:16px}
 .pill-facts span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--pink);margin-left:8px;vertical-align:middle}
 .hero-photo{width:min(300px,78vw);height:min(300px,78vw);border-radius:50%;overflow:hidden;margin:34px auto 0;border:6px solid var(--white);box-shadow:var(--shadow)}
@@ -856,7 +856,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <p>במרץ 2020, בהיריון הראשון ובסגר הראשון, העסק שלי נעצר ביום אחד, וכל הביטחון שחשבתי שיש לי נעלם ברגע.</p>
     <p>יצאתי ללמוד את מה שאפילו לא ידעתי שאני לא יודעת, ומאז ההון של המשפחה שלנו צמח פי 8. מאותה הכנסה, באותה רמת חיים.</p>
     <p>סגרתי את העסק הקודם ועברתי לשליחות אחת: לעזור לעוד אמהות לבנות לעצמן רשת ביטחון.</p>
-    <p style="margin:0">מאז ליוויתי מעל 400 אמהות. מעל 200 מהן כבר פתחו תיק השקעות.</p>
+    <p style="margin:0 auto">מאז ליוויתי מעל 400 אמהות. מעל 200 מהן כבר פתחו תיק השקעות.</p>
     <div class="facts" aria-label="במספרים">
       <div><b>2020</b><span>השנה שבה הכל התחיל</span></div>
       <div><b>400+</b><span>אמהות בתוכניות של אמא משקיעה</span></div>
