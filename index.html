@@ -592,6 +592,42 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 .hero .hero-brand::before,.hero .hero-brand::after{width:clamp(18px,5vw,48px);height:5px;margin:0 clamp(8px,2.4vw,14px)}
 .story-checks{margin:26px auto 0;display:grid;gap:14px;padding:0;list-style:none}
 .story-checks li{font-size:1.1rem;line-height:1.55;max-width:36ch}
+
+/* ===== סדר ורוגע: כל שלב וכל חלק בכרטיס אחד עם צבע רך משלו (עדי 14.9) =====
+   הצבעים = צבעי השבועות במוקאפ: היערכות ורוד · שבוע 1 תכלת · שבוע 2 סגול · שבוע 3 ירוק · יום 28 ורוד */
+:root{--t-pink:#FDE8F2;--t-sky:#E3F2FA;--t-vista:#E9ECFF;--t-lime:#F2F5CF;--a-pink:#F7A8CF;--a-sky:#BEE0F2;--a-vista:#B9C3FF;--a-lime:#CCD537}
+.timeline{max-width:560px}
+.timeline::before{background:#D9DCE8}
+.station{--tint:var(--t-pink);--acc:var(--a-pink);background:var(--tint);border-radius:28px;padding:24px 20px 26px;margin-bottom:34px;z-index:1;--soft:var(--white)}
+.station:last-child{margin-bottom:0;padding-bottom:26px}
+.station:nth-child(2){--tint:var(--t-sky);--acc:var(--a-sky)}
+.station:nth-child(3),.station:nth-child(4){--tint:var(--t-vista);--acc:var(--a-vista)}
+.station:nth-child(5){--tint:var(--t-lime);--acc:var(--a-lime)}
+.station .pic{width:112px;height:112px;border:5px solid var(--white);box-shadow:none;background:var(--white)}
+.station .when{background:var(--acc);color:var(--ink);margin-top:14px}
+.station h3{background:none;padding:0;margin-top:10px;font-size:1.3rem;line-height:1.3}
+.station p,.station .ex{background:none;padding:0;max-width:36ch}
+.station p{margin-top:10px}
+.station .have,.station.finish .have{background:var(--white);border:2px solid var(--acc);margin-top:16px;max-width:34ch}
+.station .have::before{color:var(--ink-soft)}
+.station .ex{margin-top:12px}
+.station .proof{margin-top:20px;padding-top:18px;border-top:1px dashed rgba(25,26,46,.18);width:100%}
+.inc{gap:18px}
+.inc-row{--tint:var(--t-sky);--soft:var(--white);background:var(--tint);border:0;box-shadow:none;border-radius:26px;padding:24px 18px 26px}
+.inc-row:nth-child(4n+2){--tint:var(--t-vista)}
+.inc-row:nth-child(4n+3){--tint:var(--t-lime)}
+.inc-row:nth-child(4n+4){--tint:var(--t-pink)}
+.inc-row .n{background:var(--white);width:40px;height:40px;font-size:1.05rem;box-shadow:0 2px 0 rgba(25,26,46,.08)}
+.inc-row h3{font-size:1.25rem;line-height:1.3}
+.inc-row .meet-card{box-shadow:none}
+@media(max-width:699px){
+  .inc-vis .phones{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;padding:4px 6px 14px;justify-content:flex-start;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .inc-vis .phones::-webkit-scrollbar{display:none}
+  .inc-vis .phones figure{flex:0 0 68%;scroll-snap-align:center}
+  .inc-vis .phones .phone{max-width:220px}
+  .inc-vis .phones-hint{display:block}
+}
+.phones-hint{display:none;margin:-8px 0 0;font-size:.9rem;font-weight:700;color:var(--ink-soft)}
 </style>
 </head>
 <body>
@@ -931,7 +967,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <div class="phone"><div class="scr"><img src="assets/jjars.webp" alt="מסך שלושת הכדים: כד קרוב, כד בינוני, כד ארוך, לכל שקל תפקיד" width="500" height="1300" loading="lazy"></div></div>
         <figcaption>שלושת הכדים. לכל שקל תפקיד, ולכל שקל בית.</figcaption>
       </figure>
-    </div></div></div>
+    </div><p class="phones-hint">‹ החליקי לעוד מסכים</p></div></div>
       <div class="inc-row"><span class="n">3</span><h3>פגישה אישית 1:1 עם עמית ביטון</h3><small>סוכן ביטוח פנסיוני, מהצוות של אמא משקיעה</small><p>מוציא מסלקה, בודק דמי ניהול, ומסדר את הפנסיה והביטוחים. את מקבלת בהירות, הוא עושה את הבירוקרטיה.</p><div class="inc-vis"><figure class="meet">
         <div class="meet-card">
           <span class="meet-lbl">פגישה אישית 1:1</span>
