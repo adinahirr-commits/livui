@@ -589,12 +589,14 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 .checks{margin-inline:auto}
 .checks li{margin-inline:auto}
 .hero .hero-brand{color:var(--pink);margin:6px 0 0}
+.story-checks{margin:26px auto 0;display:grid;gap:14px;padding:0;list-style:none}
+.story-checks li{font-size:1.1rem;line-height:1.55;max-width:36ch}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">דילוג לתוכן</a>
 
-<div class="topbar">כבר 4,700 אמהות הפסיקו לנחש והתחילו לבנות רשת ביטחון כלכלית למשפחה שלהן</div>
+<div class="topbar">לאמהות שרוצות ביטחון כלכלי אמיתי אבל פוחדות לאבד את מה שחסכו…</div>
 
 
 <main id="main">
@@ -602,7 +604,6 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 <!-- ========== HERO ========== -->
 <section class="hero band-cream" id="top">
   <div class="wrap">
-    <p class="eyebrow long"><em>לאמהות שרוצות ביטחון כלכלי אמיתי אבל פוחדות לאבד את מה שחסכו…</em></p>
     <h1>איך כל אמא צעירה יכולה להפוך כמה מאות שקלים בחודש <span class="accent">להון משפחתי של מיליונים</span> ולסדר את העתיד של הילדים והמשפחה שלה</h1>
     <figure class="mockup">
       <img src="assets/mockup-livui.webp?v=2" alt="הליווי של אמא משקיעה: מפגש לייב על שלושת הכדים במחשב, האזור האישי בטלפון, ועדי סומך" width="1600" height="1065" fetchpriority="high">
@@ -615,11 +616,15 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 <!-- ========== הסיפור ========== -->
 <section class="story band-cream">
   <div class="wrap">
-    <p class="bignum">ב-6 שנים האחרונות הכנסתי כל חודש בין מאות ל-אלפי שקלים אקסטרה כל חודש בלי לעשות כלום ושום דבר…</p>
+    <p class="bignum">ב-6 שנים האחרונות הכנסתי כל חודש בין מאות לאלפי שקלים בלי להתעסק בזה בכלל…</p>
 <!-- ===== ממתין מעדי: צילומי מסך של חודשים עוקבים.
      להדביק כאן:  <div class="strip"><img src="assets/shot-m1.webp" ...><img src="assets/shot-m2.webp" ...><img src="assets/shot-m3.webp" ...></div>  ===== -->
 
-    <p class="steps"><span>זה התחיל מלמצוא כספים ״אבודים״ שסתם נזלו בלי ששמתי לב,</span><span>זה המשיך מלשים הוראות קבע קטנות של 100 פה 100 שם בהשקעות,</span><span>וזה הגיע למצב שאני מסדרת את העתיד של הבנות שלי ומראה למעל 20,000 נשים ישראליות איך לעשות את זה בעצמן…</span></p>
+    <ul class="checks story-checks">
+      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>זה התחיל מלמצוא כספים אבודים שסתם נזלו בלי ששמתי לב</span></li>
+      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>זה המשיך מלשים הוראות קבע קטנות של 100 פה 100 שם בהשקעות</span></li>
+      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>וזה הגיע למצב שאני מסדרת את העתיד של הבנות שלי ושל כל המשפחה שלי ומראה למעל 20,000 נשים איך לעשות את זה בעצמן…</span></li>
+    </ul>
 
     <p class="became"><em>הפכתי לאמא שמשקיעה.</em>משקיעה את הכסף כדי להשקיע בעצמי, בבנות, בבעלי וכדי לבנות רשת בטחון מדהימה למשפחה שלי.</p>
     <div class="circles" aria-label="מהחיים של עדי והמשפחה">
