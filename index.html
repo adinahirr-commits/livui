@@ -575,6 +575,19 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 .all-mock{margin:0 auto 10px;width:100%;max-width:760px}
 .all-mock img{width:100%;height:auto;display:block}
 @media(min-width:820px){.all-mock{width:min(880px,92vw);max-width:none;margin-inline:calc(50% - min(440px,46vw))}}
+
+/* ===== מרכוז מלא (עדי 14.9: "תמרכז את הכל") ===== */
+.join-form input{text-align:center}
+.join-form input::placeholder{text-align:center}
+.sit legend{width:100%;text-align:center}
+.sit .chip{justify-content:center;text-align:center}
+.vids{display:flex;flex-wrap:wrap;justify-content:center}
+.vids .vid{width:calc(50% - 7px)}
+@media(min-width:700px){.vids{max-width:540px;margin-inline:auto;gap:18px}.vids .vid{width:calc(50% - 9px)}}
+.phones figure{width:100%;display:grid;justify-items:center}
+.phones figcaption{text-align:center}
+.checks{margin-inline:auto}
+.checks li{margin-inline:auto}
 </style>
 </head>
 <body>
