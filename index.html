@@ -113,7 +113,7 @@ header.site{padding:18px 0 4px}
 header.site img{height:46px;width:auto}
 
 /* hero */
-.hero{padding-top:clamp(22px,4vw,44px)}
+.hero{padding-top:clamp(22px,4vw,44px);padding-bottom:clamp(20px,4vw,40px)}
 .hero .sub{font-size:clamp(1.15rem,3vw,1.35rem);font-weight:500;color:var(--ink-soft);margin:16px auto 26px;line-height:1.5;max-width:32ch}
 .hero h1 .accent{color:var(--pink)}
 /* הכותרת הראשית רחבה מהעמודה בדסקטופ, כדי לא להישבר ל-6 שורות */
@@ -588,7 +588,8 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 .phones figcaption{text-align:center}
 .checks{margin-inline:auto}
 .checks li{margin-inline:auto}
-.hero .hero-brand{color:var(--pink);margin:6px 0 0}
+.hero .hero-brand{color:var(--pink);margin:10px 0 0;font-size:clamp(2.1rem,9.4vw,3.8rem);line-height:1.1;white-space:nowrap}
+.hero .hero-brand::before,.hero .hero-brand::after{width:clamp(18px,5vw,48px);height:5px;margin:0 clamp(8px,2.4vw,14px)}
 .story-checks{margin:26px auto 0;display:grid;gap:14px;padding:0;list-style:none}
 .story-checks li{font-size:1.1rem;line-height:1.55;max-width:36ch}
 </style>
@@ -614,7 +615,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== הסיפור ========== -->
-<section class="story band-cream">
+<section class="story band-gray">
   <div class="wrap">
     <p class="bignum">ב-6 שנים האחרונות הכנסתי כל חודש בין מאות לאלפי שקלים בלי להתעסק בזה בכלל…</p>
 <!-- ===== ממתין מעדי: צילומי מסך של חודשים עוקבים.
@@ -666,10 +667,10 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     </ul>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items two">
       <div class="vid">
-        <div class="frame" data-vid="1115442335"><img src="assets/v-hadar.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של הדר"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div>
-        <blockquote>"בעלי ואני מדברים על כסף ומחליטים החלטות יחד."<b>הדר גלזר</b></blockquote>
+        <div class="frame" data-vid="1115442139"><img src="assets/v-rotem.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של רותם"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div>
+        <blockquote>"הפקדתי גם לקרן השתלמות, גם לקופת גמל, וגם קנינו דירה להשקעה תוך כדי התכנית."<b>רותם</b></blockquote>
       </div>
-      <figure class="wa"><img src="assets/wa-t-zug.webp" alt="הודעה מזוג: בהחלט ההשקעה הכי טובה שעשינו. למדתי המון ושחר הרוויח שותפה לעניין הכלכלי. תודה שהיית קשובה לאורך התקופה" width="900" height="1163" loading="lazy"><figcaption>"ההשקעה הכי טובה שעשינו." והבעל הרוויח שותפה.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-zug.webp?v=u1" alt="הודעה מזוג: בהחלט ההשקעה הכי טובה שעשינו. למדתי המון ושחר הרוויח שותפה לעניין הכלכלי. תודה שהיית קשובה לאורך התקופה" width="900" height="1163" loading="lazy"><figcaption>"ההשקעה הכי טובה שעשינו." והבעל הרוויח שותפה.</figcaption></figure>
     </div></div>
   </div>
 </section>
@@ -685,7 +686,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <div class="frame" data-vid="1167389559"><img src="assets/v-aluma.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של אלומה"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div>
         <blockquote>"מצאתי מעל 200 אלף ₪ שלא ידעתי שיש לי."<b>אלומה וייס</b></blockquote>
       </div>
-      <figure class="wa"><img src="assets/wa-t-17205.webp" alt="הודעה: בזכות הקורס יצרתי קשר עם החזרי מס, ואתמול אני ובעלי קיבלנו 17,205 ש״ח לחשבון" width="900" height="1043" loading="lazy"><figcaption>17,205 ₪ החזר מס שנכנס לחשבון.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-17205.webp?v=u1" alt="הודעה: בזכות הקורס יצרתי קשר עם החזרי מס, ואתמול אני ובעלי קיבלנו 17,205 ש״ח לחשבון" width="900" height="1043" loading="lazy"><figcaption>17,205 ₪ החזר מס שנכנס לחשבון.</figcaption></figure>
     </div></div>
   </div>
 </section>
@@ -711,7 +712,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <div class="have">כל הכסף הפנוי שלך, גם זה שלא ידעת על קיומו.</div>
         <p class="ex">לאלומה מצאנו מעל 200,000 ש״ח בקופה שהיא לא ידעה על קיומה. לרוב אנחנו מוצאות בממוצע 20,000 ש״ח אבודים בקופות נסתרות.</p>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-27000.webp" alt="הודעה: ואגב לא סיפרתי לך, נכנס לנו 27,000 בזכות המענקים האלו שמילאתי אחרי הזום שלך" width="900" height="266" loading="lazy"><figcaption>27,000 ₪ ממענקים. אחרי זום אחד.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-27000.webp?v=u1" alt="הודעה: ואגב לא סיפרתי לך, נכנס לנו 27,000 בזכות המענקים האלו שמילאתי אחרי הזום שלך" width="900" height="266" loading="lazy"><figcaption>27,000 ₪ ממענקים. אחרי זום אחד.</figcaption></figure>
     </div></div>
       </li>
       <li class="station">
@@ -728,7 +729,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <p>קודם הגב. כמה חודשי מחיה מתאימים לכן, איפה הכסף הזה יושב כדי שיהיה זמין ולא יישחק, ואיך הוא נשאר בצד גם כשיש פיתוי. זה מה שנותן שקט לפני שנוגעים בהשקעות.</p>
         <div class="have">קרן חירום מוגדרת, במקום הנכון.</div>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-tama.webp" alt="הודעה: רציתי להגיד ששמתי בקרן כספית סכום של 3 חודשי מחיה שלי, וזה עשה לי הרגשה כל כך טובה" width="900" height="1116" loading="lazy"><figcaption>קרן חירום של 3 חודשי מחיה. "הרגשה כל כך טובה."</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-tama.webp?v=u1" alt="הודעה: רציתי להגיד ששמתי בקרן כספית סכום של 3 חודשי מחיה שלי, וזה עשה לי הרגשה כל כך טובה" width="900" height="1116" loading="lazy"><figcaption>קרן חירום של 3 חודשי מחיה. "הרגשה כל כך טובה."</figcaption></figure>
     </div></div>
       </li>
       <li class="station">
@@ -744,12 +745,8 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <h3>הביצוע, עם אנשי המקצוע</h3>
         <p>הפגישה האישית עם עמית ביטון, הסוכן הפנסיוני של הצוות: מסלקה, דמי ניהול, סידור הפנסיה והביטוחים. פותחות מה שצריך, ומורידות הוראת קבע להשקעות. ומי שרוצה פותחת גם תיק השקעות עצמאי, עם מענה אישי מ-IBI על הפתיחה ומיועץ ההשקעות על התמהיל בפנים. הם עושים את הבירוקרטיה, את מקבלת את הבהירות.</p>
         <div class="have">חשבונות פתוחים והוראת קבע שמוגדרת.</div>
-    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items two">
-      <div class="vid">
-        <div class="frame" data-vid="1115442139"><img src="assets/v-rotem.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של רותם"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div>
-        <blockquote>"הפקדתי גם לקרן השתלמות, גם לקופת גמל, וגם קנינו דירה להשקעה תוך כדי התכנית."<b>רותם</b></blockquote>
-      </div>
-      <figure class="wa"><img src="assets/wa-t-openacc.webp" alt="הודעה: ברוך השם בזכותך אחרי הרבה שיעורי בית פתחתי קרן השתלמות, קרן פנסיה וקופת גמל להשקעה ממש היום. אין לתאר כמה שזה קרה אך ורק בעקבות הקורס" width="900" height="589" loading="lazy"><figcaption>פתחה קרן השתלמות, פנסיה וגמל להשקעה. באותו יום.</figcaption></figure>
+    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
+      <figure class="wa"><img src="assets/wa-t-openacc.webp?v=u1" alt="הודעה: ברוך השם בזכותך אחרי הרבה שיעורי בית פתחתי קרן השתלמות, קרן פנסיה וקופת גמל להשקעה ממש היום. אין לתאר כמה שזה קרה אך ורק בעקבות הקורס" width="900" height="589" loading="lazy"><figcaption>פתחה קרן השתלמות, פנסיה וגמל להשקעה. באותו יום.</figcaption></figure>
     </div></div>
       </li>
       <li class="station finish">
@@ -786,7 +783,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <div class="frame" data-vid="1167389305"><img src="assets/v-racheli.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של רחלי"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div>
         <blockquote>"לא מאמינה שלא ידעתי את הדברים האלה לפני."<b>רחלי</b></blockquote>
       </div>
-      <figure class="wa"><img src="assets/wa-t-liat.webp" alt="הודעה: כל שיעור היה מדהים, מעניין, פותח את הראש. לפעמים מעצבן כי ביאס אותי שלא ידעתי את הדברים האלה לפני. כמה למדתי אפילו רק בשיעור אחד" width="900" height="1778" loading="lazy"><figcaption>"כמה למדתי, אפילו רק בשיעור אחד."</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-liat.webp?v=u1" alt="הודעה: כל שיעור היה מדהים, מעניין, פותח את הראש. לפעמים מעצבן כי ביאס אותי שלא ידעתי את הדברים האלה לפני. כמה למדתי אפילו רק בשיעור אחד" width="900" height="1778" loading="lazy"><figcaption>"כמה למדתי, אפילו רק בשיעור אחד."</figcaption></figure>
     </div></div>
 
     <div class="library">
@@ -828,8 +825,8 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <p class="note">החלוקה משתנה מאישה לאישה. זה בדיוק מה שבונים בליווי, על המספרים שלך.</p>
     </div>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items two">
-      <figure class="wa"><img src="assets/wa-t-180.webp" alt="הודעה: שינוי של 180 מעלות באיך אני תופסת כסף. כספית נוסך בי ממש ביטחון, כי בסוף זה כסף שלא בעוש ולא פתאום יעלם לי. מעין שליטה על הכסף שלי" width="900" height="852" loading="lazy"><figcaption>שינוי של 180 מעלות. ותחושת שליטה על הכסף.</figcaption></figure>
-      <figure class="wa"><img src="assets/wa-t-minus.webp" alt="הודעה: עוררת בי מודעות והתחלתי תהליך, סוף סוף יצאתי מהמינוס ואני בתזרים חיובי" width="900" height="450" loading="lazy"><figcaption>סוף סוף יצאה מהמינוס. ובתזרים חיובי.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-180.webp?v=u1" alt="הודעה: שינוי של 180 מעלות באיך אני תופסת כסף. כספית נוסך בי ממש ביטחון, כי בסוף זה כסף שלא בעוש ולא פתאום יעלם לי. מעין שליטה על הכסף שלי" width="900" height="852" loading="lazy"><figcaption>שינוי של 180 מעלות. ותחושת שליטה על הכסף.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-minus.webp?v=u1" alt="הודעה: עוררת בי מודעות והתחלתי תהליך, סוף סוף יצאתי מהמינוס ואני בתזרים חיובי" width="900" height="450" loading="lazy"><figcaption>סוף סוף יצאה מהמינוס. ובתזרים חיובי.</figcaption></figure>
     </div></div>
   </div>
 </section>
@@ -857,13 +854,17 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <div class="frame" data-vid="1115441958"><img src="assets/v-liat.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של ליאת"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div>
         <blockquote>"פתח אותי ואת בעלי לעולם ההשקעות ושינה לנו את החיים."<b>ליאת לנג</b></blockquote>
       </div>
+      <div class="vid">
+        <div class="frame" data-vid="1115442335"><img src="assets/v-hadar.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של הדר"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div>
+        <blockquote>"בעלי ואני מדברים על כסף ומחליטים החלטות יחד."<b>הדר גלזר</b></blockquote>
+      </div>
     </div>
 
     <h3 class="wall-title">ומה שהן כותבות לי בווטסאפ</h3>
     <div class="wall">
-      <figure class="wa"><img src="assets/wa-t-shira-hero.webp" alt="הודעה משירה: אמאלה עדי קנינו דירה להשקעה. איפה הייתי לפני שנה בלי שום הבנה, זו מתנה ענקית לעתיד שלנו" width="900" height="493" loading="lazy"><figcaption>קנו דירה להשקעה. "איפה הייתי לפני שנה."</figcaption></figure>
-      <figure class="wa"><img src="assets/wa-t-dira.webp" alt="הודעה: חתמנו על דירה להשקעה. המהלך הזה באמת יכול לשנות לנו את החיים. עסקה שווה שלא היינו מחפשים בכלל בלי הידע" width="900" height="1191" loading="lazy"><figcaption>חתמו על דירה להשקעה. עסקה שלא היו מחפשים בלי הידע.</figcaption></figure>
-      <figure class="wa"><img src="assets/wa-t-thailand.webp" alt="הודעה: תאילנד תמיד נראתה לנו חלום רחוק. בעקבות הקורס השקענו כסף שסתם ישב וסיימנו עם רכישת דירה" width="900" height="772" loading="lazy"><figcaption>השקיעו כסף שסתם ישב, סיימו רכישת דירה. ותאילנד.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-shira-hero.webp?v=u1" alt="הודעה משירה: אמאלה עדי קנינו דירה להשקעה. איפה הייתי לפני שנה בלי שום הבנה, זו מתנה ענקית לעתיד שלנו" width="900" height="493" loading="lazy"><figcaption>קנו דירה להשקעה. "איפה הייתי לפני שנה."</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-dira.webp?v=u1" alt="הודעה: חתמנו על דירה להשקעה. המהלך הזה באמת יכול לשנות לנו את החיים. עסקה שווה שלא היינו מחפשים בכלל בלי הידע" width="900" height="1191" loading="lazy"><figcaption>חתמו על דירה להשקעה. עסקה שלא היו מחפשים בלי הידע.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-thailand.webp?v=u1" alt="הודעה: תאילנד תמיד נראתה לנו חלום רחוק. בעקבות הקורס השקענו כסף שסתם ישב וסיימנו עם רכישת דירה" width="900" height="772" loading="lazy"><figcaption>השקיעו כסף שסתם ישב, סיימו רכישת דירה. ותאילנד.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -890,7 +891,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <img src="assets/ph-baby.webp" alt="עדי מרימה את התינוקת שלה על חוף" width="800" height="1423" loading="lazy">
     </div>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-tama2.webp" alt="הודעה: הקורס שלך והליווי אחריו היה לי סופר משמעותי ובהחלט משנה חיים. ובעקבותיו הלכתי ללמוד להיות מנחת נוער להתנהלות כלכלית נכונה" width="900" height="1587" loading="lazy"><figcaption>"הקורס והליווי היו משנה חיים." והלכה ללמד את זה הלאה.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-tama2.webp?v=u1" alt="הודעה: הקורס שלך והליווי אחריו היה לי סופר משמעותי ובהחלט משנה חיים. ובעקבותיו הלכתי ללמוד להיות מנחת נוער להתנהלות כלכלית נכונה" width="900" height="1587" loading="lazy"><figcaption>"הקורס והליווי היו משנה חיים." והלכה ללמד את זה הלאה.</figcaption></figure>
     </div></div>
   </div>
 </section>
@@ -915,7 +916,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <figcaption>קבוצת הליווי: שאלות, חיזוקים, ומענה שלי ושל הצוות.</figcaption>
       </figure></div>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-group.webp" alt="הודעה: המוח שלי מתפוצץ ואני מתה על זה. מרגיש באמת שיש קבוצת בנות איכותית וסביבה מקדמת" width="900" height="567" loading="lazy"><figcaption>קבוצת בנות איכותית וסביבה מקדמת.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-group.webp?v=u1" alt="הודעה: המוח שלי מתפוצץ ואני מתה על זה. מרגיש באמת שיש קבוצת בנות איכותית וסביבה מקדמת" width="900" height="567" loading="lazy"><figcaption>קבוצת בנות איכותית וסביבה מקדמת.</figcaption></figure>
     </div></div></div></div>
       <div class="inc-row"><span class="n">2</span><h3>אזור אישי שמלווה אותך</h3><small>עם כל הנתונים שלך, במקום אחד</small><p>את נכנסת ורואה בדיוק מה הצעד הבא. לא צריך לזכור כלום. לא צריך לחפש כלום.</p><div class="inc-vis"><span class="tag">הדמיה · נתונים לדוגמה</span><div class="phones">
       <figure>
@@ -939,19 +940,17 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
           <span class="meet-time">שבוע 3 · בזום · את מקבלת סיכום כתוב</span>
         </div>
         <figcaption>הפגישה שבה הבירוקרטיה נעשית, ואת מקבלת בהירות.</figcaption>
-      </figure>
-    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-hila.webp" alt="הודעה: הקורס בנוי בצורה גאונית. אני עוד מוצפת אבל כבר רואה איך זה פתח לי עולם שלם. יש לי סוכן פנסיוני אבל אני לא מרגישה שאני באמת מבינה מה יש לי" width="900" height="1587" loading="lazy"><figcaption>"בנוי בצורה גאונית. פתח לי עולם שלם."</figcaption></figure>
-    </div></div></div></div>
+      </figure></div></div>
       <div class="inc-row"><span class="n">4</span><h3>הרצאה של יועץ ההשקעות</h3><small>בתוך התוכנית</small><p>המושגים נהיים ברורים. מסלולים, מדדים, דמי ניהול, בשפה של אמא.</p><div class="inc-vis">
-    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-tik.webp" alt="הודעה: מאז ההרצאה קיבלתי אומץ ופתחנו תיק בחברת השקעות ומשקיעים את כל הכסף שהצטבר בחיסכון ובעו״ש" width="900" height="765" loading="lazy"><figcaption>אחרי ההרצאה: פתחו תיק, והכסף שישב בעו״ש התחיל לעבוד.</figcaption></figure>
+    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items two">
+      <figure class="wa"><img src="assets/wa-t-tik.webp?v=u1" alt="הודעה: מאז ההרצאה קיבלתי אומץ ופתחנו תיק בחברת השקעות ומשקיעים את כל הכסף שהצטבר בחיסכון ובעו״ש" width="900" height="765" loading="lazy"><figcaption>אחרי ההרצאה: פתחו תיק, והכסף שישב בעו״ש התחיל לעבוד.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-hila.webp?v=u1" alt="הודעה: היי עדי! קודם כל רוצה להגיד לך תודה על הקורס הזה. אני שמחה מאוד שנרשמתי! והוא ממש בנוי בצורה גאונית. אני עוד overwhelmed ולא ממש מצליחה לנסח משהו קצת יותר קונקרטי, אבל אני כבר רואה איך זה פתח לי עולם שלם." width="900" height="729" loading="lazy"><figcaption>"בנוי בצורה גאונית. פתח לי עולם שלם."</figcaption></figure>
     </div></div></div></div>
       <div class="inc-row"><span class="n">5</span><h3>בונוס: מפגש שאלות ותשובות</h3><small>עם יועץ ההשקעות</small><p>השאלות שלך, שנענות לפני שאת חותמת על משהו.</p></div>
       <div class="inc-row"><span class="n">6</span><h3>פתיחת תיק השקעות עצמאי, עם ליווי</h3><small>והטבה על הפתיחה, למי שרוצה</small><p>מי שרוצה פותחת תיק עצמאי, ולא נשארת עם זה לבד: מענה אישי מ-IBI על הצד הטכני של פתיחת התיק, ומענה של יועץ ההשקעות על איך מרכיבים אותו מבפנים, התמהיל עצמו.</p></div>
       <div class="inc-row"><span class="n">7</span><h3>בונוס: ספריית התכנים של אמא משקיעה</h3><small>שיעורי עומק עם אנשי מקצוע, לפי נושאים</small><p>שוק ההון, נדל״ן בארץ ובחו״ל, קריפטו, מוצרים פנסיוניים, תודעה, התנהלות פיננסית ועוד. נפתחת לך, ואת צופה בזמן שלך במה שמעניין אותך.</p><div class="inc-vis">
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-shave.webp" alt="הודעה: לא משנה כמה כסף שמתי על הקורס הזה, מבחינתי קיבלתי מתנה. כל שיעור מרחיב את הידע והתודעה" width="900" height="917" loading="lazy"><figcaption>"לא משנה כמה שילמתי. קיבלתי מתנה."</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-shave.webp?v=u1" alt="הודעה: לא משנה כמה כסף שמתי על הקורס הזה, מבחינתי קיבלתי מתנה. כל שיעור מרחיב את הידע והתודעה" width="900" height="917" loading="lazy"><figcaption>"לא משנה כמה שילמתי. קיבלתי מתנה."</figcaption></figure>
     </div></div></div></div>
     </div>
     <p class="inc-foot">את מקבלת את ההחלטות. הצוות עוזר לך לבצע אותן. ואף שלב לא לבד.</p>
@@ -999,7 +998,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <p class="micro" style="margin-top:20px"><strong>אחריות מלאה:</strong> עברת את הליווי, הגעת למפגשים, ולא יצאת עם מפת דרכים ברורה? החזר מלא, בלי שאלות.<br>תשלום מאובטח בקארדקום.</p>
     </div>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-haim.webp" alt="הודעה: באמת השתנו לנו החיים. תפיסה שהשתנתה 180 מעלות, דיבור שונה לחלוטין. ומה שכיף שזה גרם גם לבעלי להיות איתי בזה" width="900" height="1124" loading="lazy"><figcaption>"באמת השתנו לנו החיים." וגם בעלה איתה בזה.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-haim.webp?v=u1" alt="הודעה: באמת השתנו לנו החיים. תפיסה שהשתנתה 180 מעלות, דיבור שונה לחלוטין. ומה שכיף שזה גרם גם לבעלי להיות איתי בזה" width="900" height="1124" loading="lazy"><figcaption>"באמת השתנו לנו החיים." וגם בעלה איתה בזה.</figcaption></figure>
     </div></div>
   </div>
 </section>
@@ -1056,7 +1055,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       </div>
     </div>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-wa1.webp" alt="הודעה: תודה מעומק הלב על התכנית שלך שהעירה אותי והתחילה לגלגל אותי לאן שאני נמצאת היום. איפה הייתי לפני שנה והיום זה לא להאמין. במיינדסט, בפעולות, וגם בתזרים" width="900" height="1363" loading="lazy"><figcaption>"איפה הייתי לפני שנה והיום. במיינדסט, בפעולות, ובתזרים."</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-wa1.webp?v=u1" alt="הודעה: תודה מעומק הלב על התכנית שלך שהעירה אותי והתחילה לגלגל אותי לאן שאני נמצאת היום. איפה הייתי לפני שנה והיום זה לא להאמין. במיינדסט, בפעולות, וגם בתזרים" width="900" height="1363" loading="lazy"><figcaption>"איפה הייתי לפני שנה והיום. במיינדסט, בפעולות, ובתזרים."</figcaption></figure>
     </div></div>
   </div>
 </section>
@@ -1110,7 +1109,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <p class="micro">3 × 999 ₪ · או 2,800 ₪ בתשלום אחד · יוצאות לדרך 5.10</p>
     <a class="wa-link" data-cta="whatsapp" href="https://wa.me/972509563781?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%93%D7%99%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%A9%D7%90%D7%9C%D7%94%20%D7%A2%D7%9C%20%D7%94%D7%9C%D7%99%D7%95%D7%95%D7%99" target="_blank" rel="noopener">יש לך שאלה לפני שאת מצטרפת? כתבי לי בווטסאפ &raquo;</a>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-ribit.webp" alt="הודעה: הילד ראה פרסומת על ריבית ושאל מה זו ריבית, ועשיתי לו שיעור בהשקעות. מרגש אותי שאני יכולה להעביר לילדים שלי התנהלות נכונה עם הכסף" width="900" height="714" loading="lazy"><figcaption>הילד שאל מה זו ריבית. וקיבל שיעור מאמא.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-ribit.webp?v=u1" alt="הודעה: הילד ראה פרסומת על ריבית ושאל מה זו ריבית, ועשיתי לו שיעור בהשקעות. מרגש אותי שאני יכולה להעביר לילדים שלי התנהלות נכונה עם הכסף" width="900" height="714" loading="lazy"><figcaption>הילד שאל מה זו ריבית. וקיבל שיעור מאמא.</figcaption></figure>
     </div></div>
   </div>
 </section>
