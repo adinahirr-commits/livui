@@ -387,6 +387,18 @@ html.a11y-contrast .clock div{background:#000;border-color:#fff}
 .price-note svg{color:#1F7A4D;flex:0 0 18px}
 .join-form button[disabled]{opacity:.7;cursor:wait}
 .join-err{margin:0;text-align:center;color:#B23A48;font-weight:700;font-size:.95rem}
+.sit{border:0;margin:4px 0 0;padding:0;min-width:0;display:grid;gap:8px}
+.sit legend{font-weight:700;font-size:.95rem;padding:0;margin-bottom:2px}
+.sit legend small{font-weight:500;color:var(--ink-soft)}
+.sit .chip{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:14px;padding:10px 12px;background:var(--white);cursor:pointer;min-height:48px;font-weight:500;font-size:.98rem;line-height:1.4;position:relative;text-align:right}
+.sit .chip input{position:absolute;opacity:0;width:1px;height:1px}
+.sit .dot{flex:0 0 20px;width:20px;height:20px;border-radius:50%;border:2px solid var(--line);display:inline-grid;place-items:center}
+.sit .dot::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--ink);transform:scale(0);transition:transform .15s}
+.sit .chip:has(input:checked){border-color:var(--pink);background:var(--pink-soft)}
+.sit .chip:has(input:checked) .dot{border-color:var(--pink);background:var(--pink)}
+.sit .chip:has(input:checked) .dot::after{transform:scale(1)}
+.sit .chip:has(input:focus-visible){outline:3px solid var(--vista);outline-offset:3px}
+.fit-path{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line)}
 .pay-step{margin-top:26px;background:var(--white);border:1px solid var(--line);border-radius:24px;padding:24px 18px;box-shadow:var(--shadow)}
 .pay-hi{font-size:1.15rem;font-weight:700;margin-bottom:16px}
 .pay-step .alt{margin:12px 0 0;font-size:1rem}
@@ -930,6 +942,13 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <form class="join-form" id="joinForm" novalidate>
       <label><span>השם שלך</span><input type="text" id="j-name" name="name" autocomplete="name" maxlength="80" placeholder="שם מלא" required></label>
       <label><span>הטלפון שלך</span><input type="tel" id="j-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="050-0000000" required></label>
+      <fieldset class="sit">
+        <legend>מה הכי מדויק לגבייך היום? <small>לא חובה</small></legend>
+        <label class="chip"><input type="radio" name="situation" value="יש לי כסף שיושב ואני לא יודעת מה לעשות איתו"><span class="dot"></span><span>יש לי כסף שיושב ואני לא יודעת מה לעשות איתו</span></label>
+        <label class="chip"><input type="radio" name="situation" value="חוסכת לילדים ולא בטוחה שזה נכון"><span class="dot"></span><span>חוסכת לילדים ולא בטוחה שזה נכון</span></label>
+        <label class="chip"><input type="radio" name="situation" value="מרוויחים יפה ובסוף החודש לא נשאר"><span class="dot"></span><span>מרוויחים יפה ובסוף החודש לא נשאר</span></label>
+        <label class="chip"><input type="radio" name="situation" value="מתחילה מאפס"><span class="dot"></span><span>מתחילה מאפס</span></label>
+      </fieldset>
       <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button type="submit" class="btn" id="joinBtn" data-cta="join-form">ממשיכה לשריון המקום</button>
       <p class="price-note"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h1zm2 0h6V8a3 3 0 0 0-6 0v2z" fill="currentColor"/></svg><b>3 תשלומים של 999 ₪</b><span>· תשלום מאובטח</span></p>
@@ -943,6 +962,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <p class="alt">או <a class="textlink" data-cta="pay-one" data-pay="one" href="https://secure.cardcom.solutions/EA/EA5/nTAc3mCQhUqDou9une5fzg/PaymentSP">2,800 ₪ בתשלום אחד</a> · הנחה מיידית של 197 ₪</p>
       <p class="secure"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h1zm2 0h6V8a3 3 0 0 0-6 0v2z" fill="currentColor"/></svg>תשלום מאובטח בקארדקום · תקן PCI DSS · פרטי האשראי לא עוברים דרכנו</p>
       <p class="micro"><strong>אחריות מלאה:</strong> עברת את הליווי, הגעת למפגשים, ולא יצאת עם מפת דרכים ברורה? החזר מלא, בלי שאלות.</p>
+      <p class="micro fit-path">עוד לא בטוחה שזה הרגע שלך? <a class="textlink" data-cta="fit" href="fit.html">5 שאלות של דקה</a>, ואני חוזרת אלייך אישית בווטסאפ.</p>
     </div>
   </div>
 </section>
@@ -1170,8 +1190,9 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       if(!/^0\d{8,9}$/.test(phone)){ err.textContent='הטלפון לא נראה תקין. 10 ספרות, למשל 050-0000000.'; err.hidden=false; document.getElementById('j-phone').focus(); return; }
       if(form.querySelector('.hp').value){ showPay(name); return; }
       btn.disabled=true; var old=btn.textContent; btn.textContent='רגע, שומרת לך מקום...';
-      var payload=Object.assign({name:name, phone:phone, page:'livui'}, (window.miAttrib?window.miAttrib():{}), utm);
-      var finish=function(){ try{ sessionStorage.setItem('livui_lead', JSON.stringify({name:name,phone:phone,t:Date.now()})); }catch(e){}
+      var sitEl=form.querySelector('input[name="situation"]:checked'); var situation=sitEl?sitEl.value:'';
+      var payload=Object.assign({name:name, phone:phone, page:'livui', situation:situation}, (window.miAttrib?window.miAttrib():{}), utm);
+      var finish=function(){ try{ sessionStorage.setItem('livui_lead', JSON.stringify({name:name,phone:phone,situation:situation,t:Date.now()})); }catch(e){}
         try{ if(window.fbq) fbq('track','Lead',{content_name:'livui-mama-mashkia'}); }catch(e){}
         try{ if(window.gtag) gtag('event','generate_lead',Object.assign({cta:'join-form'},utm)); }catch(e){}
         btn.disabled=false; btn.textContent=old; showPay(name); };

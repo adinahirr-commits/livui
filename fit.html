@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>שאלון התאמה · הליווי של אמא משקיעה</title>
+<meta name="description" content="דקה אחת, חמש שאלות, ועדי חוזרת אלייך אישית בווטסאפ. בלי שיחת מכירה.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://livui.mominvest.co.il/fit.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="אמא משקיעה">
+<meta property="og:title" content="שאלון התאמה · הליווי של אמא משקיעה">
+<meta property="og:description" content="דקה אחת, חמש שאלות, ועדי חוזרת אלייך אישית בווטסאפ.">
+<meta property="og:url" content="https://livui.mominvest.co.il/fit.html">
+<meta property="og:image" content="https://livui.mominvest.co.il/assets/og.jpg">
+<meta name="theme-color" content="#FBFAF7">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel · אותו פיקסל כמו בשאר הדפים של אמא משקיעה -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+fbq('init','1820166155346211');fbq('track','PageView');
+</script>
+
+<!-- מדידה · אותו צינור כמו דף הליווי (guide_events, page=livui-fit) -->
+<script>
+(function(){
+  var TRACK = "https://academy.mominvest.co.il/guide-hit";
+  var q = new URLSearchParams(location.search), vid;
+  var KEYS = ['ref','utm_source','utm_medium','utm_campaign','utm_content'];
+  try{
+    vid = localStorage.getItem('mi_vid');
+    if(!vid){ vid = Date.now().toString(36) + Math.random().toString(36).slice(2,10); localStorage.setItem('mi_vid', vid); }
+    KEYS.forEach(function(k){ if(q.get(k)) localStorage.setItem('mi_'+k, q.get(k)); });
+  }catch(e){ vid = 'nostore'; }
+  function attrib(){
+    var o = {vid: vid || ''};
+    KEYS.forEach(function(k){
+      var v = q.get(k) || (function(){ try{ return localStorage.getItem('mi_'+k); }catch(e){ return ''; } })();
+      if(v) o[k] = v;
+    });
+    if(!o.ref && document.referrer && document.referrer.indexOf(location.host) < 0) o.ref = document.referrer.slice(0,120);
+    return o;
+  }
+  window.miHit = function(page){
+    try{ if(sessionStorage.getItem('mi_hit_'+page)) return; sessionStorage.setItem('mi_hit_'+page,'1'); }catch(e){}
+    var p = new URLSearchParams(attrib()); p.set('page', page);
+    var b = p.toString();
+    try{
+      if(!navigator.sendBeacon || !navigator.sendBeacon(TRACK, new Blob([b], {type:'application/x-www-form-urlencoded'}))){
+        fetch(TRACK, {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:b, keepalive:true}).catch(function(){});
+      }
+    }catch(e){}
+  };
+  window.miAttrib = attrib;
+  window.miHit('livui-fit');
+})();
+</script>
+
+<style>
+:root{
+  --canvas:#FBFAF7; --white:#fff; --ink:#191A2E; --ink-soft:#6B6B7B;
+  --pink:#EF55A5; --pink-soft:#FCE1EF; --lime:#CCD537; --vista:#8C9EFF; --sky:#BEE0F2; --line:#ECE7DF;
+  --shadow:0 10px 30px rgba(25,26,46,.08); --col:640px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:Heebo,"Segoe UI",Arial,sans-serif;font-size:1.1rem;line-height:1.7;text-align:right}
+.wrap{max-width:var(--col);margin:0 auto;padding:0 20px}
+.top{background:var(--ink);color:#fff;text-align:center;font-size:.95rem;font-weight:500;padding:9px 16px}
+.top a{color:#fff;text-decoration:none;font-weight:700}
+header{padding:40px 0 10px;text-align:center}
+.eyebrow{display:inline-block;font-size:.85rem;font-weight:700;letter-spacing:.16em;color:var(--pink);margin-bottom:12px}
+h1{font-size:clamp(1.6rem,5vw,2.2rem);line-height:1.25;font-weight:900;margin:0 0 12px;text-wrap:balance}
+.lead{font-size:1.1rem;color:var(--ink-soft);margin:0 auto;max-width:40ch}
+.card{background:var(--white);border:1px solid var(--line);border-radius:24px;padding:26px 20px;box-shadow:var(--shadow);margin:26px 0}
+fieldset{border:0;margin:0 0 26px;padding:0;min-width:0}
+legend{font-weight:800;font-size:1.1rem;margin-bottom:10px;padding:0;line-height:1.4}
+legend small{display:block;font-weight:500;font-size:.9rem;color:var(--ink-soft)}
+.chips{display:grid;gap:10px}
+.chip{display:flex;align-items:center;gap:12px;border:1.5px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--white);cursor:pointer;min-height:54px;font-weight:500;font-size:1.02rem;line-height:1.45}
+.chip input{position:absolute;opacity:0;width:1px;height:1px}
+.chip .dot{flex:0 0 22px;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:inline-grid;place-items:center;transition:all .15s}
+.chip.box .dot{border-radius:7px}
+.chip .dot::after{content:"";width:10px;height:10px;border-radius:50%;background:var(--ink);transform:scale(0);transition:transform .15s}
+.chip.box .dot::after{border-radius:2px}
+.chip:has(input:checked){border-color:var(--pink);background:var(--pink-soft)}
+.chip:has(input:checked) .dot{border-color:var(--pink);background:var(--pink)}
+.chip:has(input:checked) .dot::after{transform:scale(1);background:var(--ink)}
+.chip:has(input:focus-visible){outline:3px solid var(--vista);outline-offset:3px}
+textarea,input[type=text],input[type=tel]{font:inherit;font-size:1.05rem;padding:14px 16px;min-height:54px;border:1.5px solid var(--line);border-radius:16px;background:var(--white);color:var(--ink);width:100%;display:block}
+textarea{min-height:110px;resize:vertical;line-height:1.55}
+textarea:focus,input:focus{border-color:var(--pink);outline:none;box-shadow:0 0 0 3px var(--pink-soft)}
+.who{display:grid;gap:12px}
+.who label{display:grid;gap:6px;font-weight:700;font-size:.95rem}
+.who.filled{display:none}
+.who-note{font-size:.95rem;color:var(--ink-soft);margin:0 0 20px}
+.who-note button{font:inherit;background:none;border:0;color:var(--ink);text-decoration:underline;text-underline-offset:4px;font-weight:700;cursor:pointer;padding:6px 2px}
+.hp{position:absolute;top:0;left:0;width:1px;height:1px;opacity:0;overflow:hidden;clip:rect(0 0 0 0);pointer-events:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:14px 34px;border-radius:100px;background:var(--pink);color:var(--ink);font-weight:800;font-size:1.15rem;text-decoration:none;border:0;cursor:pointer;width:100%;transition:transform .15s,background .15s}
+.btn:hover{background:#e6479a;transform:translateY(-1px)}
+.btn[disabled]{opacity:.7;cursor:wait}
+.err{margin:12px 0 0;text-align:center;color:#B23A48;font-weight:700;font-size:.95rem}
+.micro{font-size:.92rem;color:var(--ink-soft);margin:14px auto 0;line-height:1.55;text-align:center}
+.micro a{color:var(--ink)}
+.done{text-align:center;padding:10px 0}
+.done .big{font-size:1.35rem;font-weight:800;margin:0 0 10px}
+.done .quote{background:var(--pink-soft);border-radius:16px;padding:14px 16px;font-weight:600;margin:14px 0}
+.done p{margin:10px 0}
+.textlink{color:var(--ink);text-decoration:underline;text-underline-offset:4px;display:inline-block;padding:10px 4px;min-height:44px;font-weight:700}
+:focus-visible{outline:3px solid var(--vista);outline-offset:3px}
+footer{padding:30px 0 40px;color:var(--ink-soft);font-size:.9rem;text-align:center;line-height:1.7}
+footer a{color:var(--ink)}
+footer .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+.hidden{display:none !important}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.chip .dot{transition:none}}
+</style>
+</head>
+<body>
+<div class="top"><a href="index.html">הליווי של אמא משקיעה · 28 יום לכסף שעובד</a></div>
+
+<main>
+<header class="wrap">
+  <span class="eyebrow">שאלון התאמה</span>
+  <h1>כאן נבדוק אם זה הרגע המדויק שלך</h1>
+  <p class="lead">דקה אחת. אין תשובות נכונות, יש התשובות שלך. אני קוראת בעצמי וחוזרת אלייך אישית בווטסאפ.</p>
+</header>
+
+<div class="wrap">
+  <form class="card" id="fitForm" novalidate>
+    <fieldset>
+      <legend>מה הכי מדויק לגבייך היום? <small>בחירה אחת</small></legend>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="q1" value="יש לי כסף שיושב בעו״ש, בפיקדון או בקרן כספית ואני לא יודעת מה לעשות איתו" required><span class="dot"></span><span>יש לי כסף שיושב בעו״ש, בפיקדון או בקרן כספית ואני לא יודעת מה לעשות איתו</span></label>
+        <label class="chip"><input type="radio" name="q1" value="חוסכת לילדים ולא בטוחה שזה נכון"><span class="dot"></span><span>חוסכת לילדים ולא בטוחה שזה נכון</span></label>
+        <label class="chip"><input type="radio" name="q1" value="מרוויחים יפה ובסוף החודש לא נשאר"><span class="dot"></span><span>מרוויחים יפה ובסוף החודש לא נשאר</span></label>
+        <label class="chip"><input type="radio" name="q1" value="מתחילה מאפס"><span class="dot"></span><span>מתחילה מאפס</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>כמה את יכולה להפנות בחודש להשקעה, בלי שזה ירגיש?</legend>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="q2" value="עד 300 ₪" required><span class="dot"></span><span>עד 300 ₪</span></label>
+        <label class="chip"><input type="radio" name="q2" value="300 עד 500 ₪"><span class="dot"></span><span>300 עד 500 ₪</span></label>
+        <label class="chip"><input type="radio" name="q2" value="500 עד 1,000 ₪"><span class="dot"></span><span>500 עד 1,000 ₪</span></label>
+        <label class="chip"><input type="radio" name="q2" value="יותר מ-1,000 ₪"><span class="dot"></span><span>יותר מזה</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>מה עצר אותך עד היום? <small>אפשר לסמן כמה</small></legend>
+      <div class="chips">
+        <label class="chip box"><input type="checkbox" name="q3" value="פחד לעשות טעות"><span class="dot"></span><span>פחד לעשות טעות</span></label>
+        <label class="chip box"><input type="checkbox" name="q3" value="זה מרגיש טכני ומסובך"><span class="dot"></span><span>זה מרגיש טכני ומסובך</span></label>
+        <label class="chip box"><input type="checkbox" name="q3" value="אין לי זמן"><span class="dot"></span><span>אין לי זמן</span></label>
+        <label class="chip box"><input type="checkbox" name="q3" value="לא ידעתי מאיפה מתחילים"><span class="dot"></span><span>לא ידעתי מאיפה מתחילים</span></label>
+        <label class="chip box"><input type="checkbox" name="q3" value="בן הזוג לא בעניין"><span class="dot"></span><span>בן הזוג לא בעניין</span></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend><label for="q4">מה הכי חשוב לך שיקרה תוך 28 יום?</label><small>במילים שלך, משפט אחד מספיק</small></legend>
+      <textarea id="q4" name="q4" maxlength="400" placeholder="למשל: שהכסף שיושב בעו״ש יתחיל לעבוד, בלי שאני צריכה להבין הכל לבד"></textarea>
+    </fieldset>
+
+    <fieldset>
+      <legend>המפגשים בימי שני ב-20:00 <small>5.10 · 12.10 · 19.10 · 26.10, הכל מוקלט</small></legend>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="q5" value="פנויה" required><span class="dot"></span><span>פנויה</span></label>
+        <label class="chip"><input type="radio" name="q5" value="רוב המפגשים, אשלים בהקלטה"><span class="dot"></span><span>רוב המפגשים, אשלים בהקלטה</span></label>
+        <label class="chip"><input type="radio" name="q5" value="לא פנויה בשני בערב"><span class="dot"></span><span>לא פנויה בשני בערב</span></label>
+      </div>
+    </fieldset>
+
+    <p class="who-note" id="whoNote" hidden>השאלון יגיע אליי בשם <b id="whoName"></b>. <button type="button" id="whoEdit">לא את? לתקן</button></p>
+    <fieldset class="who" id="who">
+      <legend>כדי שאדע מי ענתה</legend>
+      <label><span>השם שלך</span><input type="text" id="f-name" name="name" autocomplete="name" maxlength="80" placeholder="שם מלא"></label>
+      <label><span>הטלפון שלך (ווטסאפ)</span><input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="050-0000000"></label>
+    </fieldset>
+    <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <button type="submit" class="btn" id="fitBtn">שלחי לעדי, אני מחכה</button>
+    <p class="err" id="fitErr" role="alert" hidden></p>
+    <p class="micro">הפרטים נשמרים אצלי בלבד, כדי שאחזור אלייך אישית. <a href="privacy.html">מדיניות פרטיות</a></p>
+  </form>
+
+  <div class="card done" id="fitDone" hidden>
+    <p class="big">קיבלתי, <span id="doneName"></span> 💛</p>
+    <div class="quote" id="doneQuote" hidden>קראתי: ״<span id="doneEcho"></span>״</div>
+    <p>אני עוברת על התשובות בעצמי, ובהמשך היום שולחת לך בווטסאפ הודעה קולית אישית: מתאים, ומה כן.</p>
+    <p class="micro">רוצה לקרוא בינתיים שוב על הליווי? <a class="textlink" href="index.html">לדף הליווי</a></p>
+    <p class="micro">משהו דחוף? <a href="https://wa.me/972509563781?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%93%D7%99%2C%20%D7%9E%D7%99%D7%9C%D7%90%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A9%D7%90%D7%9C%D7%95%D7%9F" target="_blank" rel="noopener">כתבי לי בווטסאפ</a></p>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong style="color:var(--ink)">אמא משקיעה · עדי סומך</strong> · עוסק מורשה 204151658 · <a href="mailto:mominvest10x@gmail.com">mominvest10x@gmail.com</a></div>
+    <div class="links">
+      <a href="terms.html">תקנון ומדיניות ביטולים</a>
+      <a href="privacy.html">מדיניות פרטיות</a>
+      <a href="accessibility.html">הצהרת נגישות</a>
+    </div>
+    <p style="margin:0">© 2026 אמא משקיעה · עדי סומך. כל הזכויות שמורות.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var API='https://academy.mominvest.co.il/livui/api/fit';
+  var form=document.getElementById('fitForm'), done=document.getElementById('fitDone'), btn=document.getElementById('fitBtn'), err=document.getElementById('fitErr');
+  var who=document.getElementById('who'), whoNote=document.getElementById('whoNote'), whoName=document.getElementById('whoName');
+  var q=new URLSearchParams(location.search);
+  var source=(q.get('src')||'page').slice(0,30);
+
+  /* מי היא: מהטופס בדף הליווי (אותו דפדפן) או מהקישור. אם ידוע, השדות מוסתרים כמו אצל תום. */
+  var known=null;
+  try{ known=JSON.parse(sessionStorage.getItem('livui_lead')||'null'); }catch(e){}
+  if(q.get('n')||q.get('p')) known={name:q.get('n')||'', phone:q.get('p')||''};
+  if(known && known.name && known.phone){
+    document.getElementById('f-name').value=known.name;
+    document.getElementById('f-phone').value=known.phone;
+    who.classList.add('filled'); whoNote.hidden=false; whoName.textContent=known.name;
+  }
+  document.getElementById('whoEdit').addEventListener('click', function(){ who.classList.remove('filled'); whoNote.hidden=true; document.getElementById('f-name').focus(); });
+
+  function showDone(first, echo){
+    form.hidden=true; done.hidden=false;
+    document.getElementById('doneName').textContent=first||'';
+    if(echo){ document.getElementById('doneEcho').textContent=echo; document.getElementById('doneQuote').hidden=false; }
+    try{ window.scrollTo({top:0,behavior:'auto'}); }catch(e){}
+  }
+  try{ var prev=JSON.parse(sessionStorage.getItem('livui_fit_done')||'null'); if(prev&&prev.first){ showDone(prev.first, prev.echo); } }catch(e){}
+
+  function val(name){ var el=form.querySelector('input[name="'+name+'"]:checked'); return el?el.value:''; }
+  function vals(name){ return [].map.call(form.querySelectorAll('input[name="'+name+'"]:checked'), function(e){return e.value;}); }
+  function fail(msg, focus){ err.textContent=msg; err.hidden=false; if(focus){ try{ focus.scrollIntoView({block:'center'}); focus.focus({preventScroll:true}); }catch(e){} } }
+
+  form.addEventListener('submit', function(ev){
+    ev.preventDefault(); err.hidden=true;
+    var q1=val('q1'), q2=val('q2'), q3=vals('q3'), q4=(document.getElementById('q4').value||'').trim(), q5=val('q5');
+    if(!q1) return fail('שאלה ראשונה: מה הכי מדויק לגבייך היום?', form.querySelector('input[name="q1"]'));
+    if(!q2) return fail('כמה את יכולה להפנות בחודש? בחרי טווח.', form.querySelector('input[name="q2"]'));
+    if(!q5) return fail('פנויה למפגשים בימי שני? סמני.', form.querySelector('input[name="q5"]'));
+    var name=(document.getElementById('f-name').value||'').trim();
+    var phoneRaw=(document.getElementById('f-phone').value||'').trim();
+    var phone=phoneRaw.replace(/[^\d+]/g,'');
+    if(phone.indexOf('+972')===0) phone='0'+phone.slice(4);
+    if(phone.indexOf('972')===0 && phone.length===12) phone='0'+phone.slice(3);
+    if(name.length<2){ who.classList.remove('filled'); whoNote.hidden=true; return fail('איך קוראים לך? שם מלא בבקשה.', document.getElementById('f-name')); }
+    if(!/^0\d{8,9}$/.test(phone)){ who.classList.remove('filled'); whoNote.hidden=true; return fail('הטלפון לא נראה תקין. 10 ספרות, למשל 050-0000000.', document.getElementById('f-phone')); }
+    var first=name.split(' ')[0], echo=q4?q4.slice(0,120):q1;
+    if(form.querySelector('.hp').value){ showDone(first, echo); return; }
+    btn.disabled=true; var old=btn.textContent; btn.textContent='רגע, שולחת לעדי...';
+    var payload=Object.assign({name:name, phone:phone, q1:q1, q2:q2, q3:q3, q4:q4, q5:q5, source:source}, (window.miAttrib?window.miAttrib():{}));
+    var finish=function(res){
+      try{ sessionStorage.setItem('livui_fit_done', JSON.stringify({first:(res&&res.first)||first, echo:(res&&res.echo)||echo, t:Date.now()})); }catch(e){}
+      try{ if(window.fbq) fbq('trackCustom','FitQuiz',{content_name:'livui-fit'}); }catch(e){}
+      try{ if(window.gtag) gtag('event','fit_quiz',{source:source}); }catch(e){}
+      btn.disabled=false; btn.textContent=old; showDone((res&&res.first)||first, (res&&res.echo)||echo);
+    };
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true})
+      .then(function(r){ return r.json().catch(function(){ return {ok:r.ok}; }); })
+      .then(function(res){
+        if(res && res.ok===false && res.error==='invalid'){ btn.disabled=false; btn.textContent=old; return fail('משהו בפרטים לא תקין. בדקי את השם והטלפון.', document.getElementById('f-phone')); }
+        finish(res);
+      })
+      .catch(function(){ btn.disabled=false; btn.textContent=old; fail('לא הצלחתי לשלוח. נסי שוב, או כתבי לי בווטסאפ: 050-9563781'); });
+  });
+})();
+</script>
+</body>
+</html>
