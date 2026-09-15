@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>שאלון התאמה · הליווי של אמא משקיעה</title>
-<meta name="description" content="דקה אחת, חמש שאלות, ועדי חוזרת אלייך אישית בווטסאפ. בלי שיחת מכירה.">
+<meta name="description" content="כמה דקות, שבע שאלות, ועדי חוזרת אלייך אישית בווטסאפ.">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://livui.mominvest.co.il/fit.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
 <meta property="og:site_name" content="אמא משקיעה">
 <meta property="og:title" content="שאלון התאמה · הליווי של אמא משקיעה">
-<meta property="og:description" content="דקה אחת, חמש שאלות, ועדי חוזרת אלייך אישית בווטסאפ.">
+<meta property="og:description" content="כמה דקות, שבע שאלות, ועדי חוזרת אלייך אישית בווטסאפ.">
 <meta property="og:url" content="https://livui.mominvest.co.il/fit.html">
 <meta property="og:image" content="https://livui.mominvest.co.il/assets/og.jpg">
 <meta name="theme-color" content="#FBFAF7">
@@ -127,75 +127,76 @@ footer .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin
 <header class="wrap">
   <span class="eyebrow">שאלון התאמה</span>
   <h1>כאן נבדוק אם זה הרגע המדויק שלך</h1>
-  <p class="lead">דקה אחת. אין תשובות נכונות, יש התשובות שלך. אני קוראת בעצמי וחוזרת אלייך אישית בווטסאפ.</p>
+  <p class="lead">כמה דקות, שבע שאלות. אני עוברת על התשובות בעצמי וחוזרת אלייך בווטסאפ.</p>
 </header>
 
 <div class="wrap">
   <form class="card" id="fitForm" novalidate>
     <fieldset>
+      <legend><label for="q1">מה הסיבה שבגללה את רוצה להירשם לליווי?</label></legend>
+      <textarea id="q1" name="q1" maxlength="600" required></textarea>
+    </fieldset>
+    <fieldset>
       <legend>מה הכי מדויק לגבייך היום? <small>בחירה אחת</small></legend>
       <div class="chips">
-        <label class="chip"><input type="radio" name="q1" value="יש לי כסף שיושב בעו״ש, בפיקדון או בקרן כספית ואני לא יודעת מה לעשות איתו" required><span class="dot"></span><span>יש לי כסף שיושב בעו״ש, בפיקדון או בקרן כספית ואני לא יודעת מה לעשות איתו</span></label>
-        <label class="chip"><input type="radio" name="q1" value="חוסכת לילדים ולא בטוחה שזה נכון"><span class="dot"></span><span>חוסכת לילדים ולא בטוחה שזה נכון</span></label>
-        <label class="chip"><input type="radio" name="q1" value="מרוויחים יפה ובסוף החודש לא נשאר"><span class="dot"></span><span>מרוויחים יפה ובסוף החודש לא נשאר</span></label>
-        <label class="chip"><input type="radio" name="q1" value="מתחילה מאפס"><span class="dot"></span><span>מתחילה מאפס</span></label>
+        <label class="chip"><input type="radio" name="q2" value="יש לי כבר השקעות קיימות אבל בלי מנגנון מסודר" required><span class="dot"></span><span>יש לי כבר השקעות קיימות אבל בלי מנגנון מסודר</span></label>
+        <label class="chip"><input type="radio" name="q2" value="יש לי כסף שיושב בעו״ש / פיקדון / קרן כספית ואני לא יודעת מה לעשות איתו"><span class="dot"></span><span>יש לי כסף שיושב בעו״ש / פיקדון / קרן כספית ואני לא יודעת מה לעשות איתו</span></label>
+        <label class="chip"><input type="radio" name="q2" value="חוסכת לילדים ולא בטוחה שזה נכון"><span class="dot"></span><span>חוסכת לילדים ולא בטוחה שזה נכון</span></label>
+        <label class="chip"><input type="radio" name="q2" value="מרוויחים יפה ובסוף החודש לא נשאר"><span class="dot"></span><span>מרוויחים יפה ובסוף החודש לא נשאר</span></label>
+        <label class="chip"><input type="radio" name="q2" value="מתחילה מאפס"><span class="dot"></span><span>מתחילה מאפס</span></label>
       </div>
     </fieldset>
-
     <fieldset>
-      <legend>כמה את יכולה להפנות בחודש להשקעה, בלי שזה ירגיש?</legend>
+      <legend>כמה לדעתך את יכולה להפנות בחודש להשקעה?</legend>
       <div class="chips">
-        <label class="chip"><input type="radio" name="q2" value="עד 300 ₪" required><span class="dot"></span><span>עד 300 ₪</span></label>
-        <label class="chip"><input type="radio" name="q2" value="300 עד 500 ₪"><span class="dot"></span><span>300 עד 500 ₪</span></label>
-        <label class="chip"><input type="radio" name="q2" value="500 עד 1,000 ₪"><span class="dot"></span><span>500 עד 1,000 ₪</span></label>
-        <label class="chip"><input type="radio" name="q2" value="יותר מ-1,000 ₪"><span class="dot"></span><span>יותר מזה</span></label>
+        <label class="chip"><input type="radio" name="q3" value="עד 300 ₪" required><span class="dot"></span><span>עד 300 ₪</span></label>
+        <label class="chip"><input type="radio" name="q3" value="300 עד 500 ₪"><span class="dot"></span><span>300 עד 500 ₪</span></label>
+        <label class="chip"><input type="radio" name="q3" value="500 עד 1,000 ₪"><span class="dot"></span><span>500 עד 1,000 ₪</span></label>
+        <label class="chip"><input type="radio" name="q3" value="יותר מ-1,000 ₪"><span class="dot"></span><span>יותר מזה</span></label>
       </div>
     </fieldset>
-
     <fieldset>
-      <legend>מה עצר אותך עד היום? <small>אפשר לסמן כמה</small></legend>
+      <legend>מה עצר אותך עד היום מלעשות סדר בהכל ולהשקיע? <small>אפשר לסמן כמה תשובות</small></legend>
       <div class="chips">
-        <label class="chip box"><input type="checkbox" name="q3" value="פחד לעשות טעות"><span class="dot"></span><span>פחד לעשות טעות</span></label>
-        <label class="chip box"><input type="checkbox" name="q3" value="זה מרגיש טכני ומסובך"><span class="dot"></span><span>זה מרגיש טכני ומסובך</span></label>
-        <label class="chip box"><input type="checkbox" name="q3" value="אין לי זמן"><span class="dot"></span><span>אין לי זמן</span></label>
-        <label class="chip box"><input type="checkbox" name="q3" value="לא ידעתי מאיפה מתחילים"><span class="dot"></span><span>לא ידעתי מאיפה מתחילים</span></label>
-        <label class="chip box"><input type="checkbox" name="q3" value="בן הזוג לא בעניין"><span class="dot"></span><span>בן הזוג לא בעניין</span></label>
+        <label class="chip box"><input type="checkbox" name="q4" value="פחד לעשות טעות"><span class="dot"></span><span>פחד לעשות טעות</span></label>
+        <label class="chip box"><input type="checkbox" name="q4" value="זה מרגיש טכני ומסובך"><span class="dot"></span><span>זה מרגיש טכני ומסובך</span></label>
+        <label class="chip box"><input type="checkbox" name="q4" value="אין לי זמן"><span class="dot"></span><span>אין לי זמן</span></label>
+        <label class="chip box"><input type="checkbox" name="q4" value="לא ידעתי מאיפה מתחילים"><span class="dot"></span><span>לא ידעתי מאיפה מתחילים</span></label>
+        <label class="chip box"><input type="checkbox" name="q4" value="בן הזוג לא בעניין"><span class="dot"></span><span>בן הזוג לא בעניין</span></label>
       </div>
     </fieldset>
-
     <fieldset>
-      <legend><label for="q4">מה הכי חשוב לך שיקרה תוך 28 יום?</label><small>במילים שלך, משפט אחד מספיק</small></legend>
-      <textarea id="q4" name="q4" maxlength="400" placeholder="למשל: שהכסף שיושב בעו״ש יתחיל לעבוד, בלי שאני צריכה להבין הכל לבד"></textarea>
-    </fieldset>
-
-    <fieldset>
-      <legend>המפגשים בימי שני ב-20:00 <small>5.10 · 12.10 · 19.10 · 26.10, הכל מוקלט</small></legend>
+      <legend>המפגשים בימי שני ב-20:00 <span style="white-space:nowrap">(5.10, 12.10, 19.10, 26.10)</span>. פנויה?</legend>
       <div class="chips">
-        <label class="chip"><input type="radio" name="q5" value="פנויה" required><span class="dot"></span><span>פנויה</span></label>
-        <label class="chip"><input type="radio" name="q5" value="רוב המפגשים, אשלים בהקלטה"><span class="dot"></span><span>רוב המפגשים, אשלים בהקלטה</span></label>
-        <label class="chip"><input type="radio" name="q5" value="לא פנויה בשני בערב"><span class="dot"></span><span>לא פנויה בשני בערב</span></label>
+        <label class="chip"><input type="radio" name="q5" value="כן" required><span class="dot"></span><span>כן</span></label>
+        <label class="chip"><input type="radio" name="q5" value="רוב המפגשים"><span class="dot"></span><span>רוב המפגשים</span></label>
+        <label class="chip"><input type="radio" name="q5" value="לצערי לא, אשלים בהקלטה"><span class="dot"></span><span>לצערי לא, אשלים בהקלטה</span></label>
       </div>
     </fieldset>
-
+    <fieldset>
+      <legend><label for="q6">אם זו הייתה תכנית החלומות שלך, איך היא הייתה נראית ומה היה בה?</label></legend>
+      <textarea id="q6" name="q6" maxlength="800" required></textarea>
+    </fieldset>
+    <fieldset>
+      <legend><label for="q7">האם יש לך שאלה כלשהי שהיית רוצה לשאול אותי?</label><small>לא חובה</small></legend>
+      <textarea id="q7" name="q7" maxlength="600"></textarea>
+    </fieldset>
     <p class="who-note" id="whoNote" hidden>השאלון יגיע אליי בשם <b id="whoName"></b>. <button type="button" id="whoEdit">לא את? לתקן</button></p>
     <fieldset class="who" id="who">
       <legend>כדי שאדע מי ענתה</legend>
-      <label><span>השם שלך</span><input type="text" id="f-name" name="name" autocomplete="name" maxlength="80" placeholder="שם מלא"></label>
-      <label><span>הטלפון שלך (ווטסאפ)</span><input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="050-0000000"></label>
+      <label><span>שם פרטי</span><input type="text" id="f-name" name="name" autocomplete="given-name" maxlength="80"></label>
+      <label><span>טלפון</span><input type="tel" id="f-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="050-0000000"></label>
     </fieldset>
     <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-    <button type="submit" class="btn" id="fitBtn">שלחי לעדי, אני מחכה</button>
+    <button type="submit" class="btn" id="fitBtn">שלחי לעדי &raquo;</button>
     <p class="err" id="fitErr" role="alert" hidden></p>
     <p class="micro">הפרטים נשמרים אצלי בלבד, כדי שאחזור אלייך אישית. <a href="privacy.html">מדיניות פרטיות</a></p>
   </form>
 
   <div class="card done" id="fitDone" hidden>
-    <p class="big">קיבלתי, <span id="doneName"></span> 💛</p>
-    <div class="quote" id="doneQuote" hidden>קראתי: ״<span id="doneEcho"></span>״</div>
-    <p>אני עוברת על התשובות בעצמי, ובהמשך היום שולחת לך בווטסאפ הודעה קולית אישית: מתאים, ומה כן.</p>
-    <p class="micro">רוצה לקרוא בינתיים שוב על הליווי? <a class="textlink" href="index.html">לדף הליווי</a></p>
-    <p class="micro">משהו דחוף? <a href="https://wa.me/972509563781?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%93%D7%99%2C%20%D7%9E%D7%99%D7%9C%D7%90%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%A9%D7%90%D7%9C%D7%95%D7%9F" target="_blank" rel="noopener">כתבי לי בווטסאפ</a></p>
+    <p class="big">מושלם, קיבלתי 💛</p>
+    <p>אני עוברת על התשובות ושולחת לך הודעה בהמשך היום.</p>
   </div>
 </div>
 </main>
@@ -233,8 +234,6 @@ footer .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin
 
   function showDone(first, echo){
     form.hidden=true; done.hidden=false;
-    document.getElementById('doneName').textContent=first||'';
-    if(echo){ document.getElementById('doneEcho').textContent=echo; document.getElementById('doneQuote').hidden=false; }
     try{ window.scrollTo({top:0,behavior:'auto'}); }catch(e){}
   }
   try{ var prev=JSON.parse(sessionStorage.getItem('livui_fit_done')||'null'); if(prev&&prev.first){ showDone(prev.first, prev.echo); } }catch(e){}
@@ -245,21 +244,24 @@ footer .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin
 
   form.addEventListener('submit', function(ev){
     ev.preventDefault(); err.hidden=true;
-    var q1=val('q1'), q2=val('q2'), q3=vals('q3'), q4=(document.getElementById('q4').value||'').trim(), q5=val('q5');
-    if(!q1) return fail('שאלה ראשונה: מה הכי מדויק לגבייך היום?', form.querySelector('input[name="q1"]'));
-    if(!q2) return fail('כמה את יכולה להפנות בחודש? בחרי טווח.', form.querySelector('input[name="q2"]'));
+    var t=function(id){ return (document.getElementById(id).value||'').trim(); };
+    var q1=t('q1'), q2=val('q2'), q3=val('q3'), q4=vals('q4'), q5=val('q5'), q6=t('q6'), q7=t('q7');
+    if(q1.length<2) return fail('שאלה ראשונה: מה הסיבה שבגללה את רוצה להירשם?', document.getElementById('q1'));
+    if(!q2) return fail('מה הכי מדויק לגבייך היום? בחרי אחת.', form.querySelector('input[name="q2"]'));
+    if(!q3) return fail('כמה את יכולה להפנות בחודש? בחרי טווח.', form.querySelector('input[name="q3"]'));
     if(!q5) return fail('פנויה למפגשים בימי שני? סמני.', form.querySelector('input[name="q5"]'));
+    if(q6.length<2) return fail('תכנית החלומות שלך: כמה מילים מספיקות.', document.getElementById('q6'));
     var name=(document.getElementById('f-name').value||'').trim();
     var phoneRaw=(document.getElementById('f-phone').value||'').trim();
     var phone=phoneRaw.replace(/[^\d+]/g,'');
     if(phone.indexOf('+972')===0) phone='0'+phone.slice(4);
     if(phone.indexOf('972')===0 && phone.length===12) phone='0'+phone.slice(3);
-    if(name.length<2){ who.classList.remove('filled'); whoNote.hidden=true; return fail('איך קוראים לך? שם מלא בבקשה.', document.getElementById('f-name')); }
+    if(name.length<2){ who.classList.remove('filled'); whoNote.hidden=true; return fail('איך קוראים לך?', document.getElementById('f-name')); }
     if(!/^0\d{8,9}$/.test(phone)){ who.classList.remove('filled'); whoNote.hidden=true; return fail('הטלפון לא נראה תקין. 10 ספרות, למשל 050-0000000.', document.getElementById('f-phone')); }
-    var first=name.split(' ')[0], echo=q4?q4.slice(0,120):q1;
+    var first=name.split(' ')[0], echo=q1.slice(0,120);
     if(form.querySelector('.hp').value){ showDone(first, echo); return; }
     btn.disabled=true; var old=btn.textContent; btn.textContent='רגע, שולחת לעדי...';
-    var payload=Object.assign({name:name, phone:phone, q1:q1, q2:q2, q3:q3, q4:q4, q5:q5, source:source}, (window.miAttrib?window.miAttrib():{}));
+    var payload=Object.assign({name:name, phone:phone, q1:q1, q2:q2, q3:q3, q4:q4, q5:q5, q6:q6, q7:q7, source:source}, (window.miAttrib?window.miAttrib():{}));
     var finish=function(res){
       try{ sessionStorage.setItem('livui_fit_done', JSON.stringify({first:(res&&res.first)||first, echo:(res&&res.echo)||echo, t:Date.now()})); }catch(e){}
       try{ if(window.fbq) fbq('trackCustom','FitQuiz',{content_name:'livui-fit'}); }catch(e){}
