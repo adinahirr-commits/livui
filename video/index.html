@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>איך כל אמא יכולה להגיע לחצי מיליון שקל לכל ילד · אמא משקיעה</title>
+<meta name="description" content="3 וחצי דקות עם עדי סומך: איך הופכים כסף ששוכב בעו״ש וכמה מאות שקלים בחודש למשהו שעובד בשביל המשפחה. ואז כפתור אחד לבדיקת התאמה בווטסאפ.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://livui.mominvest.co.il/video/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="אמא משקיעה">
+<meta property="og:title" content="איך כל אמא יכולה להגיע לחצי מיליון שקל לכל ילד">
+<meta property="og:description" content="3 וחצי דקות עם עדי, ואז כפתור אחד לבדיקת התאמה לליווי אמא משקיעה.">
+<meta property="og:url" content="https://livui.mominvest.co.il/video/">
+<meta property="og:image" content="https://livui.mominvest.co.il/video/og.jpg">
+<meta name="theme-color" content="#FBFAF7">
+<link rel="icon" href="../assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<!-- Meta Pixel · אותו פיקסל כמו בשאר הדפים של אמא משקיעה -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1820166155346211');fbq('track','PageView');
+</script>
+<!-- מדידה · אותו צינור כמו דף הליווי (guide_events, page=livui-video / livui-video-play / livui-video-wa) -->
+<script>
+(function(){
+  var TRACK = "https://academy.mominvest.co.il/guide-hit";
+  var q = new URLSearchParams(location.search), vid;
+  var KEYS = ['ref','utm_source','utm_medium','utm_campaign','utm_content'];
+  try{
+    vid = localStorage.getItem('mi_vid');
+    if(!vid){ vid = Date.now().toString(36) + Math.random().toString(36).slice(2,10); localStorage.setItem('mi_vid', vid); }
+    KEYS.forEach(function(k){ if(q.get(k)) localStorage.setItem('mi_'+k, q.get(k)); });
+  }catch(e){ vid = 'nostore'; }
+  function attrib(){
+    var o = {vid: vid || ''};
+    KEYS.forEach(function(k){
+      var v = q.get(k) || (function(){ try{ return localStorage.getItem('mi_'+k); }catch(e){ return ''; } })();
+      if(v) o[k] = v;
+    });
+    if(!o.ref && document.referrer && document.referrer.indexOf(location.host) < 0) o.ref = document.referrer.slice(0,120);
+    return o;
+  }
+  window.miHit = function(page){
+    try{ if(sessionStorage.getItem('mi_hit_'+page)) return; sessionStorage.setItem('mi_hit_'+page,'1'); }catch(e){}
+    var p = new URLSearchParams(attrib()); p.set('page', page);
+    var b = p.toString();
+    try{
+      if(!navigator.sendBeacon || !navigator.sendBeacon(TRACK, new Blob([b], {type:'application/x-www-form-urlencoded'}))){
+        fetch(TRACK, {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:b, keepalive:true}).catch(function(){});
+      }
+    }catch(e){}
+  };
+  window.miHit('livui-video');
+})();
+</script>
+<style>
+:root{
+  --canvas:#FBFAF7; --white:#fff; --ink:#191A2E; --ink-soft:#6B6B7B;
+  --pink:#EF55A5; --pink-text:#C8317F; --pink-soft:#FCE1EF; --lime:#CCD537; --vista:#8C9EFF; --line:#ECE7DF;
+  --shadow:0 10px 30px rgba(25,26,46,.08); --col:760px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:Heebo,"Segoe UI",Arial,sans-serif;font-size:1.1rem;line-height:1.7;text-align:center;overflow-x:hidden}
+.wrap{max-width:var(--col);margin:0 auto;padding:0 20px}
+.top{background:var(--ink);color:#fff;font-size:.95rem;font-weight:500;padding:9px 16px}
+header{padding:34px 0 18px}
+.eyebrow{display:inline-block;font-size:.95rem;font-weight:700;color:var(--pink-text);margin-bottom:12px}
+h1{font-size:clamp(1.65rem,5.4vw,2.5rem);line-height:1.25;font-weight:900;margin:0 auto 12px;text-wrap:balance;max-width:20ch}
+.lead{font-size:1.1rem;color:var(--ink-soft);margin:0 auto;max-width:36ch}
+.player{position:relative;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 18px 48px rgba(25,26,46,.16);aspect-ratio:16/9;max-width:100%}
+.player video{display:block;width:100%;height:100%;object-fit:cover;background:#000}
+.player .play{position:absolute;inset:0;display:grid;place-items:center;background:rgba(25,26,46,.18);border:0;cursor:pointer;padding:0;transition:background .2s}
+.player .play:hover{background:rgba(25,26,46,.3)}
+.player .play span{width:92px;height:92px;border-radius:50%;background:var(--pink);display:grid;place-items:center;box-shadow:0 10px 30px rgba(0,0,0,.35);transition:transform .15s}
+.player .play:hover span{transform:scale(1.06)}
+.player .play svg{margin-inline-start:6px}
+.player.on .play{display:none}
+.cta{padding:26px 0 8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:62px;padding:15px 30px;border-radius:100px;background:var(--pink);color:var(--ink);font-weight:800;font-size:1.2rem;text-decoration:none;border:0;cursor:pointer;width:100%;max-width:460px;transition:transform .15s,background .15s}
+.btn:hover{background:#e6479a;transform:translateY(-1px)}
+.btn svg{flex:0 0 auto}
+.under{font-size:.98rem;color:var(--ink-soft);margin:14px auto 0;max-width:38ch;line-height:1.6}
+.under b{color:var(--ink)}
+:focus-visible{outline:3px solid var(--vista);outline-offset:3px}
+footer{padding:44px 0 40px;color:var(--ink-soft);font-size:.9rem;line-height:1.7}
+footer a{color:var(--ink)}
+footer .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:10px 0}
+footer .legal{font-size:.82rem;max-width:60ch;margin:12px auto 0}
+/* accessibility widget (כמו בדף הליווי) */
+.a11y-btn{position:fixed;left:14px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--white);color:var(--ink);cursor:pointer;box-shadow:var(--shadow);display:grid;place-items:center;padding:0}
+.a11y-panel{position:fixed;left:14px;bottom:calc(72px + env(safe-area-inset-bottom));z-index:61;width:250px;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow);text-align:right;font-size:.95rem}
+.a11y-title{font-weight:800;margin-bottom:6px}
+.a11y-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.a11y-row button{font:inherit;font-weight:700;cursor:pointer;border:1px solid var(--line);background:var(--canvas);color:var(--ink);border-radius:8px;padding:6px 12px;min-height:36px}
+.a11y-row button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.a11y-link{display:block;margin-top:8px;font-size:.9rem}
+html.a11y-bigtext{font-size:112.5%}
+html.a11y-contrast{--canvas:#fff;--white:#fff;--ink:#000;--ink-soft:#222;--pink:#b0125f;--pink-text:#b0125f;--pink-soft:#fff;--lime:#ffe600;--line:#000}
+html.a11y-contrast .btn{color:#fff}
+html.a11y-links a{text-decoration:underline!important;text-underline-offset:3px}
+html.a11y-noanim *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.player .play span{transition:none}}
+@media(max-width:480px){header{padding-top:26px}.player{border-radius:16px}.player .play span{width:76px;height:76px}}
+</style>
+</head>
+<body>
+<div class="top">הליווי של אמא משקיעה · יוצאות לדרך ביום שני 5.10</div>
+<main>
+<header class="wrap">
+  <span class="eyebrow">3 וחצי דקות שכדאי לך לראות עד הסוף</span>
+  <h1>איך כל אמא יכולה להגיע לחצי מיליון שקל לכל ילד</h1>
+  <p class="lead">בלי לגעת בכסף לדירה, בלי לשבת שעות מול גרפים ובלי לוותר על רמת החיים.</p>
+</header>
+<div class="wrap">
+  <div class="player" id="player">
+    <video id="vid" playsinline preload="metadata" poster="poster.jpg" controlslist="nodownload">
+      <source src="invite.mp4" type="video/mp4">
+    </video>
+    <button class="play" id="playBtn" type="button" aria-label="הפעלת הסרטון">
+      <span><svg viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#191A2E"/></svg></span>
+    </button>
+  </div>
+  <div class="cta">
+    <a class="btn" id="waBtn" data-cta="whatsapp" href="https://wa.me/message/ST4X7Q6QM5RSE1" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#191A2E" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 0 1 0 16.4c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.4c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5 0 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.4z"/></svg>
+      <span>לבדוק אם אני מתאימה &raquo;</span>
+    </a>
+    <p class="under">הכפתור פותח הודעה מוכנה בווטסאפ שלי. <b style="white-space:nowrap">30 מקומות בלבד</b>, ואני עוברת אחת אחת.</p>
+  </div>
+</div>
+</main>
+<footer>
+  <div class="wrap">
+    <div><strong style="color:var(--ink)">אמא משקיעה · עדי סומך</strong> · עוסק מורשה 204151658 · <a href="mailto:mominvest10x@gmail.com">mominvest10x@gmail.com</a></div>
+    <div class="links">
+      <a href="../terms.html">תקנון ומדיניות ביטולים</a>
+      <a href="../privacy.html">מדיניות פרטיות</a>
+      <a href="../accessibility.html">הצהרת נגישות</a>
+    </div>
+    <div class="legal">
+      <p style="margin:0 0 8px">הדף משתמש בקובצי מדידה. עדי סומך ואמא משקיעה אינן בעלות רישיון לייעוץ השקעות ואינן ממליצות על נייר ערך, קרן או מסלול ספציפי. הדוגמה בסרטון (500 ₪ בחודש, 8% בממוצע לשנה, 25 שנה) היא חישוב להמחשה ואינה הבטחת תשואה.</p>
+      <p style="margin:0">© 2026 אמא משקיעה · עדי סומך. כל הזכויות שמורות.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="a11y-btn" id="a11yBtn" type="button" aria-expanded="false" aria-controls="a11yPanel" aria-label="הגדרות נגישות">
+  <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><circle cx="12" cy="4.5" r="2.2" fill="currentColor"/><path d="M4.5 8.5c5 1.2 10 1.2 15 0l.5 1.9c-2 .5-3.9.8-5.5 1v3.1l2.6 6.4-2 .8-2.6-6.1h-1l-2.6 6.1-2-.8L9.5 14.5v-3.1c-1.6-.2-3.5-.5-5.5-1z" fill="currentColor"/></svg>
+</button>
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="הגדרות נגישות" hidden>
+  <div class="a11y-title">נגישות</div>
+  <div class="a11y-row"><span>טקסט גדול</span><button type="button" data-a11y="bigtext" aria-pressed="false">הפעלה</button></div>
+  <div class="a11y-row"><span>ניגודיות גבוהה</span><button type="button" data-a11y="contrast" aria-pressed="false">הפעלה</button></div>
+  <div class="a11y-row"><span>הדגשת קישורים</span><button type="button" data-a11y="links" aria-pressed="false">הפעלה</button></div>
+  <div class="a11y-row"><span>עצירת תנועה</span><button type="button" data-a11y="noanim" aria-pressed="false">הפעלה</button></div>
+  <div class="a11y-row"><span></span><button type="button" data-a11y="reset">איפוס</button></div>
+  <a class="a11y-link" href="../accessibility.html">הצהרת נגישות</a>
+</div>
+
+<script>
+(function(){
+  /* הנגן: לחיצה על הפוסטר מפעילה, ואז פקדי הדפדפן הרגילים */
+  var v=document.getElementById('vid'), p=document.getElementById('player'), b=document.getElementById('playBtn'), played=false;
+  function start(){ p.classList.add('on'); v.controls=true; v.play().catch(function(){}); }
+  b.addEventListener('click', start);
+  v.addEventListener('play', function(){
+    p.classList.add('on'); v.controls=true;
+    if(played) return; played=true;
+    if(window.miHit) miHit('livui-video-play');
+    try{ if(window.fbq) fbq('trackCustom','VideoPlay',{content_name:'livui-video'}); }catch(e){}
+  });
+  var marks={50:false,90:false};
+  v.addEventListener('timeupdate', function(){
+    if(!v.duration) return; var pct=v.currentTime/v.duration*100;
+    [50,90].forEach(function(m){ if(!marks[m] && pct>=m){ marks[m]=true; if(window.miHit) miHit('livui-video-'+m); } });
+  });
+  /* הכפתור לווטסאפ: מדידה, והלינק עצמו נפתח כרגיל */
+  document.getElementById('waBtn').addEventListener('click', function(){
+    if(window.miHit) miHit('livui-video-wa');
+    try{ if(window.fbq) fbq('trackCustom','WhatsAppClick',{content_name:'livui-video'}); }catch(e){}
+  });
+  /* נגישות (זהה לדף הליווי, אותו מפתח localStorage) */
+  var KEY='mm_a11y', root=document.documentElement, btn=document.getElementById('a11yBtn'), panel=document.getElementById('a11yPanel');
+  var state={}; try{ state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}; }catch(e){}
+  function apply(){
+    ['bigtext','contrast','links','noanim'].forEach(function(k){
+      root.classList.toggle('a11y-'+k, !!state[k]);
+      var el=panel.querySelector('[data-a11y="'+k+'"]');
+      if(el){ el.setAttribute('aria-pressed', state[k]?'true':'false'); el.textContent = state[k] ? 'כיבוי' : 'הפעלה'; }
+    });
+    try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){}
+  }
+  btn.addEventListener('click', function(){ var open=panel.hidden; panel.hidden=!open; btn.setAttribute('aria-expanded', open?'true':'false'); });
+  panel.addEventListener('click', function(e){ var el=e.target.closest('[data-a11y]'); if(!el) return; var k=el.getAttribute('data-a11y'); if(k==='reset'){ state={}; } else { state[k]=!state[k]; } apply(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !panel.hidden){ panel.hidden=true; btn.setAttribute('aria-expanded','false'); btn.focus(); } });
+  apply();
+})();
+</script>
+</body>
+</html>
