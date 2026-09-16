@@ -405,6 +405,18 @@ html.a11y-contrast .clock div{background:#000;border-color:#fff}
 .pay-step .alt{margin:12px 0 0;font-size:1rem}
 .secure{display:flex;align-items:center;justify-content:center;gap:8px;margin:14px 0 0;font-size:.9rem;color:var(--ink-soft);flex-wrap:wrap}
 .secure svg{color:#1F7A4D;flex:0 0 18px}
+/* ===== ההבטחה (16.9): תג בהירו + סקשן אחרי הטופס ===== */
+.hero-guar{display:inline-block;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:10px 18px;margin:0 auto;font-size:1rem;font-weight:600;line-height:1.4;color:var(--ink);text-decoration:none;box-shadow:var(--shadow);max-width:36ch}
+.hero-guar svg{color:#1F7A4D;vertical-align:-4px;margin-left:8px}
+.hero-guar b{color:var(--pink-text);font-weight:800;white-space:nowrap}
+.hero-guar:hover{border-color:var(--pink)}
+.guarantee{scroll-margin-top:12px}
+.guar-card{background:var(--white);border:1px solid var(--line);border-radius:28px;padding:clamp(26px,5vw,44px) clamp(18px,4vw,36px);box-shadow:var(--shadow)}
+.guar-icon{width:76px;height:76px;border-radius:50%;background:var(--pink-soft);color:var(--pink-text);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.guar-card h2{font-size:clamp(1.5rem,4.8vw,2.1rem);line-height:1.3;max-width:22ch;margin-inline:auto}
+.guar-card h2 .accent{display:block;color:var(--pink);margin-top:8px}
+.guar-body{font-size:1.08rem;line-height:1.6;margin:18px auto 0;max-width:36ch}
+.guar-line{font-weight:800;font-size:1.06rem;margin:16px auto 0;max-width:32ch}
 
 /* fit */
 .fit-grid{display:grid;gap:16px;margin-top:28px}
@@ -708,6 +720,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     </figure>
     <p class="brandline hero-brand">״אמא משקיעה״</p>
     <p class="sub">תכנית של 28 ימים שעוזרת לנשים להתחיל להשקיע בשוק ההון בדרך הכי בטוחה שיש (כיום ב-2026) בלי לסכן חסכונות ובצורה אוטומטית שדורשת כמעט 0 התעסקות</p>
+    <a class="hero-guar" href="#guarantee"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.4-7.5 9.8-4.4-1.4-7.5-5.2-7.5-9.8V5.5l7.5-3z" fill="currentColor" opacity=".18"/><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.4-7.5 9.8-4.4-1.4-7.5-5.2-7.5-9.8V5.5l7.5-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 12.2l2.3 2.3 4.6-4.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>הצטרפת ולא קיבלת תכנית ברורה של מה הצעד הבא שלך? <b>קבלי החזר מלא</b></span></a>
   </div>
 </section>
 
@@ -1135,6 +1148,20 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   </div>
 </section>
 
+<!-- ========== ההבטחה · החזר מלא ========== -->
+<section class="guarantee band-cream" id="guarantee">
+  <div class="wrap">
+    <div class="guar-card">
+      <div class="guar-icon"><svg viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.4-7.5 9.8-4.4-1.4-7.5-5.2-7.5-9.8V5.5l7.5-3z" fill="currentColor" opacity=".18"/><path d="M12 2.5l7.5 3v6.2c0 4.6-3.1 8.4-7.5 9.8-4.4-1.4-7.5-5.2-7.5-9.8V5.5l7.5-3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.6 12.2l2.3 2.3 4.6-4.8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <span class="eyebrow">ההבטחה שלי</span>
+      <h2>הצטרפת ולא קיבלת תכנית ברורה של מה הצעד הבא שלך?<span class="accent">קבלי החזר מלא.</span></h2>
+      <p class="guar-body">עברת את הליווי, הגעת למפגשים ולפגישה האישית, ובסוף 28 הימים עדיין לא ברור לך מה הצעד הבא? כותבת לי, ומקבלת את כל הכסף בחזרה. בלי דמי ביטול, בלי שאלות.</p>
+      <p class="guar-line">כל הסיכון עליי. את מגיעה, עושה את הצעדים, ויוצאת עם מפת דרכים.</p>
+      <p class="micro">הבקשה בכתב עד 7 ימים מסיום המחזור · <a class="textlink" href="terms.html">הפרטים המלאים בתקנון</a></p>
+    </div>
+  </div>
+</section>
+
 <!-- ========== למי זה מתאים ========== -->
 <section class="fitsec band-gray">
   <div class="wrap">
@@ -1335,9 +1362,19 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     a.addEventListener('click', function(ev){
       var j=document.getElementById('join'); if(!j) return;
       ev.preventDefault();
-      j.scrollIntoView({behavior:'auto',block:'start'});
+      j.scrollIntoView({behavior:'instant',block:'start'});
       try{ history.replaceState(null,'','#join'); }catch(e){}
       var first=document.getElementById('j-name'); if(first && !document.getElementById('joinForm').hidden){ setTimeout(function(){ first.focus({preventScroll:true}); },50); }
+    });
+  });
+
+  /* 6a2) תג ההבטחה בהירו: קפיצה מיידית לסקשן ההבטחה */
+  document.querySelectorAll('a.hero-guar').forEach(function(a){
+    a.addEventListener('click', function(ev){
+      var g=document.getElementById('guarantee'); if(!g) return;
+      ev.preventDefault();
+      g.scrollIntoView({behavior:'instant',block:'start'});
+      try{ history.replaceState(null,'','#guarantee'); }catch(e){}
     });
   });
 
