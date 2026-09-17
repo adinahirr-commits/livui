@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /fit.html
+Disallow: /video/
+
+Sitemap: https://livui.mominvest.co.il/sitemap.xml
