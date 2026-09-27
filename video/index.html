@@ -24,7 +24,7 @@
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init','1820166155346211');fbq('track','PageView');
 </script>
-<!-- מדידה · אותו צינור כמו דף הליווי (guide_events, page=livui-video / livui-video-play / livui-video-wa) -->
+<!-- מדידה · אותו צינור כמו דף הליווי (guide_events, page=livui-video / livui-video-play / livui-video-50 / livui-video-90 / livui-video-cta-shown / livui-video-cta) -->
 <script>
 (function(){
   var TRACK = "https://academy.mominvest.co.il/guide-hit";
@@ -89,6 +89,10 @@ h1 .hl{color:var(--pink-text)}
 .btn span{text-wrap:balance;line-height:1.3}
 .under{font-size:.98rem;color:var(--ink-soft);margin:14px auto 0;max-width:38ch;line-height:1.6}
 .under b{color:var(--ink)}
+.cta[hidden]{display:none}
+.timer{padding:26px 0 8px;color:var(--ink-soft);font-size:1rem;line-height:1.6}
+.timer b{display:block;font-variant-numeric:tabular-nums;font-size:2rem;font-weight:800;color:var(--ink);letter-spacing:.04em;line-height:1.2;margin-top:4px}
+.timer[hidden]{display:none}
 :focus-visible{outline:3px solid var(--vista);outline-offset:3px}
 footer{padding:44px 0 40px;color:var(--ink-soft);font-size:.9rem;line-height:1.7}
 footer a{color:var(--ink)}
@@ -128,12 +132,12 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <span><svg viewBox="0 0 24 24" width="38" height="38" aria-hidden="true"><path d="M8 5v14l11-7z" fill="#191A2E"/></svg></span>
     </button>
   </div>
-  <div class="cta">
-    <a class="btn" id="waBtn" data-cta="whatsapp" href="https://wa.me/972509563781?text=%D7%94%D7%99%D7%99%20%D7%A2%D7%93%D7%99%2C%20%D7%A1%D7%99%D7%99%D7%9E%D7%AA%D7%99%20%D7%9C%D7%A6%D7%A4%D7%95%D7%AA%20%D7%91%D7%A1%D7%A8%D7%98%D7%95%D7%9F%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%91%D7%93%D7%95%D7%A7%20%D7%94%D7%AA%D7%90%D7%9E%D7%94%20%D7%9C%D7%AA%D7%9B%D7%A0%D7%99%D7%AA%20%D7%90%D7%9E%D7%90%20%D7%9E%D7%A9%D7%A7%D7%99%D7%A2%D7%94" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="#191A2E" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 0 1 0 16.4c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3 4.4c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5 0 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3l-2-1c-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5.3-.5c.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.4z"/></svg>
-      <span>לבדוק התאמה לליווי של אמא משקיעה &raquo;</span>
+  <div class="timer" id="timer" aria-live="polite">הכפתור להמשך ייפתח בעוד<b id="timerNum">2:00</b></div>
+  <div class="cta" id="cta" hidden>
+    <a class="btn" id="ctaBtn" data-cta="details" href="../?utm_source=livui-video&amp;utm_medium=page&amp;utm_campaign=livui" rel="noopener">
+      <span>פרטים מלאים על התוכנית &raquo;</span>
     </a>
-    <p class="under">הכפתור פותח הודעה מוכנה בווטסאפ שלי. <b style="white-space:nowrap">30 מקומות בלבד</b>, ואני עוברת אחת אחת.</p>
+    <p class="under">הסילבוס, התאריכים, מה כלול והמחיר. הכל כתוב בעמוד אחד.</p>
   </div>
 </div>
 </main>
@@ -182,10 +186,27 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     if(!v.duration) return; var pct=v.currentTime/v.duration*100;
     [50,90].forEach(function(m){ if(!marks[m] && pct>=m){ marks[m]=true; if(window.miHit) miHit('livui-video-'+m); } });
   });
-  /* הכפתור לווטסאפ: מדידה, והלינק עצמו נפתח כרגיל */
-  document.getElementById('waBtn').addEventListener('click', function(){
-    if(window.miHit) miHit('livui-video-wa');
-    try{ if(window.fbq) fbq('trackCustom','WhatsAppClick',{content_name:'livui-video'}); }catch(e){}
+  /* בלי דילוג קדימה (ההחלטה עם מור 23/09): אפשר לשנות מהירות, אי אפשר לקפוץ */
+  var reached=0;
+  v.addEventListener('timeupdate', function(){ if(v.currentTime>reached && v.currentTime-reached<1.5) reached=v.currentTime; });
+  v.addEventListener('seeking', function(){ if(v.currentTime>reached+0.5) v.currentTime=reached; });
+  /* הטיימר: 2 דקות מרגע הכניסה (הסרטון 3.5 דק' במהירות כפולה) ואז נפתח כפתור "פרטים מלאים על התוכנית".
+     נפתח גם מוקדם יותר אם הסרטון הגיע ל-90%. הכפתור לא מוצג מראש כדי שלא ידלגו על הסרטון. */
+  var SECS=120, timer=document.getElementById('timer'), num=document.getElementById('timerNum'), cta=document.getElementById('cta'), t0=Date.now(), shown=false, iv;
+  function fmt(n){ n=Math.max(0,Math.ceil(n)); return Math.floor(n/60)+':'+('0'+(n%60)).slice(-2); }
+  function reveal(){
+    if(shown) return; shown=true; clearInterval(iv);
+    timer.hidden=true; cta.hidden=false;
+    if(window.miHit) miHit('livui-video-cta-shown');
+  }
+  function tick(){ var left=SECS-(Date.now()-t0)/1000; num.textContent=fmt(left); if(left<=0) reveal(); }
+  iv=setInterval(tick,250); tick();
+  v.addEventListener('timeupdate', function(){ if(v.duration && v.currentTime/v.duration>=0.9) reveal(); });
+  v.addEventListener('ended', reveal);
+  /* הכפתור לעמוד המלא: מדידה, והלינק עצמו נפתח כרגיל */
+  document.getElementById('ctaBtn').addEventListener('click', function(){
+    if(window.miHit) miHit('livui-video-cta');
+    try{ if(window.fbq) fbq('trackCustom','DetailsClick',{content_name:'livui-video'}); }catch(e){}
   });
   /* נגישות (זהה לדף הליווי, אותו מפתח localStorage) */
   var KEY='mm_a11y', root=document.documentElement, btn=document.getElementById('a11yBtn'), panel=document.getElementById('a11yPanel');
