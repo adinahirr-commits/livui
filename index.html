@@ -87,7 +87,7 @@ fbq('init','1820166155346211');fbq('track','PageView');
 
 <style>
 :root{
-  --canvas:#FBFAF7; --white:#fff; --ink:#191A2E; --ink-soft:#6B6B7B;
+  --canvas:#FBFAF7; --white:#fff; --ink:#191A2E; --ink-soft:#54556A;
   --band-cream:#F8F1E6; --band-gray:#EEF0F6; --band-white:#FFFFFF; --soft:var(--canvas);
   --pink:#EF55A5; --pink-text:#C8317F; --pink-soft:#FCE1EF; --lime:#CCD537; --vista:#8C9EFF; --sky:#BEE0F2; --line:#ECE7DF;
   --r-card:22px; --shadow:0 18px 40px -28px rgba(25,26,46,.18);
@@ -114,8 +114,9 @@ section{padding:clamp(52px,8vw,88px) 0}
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:14px 34px;border-radius:100px;background:var(--pink);color:var(--ink);font-weight:800;font-size:1.15rem;text-decoration:none;border:0;cursor:pointer;transition:transform .15s,background .15s;text-align:center;width:100%;max-width:420px}
 .btn:hover{background:#e6479a;transform:translateY(-1px)}
-.btn.go{background:#1B8047;color:#fff;padding-inline:16px;font-size:1.08rem;box-shadow:0 8px 22px rgba(27,128,71,.28)}
-.btn.go:hover{background:#166B3B}
+.btn.go{background:var(--lime);color:var(--ink);padding-inline:16px;font-size:1.08rem;box-shadow:0 8px 22px -6px rgba(110,122,26,.45)}
+.btn.go:hover{background:#BDC62E}
+html.a11y-contrast .btn.go{background:#1F5E3A;color:#fff}
 .cta-row{text-align:center;margin:30px auto 0}
 .hero .cta-row{margin:0 auto 18px}
 .seats{margin:10px 0 0;font-weight:800;font-size:1.05rem;color:var(--pink-text);letter-spacing:.02em}
@@ -571,7 +572,10 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 .band-cream{background:var(--band-cream)}
 .band-gray{background:var(--band-gray)}
 .band-white{background:var(--band-white)}
-.band-cream,.band-gray{--soft:var(--white)}
+.band-sky{background:#EAF5FB}
+.band-pink{background:#FEF0F6}
+.band-lime{background:#F6F8DC}
+.band-cream,.band-gray,.band-sky,.band-pink,.band-lime{--soft:var(--white)}
 .band-white{--soft:var(--canvas)}
 .circles{display:flex;justify-content:center;gap:clamp(10px,3vw,22px);margin:30px auto 0;flex-wrap:wrap}
 .circles img{width:clamp(96px,26vw,168px);height:clamp(96px,26vw,168px);border-radius:50%;object-fit:cover;object-position:50% 30%;border:6px solid var(--white);box-shadow:var(--shadow);max-width:100%}
@@ -779,7 +783,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מה אפשר היום ========== -->
-<section class="today band-white">
+<section class="today band-pink">
   <div class="wrap">
     <h2>היום נשים יכולות לסדר את המשפחה שלהן ואפילו לצבור הון של מאות אלפי שקלים רק מלקחת <mark>300 שקל בחודש</mark> שהן שמות על בגדים שהן לא צריכות, ולעשות הוראת קבע שלוקחת <mark>פחות מ-3 דקות</mark> לעשות.</h2>
     <div class="circle-one"><img src="assets/ph-family.webp" alt="עדי, מני והבנות" width="900" height="1200" loading="lazy"></div>
@@ -817,7 +821,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מפת הדרכים ========== -->
-<section class="road band-gray" id="road">
+<section class="road band-cream" id="road">
   <div class="wrap">
     <span class="eyebrow">מה עוברות בליווי</span>
     <h2>28 יום. שלב אחרי שלב.</h2>
@@ -928,7 +932,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מה יש לך ביד בסוף ========== -->
-<section class="outcome band-cream">
+<section class="outcome band-lime">
   <div class="wrap">
     <span class="eyebrow">ככה זה נראה ביום 28</span>
     <h2>לא תוכנית במגירה. מנגנון שעובד.</h2>
@@ -958,7 +962,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== עדויות ========== -->
-<section class="testi band-cream" id="testimonials">
+<section class="testi band-sky" id="testimonials">
   <div class="wrap">
     <span class="eyebrow">מהשטח</span>
     <h2>תשמעי אותן רגע. הן היו בדיוק במקום שלך.</h2>
@@ -1024,7 +1028,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מה כלול ========== -->
-<section class="included band-white" id="included">
+<section class="included band-cream" id="included">
   <div class="wrap">
     <span class="eyebrow">מה בדיוק כלול</span>
     <h2>מה את מקבלת בליווי</h2>
@@ -1108,7 +1112,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== מחיר ========== -->
-<section class="price band-white" id="price">
+<section class="price band-pink" id="price">
   <div class="wrap">
     <div class="price-card">
       <span class="eyebrow">ההשקעה שלך</span>
@@ -1169,7 +1173,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 
 
 <!-- ========== למי זה מתאים ========== -->
-<section class="fitsec band-gray">
+<section class="fitsec band-white">
   <div class="wrap">
     <span class="eyebrow">רגע של כנות</span>
     <h2>איך תדעי אם זה הרגע המדויק בשבילך?</h2>
@@ -1193,7 +1197,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 </section>
 
 <!-- ========== שאלות נפוצות · צ'אט אינטראקטיבי ========== -->
-<section class="faq band-gray" id="faq">
+<section class="faq band-sky" id="faq">
   <div class="wrap">
     <span class="eyebrow">שאלות נפוצות</span>
     <h2>יש לך שאלות? אני כאן בשבילך</h2>
