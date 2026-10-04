@@ -721,6 +721,187 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 .inc-vis .proof .wa{max-width:300px}
 .scr-mock{grid-template-rows:auto auto auto minmax(0,1fr);padding-bottom:6px}
 .scr-mock img{height:100%;max-height:none;width:auto;object-fit:contain;align-self:stretch}
+
+/* ===== 4.10: הסבר הליווי כמו בוובינר (חשיפה · מערכת אחת · 4 שבועות · עם מה יוצאת · בונוסים · הכל ביחד) ===== */
+:root{--t-sun:#FDF4D0;--a-sun:#F0D675;--t-mint:#DFF3E7;--a-mint:#A6DDBD}
+h2 .accent,.sys h2 span,.outcome h2 span,.bx h3 .accent{color:var(--pink)}
+.introp .eyebrow,.sys .eyebrow,.stack .eyebrow{letter-spacing:.04em}
+.promise{font-size:clamp(1.2rem,3.6vw,1.5rem);font-weight:800;line-height:1.5;margin:16px auto 0;max-width:30ch}
+.promise span{display:block}
+.promise span+span{margin-top:.5em;font-weight:500;color:var(--ink-soft)}
+.offer-mock{margin-top:26px}
+.chips4{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px auto 0;max-width:520px}
+.chips4 div{border-radius:18px;padding:12px 8px 13px;font-weight:800;font-size:1.05rem;line-height:1.3}
+.chips4 i{font-style:normal;display:block;font-size:1.35rem;line-height:1.3}
+.chips4 small{display:block;font-weight:500;color:var(--ink-soft);font-size:.9rem;margin-top:2px}
+.chips4 .c-pink{background:var(--t-pink)}.chips4 .c-vista{background:var(--t-vista)}.chips4 .c-sun{background:var(--t-sun)}.chips4 .c-mint{background:var(--t-mint)}
+
+.sys-grid{display:grid;gap:14px;margin-top:28px}
+.sys-card{background:var(--white);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.sys-top{padding:18px 16px 14px;background:var(--tint)}
+.sys-card.s1{--tint:var(--t-pink)}.sys-card.s2{--tint:var(--t-vista)}.sys-card.s3{--tint:var(--t-sun)}
+.sys-top i{font-style:normal;display:block;font-size:1.9rem;line-height:1.2}
+.sys-top h3{font-size:1.5rem;font-weight:900}
+.sys-top small{display:block;font-size:.82rem;color:var(--ink-soft);font-weight:700;margin-top:2px;unicode-bidi:isolate}
+.sys-bot{padding:14px 18px 18px}
+.sys-bot span{display:block;font-size:.9rem;font-weight:800;color:var(--pink-text);margin-bottom:4px}
+.sys-bot b{display:block;font-size:1.15rem;line-height:1.4;max-width:28ch;margin-inline:auto}
+.sys-bot p{margin:8px auto 0;font-size:1rem;color:var(--ink-soft);line-height:1.55;max-width:34ch}
+.sys-ai{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 12px;margin-top:14px;padding:16px;border-radius:22px;background:linear-gradient(100deg,#C8317F,#3D22B3);color:#fff}
+.sys-ai i{font-style:normal;font-size:1.7rem}
+.sys-ai b{display:block;font-size:1.15rem;line-height:1.3}
+.sys-ai span{display:block;font-size:.98rem;opacity:.95}
+.sys-ai em{font-style:normal;background:var(--lime);color:var(--ink);font-weight:800;font-size:.9rem;border-radius:100px;padding:4px 14px}
+.sys-note{margin:26px auto 0;font-size:1.15rem;font-weight:700;max-width:30ch}
+
+.pa{background:var(--white);border-radius:28px;padding:26px 16px 24px;margin-top:28px;--soft:var(--canvas)}
+.pa h3{font-size:1.3rem;line-height:1.35;max-width:22ch;margin-inline:auto}
+.pa-vis{margin-top:22px}
+.pa-line{font-weight:800;font-size:1.15rem;margin:18px auto 0}
+.pa-sub{margin:8px auto 0;color:var(--ink-soft);font-size:1.02rem;line-height:1.6;max-width:36ch}
+.station.st-prep{--tint:var(--t-sky);--acc:var(--a-sky)}
+.station.st-w1{--tint:var(--t-pink);--acc:var(--a-pink)}
+.station.st-w2{--tint:var(--t-vista);--acc:var(--a-vista)}
+.station.st-w3{--tint:var(--t-sun);--acc:var(--a-sun)}
+.station.st-w4{--tint:var(--t-mint);--acc:var(--a-mint)}
+.station.st-end{--tint:var(--t-lime);--acc:var(--a-lime)}
+.wkimg{margin:0;width:100%;max-width:470px}
+.wkimg img{width:100%}
+.station .when{font-size:1rem;padding:6px 18px;font-weight:800}
+.found{margin-top:18px;background:var(--white);border-radius:20px;padding:16px 14px;width:100%;max-width:400px}
+.found span{display:block;font-weight:800;font-size:1.15rem}
+.found b{display:block;font-size:clamp(2.5rem,12vw,3.6rem);font-weight:900;color:#1F8A4C;line-height:1.05;letter-spacing:-.02em;unicode-bidi:isolate}
+.found small{display:block;margin-top:6px;font-size:.95rem;color:var(--ink-soft);line-height:1.45}
+.station .meet-q{margin:18px auto 0;font-size:1.08rem;line-height:1.5;max-width:30ch}
+.station .meet-q b{display:block;font-size:1.15rem}
+.time-note{background:var(--white);border-radius:24px;padding:22px 18px;margin-top:30px}
+.time-note b{display:block;font-size:1.2rem;margin-bottom:8px}
+.time-note p{margin:0 auto;max-width:36ch;font-size:1.05rem}
+.time-note p+p{margin-top:8px;color:var(--ink-soft)}
+
+.out-cards{display:grid;gap:14px;margin-top:28px}
+@media(min-width:560px){.out-cards{grid-template-columns:1fr 1fr}}
+.out-card{border-radius:26px;padding:16px 16px 20px;background:var(--tint)}
+.out-card.o1{--tint:var(--t-pink)}.out-card.o2{--tint:var(--t-vista)}.out-card.o3{--tint:var(--t-sun)}.out-card.o4{--tint:var(--t-mint)}
+.oc-img{background:var(--white);border-radius:18px;height:150px;display:grid;place-items:center;overflow:hidden}
+.oc-img img{height:140px;width:auto;max-width:90%;object-fit:contain}
+.out-card h3{font-size:1.25rem;font-weight:900;margin-top:14px;line-height:1.25}
+.out-card p{margin:6px auto 0;font-size:1.02rem;line-height:1.5;max-width:30ch}
+.out-say{margin:24px auto 0;font-size:1.08rem;max-width:36ch}
+.after-pill{display:inline-block;background:var(--pink);color:var(--ink);font-weight:800;border-radius:24px;padding:12px 20px;margin:20px auto 30px;line-height:1.4;max-width:34ch}
+html.a11y-contrast .after-pill{color:#fff}
+
+.six{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.six-card{background:var(--white);border-radius:20px;padding:16px 10px 16px;position:relative;box-shadow:var(--shadow)}
+.six-card i{font-style:normal;display:block;font-size:1.7rem;line-height:1.2}
+.six-card h3{font-size:1.08rem;font-weight:900;line-height:1.25;margin-top:6px}
+.six-card small{display:block;color:var(--ink-soft);font-size:.92rem;line-height:1.4;margin-top:4px}
+.six-card.bonus{background:var(--lime)}
+.six-card.bonus small{color:var(--ink)}
+.six-card em{position:absolute;top:10px;right:10px;font-style:normal;background:var(--ink);color:#fff;font-size:.72rem;font-weight:800;border-radius:100px;padding:2px 9px}
+.tl6{list-style:none;margin:22px 0 0;padding:16px 8px;background:var(--white);border-radius:22px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px 6px}
+@media(min-width:600px){.tl6{grid-template-columns:repeat(6,1fr)}}
+.tl6 li{display:grid;justify-items:center;gap:2px}
+.tl6 img{width:62px;height:62px;border-radius:50%;object-fit:cover;border:3px solid var(--line);background:var(--white)}
+.tl6 b{font-size:1rem;line-height:1.2;margin-top:4px}
+.tl6 span{font-size:.8rem;font-weight:800;background:var(--t-pink);border-radius:100px;padding:1px 10px}
+.tl6 li.last span{background:var(--lime)}
+.six-dates{margin:16px auto 0;font-size:.98rem;color:var(--ink-soft);font-weight:700}
+.six-dates span{unicode-bidi:isolate;white-space:nowrap}
+
+.bonuses .inc-demo{margin-bottom:6px}
+.bx{background:var(--white);border-radius:28px;padding:26px 18px 24px;margin-top:20px;--soft:var(--canvas)}
+.bx-kick{display:block;font-size:.95rem;font-weight:800;color:var(--pink-text);margin-bottom:6px}
+.bx h3{font-size:clamp(1.35rem,4.6vw,1.7rem);font-weight:900;line-height:1.25}
+.bx p{margin:12px auto 0;max-width:36ch;font-size:1.05rem}
+.bx-vis{margin:20px auto 0;max-width:400px}
+.bx-vis figure{margin:0}
+.bx-img{margin:18px auto 0;max-width:520px}
+.bx-img img{width:100%}
+.bx-list{list-style:none;margin:16px auto 0;padding:0;display:grid;gap:8px;max-width:34ch}
+.bx-list li{background:var(--t-vista);border-radius:14px;padding:10px 14px;font-weight:700;font-size:1.02rem;line-height:1.4}
+.topics.light li{background:var(--canvas);border:1px solid var(--line);color:var(--ink)}
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}
+.pill-val{background:var(--lime);color:var(--ink);font-weight:900;font-size:1.02rem;border-radius:100px;padding:7px 18px}
+.pill-free{border:2px solid var(--pink);font-weight:700;font-size:.95rem;border-radius:100px;padding:5px 16px}
+.tmap{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 8px}
+@media(min-width:600px){.tmap{grid-template-columns:repeat(5,1fr)}}
+.tmap li{display:grid;justify-items:center}
+.tm-ic{position:relative;width:72px;height:72px;border-radius:50%;background:var(--white);border:5px solid var(--a-pink);display:grid;place-items:center}
+.tmap li:nth-child(5n+2) .tm-ic{border-color:var(--a-vista)}.tmap li:nth-child(5n+3) .tm-ic{border-color:var(--a-sun)}.tmap li:nth-child(5n+4) .tm-ic{border-color:var(--a-mint)}.tmap li:nth-child(5n+5) .tm-ic{border-color:var(--pink)}
+.tm-ic i{font-style:normal;font-size:1.9rem;line-height:1}
+.tm-ic em{position:absolute;top:-8px;right:-8px;width:26px;height:26px;border-radius:50%;background:var(--lime);font-style:normal;font-weight:900;font-size:.85rem;display:grid;place-items:center}
+.tmap b{font-size:1.02rem;line-height:1.2;margin-top:8px}
+.tmap small{font-size:.88rem;color:var(--ink-soft);line-height:1.3;margin-top:2px}
+.tmap-free{font-weight:800;margin-top:20px!important}
+.trks{display:grid;gap:14px;margin-top:14px}
+.trk{background:var(--white);border-radius:26px;padding:22px 18px 22px;--soft:var(--canvas)}
+.trk-ic{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--t-vista);font-size:1.9rem;margin:0 auto 10px}
+.trk:nth-child(3n+1) .trk-ic{background:var(--t-pink)}.trk:nth-child(3n+3) .trk-ic{background:var(--t-mint)}
+.trk h4{margin:0;font-size:1.3rem;font-weight:900;line-height:1.25}
+.trk h4 span{display:block;color:var(--pink-text)}
+.trk ul{list-style:none;margin:14px auto 0;padding:0;display:grid;gap:8px;max-width:34ch}
+.trk li{font-size:1.02rem;line-height:1.5}
+.trk li::before{content:"";display:inline-block;width:9px;height:9px;border-radius:3px;background:var(--pink);margin-left:8px;vertical-align:middle}
+.voucher{margin:18px auto 0;max-width:290px;transform:rotate(-2deg);background:linear-gradient(135deg,var(--pink),#C8317F);color:#fff;border-radius:22px;padding:16px 18px;border:2px dashed rgba(255,255,255,.65)}
+.voucher small{display:block;font-size:.85rem;font-weight:700;opacity:.95}
+.voucher b{display:block;font-size:1.5rem;font-weight:900;line-height:1.15;margin:4px 0}
+.voucher span{font-size:.95rem;font-weight:700}
+.team{margin:18px auto 0;background:var(--canvas);border-radius:22px;padding:16px 10px 18px;max-width:420px}
+.team-lbl{display:block;font-weight:800;font-size:.98rem;margin-bottom:12px}
+.team-row{display:flex;justify-content:center;gap:clamp(14px,6vw,34px)}
+.team figure{margin:0;width:42%;max-width:150px}
+.team img{width:100%;aspect-ratio:1;border-radius:50%;object-fit:cover;border:4px solid var(--white);box-shadow:0 0 0 3px var(--a-vista)}
+.team figure:last-child img{box-shadow:0 0 0 3px var(--a-pink)}
+.team figcaption{font-size:.85rem;color:var(--ink-soft);line-height:1.3;margin-top:8px}
+.team figcaption b{display:block;font-size:1.15rem;color:var(--ink)}
+.found-res{margin:14px auto 0;max-width:420px;background:var(--t-mint);border-radius:18px;padding:12px 10px;display:grid;grid-template-columns:1fr 1fr;gap:6px 8px;align-items:center}
+.found-res>span{grid-column:1/-1;font-weight:800;font-size:.98rem}
+.found-res small{display:block;font-size:.85rem;color:var(--ink-soft)}
+.found-res b{display:block;font-size:1.3rem;font-weight:900;white-space:nowrap}
+.found-res s{color:var(--pink-text)}
+.found-res b.g{color:#1F8A4C}
+.trk-say{margin:14px auto 0;font-size:1rem;color:var(--ink-soft);line-height:1.6;max-width:36ch}
+.stamp{margin:18px auto 0;width:150px;height:150px;border-radius:50%;border:5px solid var(--pink);color:var(--pink-text);display:grid;place-content:center;transform:rotate(-8deg);font-weight:900;line-height:1.2}
+.stamp small{font-size:.85rem;max-width:11ch;margin-inline:auto}
+.stamp b{font-size:1.4rem;unicode-bidi:isolate}
+
+.stk{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:10px}
+.stk li{background:var(--white);border-radius:20px;padding:10px 12px;display:grid;grid-template-columns:64px 1fr;gap:4px 12px;align-items:center;text-align:right;box-shadow:var(--shadow)}
+.stk img{width:64px;height:64px;border-radius:14px;object-fit:cover;object-position:top;background:var(--band-cream);grid-row:1/3;margin:0}
+.stk small{display:block;font-size:.78rem;font-weight:800;color:var(--pink-text);text-align:right;unicode-bidi:isolate}
+.stk b{display:block;font-size:1.05rem;line-height:1.3}
+.stk li>span{grid-column:2;font-weight:900;font-size:1rem;color:#6E7A1A}
+.stk-more-h{margin-top:28px;font-size:1.2rem}
+.stk-more{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.stk-more li{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--white);border-radius:16px;padding:10px 14px;text-align:right}
+.stk-more b{font-size:1rem;font-weight:700;line-height:1.35}
+.stk-more span{font-weight:900;white-space:nowrap;color:#6E7A1A}
+.stk-say{margin:22px auto 0;font-size:1.12rem;font-weight:700;max-width:32ch}
+.notpay{display:grid;justify-items:center;gap:2px;margin-bottom:10px}
+.notpay span{font-weight:800;font-size:1.05rem}
+.notpay s{font-size:1.5rem;font-weight:800;color:var(--ink-soft);text-decoration-color:var(--pink);text-decoration-thickness:3px}
+.notpay small{font-size:.92rem;color:var(--ink-soft)}
+.guar-box{margin-top:22px;background:#E6F4EA;border-radius:20px;padding:16px 14px;display:grid;gap:6px;justify-items:center}
+.guar-box span{font-size:.85rem;font-weight:800;letter-spacing:.06em;color:#1F7A4D}
+.guar-box b{font-size:1.08rem;line-height:1.45;max-width:30ch}
+.guar-box em{font-style:normal;font-weight:800;color:var(--pink-text);font-size:1.1rem}
+.guar-box small{font-size:.92rem;color:var(--ink-soft);line-height:1.45;max-width:34ch}
+.steps3{list-style:none;margin:20px auto 0;padding:0;display:grid;gap:8px;max-width:400px}
+.steps3 li{background:var(--white);border-radius:16px;padding:10px 14px;font-size:1rem;font-weight:600;line-height:1.4;display:flex;align-items:center;gap:10px;text-align:right}
+.steps3 b{flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-weight:900}
+html.a11y-contrast .sys-card,html.a11y-contrast .six-card,html.a11y-contrast .bx,html.a11y-contrast .trk,html.a11y-contrast .out-card,html.a11y-contrast .stk li,html.a11y-contrast .stk-more li,html.a11y-contrast .chips4 div,html.a11y-contrast .found,html.a11y-contrast .time-note,html.a11y-contrast .pa,html.a11y-contrast .guar-box{border:1px solid #000}
+html.a11y-contrast .sys-ai{background:#000}
+html.a11y-contrast .voucher{background:#b0125f}
+}
+
+.bonus{padding-top:clamp(40px,6vw,64px)}
+@media(max-width:600px){
+  .sys-bot span,.sys-ai em,.tl6 span,.tm-ic em,.team figcaption,.guar-box span,.six-card em,.voucher small,.voucher span,.stamp small,.notpay small,.found-res small,.stk small{font-size:.95rem!important}
+  .six-card em{position:static;display:inline-block;margin-bottom:4px}
+  .tm-ic em{width:28px;height:28px}
+}
+
 </style>
 </head>
 <body>
@@ -806,91 +987,147 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   </div>
 </section>
 
-<!-- ========== חשיפת התכנית ========== -->
-<section class="introp band-white">
+<!-- ========== חשיפת הליווי (נוסח הוובינר 4.10) ========== -->
+<section class="introp band-white" id="livui">
   <div class="wrap">
-    <figure class="all-mock"><img src="assets/mockup-all.webp" alt="כל הליווי במבט אחד: ציד האוצר, ממפות, מגינות, מחלקות, מפעילות ויום 28, מפגש הלייב במחשב, האזור האישי בטלפון, קבוצת הליווי והפגישה האישית עם עמית ביטון" width="1800" height="1620" loading="lazy"></figure>
-    <p class="brandline">״אמא משקיעה״</p>
+    <span class="eyebrow">אז בניתי את קיצור הדרך הכי מטורף שאני מכירה</span>
+    <h2>הליווי של <span class="accent">אמא משקיעה</span></h2>
+    <p class="promise"><span>תוך 28 יום הכסף של המשפחה שלך מחולק, מושקע, ועובד. גם כשאת ישנה.</span><span>ואת מקבלת שליטה מלאה על הכל. מההבנה ועד הביצוע בפועל.</span></p>
+    <figure class="all-mock offer-mock"><img src="assets/mock-offer.webp" alt="הליווי של אמא משקיעה: מפגש לייב על שלושת הכדים במחשב, והאזור האישי בטלפון עם הצעד הבא והחלומות שלי" width="1400" height="832" loading="lazy"></figure>
+    <div class="chips4">
+      <div class="c-pink"><i aria-hidden="true">💰</i>216,000 ₪<small>מצאנו לאלומה</small></div>
+      <div class="c-vista"><i aria-hidden="true">🤝</i>פגישה אישית 1:1<small>עם איש מקצוע מהצוות</small></div>
+      <div class="c-sun"><i aria-hidden="true">📅</i>4 לייבים · 28 יום<small>ימי שני ב-20:00</small></div>
+      <div class="c-mint"><i aria-hidden="true">✓</i>הוראת הקבע יורדת<small>המנגנון עובד לבד</small></div>
+    </div>
     <p class="first">יצרתי את התכנית הראשונה בישראל שעוזרת לנשים למצוא <b>כספים אבודים של בין <span dir="ltr">200-1,000</span> שקל בחודש</b> ולגלגל את הכסף הזה להון משפחתי של מיליונים…</p>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items two">
-      <div class="vid">
-        <div class="frame" data-vid="1167389559"><img src="assets/v-aluma.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של אלומה"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div>
-        <blockquote>"מצאתי מעל 200 אלף ₪ שלא ידעתי שיש לי."<b>אלומה וייס</b></blockquote>
-      </div>
+      <div class="vid"><div class="frame" data-vid="1167389559"><img src="assets/v-aluma.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של אלומה"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div><blockquote>"מצאתי מעל 200 אלף ₪ שלא ידעתי שיש לי."<b>אלומה וייס</b></blockquote></div>
       <figure class="wa"><img src="assets/wa-t-17205.webp?v=u1" alt="הודעה: בזכות הקורס יצרתי קשר עם החזרי מס, ואתמול אני ובעלי קיבלנו 17,205 ש״ח לחשבון" width="900" height="1043" loading="lazy"><figcaption>17,205 ₪ החזר מס שנכנס לחשבון.</figcaption></figure>
     </div></div>
     <div class="cta-row"><a class="btn go" data-cta="introp" href="#join">אני רוצה לשריין מקום למחזור הקרוב</a></div>
   </div>
 </section>
 
-<!-- ========== מפת הדרכים ========== -->
+<!-- ========== מערכת אחת ========== -->
+<section class="sys band-sky" id="system">
+  <div class="wrap">
+    <span class="eyebrow">והנה החלק החשוב</span>
+    <h2>בליווי, הכל הופך <span>למערכת אחת</span></h2>
+    <div class="sys-grid">
+      <div class="sys-card s1">
+        <div class="sys-top"><i aria-hidden="true">🗺️</i><h3>המפה</h3><small dir="ltr">Family Finance OS™ + Cash Finder System™</small></div>
+        <div class="sys-bot"><span>בליווי זה הופך ל:</span><b>המפה המלאה של הכסף שלך, וציד האוצר שמוצא גם את מה ששכחת</b></div>
+      </div>
+      <div class="sys-card s2">
+        <div class="sys-top"><i aria-hidden="true">⚖️</i><h3>גם וגם</h3><small dir="ltr">Dual Timeline™</small></div>
+        <div class="sys-bot"><span>בליווי זה הופך ל:</span><b>חלוקה של הכסף שמאפשרת גם חופשה וגם עתיד</b><p>גם החופשה של עוד חצי שנה, גם השופינג שאת אוהבת והקפה שאת לא מוכנה לוותר עליו, וגם העתיד שלך.</p></div>
+      </div>
+      <div class="sys-card s3">
+        <div class="sys-top"><i aria-hidden="true">⏱️</i><h3>15 דקות</h3><small dir="ltr">Set &amp; Review™ + Zero-Friction Execution™</small></div>
+        <div class="sys-bot"><span>בליווי זה הופך ל:</span><b>מנגנון שעובד לבד, ואנשי מקצוע שמבצעים איתך</b><p>הוראת קבע שכבר עובדת בשבילך וצוברת נכסים, בלי להמציא את זה מחדש כל חודש.</p></div>
+      </div>
+    </div>
+    <div class="sys-ai bonus-only"><i aria-hidden="true">🤖</i><div><b>ומעל הכל: מערכת ה-AI</b><span>המלצה אישית להרכב התיק שלך</span></div><em>זמינה 24/7</em></div>
+    <p class="sys-note">וזה לא רק עניין טכני. זה מרחיב את הידע ואת התודעה.</p>
+    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
+      <figure class="wa"><img src="assets/wa-t-shave.webp?v=u1" alt="הודעה: לא משנה כמה כסף שמתי על הקורס הזה, מבחינתי קיבלתי מתנה. כל שיעור מרחיב את הידע והתודעה" width="900" height="917" loading="lazy"><figcaption>"כל שיעור מרחיב את הידע והתודעה."</figcaption></figure>
+    </div></div>
+  </div>
+</section>
+
+<!-- ========== 4 שבועות ========== -->
 <section class="road band-cream" id="road">
   <div class="wrap">
-    <span class="eyebrow">מה עוברות בליווי</span>
-    <h2>28 יום. שלב אחרי שלב.</h2>
-    <p class="lead">כל שלב כאן הוא פעולה שעשית. לא שיעור שצפית בו.</p>
+    <span class="eyebrow">איך הליווי בנוי</span>
+    <h2>4 שבועות. 28 יום.<br>צעד אחד בכל פעם.</h2>
 
-    <div class="arc" aria-label="כל הדרך בשלוש מילים: ממפות, מחלקות, משקיעות">
-      <span class="p">ממפות</span><span class="s"><i aria-hidden="true">←</i><span class="p">מחלקות</span></span><span class="s"><i aria-hidden="true">←</i><span class="p last">משקיעות</span></span>
+    <div class="pa">
+      <h3>את נכנסת לאזור האישי ורואה בדיוק מה הפעולה הבאה שלך</h3>
+      <div class="inc-vis pa-vis"><div class="phones">
+      <figure>
+        <div class="phone"><div class="scr"><img src="assets/jhome.webp" alt="מסך הבית של האזור האישי: יום 10 מתוך 28, הצעד הבא שלי, וארבעת השלבים ממפות מגינות מחלקות מפעילות" width="500" height="1300" loading="lazy"></div></div>
+        <figcaption>הצעד הבא שלך: אחד.</figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><div class="scr"><img src="assets/jdreams.webp" alt="מסך החלומות שלי: כרטיסים של חלומות עם טווח זמן לכל אחד" width="500" height="1200" loading="lazy"></div></div>
+        <figcaption>החלומות שלך.</figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><div class="scr"><img src="assets/jjars.webp" alt="מסך שלושת הכדים: כד קרוב, כד בינוני, כד ארוך, לכל שקל תפקיד" width="500" height="1300" loading="lazy"></div></div>
+        <figcaption>שלושת הכדים.</figcaption>
+      </figure>
+    </div><p class="phones-hint">‹ החליקי לעוד מסכים</p></div>
+      <p class="pa-line">לא צריך לזכור כלום. לא צריך לחפש כלום.</p>
+      <p class="pa-sub">לוקחות את הדבר הענק הזה, עולם ההשקעות, ומפרקות אותו לפעולות קטנות. כל פעם פעולה אחת. החלומות שלך, המטרות שלך, השווי הנקי שלך: הכל נאסף במקום אחד ונותן לך בהירות ותמונה מלאה.</p>
     </div>
-    <p class="arc-note">כל הדרך בשלוש מילים. עכשיו בפירוט:</p>
 
     <ol class="timeline">
-      <li class="station">
+      <li class="station st-prep">
         <div class="pic"><img src="assets/step-treasure.webp" alt="" width="640" height="640" loading="lazy"></div>
-        <span class="when">היערכות</span>
+        <span class="when">היערכות · מרגע ההצטרפות</span>
         <h3>ציד האוצר: מוצאות כספים אבודים</h3>
-        <p>עוד לפני שמדברות על השקעות. תשלומים שלא שמת לב שקיימים, קופות וקרנות ממקומות עבודה ישנים, החזרי מס ומענקים שמגיעים לך ולא ביקשת.</p>
+        <p>מיד כשאת מצטרפת את מקבלת לינק לאזור האישי, ממלאת שאלון מקדים, כותבת את החלומות שלך, ויוצאת לציד האוצר: תשלומים שלא שמת לב שקיימים, קופות וקרנות ממקומות עבודה ישנים, החזרי מס ומענקים שמגיעים לך ולא ביקשת.</p>
         <div class="have">כל הכסף הפנוי שלך, גם זה שלא ידעת על קיומו.</div>
-        <p class="ex">לאלומה מצאנו מעל 200,000 ש״ח בקופה שהיא לא ידעה על קיומה. לרוב אנחנו מוצאות בממוצע 20,000 ש״ח אבודים בקופות נסתרות.</p>
+      </li>
+      <li class="station st-w1">
+        <figure class="wkimg"><img src="assets/wk1.webp" alt="מפגש הלייב של שבוע 1, ממפות: תודעה, ואיפה הכסף שלי" width="1200" height="750" loading="lazy"></figure>
+        <span class="when">שבוע 1 · ממפות</span>
+        <h3>תודעה, ואיפה הכסף שלי</h3>
+        <p>ממפות את הדברים ומבינות איפה נמצא הכסף שלך. כל מה שיכולתי לחבר לו מערכת או איש מקצוע שעושה את זה בשבילך, כבר שם.</p>
+        <div class="found"><span>מצאנו לאלומה</span><b>216,000 ₪!</b><small>בממוצע כל משתתפת מוצאת כ-20,000 ₪ שהיא אפילו לא חשבה שיש לה</small></div>
+        <p class="ex">זה כיף בטירוף לגלות את זה. כמו לקבל מתנה מהיקום.</p>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
       <figure class="wa"><img src="assets/wa-t-27000.webp?v=u1" alt="הודעה: ואגב לא סיפרתי לך, נכנס לנו 27,000 בזכות המענקים האלו שמילאתי אחרי הזום שלך" width="900" height="266" loading="lazy"><figcaption>27,000 ₪ ממענקים. אחרי זום אחד.</figcaption></figure>
     </div></div>
       </li>
-      <li class="station">
-        <div class="pic"><img src="assets/step-stage-map.webp" alt="" width="640" height="640" loading="lazy"></div>
-        <span class="when">שבוע 1 · ממפות</span>
-        <h3>מיפוי הכספים הקיימים</h3>
-        <p>כל הכסף על השולחן: עו"ש, פיקדונות, קופות, פנסיה, קרן השתלמות. באזור האישי שלך. ואז חזון, ו-3 מטרות עם סכום ותאריך. כי עכשיו, כשיודעות כמה באמת יש, המטרות נהיות אמיתיות.</p>
-        <div class="have">תמונה מלאה של הכסף שלך, ו-3 מטרות כתובות.</div>
-      </li>
-      <li class="station">
-        <div class="pic"><img src="assets/step-stage-protect.webp" alt="" width="640" height="640" loading="lazy"></div>
+      <li class="station st-w2">
+        <figure class="wkimg"><img src="assets/wk2.webp" alt="מפגש הלייב של שבוע 2, מגינות: שיטת הכדים" width="1200" height="750" loading="lazy"></figure>
         <span class="when">שבוע 2 · מגינות</span>
-        <h3>בניית קרן חירום למשפחה</h3>
-        <p>קודם הגב. כמה חודשי מחיה מתאימים לכן, איפה הכסף הזה יושב כדי שיהיה זמין ולא יישחק, ואיך הוא נשאר בצד גם כשיש פיתוי. זה מה שנותן שקט לפני שנוגעים בהשקעות.</p>
-        <div class="have">קרן חירום מוגדרת, במקום הנכון.</div>
+        <h3>שיטת הכדים</h3>
+        <p>מגינות על הכסף, ומחלקות אותו נכון בין הכדים: ההווה, העתיד הקרוב והעתיד הרחוק. קודם הגב: קרן חירום במקום הנכון, שנותנת שקט לפני שנוגעים בהשקעות.</p>
+        <p class="meet-q"><b>תכירי את תמה:</b>"הצלחתי להפקיד 3 חודשי מחיה לקרן כספית, אחרי שנים של מינוסים"</p>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
       <figure class="wa"><img src="assets/wa-t-tama.webp?v=u1" alt="הודעה: רציתי להגיד ששמתי בקרן כספית סכום של 3 חודשי מחיה שלי, וזה עשה לי הרגשה כל כך טובה" width="900" height="1116" loading="lazy"><figcaption>קרן חירום של 3 חודשי מחיה. "הרגשה כל כך טובה."</figcaption></figure>
     </div></div>
       </li>
-      <li class="station">
-        <div class="pic"><img src="assets/step-stage-split.webp" alt="" width="640" height="640" loading="lazy"></div>
-        <span class="when">שבוע 2 · מחלקות</span>
-        <h3>תכנון לפי שיטת הכדים</h3>
-        <p>מחלקות את מה שנשאר לשלושת הכדים: חירום, טווח קרוב, טווח רחוק. לכל שקל תפקיד ובית. ובמקביל, הרצאת יועץ ההשקעות ומערכת המענה שלו, כדי שתצליחי לבנות מסלול אידיאלי למשפחה שלך.</p>
-        <div class="have">תוכנית חלוקה אישית, שאת מבינה ומסכימה איתה.</div>
-      </li>
-      <li class="station">
-        <div class="pic"><img src="assets/step-stage-activate.webp" alt="" width="640" height="640" loading="lazy"></div>
-        <span class="when">שבוע 3 · מפעילות</span>
-        <h3>הביצוע, עם אנשי המקצוע</h3>
-        <p>הפגישה האישית עם עמית ביטון, הסוכן הפנסיוני של הצוות: מסלקה, דמי ניהול, סידור הפנסיה והביטוחים. פותחות מה שצריך, ומורידות הוראת קבע להשקעות. ומי שרוצה פותחת גם תיק השקעות עצמאי, עם מענה אישי מ-IBI על הפתיחה ומיועץ ההשקעות על התמהיל בפנים. הם עושים את הבירוקרטיה, את מקבלת את הבהירות.</p>
-        <div class="have">חשבונות פתוחים והוראת קבע שמוגדרת.</div>
-    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
+      <li class="station st-w3">
+        <figure class="wkimg"><img src="assets/wk3.webp" alt="מפגש הלייב של שבוע 3, מחלקות: המפה של עולם ההשקעות" width="1200" height="750" loading="lazy"></figure>
+        <span class="when">שבוע 3 · מחלקות</span>
+        <h3>המפה של עולם ההשקעות</h3>
+        <p>מחלקות את הכסף: איפה לשים כל דבר, ואיזו השקעה מתאימה לך. מורידות את כל המחסומים: אילו השקעות בכלל קיימות, איך מתחילים, ומה נכון לך בנקודה שבה את נמצאת היום.</p>
+        <p class="meet-q"><b>מחלקות, ומורידות את כל המחסומים מעולם ההשקעות</b></p>
+    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items two">
       <figure class="wa"><img src="assets/wa-t-openacc.webp?v=u1" alt="הודעה: ברוך השם בזכותך אחרי הרבה שיעורי בית פתחתי קרן השתלמות, קרן פנסיה וקופת גמל להשקעה ממש היום. אין לתאר כמה שזה קרה אך ורק בעקבות הקורס" width="900" height="589" loading="lazy"><figcaption>פתחה קרן השתלמות, פנסיה וגמל להשקעה. באותו יום.</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-tik.webp?v=u1" alt="הודעה: מאז ההרצאה קיבלתי אומץ ופתחנו תיק בחברת השקעות ומשקיעים את כל הכסף שהצטבר בחיסכון ובעו״ש" width="900" height="765" loading="lazy"><figcaption>קיבלה אומץ, פתחו תיק, והכסף שישב בעו״ש התחיל לעבוד.</figcaption></figure>
     </div></div>
       </li>
-      <li class="station finish">
+      <li class="station st-w4">
+        <figure class="wkimg"><img src="assets/wk4.webp" alt="מפגש הלייב של שבוע 4, מפעילות: שוק ההון, ומפעילות" width="1200" height="750" loading="lazy"></figure>
+        <span class="when">שבוע 4 · מפעילות</span>
+        <h3>שוק ההון, ומפעילות</h3>
+        <p>מפעילות את זה. יוצרות את הוראת הקבע הראשונה, הפשוטה, שמתאימה לך: גם למה שאת מרגישה שנכון לך כרגע, וגם להמלצה של מאיפה כדאי לך להתחיל. לכל אחת יש המלצה אחרת, לפי כמה כבר יש לה ואיפה הכסף שלה נמצא היום.</p>
+        <p class="meet-q"><b>"איפה הייתי לפני שנה, והיום זה לא להאמין"</b></p>
+    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
+      <figure class="wa"><img src="assets/wa-t-wa1.webp?v=u1" alt="הודעה: תודה מעומק הלב על התכנית שלך שהעירה אותי והתחילה לגלגל אותי לאן שאני נמצאת היום. איפה הייתי לפני שנה והיום זה לא להאמין. במיינדסט, בפעולות, וגם בתזרים" width="900" height="1363" loading="lazy"><figcaption>"איפה הייתי לפני שנה והיום. במיינדסט, בפעולות, ובתזרים."</figcaption></figure>
+    </div></div>
+      </li>
+      <li class="station finish st-end">
         <div class="pic"><img src="assets/step-celebrate.webp" alt="" width="640" height="640" loading="lazy"></div>
-        <span class="when">שבוע 4 · יום 28</span>
+        <span class="when">יום 28 · עובד לבד</span>
         <h3>המנגנון עובד. לבד.</h3>
-        <p>ההוראה הראשונה יורדת. את בודקת אחת לכמה זמן, ומעדכנת רק כשהחיים משתנים. ולייב סיום, עם משפט אחד שאת אומרת על עצמך: אני אמא משקיעה.</p>
+        <p>ההוראה הראשונה יורדת. את בודקת אחת לכמה זמן, ומעדכנת רק כשהחיים משתנים.</p>
         <div class="have">רשת ביטחון למשפחה. פעילה. רצה ועובדת גם כשאת ישנה.</div>
         <p class="ex">ומרגע שהמסילה בנויה, גם 200 ₪ שנשארו לך בסוף החודש יודעים לאן ללכת. בלי לתכנן הכל מחדש.</p>
         <p class="ex">גם 500 ₪ הפקדה בחודש יכולים להפוך למעל חצי מיליון לילד שלך. <small>(בהנחת תשואה שנתית ממוצעת של 8%, לאורך 30 שנה)</small></p>
       </li>
     </ol>
+
+    <div class="time-note">
+      <b>וכמה זמן זה דורש ממך?</b>
+      <p>לייב אחד בשבוע, שעה עד שעה וחצי, ואחריו משימה של 5 עד 10 דקות. את לא צריכה לעזוב את העבודה בשביל זה.</p>
+      <p>היו אצלנו רופאות, נשות הייטק, אמהות בחופשת לידה וסטודנטיות. זו תוכנית שמותאמת לנשים עסוקות.</p>
+    </div>
     <div class="cta-row"><a class="btn go" data-cta="road" href="#join">אני רוצה לשריין מקום למחזור הקרוב</a></div>
   </div>
 </section>
@@ -904,47 +1141,36 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 
     <div class="learn-grid">
       <div><i>01</i><b>לקרוא את התמונה שלך</b><small>באזור האישי ממפות את כל הכסף שלך, ובונות שלוש מטרות עם סכום ותאריך.</small></div>
-      <div><i>02</i><b>מה זה מדד, ומה זו קרן סל</b><small>בהרצאה ובמפגש שאלות ותשובות עם יועץ ההשקעות בעל הרישיון. ממי שמותר לו לענות.</small></div>
-      <div><i>03</i><b>מה עושים דמי ניהול</b><small>עמית ביטון, הסוכן הפנסיוני של הצוות, בודק את דמי הניהול שלך בפגישה אישית ועושה את הבירוקרטיה.</small></div>
+      <div><i>02</i><b>מה זה מדד, ומה זו קרן סל</b><small>בשבוע של שוק ההון, ובלייב השאלות והתשובות עם יועץ השקעות בעל רישיון. ממי שמותר לו לענות.</small></div>
+      <div><i>03</i><b>מה עושים דמי ניהול</b><small>בפגישה האישית, עמית או רות מהצוות בודקים איתך דמי ניהול, מסלולים וכסף שנשכח, וממטבים.</small></div>
       <div><i>04</i><b>להתאים אפיק לטווח</b><small>בשיטת הכדים כל שקל מקבל תפקיד לפי הטווח שלו, גם הכספים האבודים שמצאנו בציד האוצר.</small></div>
-      <div><i>05</i><b>פיזור ופשטות</b><small>מי שרוצה פותחת תיק עצמאי, עם מענה אישי על התמהיל מיועץ ההשקעות ועל הפתיחה מ-IBI.</small></div>
+      <div><i>05</i><b>פיזור ופשטות</b><small>מי שרוצה פותחת תיק עצמאי, בפתיחה מסודרת צעד אחר צעד, עם הרכב תיק אישי שמתאים לה.</small></div>
       <div><i>06</i><b>לפתוח, להגדיר, ולעדכן</b><small>נתקעת מול טופס? שולחת צילום מסך בקבוצה ופותרות יחד. וביום 28 יורדת הוראת קבע אמיתית.</small></div>
     </div>
     <p class="learn-do">התפקיד שלי ושל הצוות: להביא אותך ל״עשיתי״.</p>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items two">
-      <div class="vid">
-        <div class="frame" data-vid="1167389305"><img src="assets/v-racheli.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של רחלי"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div>
-        <blockquote>"לא מאמינה שלא ידעתי את הדברים האלה לפני."<b>רחלי</b></blockquote>
-      </div>
+      <div class="vid"><div class="frame" data-vid="1167389305"><img src="assets/v-racheli.webp" alt="" width="540" height="960" loading="lazy"><button class="play" type="button" aria-label="לצפייה בעדות של רחלי"><span><svg viewBox="0 0 24 24" fill="#191A2E" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></button></div><blockquote>"לא מאמינה שלא ידעתי את הדברים האלה לפני."<b>רחלי</b></blockquote></div>
       <figure class="wa"><img src="assets/wa-t-liat.webp?v=u1" alt="הודעה: כל שיעור היה מדהים, מעניין, פותח את הראש. לפעמים מעצבן כי ביאס אותי שלא ידעתי את הדברים האלה לפני. כמה למדתי אפילו רק בשיעור אחד" width="900" height="1778" loading="lazy"><figcaption>"כמה למדתי, אפילו רק בשיעור אחד."</figcaption></figure>
     </div></div>
 
-    <div class="library">
-      <span class="tag">בונוס · כלול</span>
-      <h3>וגם: ספריית התכנים של אמא משקיעה</h3>
-      <p>הליווי עצמו עובר <strong>בלייב, כולו</strong>, והשיעורים מוקלטים ועולים לך לפורטל. ומעבר לזה נפתחת לך הספרייה: שיעורי עומק עם אנשי מקצוע תותחים, כל אחד בתחום שלו.</p>
-      <ul class="topics">
-        <li>שוק ההון</li><li>נדל״ן בארץ</li><li>נדל״ן בחו״ל</li><li>קריפטו</li><li>מוצרים פנסיוניים</li><li>תודעה</li><li>התנהלות פיננסית</li><li>ועוד</li>
-      </ul>
-      <p class="after">בזמן שלך, לפי נושא. את פותחת מה שמעניין אותך, כשמתחשק לך להעמיק.</p>
-    </div>
-
     <p class="learn-foot"><strong>ואם המצב שלך משתנה?</strong>הכנסה חדשה, בונוס שנחת, הוצאה גדולה, תקופת לימודים. את כבר יודעת לאן זה הולך ומה להזיז, בלי לתכנן הכל מחדש ובלי לחזור לנקודת ההתחלה.</p>
-    <p class="learn-foot" style="margin-top:18px"><strong>ומה שנשאר פתוח?</strong>מפגש שאלות ותשובות עם יועץ ההשקעות, ומענה אישי שלו למי שפותחת תיק עצמאי, על איך מרכיבים אותו מבפנים. שם שואלים אישית, ומקבלים תשובה ממי שמותר לו לענות.</p>
+    <p class="learn-foot" style="margin-top:18px"><strong>ומה שנשאר פתוח?</strong>שלושה חודשי ליווי בווטסאפ אחרי התוכנית, ולייב חודשי של שאלות ותשובות עם יועץ השקעות ואנשי המקצוע. שם שואלים אישית, ומקבלים תשובה ממי שמותר לו לענות.</p>
   </div>
 </section>
 
-<!-- ========== מה יש לך ביד בסוף ========== -->
-<section class="outcome band-lime">
+<!-- ========== עם מה את יוצאת ========== -->
+<section class="outcome band-lime" id="outcome">
   <div class="wrap">
-    <span class="eyebrow">ככה זה נראה ביום 28</span>
-    <h2>לא תוכנית במגירה. מנגנון שעובד.</h2>
-    <ul class="checks pink out-list">
-      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>הכסף מחולק ומושקע</b> בצורה שמתאימה לך, למטרות שלך ולזמן של כל מטרה.</span></li>
-      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>רשת ביטחון למשפחה:</b> קרן חירום, מספיק בעו"ש, כסף שמושקע לילדים לטווח ארוך, וכסף שצבוע למטרה ספציפית.</span></li>
-      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>הוראת קבע להשקעות</b> שיורדת כל חודש, בסכום שמתאים לך. תמיד אפשר להגדיל, להקטין או לעצור.</span></li>
-      <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>ואת מבינה מה את עושה ולמה.</b> ועושה את זה בפועל.</span></li>
-    </ul>
+    <span class="eyebrow">ביום 28</span>
+    <h2>עם מה את <span>יוצאת</span> מהליווי</h2>
+    <div class="out-cards">
+      <div class="out-card o1"><div class="oc-img"><img src="assets/step-stage-split.webp" alt="" width="640" height="640" loading="lazy"></div><h3>הכסף מחולק לפי טווחים</h3><p>קרוב, בינוני ורחוק. לכל שקל יש תפקיד ובית.</p></div>
+      <div class="out-card o2"><div class="oc-img"><img src="assets/step-stage-activate.webp" alt="" width="640" height="640" loading="lazy"></div><h3>תיק השקעות פעיל בשוק ההון</h3><p>פתוח, מושקע ומותאם בדיוק לך.</p></div>
+      <div class="out-card o3"><div class="oc-img"><img src="assets/illo-jars.webp" alt="" width="640" height="640" loading="lazy"></div><h3>השקעות שכבר עובדות בשבילך</h3><p>בונות את הביטחון והעתיד שלך, עם שליטה והבנה מלאה של איך ולמה בנוי כל דבר.</p></div>
+      <div class="out-card o4"><div class="oc-img"><img src="assets/step-celebrate.webp" alt="" width="640" height="640" loading="lazy"></div><h3>קהילה וסביבה מנצחת</h3><p>נשים משקיעות באותו מיינדסט, שממשיכות איתך הלאה.</p></div>
+    </div>
+    <p class="out-say">כל אחת לפי מה שמתאים לה: תיק השקעות עצמאי, תיק מנוהל, או קרן כספית. חשוב לי שתהיה לך כבר הפעולה הזאת, שעשית בעצמך. הפעם הבאה תהיה פי אלף יותר קלה, כי כבר עשינו את זה ביחד.</p>
+    <p class="after-pill">ובהמשך: גישה לתכנים והזדמנויות ייחודיים, רק לבוגרות של אמא&nbsp;משקיעה&nbsp;✨</p>
     <div class="flow" aria-label="לאן הולך הכסף">
       <div class="lbl">לאן הולך הכסף</div>
       <div class="top">המשכורת נכנסת</div>
@@ -1030,68 +1256,152 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   </div>
 </section>
 
-<!-- ========== מה כלול ========== -->
+<!-- ========== ככה נראה הליווי מבפנים ========== -->
 <section class="included band-cream" id="included">
   <div class="wrap">
-    <span class="eyebrow">מה בדיוק כלול</span>
-    <h2>מה את מקבלת בליווי</h2>
-    <p class="lead">בשורה אחת: בונות לך תוכנית השקעות פשוטה וכמה שיותר אוטומטית, כדי שהכסף יהיה מחולק ויעבוד בשבילך בלי שתצטרכי להתעסק בזה כמעט בכלל.<br>28 יום. 4 שלבים. וצוות של אנשי מקצוע שעושה איתך את הדרך.</p>
-    <p class="inc-demo">המסכים כאן הם הדמיה, עם נתונים לדוגמה.</p>
-    <div class="inc">
-      <div class="inc-row"><span class="n">1</span><h3>4 מפגשי לייב שבועיים</h3><small>ימי שני ב-20:00: 5.10, 12.10, 19.10, 26.10. מוקלטים.</small><p>הליווי עובר בלייב כולו, שלב אחד בכל שבוע, ביחד, עם מקום לשאלות. וכל מפגש מוקלט, עולה לך לפורטל, ונשאר שלך. בתקופה עמוסה את משלימה בקצב שלך.</p><div class="inc-vis"><figure class="laptop">
-      <div class="lid"><img src="assets/mock-live.webp?v=2" alt="מפגש לייב: עדי מלמדת את שלושת הכדים" width="1280" height="720" loading="lazy"></div>
-      <div class="base"></div>
-      <figcaption>מפגש הלייב השבועי. ימי שני ב-20:00, ומוקלט למי שפספסה.</figcaption>
-    </figure><div class="mock-cards one"><figure class="wa-mock">
-        <div class="wa-head"><img src="assets/adi.webp" class="wa-av" alt="" width="800" height="1200" loading="lazy"><div><b>קבוצת הליווי · אמא משקיעה</b><small>עדי, הצוות והמשתתפות</small></div></div>
-        <div class="wa-body">
-          <div class="m"><b>עדי</b>בוקר טוב 💛 השבוע: ציד האוצר. הצעד של היום באזור האישי לוקח 10 דקות. מי שמצאה קופה שכוחה, כתבי לי כאן.</div>
-          <div class="m"><b>עדי</b>ומי שנתקעת מול טופס, שולחת צילום מסך ופותרות יחד. אף אחת לא נשארת תקועה.</div>
-        </div>
-        <figcaption>קבוצת הליווי: שאלות, חיזוקים, ומענה שלי ושל הצוות.</figcaption>
-      </figure></div>
-    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-group.webp?v=u1" alt="הודעה: המוח שלי מתפוצץ ואני מתה על זה. מרגיש באמת שיש קבוצת בנות איכותית וסביבה מקדמת" width="900" height="567" loading="lazy"><figcaption>קבוצת בנות איכותית וסביבה מקדמת.</figcaption></figure>
-    </div></div></div></div>
-      <div class="inc-row"><span class="n">2</span><h3>אזור אישי שמלווה אותך</h3><small>עם כל הנתונים שלך, במקום אחד</small><p>את נכנסת ורואה בדיוק מה הצעד הבא. לא צריך לזכור כלום. לא צריך לחפש כלום.</p><div class="inc-vis"><div class="phones">
-      <figure>
-        <div class="phone"><div class="scr"><img src="assets/jhome.webp" alt="מסך הבית של האזור האישי: יום 10 מתוך 28, הצעד הבא שלי, וארבעת השלבים ממפות מגינות מחלקות מפעילות" width="500" height="1300" loading="lazy"></div></div>
-        <figcaption>יום 10 מתוך 28. ארבעה שלבים, ומה שהושלם מסומן. והצעד הבא שלך: אחד.</figcaption>
-      </figure>
-      <figure>
-        <div class="phone"><div class="scr"><img src="assets/jdreams.webp" alt="מסך החלומות שלי: כרטיסים של חלומות עם טווח זמן לכל אחד" width="500" height="1200" loading="lazy"></div></div>
-        <figcaption>החלומות שלך. כי מזה מתחילים, ומזה נגזרות המטרות.</figcaption>
-      </figure>
-      <figure>
-        <div class="phone"><div class="scr"><img src="assets/jjars.webp" alt="מסך שלושת הכדים: כד קרוב, כד בינוני, כד ארוך, לכל שקל תפקיד" width="500" height="1300" loading="lazy"></div></div>
-        <figcaption>שלושת הכדים. לכל שקל תפקיד, ולכל שקל בית.</figcaption>
-      </figure>
-    </div><p class="phones-hint">‹ החליקי לעוד מסכים</p></div></div>
-      <div class="inc-row"><span class="n">3</span><h3>פגישה אישית 1:1 עם עמית ביטון</h3><small>סוכן ביטוח פנסיוני, מהצוות של אמא משקיעה</small><p>מוציא מסלקה, בודק דמי ניהול, ומסדר את הפנסיה והביטוחים. את מקבלת בהירות, הוא עושה את הבירוקרטיה.</p><div class="inc-vis"><figure class="meet">
-        <div class="meet-card">
-          <span class="meet-lbl">פגישה אישית 1:1</span>
-          <b>עמית ביטון · סוכן ביטוח פנסיוני</b>
-          <ul><li>מסלקה פנסיונית: מה יש לך היום</li><li>בדיקת דמי ניהול וכיסויים</li><li>פתיחת מה שצריך והורדת הוראת הקבע</li></ul>
-          <span class="meet-time">שבוע 3 · בזום · את מקבלת סיכום כתוב</span>
-        </div>
-        <figcaption>הפגישה שבה הבירוקרטיה נעשית, ואת מקבלת בהירות.</figcaption>
-      </figure></div></div>
-      <div class="inc-row"><span class="n">4</span><h3>הרצאה של יועץ ההשקעות</h3><small>בתוך התוכנית</small><p>המושגים נהיים ברורים. מסלולים, מדדים, דמי ניהול, בשפה של אמא.</p><div class="inc-vis"><figure class="laptop"><div class="lid"><div class="scr-mock lecture"><span class="scr-pill">הרצאה · יועץ ההשקעות</span><b>מה זה מדד? ומה זו קרן סל?</b><div class="scr-chips"><span>מדד</span><span>קרן סל</span><span>דמי ניהול</span><span>טווח</span></div><img src="assets/step-stage-split.webp" alt="" width="640" height="640" loading="lazy"></div></div><div class="base"></div></figure>
-    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items two">
-      <figure class="wa"><img src="assets/wa-t-tik.webp?v=u1" alt="הודעה: מאז ההרצאה קיבלתי אומץ ופתחנו תיק בחברת השקעות ומשקיעים את כל הכסף שהצטבר בחיסכון ובעו״ש" width="900" height="765" loading="lazy"><figcaption>אחרי ההרצאה: פתחו תיק, והכסף שישב בעו״ש התחיל לעבוד.</figcaption></figure>
-      <figure class="wa"><img src="assets/wa-t-hila.webp?v=u1" alt="הודעה: היי עדי! קודם כל רוצה להגיד לך תודה על הקורס הזה. אני שמחה מאוד שנרשמתי! והוא ממש בנוי בצורה גאונית. אני עוד overwhelmed ולא ממש מצליחה לנסח משהו קצת יותר קונקרטי, אבל אני כבר רואה איך זה פתח לי עולם שלם." width="900" height="729" loading="lazy"><figcaption>"בנוי בצורה גאונית. פתח לי עולם שלם."</figcaption></figure>
-    </div></div></div></div>
-      <div class="inc-row"><span class="n">5</span><h3>בונוס: מפגש שאלות ותשובות</h3><small>עם יועץ ההשקעות</small><p>השאלות שלך, שנענות לפני שאת חותמת על משהו.</p><div class="inc-vis"><figure class="qa-mock"><ul><li>יש לנו כסף בעו״ש ובקופת גמל. איך יודעים איפה נכון שיהיה?</li><li>באיזה גיל כדאי להוריד את הסיכון בחיסכון לכל ילד?</li><li>אני לא מבינה את הדוחות. להזיז את הכסף? ולאן?</li></ul></figure></div></div>
-      <div class="inc-row"><span class="n">6</span><h3>פתיחת תיק השקעות עצמאי, עם ליווי</h3><small>והטבה על הפתיחה, למי שרוצה</small><p>מי שרוצה פותחת תיק עצמאי, ולא נשארת עם זה לבד: מענה אישי מ-IBI על הצד הטכני של פתיחת התיק, ומענה של יועץ ההשקעות על איך מרכיבים אותו מבפנים, התמהיל עצמו.</p><div class="inc-vis"><div class="phones one"><figure><div class="phone"><div class="scr"><div class="acct-mock"><span class="acct-top">פתיחת תיק השקעות</span><div class="acct-bar"><i></i></div><small>שלב 3 מתוך 4</small><ul><li class="done">פרטים אישיים</li><li class="done">אימות זהות</li><li class="now">חתימה דיגיטלית</li><li>הפקדה ראשונה</li></ul></div></div></div></figure></div></div></div>
-      <div class="inc-row"><span class="n">7</span><h3>בונוס: ספריית התכנים של אמא משקיעה</h3><small>שיעורי עומק עם אנשי מקצוע, לפי נושאים</small><p>שוק ההון, נדל״ן בארץ ובחו״ל, קריפטו, מוצרים פנסיוניים, תודעה, התנהלות פיננסית ועוד. נפתחת לך, ואת צופה בזמן שלך במה שמעניין אותך.</p><div class="inc-vis"><figure class="laptop"><div class="lid"><img src="assets/mock-library.webp" alt="ספריית התכנים של אמא משקיעה: שיעורי עומק בווידאו לפי נושאים, השקעות, כסף, התפתחות ונדל״ן" width="1280" height="800" loading="lazy"></div><div class="base"></div></figure>
-    <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-shave.webp?v=u1" alt="הודעה: לא משנה כמה כסף שמתי על הקורס הזה, מבחינתי קיבלתי מתנה. כל שיעור מרחיב את הידע והתודעה" width="900" height="917" loading="lazy"><figcaption>"לא משנה כמה שילמתי. קיבלתי מתנה."</figcaption></figure>
-    </div></div></div></div>
-      <div class="inc-row"><span class="n">8</span><h3>בונוס: בניית תיק השקעות</h3><small>עם הרכב אישי של התיק</small></div>
-      <div class="inc-row"><span class="n">9</span><h3>בונוס: לייב בונוס אחת לחודש</h3><small>למשך 3 חודשים אחרי הליווי</small><p>ליישום ומענה לשאלות.</p></div>
+    <span class="eyebrow">ככה נראה הליווי מבפנים</span>
+    <h2>28 יום. <span class="accent">צעד אחד בכל פעם.</span></h2>
+    <p class="lead">בשורה אחת: בונות לך תוכנית השקעות פשוטה וכמה שיותר אוטומטית, כדי שהכסף יהיה מחולק ויעבוד בשבילך בלי שתצטרכי להתעסק בזה כמעט בכלל.</p>
+    <div class="six">
+      <div class="six-card "><i aria-hidden="true">🎥</i><h3>מפגש לייב פעם בשבוע</h3><small>ימי שני ב-20:00<br>מוקלט ונשאר לתמיד</small></div>
+      <div class="six-card "><i aria-hidden="true">📱</i><h3>אזור אישי</h3><small>מלווה אותך כל יום</small></div>
+      <div class="six-card "><i aria-hidden="true">💬</i><h3>קבוצת ליווי בווטסאפ</h3><small>שאלות בין המפגשים</small></div>
+      <div class="six-card "><i aria-hidden="true">🤝</i><h3>פגישה אישית 1:1</h3><small>עם עמית או רות, מהצוות של אמא משקיעה</small></div>
+      <div class="six-card bonus"><em>בונוס</em><i aria-hidden="true">📈</i><h3>בניית תיק השקעות</h3><small>עם הרכב אישי של התיק</small></div>
+      <div class="six-card bonus"><em>בונוס</em><i aria-hidden="true">🔁</i><h3>לייב בונוס אחת לחודש</h3><small>למשך 3 חודשים אחרי הליווי, ליישום ומענה לשאלות</small></div>
     </div>
+    <ol class="tl6" aria-label="המסלול: מציד האוצר ועד מנגנון שעובד לבד">
+      <li><img src="assets/step-treasure.webp" alt="" width="640" height="640" loading="lazy"><b>ציד האוצר</b><span>היערכות</span></li>
+      <li><img src="assets/step-stage-map.webp" alt="" width="640" height="640" loading="lazy"><b>ממפות</b><span>שבוע 1</span></li>
+      <li><img src="assets/step-stage-protect.webp" alt="" width="640" height="640" loading="lazy"><b>מגינות</b><span>שבוע 2</span></li>
+      <li><img src="assets/step-stage-split.webp" alt="" width="640" height="640" loading="lazy"><b>מחלקות</b><span>שבוע 3</span></li>
+      <li><img src="assets/step-stage-activate.webp" alt="" width="640" height="640" loading="lazy"><b>מפעילות</b><span>שבוע 4</span></li>
+      <li class=last><img src="assets/step-celebrate.webp" alt="" width="640" height="640" loading="lazy"><b>עובד לבד</b><span>יום 28</span></li>
+    </ol>
+    <p class="six-dates">הלייבים של הליווי הקרוב: <span dir="ltr">5.10 · 12.10 · 19.10 · 26.10</span></p>
     <p class="inc-foot">את מקבלת את ההחלטות. הצוות עוזר לך לבצע אותן. ואף שלב לא לבד.</p>
     <div class="cta-row"><a class="btn go" data-cta="included" href="#join">אני רוצה לשריין מקום למחזור הקרוב</a></div>
+  </div>
+</section>
+
+<!-- ========== בונוסים ========== -->
+<section class="bonuses band-gray" id="bonuses">
+  <div class="wrap">
+    <span class="eyebrow">ולא רק זה</span>
+    <h2>ויש גם בונוסים</h2>
+    <p class="inc-demo">המסכים כאן הם הדמיה, עם נתונים לדוגמה.</p>
+
+    <div class="bx bx1">
+      <span class="bx-kick">יישום בפועל של כל מה שנלמד</span>
+      <h3>3 חודשי ליווי בווטסאפ<br>+ לייב Q&amp;A חודשי</h3>
+      <p>אחרי 28 הימים יש לך עוד שלושה חודשים של ליווי בווטסאפ, ולייב חודשי של שאלות ותשובות עם יועץ השקעות ואנשי המקצוע.</p>
+      <p>כי יש שאלות שיודעים לשאול רק אחרי שכבר ניסית לעשות. אני רוצה שהדברים יוטמעו, יצליחו, ויעבדו בפועל.</p>
+      <div class="bx-vis"><figure class="wa-mock">
+          <div class="wa-head"><img src="assets/adi.webp" class="wa-av" alt="" width="800" height="1200" loading="lazy"><div><b>קבוצת הליווי · אמא משקיעה</b><small>עדי, הצוות והמשתתפות</small></div></div>
+          <div class="wa-body">
+            <div class="m"><b>עדי</b>בוקר טוב 💛 מי שמצאה קופה שכוחה בציד האוצר, כתבי לי כאן.</div>
+            <div class="m"><b>עדי</b>ומי שנתקעת מול טופס, שולחת צילום מסך ופותרות יחד. אף אחת לא נשארת תקועה.</div>
+          </div>
+        </figure></div>
+      <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
+      <figure class="wa"><img src="assets/wa-t-group.webp?v=u1" alt="הודעה: המוח שלי מתפוצץ ואני מתה על זה. מרגיש באמת שיש קבוצת בנות איכותית וסביבה מקדמת" width="900" height="567" loading="lazy"><figcaption>קבוצת בנות איכותית וסביבה מקדמת.</figcaption></figure>
+    </div></div>
+      <div class="pills"><span class="pill-val">שווי 1,500 ₪</span></div>
+    </div>
+
+    <div class="bx bx2">
+      <span class="bx-kick">התיקייה שנפתחת לך מעבר לליווי</span>
+      <h3>כל המדריכים, ההקלטות והתכנים של אמא משקיעה</h3>
+      <figure class="bx-img"><img src="assets/mock-library2.webp" alt="ספריית התכנים של אמא משקיעה במחשב ובטלפון: שיעורי וידאו לפי נושאים" width="1300" height="746" loading="lazy"></figure>
+      <ul class="bx-list">
+        <li>כולל קורסים דיגיטליים ומדריכים</li>
+        <li>כל מה שלמדתי בשש שנים, מסונן ומזוקק</li>
+      </ul>
+      <p>מאגר תכנים של מרצים ואנשי מקצוע שאני מכירה אישית, מונגש בשפה של אמא משקיעה למי שמתחילה. למי שרוצה להעמיק ולצלול:</p>
+      <ul class="topics light">
+        <li>שוק ההון</li><li>איך בוחרים מניות</li><li>נדל״ן בארץ</li><li>נדל״ן בארה״ב</li><li>קריפטו</li><li>מוצרים פנסיוניים</li><li>תודעה</li><li>ועוד</li>
+      </ul>
+      <div class="pills"><span class="pill-val">שווי ההקלטות: 1,500 ₪</span></div>
+    </div>
+
+    <div class="bx bx3">
+      <span class="bx-kick">ואחרי 28 יום?</span>
+      <h3>מסלולי ההמשך של <span class="accent">בוגרות אמא משקיעה</span></h3>
+      <ol class="tmap">
+        <li><span class="tm-ic"><i aria-hidden="true">📊</i><em>1</em></span><b>הטבה ב-RiseUp</b><small>למעקב תזרים</small></li>
+        <li><span class="tm-ic"><i aria-hidden="true">🤝</i><em>2</em></span><b>פגישת 1:1</b><small>השקעות + מיטוב פנסיוני</small></li>
+        <li><span class="tm-ic"><i aria-hidden="true">🧾</i><em>3</em></span><b>החזרי מס</b><small>בדיקת התאמה</small></li>
+        <li><span class="tm-ic"><i aria-hidden="true">📈</i><em>4</em></span><b>הטבה בשוק ההון</b><small>על פתיחת תיק</small></li>
+        <li><span class="tm-ic"><i aria-hidden="true">🧩</i><em>5</em></span><b>הרכב תיק מניות</b><small>אישי</small></li>
+        <li><span class="tm-ic"><i aria-hidden="true">🏠</i><em>6</em></span><b>מחזור משכנתא</b><small>בחינת התאמה</small></li>
+        <li><span class="tm-ic"><i aria-hidden="true">🔑</i><em>7</em></span><b>משכנתא חדשה</b><small>ייעוץ אסטרטגי</small></li>
+        <li><span class="tm-ic"><i aria-hidden="true">🎬</i><em>8</em></span><b>הקלטות מתקדמות</b><small>ספריית התכנים</small></li>
+        <li><span class="tm-ic"><i aria-hidden="true">💬</i><em>9</em></span><b>3 חודשי ליווי</b><small>ווטסאפ + לייב Q&amp;A</small></li>
+        <li><span class="tm-ic"><i aria-hidden="true">🏢</i><em>10</em></span><b>תכנון נדל״ן</b><small>פגישת התאמה</small></li>
+      </ol>
+      <p class="tmap-free">חינם לבוגרות · כל אחת לפי מה שמתאים לה</p>
+      <p>הליווי הוא הבסיס. אחרי שאת יודעת כמה יש לך ומה המטרות שלך, לכל דבר שיהיה נכון לך להמשיך אליו יש למי לחבר אותך.</p>
+    </div>
+
+    <div class="trks">
+      <div class="trk">
+        <span class="trk-ic" aria-hidden="true">📊</span>
+        <h4>מעקב תזרים<span>בלי אקסל, בלי מאמץ</span></h4>
+        <ul><li>הטבה ב-RiseUp: חודש ראשון חינם, ועוד חודשיים בחצי מחיר</li><li>רואה כל חודש בדיוק כמה נכנס, כמה יצא, ולאן</li><li>המספרים שלך מתעדכנים לבד, ואת נשארת בשליטה</li></ul>
+        <div class="voucher"><small>הטבה לבוגרות אמא משקיעה</small><b>חודש חינם<br>+ חודשיים ב-50%</b><span>RiseUp · מעקב תזרים</span></div>
+        <div class="pills"><span class="pill-val">שווי 100 ₪</span><span class="pill-free">חינם לבוגרות, לפי התאמה</span></div>
+      </div>
+      <div class="trk">
+        <span class="trk-ic" aria-hidden="true">🤝</span>
+        <h4>פגישה אישית 1:1<span>תכנון השקעות ומיטוב התיק הפנסיוני</span></h4>
+        <ul><li>עם עמית או רות מהצוות של אמא משקיעה</li><li>גם אם כבר יש לך סוכן: הבדיקה נעשית בלי שהוא מקבל התראה עליה</li><li>בודקים דמי ניהול, מסלולים וכסף שנשכח, וממטבים</li></ul>
+        <div class="team"><span class="team-lbl">הפגישה האישית שלך, עם אחד מהם</span>
+          <div class="team-row">
+            <figure><img src="assets/team-amit.webp" alt="עמית, מהצוות של אמא משקיעה" width="360" height="360" loading="lazy"><figcaption><b>עמית</b>מהצוות של אמא משקיעה</figcaption></figure>
+            <figure><img src="assets/team-ruth.webp" alt="רות, מהצוות של אמא משקיעה" width="360" height="360" loading="lazy"><figcaption><b>רות</b>מהצוות של אמא משקיעה</figcaption></figure>
+          </div>
+        </div>
+        <div class="found-res"><span>מה מצאנו לאוריה:</span><div><small>דמי ניהול</small><b><s>0.7%</s> ← 0.1%</b></div><div><small>לפנסיה</small><b class="g"><span dir="ltr">+300,000 ₪</span></b></div></div>
+        <p class="trk-say">אף אחד לא משנה בשבילך שום דבר. עוד עין מקצועית מסתכלת על הדברים ונותנת המלצות. אם הכל טוב, הם הראשונים שיגידו שהכל טוב. ואם צריך שינוי, הם ממליצים, ואת מחליטה.</p>
+        <div class="pills"><span class="pill-val">שווי 2,500 ₪</span><span class="pill-free">חינם לבוגרות, לפי התאמה</span></div>
+      </div>
+      <div class="trk">
+        <span class="trk-ic" aria-hidden="true">🧾</span>
+        <h4>החזרי מס<span>בדיקת התאמה</span></h4>
+        <ul><li>בודקות יחד אם מגיע לך החזר על השנים האחרונות</li><li>ואם כן, את יודעת בדיוק מה מגישים ואיך</li><li>כסף שמגיע לך, שחוזר אלייך</li></ul>
+        <div class="stamp"><small>החזר לאחת המשתתפות</small><b>17,205 ₪</b></div>
+        <div class="pills"><span class="pill-val">שווי 500 ₪</span><span class="pill-free">חינם לבוגרות, לפי התאמה</span></div>
+      </div>
+      <div class="trk">
+        <span class="trk-ic" aria-hidden="true">📈</span>
+        <h4>הטבה בלעדית<span>על פתיחת תיק בשוק ההון</span></h4>
+        <ul><li>פתיחת תיק מסודרת, צעד אחר צעד, בלי להתבלבל</li><li>בתנאים מיוחדים לבוגרות אמא משקיעה</li><li>ומשם, ההפקדה הראשונה כבר אצלך</li></ul>
+        
+        <div class="pills"><span class="pill-val">שווי 300 ₪</span><span class="pill-free">חינם לבוגרות, לפי התאמה</span></div>
+      </div>
+      <div class="trk">
+        <span class="trk-ic" aria-hidden="true">🏠</span>
+        <h4>בחינת התאמה<span>למחזור משכנתא</span></h4>
+        <ul><li>בודקים אם מחזור יכול להוזיל לך את המשכנתא</li><li>מסתכלים על התמהיל, הריביות והתקופה</li><li>ומחליטות רק כשיש תמונה מלאה</li></ul>
+        
+        <div class="pills"><span class="pill-val">שווי 750 ₪</span><span class="pill-free">חינם לבוגרות, לפי התאמה</span></div>
+      </div>
+      <div class="trk">
+        <span class="trk-ic" aria-hidden="true">🔑</span>
+        <h4>ייעוץ אסטרטגי<span>לבניית משכנתא חדשה</span></h4>
+        <ul><li>לפני שחותמות: משכנתא שבנויה סביב המטרות שלך</li><li>תמהיל שמתאים לתזרים ולתוכנית ההשקעות</li><li>שקט בהחלטה הכי גדולה של המשפחה</li></ul>
+        
+        <div class="pills"><span class="pill-val">שווי 1,500 ₪</span><span class="pill-free">חינם לבוגרות, לפי התאמה</span></div>
+      </div>
+      <div class="trk">
+        <span class="trk-ic" aria-hidden="true">🏢</span>
+        <h4>פגישת התאמה<span>לתכנון נדל״ן</span></h4>
+        <ul><li>האם ומתי נכון לך להיכנס לנדל״ן</li><li>איך זה מתחבר לשאר התוכנית הכלכלית שלך</li><li>החלטה מתוך בהירות ושקט</li></ul>
+        
+        <div class="pills"><span class="pill-val">שווי 750 ₪</span><span class="pill-free">חינם לבוגרות, לפי התאמה</span></div>
+      </div>
+    </div>
+    <div class="cta-row"><a class="btn go" data-cta="bonuses" href="#join">אני רוצה לשריין מקום למחזור הקרוב</a></div>
   </div>
 </section>
 
@@ -1116,12 +1426,43 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   </div>
 </section>
 
+<!-- ========== הכל, ביחד ========== -->
+<section class="stack band-cream" id="stack">
+  <div class="wrap">
+    <span class="eyebrow">אז מה את מקבלת בפנים, אחד אחד</span>
+    <h2>הכל, ביחד:</h2>
+    <ul class="stk">
+      <li><img src="assets/jhome.webp" alt="" loading="lazy" width="120" height="120"><div><small dir=ltr>Family Finance OS™</small><b>תוכנית 4 השבועות המלאה + האזור האישי שלך</b></div><span>שווי <span dir="ltr">2,900 ₪</span></span></li>
+      <li><img src="assets/team-amit.webp" alt="" loading="lazy" width="120" height="120"><div><small dir=ltr>Zero-Friction Execution™</small><b>פגישה 1:1 עם הסוכן הפנסיוני, שמבצע עבורך</b></div><span>שווי <span dir="ltr">2,500 ₪</span></span></li>
+      <li><img src="assets/step-treasure.webp" alt="" loading="lazy" width="120" height="120"><div><small dir=ltr>Cash Finder System™</small><b>כספים אבודים: בממוצע מעל 20,000 ₪ למשתתפת</b></div><span>שווי <span dir="ltr">3,000+ ₪</span></span></li>
+      <li><img src="assets/mock-live.webp?v=2" alt="" loading="lazy" width="120" height="120"><div><small dir=ltr>LIVE</small><b>4 מפגשי לייב שבועיים + הקלטות</b></div><span>שווי <span dir="ltr">2,300 ₪</span></span></li>
+      <li><img src="assets/step-stage-protect.webp" alt="" loading="lazy" width="120" height="120"><div><small dir=ltr>Dream Team</small><b>גישה לצוות הדרים טים של אמא משקיעה</b></div><span>שווי <span dir="ltr">2,000+ ₪</span></span></li>
+      <li><img src="assets/illo-jars.webp" alt="" loading="lazy" width="120" height="120"><div><small dir=ltr>Dual Timeline™ + Set &amp; Review™</small><b>מנגנון החלוקה האוטומטי האישי שלך</b></div><span>שווי <span dir="ltr">1,500 ₪</span></span></li>
+      <li><img src="assets/step-celebrate.webp" alt="" loading="lazy" width="120" height="120"><div><small dir=ltr>Community</small><b>קהילת הבוגרות של אמא משקיעה</b></div><span>שווי <span dir="ltr">1,200 ₪</span></span></li>
+      <li><img src="assets/mock-library.webp" alt="" loading="lazy" width="120" height="120"><div><b>הידע המזוקק: איך משקיעים, בלי חפירות</b></div><span>שווי <span dir="ltr">1,200 ₪</span></span></li>
+      <li><img src="assets/step-stage-map.webp" alt="" loading="lazy" width="120" height="120"><div><b>המלצה אישית למסלול ההמשך שלך</b></div><span>שווי <span dir="ltr">500 ₪</span></span></li>
+    </ul>
+    <h3 class="stk-more-h">ועוד, לבוגרות: מסלולי ההמשך, לפי התאמה</h3>
+    <ul class="stk-more">
+      <li><b>כל המדריכים, ההקלטות והתכנים של אמא משקיעה</b><span dir="ltr">1,500 ₪</span></li>
+      <li><b>הטבה ב-RiseUp למעקב תזרים</b><span dir="ltr">100 ₪</span></li>
+      <li><b>בדיקת התאמה להחזרי מס</b><span dir="ltr">500 ₪</span></li>
+      <li><b>הטבה על פתיחת תיק בשוק ההון</b><span dir="ltr">300 ₪</span></li>
+      <li><b>3 חודשי ליווי בווטסאפ + לייב Q&amp;A חודשי</b><span dir="ltr">1,500 ₪</span></li>
+      <li><b>בחינת התאמה למחזור משכנתא</b><span dir="ltr">750 ₪</span></li>
+      <li><b>ייעוץ אסטרטגי לבניית משכנתא חדשה</b><span dir="ltr">1,500 ₪</span></li>
+      <li><b>פגישת התאמה לתכנון נדל״ן</b><span dir="ltr">750 ₪</span></li>
+    </ul>
+    <p class="stk-say">אבל האמת? מה שמעניין אותי זה הפוטנציאל: מאות אלפי שקלים, ותכל׳ס מיליונים. תלוי כמה שמות, וכמה שנים.</p>
+  </div>
+</section>
+
 <!-- ========== מחיר ========== -->
 <section class="price band-pink" id="price">
   <div class="wrap">
     <div class="price-card">
       <span class="eyebrow">ההשקעה שלך</span>
-      <div class="full">מחיר מלא <s>3,500 ₪</s></div>
+      <div class="notpay"><span>את לא משלמת:</span><s>26,000 ₪</s><small>השווי של כל מה שאת מקבלת</small><s>4,800 ₪</s><small>המחיר שבו נמכר הליווי בפעם הקודמת</small></div>
       <div class="big">3 × 999 ₪</div>
       <div class="total">סה"כ 2,997 ₪ · בשלושה תשלומים</div>
       <a class="btn go" data-cta="price" href="#join">אני רוצה לשריין מקום למחזור הקרוב</a>
@@ -1129,11 +1470,12 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       <p class="alt">או <b>2,800 ₪ בתשלום אחד</b> · הנחה מיידית של 197 ₪</p>
       <ul class="pfacts">
         <li id="bonusFact"><b>בונוס למי שנרשמת <span class="bonus-until">עד הלילה ב-00:00</span>.</b>מערכת ה-AI שבונה לך הרכב תיק השקעות אישי, נכנסת איתך לליווי.</li>
-        <li><b>זה המחיר הנמוך ביותר שהליווי הזה יהיה.</b>במחזורים הבאים הוא עולה.</li>
+        <li><b>זה המחיר הנמוך ביותר שהליווי הזה יהיה.</b>בליוויים הבאים הוא עולה.</li>
         <li><b>מקומות אחרונים לליווי שמתחיל ב-5.10.</b>מי שנרשמת אחרי שהמקומות נגמרים נכנסת מיד לרשימת ההמתנה לליווי הבא, ושומרת את המחיר הזה.</li>
         <li><b>יוצאות לדרך יום שני 5.10.</b>מיד אחרי החגים. עד סוף אוקטובר המנגנון שלך עובד.</li>
       </ul>
-      <p class="micro" style="margin-top:20px"><strong>אחריות מלאה:</strong> עברת את הליווי, הגעת למפגשים, ולא יצאת עם מפת דרכים ברורה? החזר מלא, בלי שאלות.<br>תשלום מאובטח בקארדקום.</p>
+      <div class="guar-box"><span>100% אחריות על התהליך</span><b>עברת את הליווי, הגעת למפגשים, ולא יצאת עם מפת דרכים ברורה? קבלי החזר מלא.</b><em>אני אוהבת כסף שמח :)</em><small>בלי שאלות. או שאת יוצאת עם ערך אמיתי, או שלא שילמת שקל.</small></div>
+      <p class="micro" style="margin-top:14px">תשלום מאובטח בקארדקום.</p>
     </div>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
       <figure class="wa"><img src="assets/wa-t-haim.webp?v=u1" alt="הודעה: באמת השתנו לנו החיים. תפיסה שהשתנתה 180 מעלות, דיבור שונה לחלוטין. ומה שכיף שזה גרם גם לבעלי להיות איתי בזה" width="900" height="1124" loading="lazy"><figcaption>"באמת השתנו לנו החיים." וגם בעלה איתה בזה.</figcaption></figure>
@@ -1146,7 +1488,12 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   <div class="wrap">
     <span class="eyebrow">שריון מקום</span>
     <h2>שרייני את המקום שלך</h2>
-    <p class="lead">שם וטלפון, ואז מעבר לתשלום מאובטח. לוקח דקה.</p>
+    <p class="lead">3 צעדים ואת בפנים. לוקח דקה.</p>
+    <ol class="steps3" aria-label="3 צעדים ואת בפנים">
+      <li><b>1</b>משאירה שם וטלפון</li>
+      <li><b>2</b>משלמת באתר מאובטח: 3 × 999 ₪, או 2,800 ₪ בתשלום אחד</li>
+      <li><b>3</b>מצטרפת לאמא משקיעה, ומיד מקבלת לינק לאזור האישי</li>
+    </ol>
     <form class="join-form" id="joinForm" novalidate>
       <label><span>השם שלך</span><input type="text" id="j-name" name="name" autocomplete="name" maxlength="80" placeholder="שם מלא" required></label>
       <label><span>הטלפון שלך</span><input type="tel" id="j-phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="050-0000000" required></label>
@@ -1184,18 +1531,19 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
     <h2>איך תדעי אם זה הרגע המדויק בשבילך?</h2>
     <div class="fit-grid">
       <div class="fit">
-        <h3>הליווי נבנה בשבילך אם:</h3>
+        <h3>הליווי הזה נבנה בדיוק בשבילך אם:</h3>
         <ul class="checks">
-          <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>יש לך כסף שיושב, גם אם זה 20 אלף וגם אם זה 200 אלף, ואת רוצה שהוא יתחיל לעבוד.</span></li>
+          <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>את רוצה לבנות עתיד כלכלי חכם למשפחה שלך.</span></li>
+          <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>את מבינה שהגיע הזמן להפסיק לדחות ולהתחיל לעשות סדר.</span></li>
           <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>את רוצה לדעת בדיוק מה יש לך, מה נכון לך, ומה הצעד הבא.</span></li>
-          <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>את לא מחפשת עוד ידע. את מחפשת דרך ברורה ליישם.</span></li>
-          <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>יש לך שעה בשבוע בארבעת השבועות הקרובים.</span></li>
-          <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>או שדווקא הכל אצלך עומד להשתנות, לימודים או עבודה חדשה, ואת רוצה להיכנס לתקופה הזו עם מסגרת מוכנה ולא אחריה.</span></li>
+          <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>את לא מחפשת סתם עוד ידע. את מחפשת דרך ברורה ליישם.</span></li>
+          <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>יש לך שעה, שעה וחצי בשבוע בארבעת השבועות הקרובים.</span></li>
+          <li><span class="ck"><svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="#191A2E" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>או שדווקא הכל אצלך עומד להשתנות, לימודים או עבודה חדשה, ואת רוצה להיכנס לתקופה הזו עם מסגרת מוכנה.</span></li>
         </ul>
       </div>
     </div>
     <div class="proof"><span class="proof-lbl">מהשטח</span><div class="proof-items">
-      <figure class="wa"><img src="assets/wa-t-wa1.webp?v=u1" alt="הודעה: תודה מעומק הלב על התכנית שלך שהעירה אותי והתחילה לגלגל אותי לאן שאני נמצאת היום. איפה הייתי לפני שנה והיום זה לא להאמין. במיינדסט, בפעולות, וגם בתזרים" width="900" height="1363" loading="lazy"><figcaption>"איפה הייתי לפני שנה והיום. במיינדסט, בפעולות, ובתזרים."</figcaption></figure>
+      <figure class="wa"><img src="assets/wa-t-hila.webp?v=u1" alt="הודעה: היי עדי! קודם כל רוצה להגיד לך תודה על הקורס הזה. אני שמחה מאוד שנרשמתי! והוא ממש בנוי בצורה גאונית. אני עוד overwhelmed ולא ממש מצליחה לנסח משהו קצת יותר קונקרטי, אבל אני כבר רואה איך זה פתח לי עולם שלם." width="900" height="729" loading="lazy"><figcaption>"בנוי בצורה גאונית. פתח לי עולם שלם."</figcaption></figure>
     </div></div>
     <div class="cta-row"><a class="btn go" data-cta="fitsec" href="#join">אני רוצה לשריין מקום למחזור הקרוב</a></div>
   </div>
@@ -1220,20 +1568,27 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
         <div class="chips" id="chatChips">
         <button type="button" data-q="0">"זה מסובך מדי בשבילי. אני אסתבך ואוותר."</button>
         <button type="button" data-q="1">"אין לי מספיק כסף כדי להתחיל."</button>
-        <button type="button" data-q="2">"הכסף שלי כבר יושב בקרן כספית. יש לי בכלל מה לעשות בליווי?"</button>
+        <button type="button" data-q="2">"אני במינוס, או שיש לי הלוואה. זה מתאים לי?"</button>
         <button type="button" data-q="3">"חסר לי ידע. אני לא מבינה כלום בהשקעות."</button>
-        <button type="button" data-q="4">"למה לפזר לכמה השקעות? לא עדיף שכל הכסף יצבור ריבית דריבית ביחד?"</button>
+        <button type="button" data-q="4">"אני לא יכולה בימי שני ב-20:00. ובכלל, אין לי זמן."</button>
         <button type="button" data-q="5">"מה בעצם יש בתוכנית, ומה מותאם אישית?"</button>
-        <button type="button" data-q="6">"בסוף התוכנית אני באמת פותחת ומתחילה להשקיע, או רק מבינה מה לעשות?"</button>
-        <button type="button" data-q="7">"זו לא תקופה מתאימה בשבילי."</button>
-        <button type="button" data-q="8">"אין לי זמן. אני בתקופה ממש עמוסה."</button>
-        <button type="button" data-q="9">"יש מישהו שיסתכל על המצב הספציפי שלנו אחד על אחד?"</button>
-        <button type="button" data-q="10">"אני חושבת גם על כיוון של נדל״ן."</button>
-        <button type="button" data-q="11">"תגידי לי במה להשקיע?"</button>
-        <button type="button" data-q="12">"מתי זה מתחיל, וכמה זמן זה?"</button>
-        <button type="button" data-q="13">"2,997 ₪ וזהו? בלי הפתעות?"</button>
+        <button type="button" data-q="6">"בסוף התוכנית אני באמת משקיעה, או רק מבינה מה לעשות?"</button>
+        <button type="button" data-q="7">"מה קורה אחרי 28 יום?"</button>
+        <button type="button" data-q="8">"יש מישהו שיסתכל על המצב הספציפי שלנו אחד על אחד?"</button>
+        <button type="button" data-q="9">"כבר יש לי סוכן ותיק השקעות. יש לי מה לחפש אצלכן?"</button>
+        <button type="button" data-q="10">"תגידי לי במה להשקיע?"</button>
+        <button type="button" data-q="11">"מה ההבדל בין הליווי לבין לקחת יועץ השקעות?"</button>
+        <button type="button" data-q="12">"הכסף שלי כבר יושב בקרן כספית. יש לי בכלל מה לעשות בליווי?"</button>
+        <button type="button" data-q="13">"למה לפזר לכמה השקעות? לא עדיף שכל הכסף יצבור ריבית דריבית ביחד?"</button>
         <button type="button" data-q="14">"אצלנו בבית בעלי דואג לזה."</button>
-        <button type="button" data-q="15">"ומה אם איתקע באמצע?"</button>
+        <button type="button" data-q="15">"זה מתאים גם לרווקות?"</button>
+        <button type="button" data-q="16">"אני חושבת גם על כיוון של נדל״ן."</button>
+        <button type="button" data-q="17">"זו לא תקופה מתאימה בשבילי."</button>
+        <button type="button" data-q="18">"מתי זה מתחיל, וכמה זמן זה?"</button>
+        <button type="button" data-q="19">"2,997 ₪ וזהו? בלי הפתעות?"</button>
+        <button type="button" data-q="20">"למה המחיר נמוך יותר מבעבר?"</button>
+        <button type="button" data-q="21">"התכנים נשארים שלי גם אחרי שהליווי נגמר?"</button>
+        <button type="button" data-q="22">"ומה אם איתקע באמצע?"</button>
         </div>
       </div>
     </div>
@@ -1448,7 +1803,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
 
   /* 8) צ'אט שאלות אינטראקטיבי */
   (function(){
-    var QA=[{"q": "\"זה מסובך מדי בשבילי. אני אסתבך ואוותר.\"", "a": ["ככה חשבו רוב הנשים שעברו כאן.", "ולכן הליווי בנוי בדיוק הפוך: צעד אחד קטן בכל שבוע, בשפה של אמא, ואזור אישי שאומר לך מה הצעד הבא. אחד.", "ואת החלק שנתפס \"מסובך\", הטפסים והפתיחה, עושים <strong>ביחד עם אנשי המקצוע</strong>. את לא נשארת שם לבד."]}, {"q": "\"אין לי מספיק כסף כדי להתחיל.\"", "a": ["הוראת קבע מתחילה גם ב-<strong>100 ₪</strong> בחודש.", "ועוד לפני זה יש ציד אוצר: ממפות מה שכבר יש לך. רוב הנשים מגלות יותר ממה שחשבו, לפעמים גם קופות שכוחות.", "והערך האמיתי הוא <strong>המסילה</strong>, לא הסכום. ברגע שהמסילה בנויה, גם 200 ₪ שנשארו לך בסוף החודש יודעים בדיוק לאן ללכת. בלי לתכנן הכל מחדש, בלי להתלבט שוב.", "את הכסף לפעולה מוצאים בתהליך. בלי צנע ובלי לוותר על החיים של היום."]}, {"q": "\"הכסף שלי כבר יושב בקרן כספית. יש לי בכלל מה לעשות בליווי?\"", "a": ["השאלה הראשונה היא לא באיזה מכשיר הכסף יושב. היא <strong>מתי תצטרכי אותו</strong>.", "כסף שאת בונה עליו לשנה שנתיים הקרובות צריך להיות זמין ונזיל. כסף שלא תיגעי בו 15 שנה יכול לעבוד אחרת לגמרי, ולאורך זמן זה ההבדל בין שמור לבין גדל.", "רוב הנשים שמגיעות לכאן מחזיקות את הכל בערימה אחת, ולכן הכסף שלהן שמור, אבל לא עובד.", "בליווי את עושה את החלוקה הזו על המספרים שלך, ויוצאת עם מסלול לכל טווח."]}, {"q": "\"חסר לי ידע. אני לא מבינה כלום בהשקעות.\"", "a": ["מצוין. זו בדיוק נקודת הפתיחה שהליווי בנוי לה.", "את מקבלת את הידע בפשטות: מה זה מדד, מה זו קרן סל, למה פיזור ופשטות מנצחים. הרצאה של יועץ השקעות, ומערכת שעונה לך על כל שאלה, בכל שעה.", "ואם בא לך להעמיק? נפתחת לך <strong>ספריית התכנים של אמא משקיעה</strong>: שיעורי עומק עם אנשי מקצוע תותחים על שוק ההון, נדל״ן בארץ ובחו״ל, קריפטו, מוצרים פנסיוניים, תודעה והתנהלות פיננסית. בזמן שלך, לפי נושא.", "והסוד האמיתי? את לא צריכה להיות מומחית. את צריכה <strong>הוראת קבע אחת שרצה</strong>. בזה מסיימות."]}, {"q": "\"למה לפזר לכמה השקעות? לא עדיף שכל הכסף יצבור ריבית דריבית ביחד?\"", "a": ["מבחינת החישוב זה בדיוק אותו דבר. <strong>10 פעמים ריבית על שקל אחד, או פעם אחת ריבית על 10 שקלים.</strong> אותה תוצאה בדיוק. את לא מפסידה שקל מהחלוקה.", "ואין שום עניין לחלק כדי לחלק. <strong>מחלקות לפי זמן</strong>: כסף שתצטרכי בקרוב, כסף שתצטרכי בשנים הקרובות אבל עדיין לא, וכסף שאת יכולה להשקיע ולא לגעת בו ב-15 השנים הבאות.", "כי מה שקובע כמה סיכון מתאים לשקל מסוים זה לא הגודל שלו. זה מתי תצטרכי אותו.", "ככה כל שקל יושב במקום שמתאים לזמן שלו, ואת לא נאלצת למשוך כסף מטווח ארוך בדיוק ברגע הלא נכון."]}, {"q": "\"מה בעצם יש בתוכנית, ומה מותאם אישית?\"", "a": ["בשורה אחת: בונות לך <strong>תוכנית השקעות פשוטה וכמה שיותר אוטומטית</strong>, כדי שהכסף יהיה מחולק ויעבוד בשבילך, בלי שתצטרכי להתעסק בזה כמעט בכלל.", "המותאם אישית זה <strong>הלב של העניין</strong>: המספרים שלך (כולל מה שנמצא בציד האוצר), החלומות והמטרות שלך, החלוקה בין הטווחים, וגובה ההוראת קבע שמתאים לך.", "והמסגרת קבועה: 4 מפגשי לייב, אזור אישי עם צעד אחד ליום, פגישה אישית עם הסוכן הפנסיוני, והרצאה ומענה של יועץ ההשקעות.", "והמפגשים עוברים <strong>בלייב</strong>, כולם, ומוקלטים ועולים לך לפורטל. ובבונוס נפתחת גם ספריית התכנים: שיעורי עומק עם אנשי מקצוע, לפי נושאים.", "ולא רק מבצעות: לומדות בדרך מה זה מדד, מה זו קרן סל, מה עושים דמי ניהול, ואיזה אפיק מתאים לאיזה טווח. <strong>כדי שתדעי לעשות את זה גם לבד.</strong>", "ביום 28 את לא יוצאת עם ידע. את יוצאת עם <strong>מנגנון שרץ</strong>."]}, {"q": "\"בסוף התוכנית אני באמת פותחת ומתחילה להשקיע, או רק מבינה מה לעשות?\"", "a": ["פותחת ומתחילה. זו כל הנקודה.", "בשבוע 3 יושבים על הביצוע: פגישה אישית עם עמית ביטון, הסוכן הפנסיוני של הצוות, פותחות מה שצריך, ומורידות את <strong>הוראת הקבע</strong> להשקעות.", "ביום 28 ההוראה הראשונה כבר יורדת. את לא יוצאת עם רשימת מטלות, את יוצאת עם מנגנון שרץ.", "ומי שרוצה פותחת גם <strong>תיק השקעות עצמאי</strong>, עם הטבה על הפתיחה. וגם שם לא לבד: מענה אישי מ-IBI על הצד הטכני, ויועץ ההשקעות על איך מרכיבים את התיק מבפנים."]}, {"q": "\"זו לא תקופה מתאימה בשבילי.\"", "a": ["את המשפט הזה אמרת לעצמך גם בשנה שעברה. 🙂", "ובינתיים, בהשקעה לטווח ארוך, כל שנתיים של המתנה יכולות לעלות <strong>מעל 100,000 ₪</strong> בתוצאה הסופית.", "ואם דווקא עכשיו הכל עומד להשתנות אצלך, לימודים, עבודה חדשה, תזרים שעוד לא ברור? זו הסיבה הכי טובה לעשות את הסדר <strong>לפני</strong> השינוי ולא אחריו. ככה את נכנסת לתקופה החדשה עם מסגרת מוכנה.", "הליווי דורש בערך שעה בשבוע, למשך 4 שבועות."]}, {"q": "\"אין לי זמן. אני בתקופה ממש עמוסה.\"", "a": ["<strong>4</strong> לייבים, בימי שני ב-20:00, וכולם מוקלטים, עולים לאזור האישי, ונשארים שלך.", "כל השאר בזמן שלך: צעד יומי של 5 עד 10 דקות, ופגישה אישית אחת שנקבעת לנוחות שלך.", "ואם שבוע אחד נבלע לך בעבודה או בלימודים, את משלימה בקצב שלך. <strong>אף אחת לא נופלת מהעגלה בגלל לוח זמנים.</strong>"]}, {"q": "\"יש מישהו שיסתכל על המצב הספציפי שלנו אחד על אחד?\"", "a": ["כן. <strong>פגישה אישית 1:1</strong> עם עמית ביטון, הסוכן הפנסיוני של הצוות: מוציא מסלקה ורואה בדיוק מה יש לכם, בודק דמי ניהול וכיסויים, ומסדר את הפנסיה והביטוחים. את מקבלת ממנו גם סיכום כתוב.", "ואת החלוקה עצמה, איך ה-1,000 ₪ שאת מפרישה מתחלקים בין הטווחים, בונות ביחד בליווי על המספרים שלך. אני והצוות איתך בקבוצה ובלייבים, ואפשר לשאול שם הכל.", "ולמי שפותחת תיק השקעות עצמאי יש מענה אישי בשני הפנים: <strong>מ-IBI</strong> על הצד הטכני של פתיחת התיק, ו<strong>מיועץ ההשקעות</strong> על איך מרכיבים אותו מבפנים, התמהיל עצמו. שם שואלים אישית, ומקבלים תשובה ממי שמותר לו לענות."]}, {"q": "\"אני חושבת גם על כיוון של נדל״ן.\"", "a": ["מעולה, וזה מתחבר. בליווי בונים את הבסיס: תמונה מלאה של הכסף, קרן חירום, חלוקה לטווחים, והון שמתחיל להיבנות. זה בדיוק ההון העצמי שנדל״ן דורש.", "ומי שמתאימה, ויש לה הון עצמי שאפשר להתקדם איתו, מקבלת אצלנו <strong>הכוונה לנדל״ן אחרי התוכנית</strong>, כדי להתקדם גם בערוץ הזה."]}, {"q": "\"תגידי לי במה להשקיע?\"", "a": ["<strong>אני לא. ובכוונה.</strong> המלצה אישית על נייר ערך היא תפקיד של מי שיש לו רישיון לזה.", "ובדיוק בשביל זה יש בליווי יועץ השקעות: הרצאה, מערכת מענה, ומפגש שאלות ותשובות. שם שואלים את השאלות האישיות, ומקבלים תשובות ממי שמותר לו לענות.", "התפקיד שלי: שתביני את המפה, תבחרי בביטחון, ותפעלי דרך המסילות הנכונות."]}, {"q": "\"מתי זה מתחיל, וכמה זמן זה?\"", "a": ["המחזור הקרוב יוצא לדרך ביום שני <strong>5.10</strong>, מיד אחרי החגים, ונמשך <strong>28</strong> יום.", "הלייבים בימי שני ב-20:00. ושבוע ההיערכות שלך מתחיל כבר ברגע ההצטרפות: כניסה לאזור האישי, שאלון קצר, וציד האוצר."]}, {"q": "\"2,997 ₪ וזהו? בלי הפתעות?\"", "a": ["כן. <strong>3 תשלומים של 999 ₪</strong>, או 2,800 ₪ בתשלום אחד. הכל כלול.", "4 הלייבים, האזור האישי, הפגישה עם הסוכן הפנסיוני, ההרצאה והמענה של יועץ ההשקעות, ומפגש השאלות.", "ומה שתחליטי להשקיע? נכנס לתיק שלך, על שמך, ונשאר שלך."]}, {"q": "\"אצלנו בבית בעלי דואג לזה.\"", "a": ["נהדר שיש מישהו שמתעסק בזה. אבל ביטחון כלכלי אמיתי הוא לא שמישהו אחר מבין בשבילך. הוא שגם את יודעת מה יש לכם, ולמה.", "לירון, בוגרת: בעלה בנדל״ן, קיבל את כל ההחלטות. היום הם מחליטים יחד, וקנו עוד דירה שהיא חסמה מפחד.", "וזו בדרך כלל השיחה הכי טובה שהייתה לזוג על כסף."]}, {"q": "\"ומה אם איתקע באמצע?\"", "a": ["יש לך אזור אישי שתמיד מראה לך את הפעולה הבאה האחת, לייב כל שבוע, ואנשי מקצוע שעושים איתך את החלק הגדול.", "ואם בסוף הליווי לא יצאת עם מפת דרכים ברורה? <strong>החזר מלא.</strong>", "אין פה אף שלב שבו את לבד. דאגתי לזה."]}];
+    var QA=[{"q": "\"זה מסובך מדי בשבילי. אני אסתבך ואוותר.\"", "a": ["ככה חשבו רוב הנשים שעברו כאן.", "ולכן הליווי בנוי בדיוק הפוך: צעד אחד קטן בכל שבוע, בשפה של אמא, ואזור אישי שאומר לך מה הצעד הבא. אחד.", "ואת החלק שנתפס \"מסובך\", הטפסים והפתיחה, עושים <strong>ביחד עם אנשי המקצוע</strong>. את לא נשארת שם לבד."]}, {"q": "\"אין לי מספיק כסף כדי להתחיל.\"", "a": ["קודם כל יוצאות לחפש את הכסף האבוד שלך. רוב הנשים מגלות יותר ממה שחשבו, לפעמים גם קופות שכוחות.", "וגם אם יש לך היום <strong>100 ₪ פנויים בחודש</strong>, אפשר להתחיל להשקיע. יש מוצרים שמתחילים גם ב-20 ₪. מה שמעניין אותי זה ההתחלה.", "והערך האמיתי הוא <strong>המסילה</strong>, לא הסכום. ברגע שהמסילה בנויה, גם 200 ₪ שנשארו לך בסוף החודש יודעים בדיוק לאן ללכת. בלי לתכנן הכל מחדש, בלי להתלבט שוב."]}, {"q": "\"אני במינוס, או שיש לי הלוואה. זה מתאים לי?\"", "a": ["תלוי מה עומד מולם.", "אם יש לך מינוס או הלוואה, ויש גם חסכונות או כסף שיושב במקום אחר, מעולה: לפעמים פשוט צריך לעשות סדר אחר. הלוואה היא מבחינתי עוד הוצאה חודשית. מה שחשוב הוא שבכל חודש נשאר לך כסף פנוי, אפילו קטן.", "ואם המינוס גדול מאוד ואין שום חיסכון שמגבה אותו, השלב הראשון הוא לצאת ממנו, ורק אז להשקיע.", "לא בטוחה איפה את? כתבי לי בווטסאפ ונבדוק ביחד."]}, {"q": "\"חסר לי ידע. אני לא מבינה כלום בהשקעות.\"", "a": ["זו בדיוק נקודת הפתיחה שהליווי בנוי בשבילה.", "לא צריך להיות מומחית ולא צריך להבין במושגים של כסף. אם זו הפעם הראשונה שלך, מעולה. ואם כבר יש לך השקעות אבל הדברים עוד לא יושבים לך בראש, מושלם: מאפסות, ומתחילות כמו שצריך.", "את הידע את מקבלת בפשטות, <strong>בשפה של אמא</strong>, כמו שאני הייתי רוצה שיסבירו לי.", "ואם בא לך להעמיק? נפתחת לך <strong>ספריית התכנים של אמא משקיעה</strong>: מרצים ואנשי מקצוע על שוק ההון, נדל״ן, קריפטו, מוצרים פנסיוניים ותודעה. בזמן שלך, לפי נושא.", "והסוד האמיתי? את לא צריכה להיות מומחית. את צריכה <strong>הוראת קבע אחת שרצה</strong>."]}, {"q": "\"אני לא יכולה בימי שני ב-20:00. ובכלל, אין לי זמן.\"", "a": ["הכל מוקלט, עולה לאזור האישי שלך, ונשאר פתוח לך לתמיד. את משלימה בזמן שלך.", "זה לייב אחד בשבוע, בין שעה לשעה וחצי, וצעד קטן של 5 עד 10 דקות באזור האישי. כמה שפחות מאמץ, כמה שיותר תוצאות.", "את הפגישה האישית את קובעת בשעה שנוחה לך. ואם משהו לא היה ברור, בווטסאפ תמיד מקבלים מענה."]}, {"q": "\"מה בעצם יש בתוכנית, ומה מותאם אישית?\"", "a": ["בשורה אחת: בונות לך <strong>תוכנית השקעות פשוטה וכמה שיותר אוטומטית</strong>, כדי שהכסף יהיה מחולק ויעבוד בשבילך, בלי שתצטרכי להתעסק בזה כמעט בכלל.", "המותאם אישית זה <strong>הלב של העניין</strong>: המספרים שלך (כולל מה שנמצא בציד האוצר), החלומות והמטרות שלך, החלוקה בין הטווחים, וגובה הוראת הקבע שמתאים לך.", "והמסגרת קבועה: 4 מפגשי לייב, אזור אישי עם צעד אחד בכל פעם, קבוצת ליווי בווטסאפ, ופגישה אישית 1:1 עם עמית או רות מהצוות.", "ואחרי 28 הימים: שלושה חודשי ליווי בווטסאפ, לייב חודשי של שאלות ותשובות, ספריית התכנים, ומסלולי ההמשך לבוגרות.", "ביום 28 את לא יוצאת עם ידע. את יוצאת עם <strong>מנגנון שרץ</strong>."]}, {"q": "\"בסוף התוכנית אני באמת משקיעה, או רק מבינה מה לעשות?\"", "a": ["משקיעה. אני רוצה שתהיי אמא משקיעה לא רק בידע, אלא בתכל׳ס.", "פותחות מה שצריך עם אנשי המקצוע, עושות הוראת קבע, ו<strong>יש לך כבר הוראה שיורדת</strong>.", "כל אחת לפי מה שמתאים לה: תיק השקעות עצמאי, תיק מנוהל, או קרן כספית. חשוב לי שתהיה לך כבר הפעולה הזאת, שעשית בעצמך. הפעם הבאה תהיה פי אלף יותר קלה, כי כבר עשינו את זה ביחד."]}, {"q": "\"מה קורה אחרי 28 יום?\"", "a": ["את לא נשארת לבד. זו רק ההתחלה.", "יש לך <strong>שלושה חודשי ליווי בווטסאפ</strong> ולייב חודשי של שאלות ותשובות, קהילת הבוגרות, וכל ההקלטות והתכנים, שנשארים שלך.", "ו<strong>מסלולי ההמשך לבוגרות</strong>, כל אחת לפי מה שמתאים לה: מעקב תזרים, החזרי מס, הטבה על פתיחת תיק, משכנתא ונדל״ן."]}, {"q": "\"יש מישהו שיסתכל על המצב הספציפי שלנו אחד על אחד?\"", "a": ["כן. <strong>פגישה אישית 1:1</strong> עם עמית או רות מהצוות של אמא משקיעה. הם נפגשים איתך ומסתכלים איתך על כל הנתונים ביחד: דמי ניהול, מסלולים, וכסף שנשכח.", "ואת החלוקה עצמה, איך מה שאת מפרישה כל חודש מתחלק בין הטווחים, בונות ביחד בליווי על המספרים שלך. אני והצוות איתך בקבוצה ובלייבים, ואפשר לשאול שם הכל.", "אגב, הנתונים שלך הם שלך. את ואנשי המקצוע רואים אותם. אותי מעניין שתצליחי, תעשי ותיישמי."]}, {"q": "\"כבר יש לי סוכן ותיק השקעות. יש לי מה לחפש אצלכן?\"", "a": ["השאלה היא אם יש לך תוכנית.", "אם פתוח לך תיק השקעות ואת לא משקיעה בו, או שאת לא סגורה על מה שיש בו, בונות תוכנית ומוודאות שהדברים מותאמים לך.", "ואם יש לך סוכן ואת לא בטוחה שהדברים נכונים: בפגישה האישית עוד עין מקצועית מסתכלת על הנתונים שלך. <strong>הבדיקה נעשית בלי שהסוכן שלך מקבל עליה התראה</strong>, ואף אחד לא משנה בשבילך שום דבר. אם הכל טוב, הם הראשונים שיגידו שהכל טוב."]}, {"q": "\"תגידי לי במה להשקיע?\"", "a": ["אני לא. אני לא יועצת השקעות, מעולם לא הייתי, ואין לי כוונה להיות.", "אבל יש לי <strong>צוות שכולו בעלי רישיון</strong>, אנשים מעולם ההשקעות, שעונים לך על כל השאלות האישיות שלך. לא תישאר שום שאלה פתוחה.", "התפקיד שלי: שתביני את המפה, תבחרי בביטחון, ותפעלי דרך המסילות הנכונות."]}, {"q": "\"מה ההבדל בין הליווי לבין לקחת יועץ השקעות?\"", "a": ["יועץ השקעות נותן לך מענה ספציפי על איך בונים תיק השקעות. סוכן פנסיוני נותן מענה ספציפי על הפנסיה.", "כאן יש לך <strong>הכל במנגנון אחד</strong>, יחד עם למידה והבנה של מה את בעצם עושה, ויישום בפועל.", "מסתכלות על כל המכלול ביחד, ואז את מקבלת את הייעוץ כשאת כבר בנויה ליישם אותו."]}, {"q": "\"הכסף שלי כבר יושב בקרן כספית. יש לי בכלל מה לעשות בליווי?\"", "a": ["השאלה הראשונה היא לא באיזה מכשיר הכסף יושב. היא <strong>מתי תצטרכי אותו</strong>.", "כסף שאת בונה עליו לשנה שנתיים הקרובות צריך להיות זמין ונזיל. כסף שלא תיגעי בו 15 שנה יכול לעבוד אחרת לגמרי, ולאורך זמן זה ההבדל בין שמור לבין גדל.", "רוב הנשים שמגיעות לכאן מחזיקות את הכל בערימה אחת, ולכן הכסף שלהן שמור, אבל לא עובד.", "בליווי את עושה את החלוקה הזו על המספרים שלך, ויוצאת עם מסלול לכל טווח."]}, {"q": "\"למה לפזר לכמה השקעות? לא עדיף שכל הכסף יצבור ריבית דריבית ביחד?\"", "a": ["מבחינת החישוב זה בדיוק אותו דבר. <strong>10 פעמים ריבית על שקל אחד, או פעם אחת ריבית על 10 שקלים.</strong> אותה תוצאה בדיוק. את לא מפסידה שקל מהחלוקה.", "ואין שום עניין לחלק כדי לחלק. <strong>מחלקות לפי זמן</strong>: כסף שתצטרכי בקרוב, כסף שתצטרכי בשנים הקרובות אבל עדיין לא, וכסף שאת יכולה להשקיע ולא לגעת בו ב-15 השנים הבאות.", "כי מה שקובע כמה סיכון מתאים לשקל מסוים זה לא הגודל שלו. זה מתי תצטרכי אותו.", "ככה כל שקל יושב במקום שמתאים לזמן שלו, ואת לא נאלצת למשוך כסף מטווח ארוך בדיוק ברגע הלא נכון."]}, {"q": "\"אצלנו בבית בעלי דואג לזה.\"", "a": ["נהדר שיש מישהו שמתעסק בזה. אבל ביטחון כלכלי אמיתי הוא לא שמישהו אחר מבין בשבילך. הוא שגם את יודעת מה יש לכם, ולמה.", "לירון, בוגרת: בעלה בנדל״ן, קיבל את כל ההחלטות. היום הם מחליטים יחד, וקנו עוד דירה שהיא חסמה מפחד.", "ואפשר גם ביחד. אם את רוצה לצרף את בן הזוג, בכיף. היו אצלנו גם נשים שרשמו את הבעל."]}, {"q": "\"זה מתאים גם לרווקות?\"", "a": ["חד משמעית כן. היו לנו הרבה רווקות בליווי.", "אין פה עניין של סטטוס משפחתי. מה שמעניין זה לעשות את הסדר הזה. הילדים הם פשוט הרבה פעמים הטריגר.", "ואם יש לך אפילו 100 ₪ פנויים בחודש, הייתי מתחילה. הזמן משחק פה תפקיד. <strong>מתחילים, ואז יהיה.</strong>"]}, {"q": "\"אני חושבת גם על כיוון של נדל״ן.\"", "a": ["מעולה, וזה מתחבר. בליווי בונים את הבסיס: תמונה מלאה של הכסף, קרן חירום, חלוקה לטווחים, והון שמתחיל להיבנות. זה בדיוק ההון העצמי שנדל״ן דורש.", "ומי שמתאים לה מקבלת אחרי הליווי <strong>פגישת התאמה לתכנון נדל״ן</strong>, בלי עלות: האם ומתי נכון לך להיכנס לנדל״ן, ואיך זה מתחבר לשאר התוכנית שלך."]}, {"q": "\"זו לא תקופה מתאימה בשבילי.\"", "a": ["את המשפט הזה אמרת לעצמך גם בשנה שעברה. 🙂", "ובינתיים, בהשקעה לטווח ארוך, כל שנתיים של המתנה יכולות לעלות <strong>מעל 100,000 ₪</strong> בתוצאה הסופית.", "ואם דווקא עכשיו הכל עומד להשתנות אצלך, לימודים, עבודה חדשה, תזרים שעוד לא ברור? זו הסיבה הכי טובה לעשות את הסדר <strong>לפני</strong> השינוי ולא אחריו. ככה את נכנסת לתקופה החדשה עם מסגרת מוכנה.", "הליווי דורש בערך שעה בשבוע, למשך 4 שבועות."]}, {"q": "\"מתי זה מתחיל, וכמה זמן זה?\"", "a": ["הליווי הקרוב יוצא לדרך ביום שני <strong>5.10</strong>, ונמשך <strong>28</strong> יום: ארבעה מפגשים בימי שני ב-20:00. לייב אחד בשבוע.", "ומיד כשאת מצטרפת את מקבלת לינק לאזור האישי ושאלון מקדים, ומתחילה.", "נרשמת אחרי שהמקומות לליווי הזה נגמרו? את נכנסת מיד לרשימת ההמתנה לליווי הבא, ושומרת את המחיר."]}, {"q": "\"2,997 ₪ וזהו? בלי הפתעות?\"", "a": ["כן. זה המחיר לכל הליווי, בלי הפתעות ובלי מחירים נלווים. <strong>3 תשלומים של 999 ₪</strong>, או 2,800 ₪ בתשלום אחד.", "אנשי המקצוע הם לא בתשלום נפרד. פגישות ההתאמה והאפיון עם הצוות שלי הן בלי עלות. רק אם תבחרי להמשיך איתם הלאה, למשל לליווי ברכישת דירה או במשכנתא, לזה יש עלות משלו.", "ומה שתחליטי להשקיע? נכנס לתיק שלך, על שמך, ונשאר שלך."]}, {"q": "\"למה המחיר נמוך יותר מבעבר?\"", "a": ["בזכות ה-AI.", "הוא חסך לי חצי מהצוות שהייתי צריכה כדי שתקבלי מענה אישי, ושכל הנתונים שלך ייאספו במקום אחד. בזכות המערכת שבניתי המחיר ירד מאוד משמעותית, ואת מקבלת הרבה יותר.", "בפעם הקודמת הליווי נמכר ב-4,800 ₪."]}, {"q": "\"התכנים נשארים שלי גם אחרי שהליווי נגמר?\"", "a": ["כן. כל התכנים וכל ההקלטות נשארים שלך, ואת צופה בזמן שלך.", "הרבה פעמים מגניב לחזור אליהם אחרי שכבר צברת ניסיון, ופתאום לשמוע אותם ממקום אחר לגמרי."]}, {"q": "\"ומה אם איתקע באמצע?\"", "a": ["יש לך אזור אישי שתמיד מראה לך את הפעולה הבאה האחת, לייב כל שבוע, קבוצת ווטסאפ שתמיד יש בה מי שעונה, ואנשי מקצוע שעושים איתך את החלק הגדול.", "ואחרי 28 הימים יש עוד שלושה חודשי ליווי בווטסאפ ולייב חודשי, בדיוק בשביל השאלות שעולות כשמתחילים לבצע.", "ואם עברת את הליווי, הגעת למפגשים, ולא יצאת עם מפת דרכים ברורה? <strong>החזר מלא.</strong>"]}];
     var log=document.getElementById('chatLog'), chips=document.getElementById('chatChips');
     if(!log||!chips) return;
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -1539,6 +1894,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
       if (left <= 0) {
         sec.hidden = true;
         if (fact) fact.hidden = true;
+        document.querySelectorAll('.bonus-only').forEach(function(e){ e.hidden = true; });
         if (t) clearInterval(t);
         return;
       }
