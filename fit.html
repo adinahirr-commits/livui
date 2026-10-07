@@ -166,7 +166,7 @@ footer .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin
       </div>
     </fieldset>
     <fieldset>
-      <legend>המפגשים בימי שני ב-20:00, והמחזור הבא מתחיל ב-28.10. פנויה?</legend>
+      <legend>המפגשים בימי רביעי ב-20:00, והמחזור הבא מתחיל ב-28.10. פנויה?</legend>
       <div class="chips">
         <label class="chip"><input type="radio" name="q5" value="כן" required><span class="dot"></span><span>כן</span></label>
         <label class="chip"><input type="radio" name="q5" value="רוב המפגשים"><span class="dot"></span><span>רוב המפגשים</span></label>
@@ -249,7 +249,7 @@ footer .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin
     if(q1.length<2) return fail('שאלה ראשונה: מה הסיבה שבגללה את רוצה להירשם?', document.getElementById('q1'));
     if(!q2) return fail('מה הכי מדויק לגבייך היום? בחרי אחת.', form.querySelector('input[name="q2"]'));
     if(!q3) return fail('כמה את יכולה להפנות בחודש? בחרי טווח.', form.querySelector('input[name="q3"]'));
-    if(!q5) return fail('פנויה למפגשים בימי שני? סמני.', form.querySelector('input[name="q5"]'));
+    if(!q5) return fail('פנויה למפגשים בימי רביעי? סמני.', form.querySelector('input[name="q5"]'));
     if(q6.length<2) return fail('תכנית החלומות שלך: כמה מילים מספיקות.', document.getElementById('q6'));
     var name=(document.getElementById('f-name').value||'').trim();
     var phoneRaw=(document.getElementById('f-phone').value||'').trim();
