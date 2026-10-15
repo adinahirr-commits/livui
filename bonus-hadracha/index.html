@@ -24,6 +24,9 @@
   var YT_ID  = "kB4Wg-w4-r8";
   var CLOSES = "2026-10-08T23:59:00+03:00";
   var SLUG   = "livui-bonus-rec";
+  // רגע ההצעה בהקלטה, בשניות מתחילת הסרטון. 0 = לא הוגדר, ואז
+  // "צפתה עד ההצעה" נקבע לפי 75% מאורך ההקלטה.
+  var OFFER_AT = 0;
 </script>
 <!-- Meta Pixel · אותו פיקסל כמו בשאר הדפים של אמא משקיעה -->
 <script>
@@ -35,7 +38,9 @@ fbq('init','1820166155346211');fbq('track','PageView');
 (function(){
   var TRACK = "https://academy.mominvest.co.il/guide-hit";
   var q = new URLSearchParams(location.search), vid;
-  var KEYS = ['ref','utm_source','utm_medium','utm_campaign','utm_content'];
+  // 'e' = המייל מהלינק האישי (‎/r/<code>?e=[[מייל]]‎). בלי זה הצפייה אנונימית
+  // ואי אפשר לדעת מי לחצה על ההקלטה וכמה היא ראתה.
+  var KEYS = ['ref','utm_source','utm_medium','utm_campaign','utm_content','e'];
   try{
     vid = localStorage.getItem('mi_vid');
     if(!vid){ vid = Date.now().toString(36) + Math.random().toString(36).slice(2,10); localStorage.setItem('mi_vid', vid); }
@@ -62,6 +67,37 @@ fbq('init','1820166155346211');fbq('track','PageView');
   };
   window.miHit(SLUG);
 })();
+</script>
+<!-- כמה היא באמת צפתה · יורה SLUG-play / -p10 / -p25 / -p50 / -p75 / -p90 / -p100,
+     ו-SLUG-offer כשהיא עוברת את רגע ההצעה (OFFER_AT, בשניות; 0 = אין נקודה מוגדרת).
+     עובד דרך הודעות ה-IFrame של יוטיוב (enablejsapi) בלי לטעון שום ספרייה. -->
+<script>
+window.miRecTrack = function(box, slug, offerAt){
+  var fr = box && box.querySelector('iframe'); if(!fr) return;
+  var dur = 0, maxT = 0, done = {};
+  function mark(k){ if(done[k]) return; done[k] = 1; if(window.miHit) miHit(slug + k); }
+  window.addEventListener('message', function(e){
+    if(e.origin !== 'https://www.youtube.com') return;
+    var d; try{ d = (typeof e.data === 'string') ? JSON.parse(e.data) : e.data; }catch(x){ return; }
+    if(!d || d.event !== 'infoDelivery' || !d.info) return;
+    var i = d.info;
+    if(i.playerState === 1){
+      mark('-play');
+      try{ if(window.fbq) fbq('trackCustom','VideoPlay',{content_name:slug}); }catch(x){}
+    }
+    if(i.duration > 0) dur = i.duration;
+    if(typeof i.currentTime === 'number' && i.currentTime > maxT) maxT = i.currentTime;
+    if(offerAt > 0 && maxT >= offerAt) mark('-offer');
+    if(dur > 60){
+      var pct = maxT / dur * 100;
+      for(var j = 0; j < 5; j++){ var p = [10,25,50,75,90][j]; if(pct >= p) mark('-p' + p); }
+      if(pct >= 97) mark('-p100');
+    }
+  });
+  fr.addEventListener('load', function(){
+    try{ fr.contentWindow.postMessage(JSON.stringify({event:'listening', id:1, channel:'widget'}), 'https://www.youtube.com'); }catch(x){}
+  });
+};
 </script>
 <style>
 :root{
@@ -377,17 +413,7 @@ html.a11y-noanim *{animation:none!important;transition:none!important;scroll-beh
   if(Date.now()>=deadline){ closePage(); }
   else{
     box.innerHTML='<iframe src="https://www.youtube.com/embed/'+YT_ID+'?rel=0&modestbranding=1&playsinline=1&enablejsapi=1&origin='+encodeURIComponent(location.origin)+'" title="ההקלטה המלאה של ההדרכה" allow="accelerometer; autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
-    /* מדידת הפעלה דרך הודעות ה-IFrame של יוטיוב, בלי לטעון ספרייה */
-    var played=false, fr=box.querySelector('iframe');
-    window.addEventListener('message', function(e){
-      if(e.origin!=='https://www.youtube.com' || played) return;
-      var d; try{ d=typeof e.data==='string'?JSON.parse(e.data):e.data; }catch(x){ return; }
-      if(d && d.event==='infoDelivery' && d.info && d.info.playerState===1){
-        played=true; if(window.miHit) miHit(SLUG+'-play');
-        try{ if(window.fbq) fbq('trackCustom','VideoPlay',{content_name:SLUG}); }catch(x){}
-      }
-    });
-    fr.addEventListener('load', function(){ try{ fr.contentWindow.postMessage(JSON.stringify({event:'listening',id:1,channel:'widget'}),'https://www.youtube.com'); }catch(x){} });
+    if(window.miRecTrack) miRecTrack(box, SLUG, OFFER_AT);
   }
   /* שעון ההארכה: עד חמישי 8.10 ב-23:59. אחרי הדדליין השעון יורד והכיתוב משתנה */
   var UNTIL=deadline, dl=document.getElementById('dl');
