@@ -1410,7 +1410,7 @@ html.a11y-contrast .voucher{background:#b0125f}
 <section class="bonus band-white" id="bonus">
   <div class="wrap">
     <div class="bonus-card">
-      <span class="eyebrow">בונוס סופר שווה וחדש · למי שנרשמת <span class="bonus-until">עד הלילה ב-00:00</span></span>
+      <span class="eyebrow">בונוס סופר שווה וחדש · למי שנרשמת <span class="bonus-until">עד יום רביעי 28.10 ב-20:00</span></span>
       <h2>מערכת AI שמלווה, לומדת אותך ומדריכה אותך לאורך כל הדרך</h2>
       <p class="bonus-name">ובונה לך הרכב תיק השקעות אישי</p>
       <figure class="ai-mock"><img src="assets/mock-ai.webp" alt="מערכת ה-AI של יועץ ההשקעות בטלפון: שאלה אישית, רמת הסיכון שנבחרה, והמלצה על הרכב התיק" width="1300" height="808" loading="lazy"></figure>
@@ -1421,7 +1421,7 @@ html.a11y-contrast .voucher{background:#b0125f}
         <div><b id="cdM">00</b><small>דקות</small></div>
         <div><b id="cdS">00</b><small>שניות</small></div>
       </div>
-      <p class="bonus-when">הבונוס פתוח <span class="bonus-until">עד הלילה ב-00:00</span>. שריינת מקום בזמן, הוא נכנס איתך לליווי.</p>
+      <p class="bonus-when">הבונוס פתוח <span class="bonus-until">עד יום רביעי 28.10 ב-20:00</span>. שריינת מקום בזמן, הוא נכנס איתך לליווי.</p>
       <a class="btn" data-cta="bonus" href="#join">אני רוצה את הבונוס ואת המקום שלי</a>
     </div>
   </div>
@@ -1470,7 +1470,7 @@ html.a11y-contrast .voucher{background:#b0125f}
       <p class="seats">הליווי של 5.10 התמלא · ההרשמה עכשיו למחזור הבא, שמתחיל ב-28.10</p>
       <p class="alt">או בתשלום אחד של <b>2,800 ₪</b> (הטבה של 197 ₪)</p>
       <ul class="pfacts">
-        <li id="bonusFact"><b>בונוס למי שנרשמת <span class="bonus-until">עד הלילה ב-00:00</span>.</b>מערכת ה-AI שבונה לך הרכב תיק השקעות אישי, נכנסת איתך לליווי.</li>
+        <li id="bonusFact"><b>בונוס למי שנרשמת <span class="bonus-until">עד יום רביעי 28.10 ב-20:00</span>.</b>מערכת ה-AI שבונה לך הרכב תיק השקעות אישי, נכנסת איתך לליווי.</li>
         <li><b>זה המחיר הנמוך ביותר שהליווי הזה יהיה.</b>בליוויים הבאים הוא עולה.</li>
         <li><b>הליווי של 5.10 התמלא.</b>ההרשמה עכשיו היא למחזור הבא, שמתחיל ב-28.10, באותו מחיר.</li>
         <li><b>המחזור הבא מתחיל ב-28.10.</b>28 יום אחר כך, המנגנון שלך עובד.</li>
@@ -1864,7 +1864,7 @@ html.a11y-contrast .voucher{background:#b0125f}
 
     /* דדליין קבוע לכל המבקרות: שימי כאן תאריך ISO, למשל '2026-09-09T22:00:00+03:00'.
        ריק = חלון של 24 שעות לכל מבקרת, מרגע הכניסה הראשונה שלה לדף. */
-    var FIXED = '2026-10-14T22:00:00+03:00';
+    var FIXED = '2026-10-28T20:00:00+02:00';
 
     var DAY = 864e5, KEY = 'mm_bonus_until', now = Date.now(), until = 0;
     if (FIXED) {
@@ -1882,12 +1882,14 @@ html.a11y-contrast .voucher{background:#b0125f}
     (function(){
       var d = new Date(until), n = new Date(), hm = pad(d.getHours()) + ':' + pad(d.getMinutes());
       var days = ['ראשון','שני','שלישי','רביעי','חמישי','שישי','שבת'];
+      var dm = d.getDate() + '.' + (d.getMonth() + 1);
       var mid = function(x){ return new Date(x.getFullYear(), x.getMonth(), x.getDate()).getTime(); };
       var diff = Math.round((mid(d) - mid(n)) / 864e5), txt;
-      if (diff === 0) txt = 'עד היום ב-' + hm;
+      /* התאריך נכלל תמיד, כדי שהדדליין בדף יהיה זהה לדדליין במיילים ובווטסאפ */
+      if (diff === 0) txt = 'עד היום ' + dm + ' ב-' + hm;
       else if (diff === 1 && d.getHours() === 0 && d.getMinutes() === 0) txt = 'עד הלילה ב-00:00';
-      else if (diff === 1) txt = 'עד מחר ב-' + hm;
-      else txt = 'עד יום ' + days[d.getDay()] + ' ב-' + hm;
+      else if (diff === 1) txt = 'עד מחר ' + dm + ' ב-' + hm;
+      else txt = 'עד יום ' + days[d.getDay()] + ' ' + dm + ' ב-' + hm;
       document.querySelectorAll('.bonus-until').forEach(function(e){ e.textContent = txt; });
     })();
     var t;
