@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>טלפרומפטר · הסרטון לדף הליווי</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;700;800&display=swap">
+<style>
+:root{--bg:#0F1020;--fg:#F6F4EE;--muted:#9A9BB0;--pink:#E0408F;--line:#2A2C44;--panel:#181A2E}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--bg);color:var(--fg);font-family:"Noto Sans Hebrew",system-ui,sans-serif;direction:rtl}
+.app{display:grid;grid-template-rows:auto 1fr;height:100%}
+header{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;padding:10px 14px;background:var(--panel);border-bottom:1px solid var(--line);font-size:14px}
+header b{font-size:15px;margin-left:6px}
+label{display:inline-flex;align-items:center;gap:6px;color:var(--muted)}
+input[type=range]{width:110px;accent-color:var(--pink)}
+button{font:inherit;font-weight:700;border:1px solid var(--line);background:#23253B;color:#fff;border-radius:999px;padding:7px 14px;cursor:pointer}
+button.p{background:var(--pink);border-color:var(--pink)}
+button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.stage{position:relative;overflow:hidden}
+video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1);opacity:.55;background:#000}
+video[hidden]{display:none}
+.scroll{position:absolute;inset:0;overflow:hidden}
+.txt{padding:40vh 7vw 60vh;font-size:var(--fs,44px);line-height:1.55;font-weight:700;text-align:center;text-shadow:0 2px 14px rgba(0,0,0,.8);will-change:transform;white-space:pre-wrap}
+.txt h2{color:#F5A3CB;font-size:.6em;font-weight:800;margin:1.6em 0 .3em;letter-spacing:.02em}
+.txt i{display:block;font-style:normal;font-weight:400;font-size:.55em;color:var(--muted);margin:.4em 0 .8em}
+.mirror .txt{transform:scaleX(-1)}
+.line{position:absolute;left:0;right:0;top:40vh;height:2px;background:linear-gradient(90deg,transparent,var(--pink),transparent);opacity:.8;pointer-events:none}
+.edit{position:absolute;inset:0;display:none;padding:14px;background:var(--bg)}
+.edit textarea{width:100%;height:100%;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:14px;padding:14px;font:inherit;font-size:17px;line-height:1.6;resize:none}
+.editing .edit{display:block}
+.rec{display:inline-flex;align-items:center;gap:6px}
+.rec i{width:10px;height:10px;border-radius:50%;background:#E03E3E;display:none}
+.recording .rec i{display:inline-block;animation:bl 1s infinite}
+@keyframes bl{50%{opacity:.2}}
+.hint{color:var(--muted);font-size:13px;width:100%}
+a.dl{color:#F5A3CB;font-weight:700}
+@media (max-width:640px){.txt{padding-inline:5vw;--fs:30px}input[type=range]{width:80px}}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+<header>
+  <b>טלפרומפטר 🎥</b>
+  <button class="p" id="play">▶ התחלה (רווח)</button>
+  <button id="top">⤒ להתחלה</button>
+  <label>מהירות <input type="range" id="speed" min="10" max="120" value="42"></label>
+  <label>גודל <input type="range" id="size" min="24" max="80" value="44"></label>
+  <label><input type="checkbox" id="mirror"> מראה</label>
+  <label><input type="checkbox" id="cam" checked> מצלמה ברקע</label>
+  <button id="recbtn" class="rec"><i></i>● הקלטה מהמחשב</button>
+  <button id="editbtn">✎ לערוך טקסט</button>
+  <span class="hint">רווח = התחלה/עצירה · חצים = מהירות · מצלמת מהטלפון? שימי אותו ממש ליד המצלמה של המחשב, בגובה הקו הוורוד.</span>
+</header>
+<div class="stage" id="stage">
+  <video id="v" autoplay muted playsinline></video>
+  <div class="scroll" id="scroll"><div class="txt" id="txt"></div></div>
+  <div class="line"></div>
+  <div class="edit" id="edit"><textarea id="ta" spellcheck="false"></textarea></div>
+</div>
+</div>
+<script>
+const DEFAULT = `## 1. את אמא
+את אמא.
+אין לך דקה פנויה,
+ובטח שאין לך כסף שיושב ומחכה בצד.
+ההוצאות של הבית רק עולות,
+הזמן שיש לך להרוויח רק הולך ומצטמצם,
+וכל מה שאת באמת רוצה
+זה עוד קצת זמן עם התינוק שלך.
+(ישר למצלמה. חיוך שמבין. לאט.)
+
+## 2. הלופ
+ודווקא בגלל זה,
+לעבוד עוד שעות זה לא הפתרון.
+מה שאת צריכה זה מנגנון
+שגורם לכסף שכבר יש לך לעבוד בשבילך.
+לבד.
+ותכף אני אראה לך מאיפה מתחילים,
+גם אם את בטוחה שאין לך מאיפה.
+
+## 3. הסיפור שלי
+במרץ 2020 הייתי בהיריון הראשון שלי,
+ונכנסנו לסגר הראשון.
+היה לי עסק לאיפור כלות, מלא ועמוס,
+וביום אחד הוא פשוט נעצר.
+(כאן, במילים שלך, משפט אחד: מה הרגשת באותו רגע.)
+אז הבנתי שהביטחון שחשבתי שיש לי לא באמת היה שם.
+יצאתי ללמוד את מה שאפילו לא ידעתי שאני לא יודעת.
+ומאז, מאותה הכנסה, באותה רמת חיים,
+ההון של המשפחה שלנו צמח פי 8.
+בלי להצטמצם.
+
+## 4. מתחילות מכסף שכבר שלך
+והסוד הראשון:
+אנחנו לא מתחילות מהכיס שלך.
+אנחנו מתחילות מלהציל כספים אבודים.
+קופות ממקומות עבודה ישנים,
+החזרי מס, מענקים,
+תשלומים שיורדים לך בלי ששמת לב.
+בממוצע, אצלנו כל אחת מוצאת לפחות 20 אלף שקל.
+אלומה מצאה מעל 200 אלף.
+אז אם הרגשת שאין לך כסף פנוי להתחיל ממנו,
+כנראה שהוא כבר אצלך.
+(לחייך על "אלומה".)
+
+## 5. גם וגם, והמפה
+השני: גם וגם.
+לא מוותרים על היום בשביל המחר.
+הילדים שלך לא צריכים אמא שמוותרת על הכל.
+אז לכל שקל אנחנו נותנות בית,
+לפי מתי תצטרכי אותו:
+ההווה, העתיד הקרוב, והעתיד הרחוק.
+וקודם כל קרן חירום, כדי שיהיה שקט.
+ותראי מה זה עושה:
+500 שקל בחודש, 25 שנה.
+בבנק: בערך 160 אלף.
+בשוק ההון, בהנחה של 8% בשנה: בערך 454 אלף.
+אותם 500 שקל.
+(לספור על האצבעות: הווה, קרוב, רחוק. שנייה של שקט אחרי "454 אלף".)
+
+## 6. המנכ״לית
+והשלישי, הכי חשוב לאמא בלי זמן:
+את המנכ״לית, לא הפועלת.
+את לא צריכה לשבת מול גרפים
+ולא להפוך למומחית.
+ככל שתעשי פחות,
+הכסף שלך יעשה יותר.
+הוראת קבע אחת,
+ובודקים פעם בכמה זמן.
+
+## 7. הליווי
+בשביל זה בניתי את הליווי של אמא משקיעה.
+28 יום, צעד אחד בכל פעם:
+ממפות, מגינות, מחלקות, מפעילות.
+לייב אחד בשבוע, מוקלט,
+ומשימה של 5 עד 10 דקות.
+אזור אישי שמראה לך כל יום מה הצעד הבא,
+ופגישה אישית עם איש מקצוע מהצוות.
+וביום ה-28, הוראת הקבע הראשונה שלך כבר יורדת.
+
+## 8. ההזמנה
+מעל 400 אמהות כבר עשו את זה איתי.
+המחזור הבא מתחיל ב-28 באוקטובר.
+הכפתור ממש פה מתחת לסרטון.
+תשרייני מקום,
+ובואי נעשה את זה ביחד.
+מחכה לך בפנים 💛
+(חיוך גדול. להצביע למטה.)
+`;
+const $=id=>document.getElementById(id);
+const KEY='livui-prompter-text';
+let text=DEFAULT; try{text=localStorage.getItem(KEY)||DEFAULT;}catch(e){}
+function esc(s){return s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function render(){
+  $('txt').innerHTML=text.split('\n').map(l=>{
+    if(l.startsWith('## ')) return '<h2>'+esc(l.slice(3))+'</h2>';
+    if(/^\(.*\)$/.test(l.trim())) return '<i>'+esc(l.trim())+'</i>';
+    return esc(l)+'\n';
+  }).join('');
+}
+render();
+let y=0,playing=false,last=0,speed=+$('speed').value;
+const scroll=$('scroll'),txt=$('txt');
+function frame(t){ if(!playing) return; const dt=(t-last)/1000; last=t; y+=speed*dt; txt.style.transform=($('mirror').checked?'scaleX(-1) ':'')+'translateY('+(-y)+'px)'; if(y>txt.scrollHeight-innerHeight*.6){playing=false;$('play').textContent='▶ מהתחלה';} else requestAnimationFrame(frame); }
+function toggle(){ playing=!playing; $('play').textContent=playing?'⏸ עצירה (רווח)':'▶ המשך (רווח)'; if(playing){ if(y>txt.scrollHeight-innerHeight*.6) y=0; last=performance.now(); requestAnimationFrame(frame);} }
+$('play').onclick=toggle;
+$('top').onclick=()=>{y=0;playing=false;$('play').textContent='▶ התחלה (רווח)';txt.style.transform='translateY(0)';};
+$('speed').oninput=e=>speed=+e.target.value;
+$('size').oninput=e=>txt.style.setProperty('--fs',e.target.value+'px');
+$('mirror').onchange=()=>{$('app').classList.toggle('mirror',$('mirror').checked);txt.style.transform=($('mirror').checked?'scaleX(-1) ':'')+'translateY('+(-y)+'px)';};
+document.addEventListener('keydown',e=>{ if(document.activeElement.tagName==='TEXTAREA') return; if(e.code==='Space'){e.preventDefault();toggle();} if(e.key==='ArrowUp'){speed=Math.min(120,speed+4);$('speed').value=speed;} if(e.key==='ArrowDown'){speed=Math.max(10,speed-4);$('speed').value=speed;} });
+/* עריכה */
+$('editbtn').onclick=()=>{ const on=$('app').classList.toggle('editing'); if(on){$('ta').value=text;$('ta').focus();$('editbtn').textContent='✓ סיימתי לערוך';} else {text=$('ta').value;try{localStorage.setItem(KEY,text);}catch(e){} render();$('top').click();$('editbtn').textContent='✎ לערוך טקסט';} };
+/* מצלמה */
+let stream=null,rec=null,chunks=[];
+async function cam(on){ const v=$('v'); if(!on){ if(stream){stream.getTracks().forEach(t=>t.stop());stream=null;} v.hidden=true; return; }
+  try{ stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:1920},height:{ideal:1080}},audio:true}); v.srcObject=stream; v.hidden=false; }catch(e){ alert('לא הצלחתי לפתוח את המצלמה: '+e.message); $('cam').checked=false; } }
+$('cam').onchange=()=>cam($('cam').checked); cam(true);
+$('recbtn').onclick=()=>{
+  if(!stream){alert('קודם להדליק את המצלמה');return;}
+  if(rec&&rec.state==='recording'){ rec.stop(); return; }
+  chunks=[]; const mime=['video/mp4;codecs=avc1','video/webm;codecs=vp9','video/webm'].find(m=>MediaRecorder.isTypeSupported(m))||'';
+  rec=new MediaRecorder(stream,mime?{mimeType:mime,videoBitsPerSecond:6e6}:{});
+  rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
+  rec.onstop=()=>{ $('app').classList.remove('recording'); $('recbtn').innerHTML='<i></i>● הקלטה מהמחשב';
+    const blob=new Blob(chunks,{type:rec.mimeType||'video/webm'}); const ext=(rec.mimeType||'').includes('mp4')?'mp4':'webm';
+    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='adi-livui-'+new Date().toISOString().slice(0,16).replace(/[:T]/g,'-')+'.'+ext; a.textContent='⬇ להוריד את ההקלטה ('+(blob.size/1048576).toFixed(1)+' MB)'; a.className='dl';
+    const h=document.querySelector('.hint'); h.innerHTML=''; h.appendChild(a); a.click(); };
+  rec.start(1000); $('app').classList.add('recording'); $('recbtn').innerHTML='<i></i>■ לעצור ולשמור'; if(!playing) toggle();
+};
+</script>
+</body>
+</html>
