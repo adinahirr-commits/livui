@@ -21,7 +21,8 @@ button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 .stage{position:relative;overflow:hidden}
 video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scaleX(-1);opacity:.55;background:#000}
 video[hidden]{display:none}
-.scroll{position:absolute;inset:0;overflow:hidden}
+.scroll{position:absolute;inset:0;overflow:hidden;cursor:grab;touch-action:none;user-select:none}
+.scroll.drag{cursor:grabbing}
 .txt{padding:40vh 7vw 60vh;font-size:var(--fs,44px);line-height:1.55;font-weight:700;text-align:center;text-shadow:0 2px 14px rgba(0,0,0,.8);will-change:transform;white-space:pre-wrap}
 .txt h2{color:#F5A3CB;font-size:.6em;font-weight:800;margin:1.6em 0 .3em;letter-spacing:.02em}
 .txt i{display:block;font-style:normal;font-weight:400;font-size:.55em;color:var(--muted);margin:.4em 0 .8em}
@@ -72,7 +73,7 @@ a.dl{color:#F5A3CB;font-weight:700}
   <span id="timer" class="timer" hidden>00:00</span>
   <button id="savebtn" class="p" hidden>⬇ לשמור את ההקלטה</button>
   <button id="editbtn">✎ לערוך טקסט</button>
-  <span class="hint"><b>לצלם:</b> הכפתור האדום מתחיל הקלטה והטקסט מתחיל לרוץ. בסוף "■ לעצור ולשמור". ההקלטה נשמרת גם בדפדפן עצמו, אז רענון לא מוחק אותה. · רווח = עצירה/המשך · חצים = מהירות · <b>לצלם מהאייפון במצב קולנועי:</b> האייפון נעול ליד המחשב (אותו Apple ID ו-Wi-Fi), בוחרים אותו ברשימת המצלמות, ובמק: מרכז הבקרה ← אפקטי וידאו ← <b>פורטרט</b>. ההקלטה נשמרת להורדות.</span>
+  <span class="hint"><b>לצלם:</b> הכפתור האדום מתחיל הקלטה והטקסט מתחיל לרוץ. בסוף "■ לעצור ולשמור". ההקלטה נשמרת גם בדפדפן עצמו, אז רענון לא מוחק אותה. · רווח = עצירה/המשך · חצים = מהירות · גלגלת או גרירה = גלילה ידנית · <b>לצלם מהאייפון במצב קולנועי:</b> האייפון נעול ליד המחשב (אותו Apple ID ו-Wi-Fi), בוחרים אותו ברשימת המצלמות, ובמק: מרכז הבקרה ← אפקטי וידאו ← <b>פורטרט</b>. ההקלטה נשמרת להורדות.</span>
 </header>
 <div class="stage" id="stage">
   <video id="v" autoplay muted playsinline></video>
@@ -242,6 +243,14 @@ async function cam(on){ const v=$('v'); if(stream){stream.getTracks().forEach(t=
 $('cam').onchange=()=>cam($('cam').checked);
 $('camsel').onchange=()=>{ if($('cam').checked) cam(true); };
 if(navigator.mediaDevices){ navigator.mediaDevices.addEventListener('devicechange',listCams); cam(true); }
+/* גלילה ידנית: גלגלת, גרירה באצבע או בעכבר, גם תוך כדי ריצה */
+function setY(v){ y=Math.max(0,Math.min(v,txt.scrollHeight-innerHeight*.4)); txt.style.transform=($('mirror').checked?'scaleX(-1) ':'')+'translateY('+(-y)+'px)'; }
+scroll.addEventListener('wheel',e=>{ e.preventDefault(); setY(y+e.deltaY); },{passive:false});
+let dragY=null;
+scroll.addEventListener('pointerdown',e=>{ dragY=e.clientY; scroll.classList.add('drag'); scroll.setPointerCapture(e.pointerId); });
+scroll.addEventListener('pointermove',e=>{ if(dragY===null) return; setY(y-(e.clientY-dragY)); dragY=e.clientY; });
+['pointerup','pointercancel'].forEach(ev=>scroll.addEventListener(ev,()=>{ dragY=null; scroll.classList.remove('drag'); }));
+
 /* הקלטה עם רשת ביטחון: כל שנייה נשמרת ב-IndexedDB, כך שגם רענון או סגירה לא מאבדים את ההקלטה */
 const DB='livui-prompter-rec';
 function idb(){ return new Promise((res,rej)=>{ const r=indexedDB.open(DB,1); r.onupgradeneeded=()=>r.result.createObjectStore('chunks',{autoIncrement:true}); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }
