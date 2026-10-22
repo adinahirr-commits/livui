@@ -36,6 +36,9 @@ video[hidden]{display:none}
 select{font:inherit;background:#23253B;color:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 10px;max-width:220px}
 .edit textarea{width:100%;height:100%;background:var(--panel);color:var(--fg);border:1px solid var(--line);border-radius:14px;padding:14px;font:inherit;font-size:17px;line-height:1.6;resize:none}
 .editing .edit{display:block}
+.txt .w.on{color:#F5A3CB}
+.txt .w.done{opacity:.55}
+.listening #voice{background:var(--pink);border-color:var(--pink)}
 .rec{display:inline-flex;align-items:center;gap:6px}
 .rec i{width:10px;height:10px;border-radius:50%;background:#E03E3E;display:none}
 .recording .rec i{display:inline-block;animation:bl 1s infinite}
@@ -50,6 +53,7 @@ a.dl{color:#F5A3CB;font-weight:700}
 <header>
   <b>טלפרומפטר 🎥</b>
   <button class="p" id="play">▶ התחלה (רווח)</button>
+  <button id="voice">🎙 לעקוב אחרי הקול שלי</button>
   <button id="top">⤒ להתחלה</button>
   <label>מהירות <input type="range" id="speed" min="10" max="120" value="42"></label>
   <label>גודל <input type="range" id="size" min="24" max="80" value="44"></label>
@@ -58,7 +62,7 @@ a.dl{color:#F5A3CB;font-weight:700}
   <select id="camsel" title="איזו מצלמה"><option value="">מצלמה: ברירת מחדל</option></select>
   <button id="recbtn" class="rec"><i></i>● הקלטה מהמחשב</button>
   <button id="editbtn">✎ לערוך טקסט</button>
-  <span class="hint">רווח = התחלה/עצירה · חצים = מהירות · <b>לצלם מהאייפון במצב קולנועי:</b> האייפון נעול ליד המחשב (אותו Apple ID ו-Wi-Fi), בוחרים אותו ברשימת המצלמות, ובמק: מרכז הבקרה ← אפקטי וידאו ← <b>פורטרט</b>. ההקלטה נשמרת להורדות.</span>
+  <span class="hint">רווח = התחלה/עצירה · חצים = מהירות · <b>🎙 עוקב אחרי הקול:</b> הטקסט זז לפי מה שאת אומרת (כרום, עם אינטרנט). · <b>לצלם מהאייפון במצב קולנועי:</b> האייפון נעול ליד המחשב (אותו Apple ID ו-Wi-Fi), בוחרים אותו ברשימת המצלמות, ובמק: מרכז הבקרה ← אפקטי וידאו ← <b>פורטרט</b>. ההקלטה נשמרת להורדות.</span>
 </header>
 <div class="stage" id="stage">
   <video id="v" autoplay muted playsinline></video>
@@ -166,14 +170,19 @@ function render(){
   $('txt').innerHTML=text.split('\n').map(l=>{
     if(l.startsWith('## ')) return '<h2>'+esc(l.slice(3))+'</h2>';
     if(/^\(.*\)$/.test(l.trim())) return '<i>'+esc(l.trim())+'</i>';
-    return esc(l)+'\n';
+    return l.split(/(\s+)/).map(t=>/^\s+$/.test(t)||!t?t:'<span class="w">'+esc(t)+'</span>').join('')+'\n';
   }).join('');
+  words=[...$('txt').querySelectorAll('.w')].map(el=>({el,n:norm(el.textContent)}));
+  wi=0;
 }
+let words=[],wi=0;
+function norm(t){ return t.replace(/[\u0591-\u05C7]/g,'').replace(/[^\u05D0-\u05EA0-9a-z]/gi,'').replace(/[ךםןףץ]/g,c=>({'ך':'כ','ם':'מ','ן':'נ','ף':'פ','ץ':'צ'}[c])); }
+function sim(a,b){ if(!a||!b) return false; if(a===b) return true; if(a.length>=4&&b.length>=4&&(a.endsWith(b)||b.endsWith(a)||a.startsWith(b)||b.startsWith(a))) return true; return false; }
 render();
 let y=0,playing=false,last=0,speed=+$('speed').value;
 const scroll=$('scroll'),txt=$('txt');
 function frame(t){ if(!playing) return; const dt=(t-last)/1000; last=t; y+=speed*dt; txt.style.transform=($('mirror').checked?'scaleX(-1) ':'')+'translateY('+(-y)+'px)'; if(y>txt.scrollHeight-innerHeight*.6){playing=false;$('play').textContent='▶ מהתחלה';} else requestAnimationFrame(frame); }
-function toggle(){ playing=!playing; $('play').textContent=playing?'⏸ עצירה (רווח)':'▶ המשך (רווח)'; if(playing){ if(y>txt.scrollHeight-innerHeight*.6) y=0; last=performance.now(); requestAnimationFrame(frame);} }
+function toggle(){ if(listening) stopVoice(); playing=!playing; $('play').textContent=playing?'⏸ עצירה (רווח)':'▶ המשך (רווח)'; if(playing){ if(y>txt.scrollHeight-innerHeight*.6) y=0; last=performance.now(); requestAnimationFrame(frame);} }
 $('play').onclick=toggle;
 $('top').onclick=()=>{y=0;playing=false;$('play').textContent='▶ התחלה (רווח)';txt.style.transform='translateY(0)';};
 $('speed').oninput=e=>speed=+e.target.value;
@@ -186,6 +195,32 @@ function buildSecs(){ const secs=parseSecs(text); $('secs').innerHTML=secs.map((
 function readSecs(){ return [...$('secs').querySelectorAll('.sec')].map(d=>'## '+d.querySelector('input').value.trim()+'\n'+d.querySelector('textarea').value.replace(/\s+$/,'')+'\n').join('\n'); }
 $('editbtn').onclick=()=>{ const on=$('app').classList.toggle('editing'); if(on){ playing=false; buildSecs(); $('editbtn').textContent='✓ סיימתי, להציג'; } else { text=readSecs(); try{localStorage.setItem(KEY,text);}catch(e){} render(); $('top').click(); $('editbtn').textContent='✎ לערוך טקסט'; } };
 $('reset').onclick=()=>{ if(!confirm('לחזור לתסריט המקורי? העריכות שלך יימחקו.')) return; text=DEFAULT; try{localStorage.removeItem(KEY);}catch(e){} buildSecs(); };
+/* מעקב אחרי הקול: זיהוי דיבור בעברית, התאמה למילים בתסריט, גלילה רכה למילה האחרונה שנאמרה */
+let listening=false,recog=null,followY=0,followRaf=0;
+function placeWord(i){ const w=words[i]; if(!w) return; const stageH=$('stage').clientHeight; followY=Math.max(0,w.el.offsetTop-stageH*0.4); words.forEach((x,k)=>{x.el.classList.toggle('on',k===i);x.el.classList.toggle('done',k<i);}); }
+function followLoop(){ if(!listening) return; y+= (followY-y)*0.12; txt.style.transform=($('mirror').checked?'scaleX(-1) ':'')+'translateY('+(-y)+'px)'; followRaf=requestAnimationFrame(followLoop); }
+function feed(said){
+  const toks=said.split(/\s+/).map(norm).filter(Boolean).slice(-8); if(!toks.length) return;
+  const AHEAD=45,BACK=4,start=Math.max(0,wi-BACK),end=Math.min(words.length,wi+AHEAD);
+  let best=-1,bestScore=0;
+  for(let i=start;i<end;i++){
+    let score=0;
+    for(let k=toks.length-1;k>=0;k--){ const j=i-(toks.length-1-k); if(j<0) break; if(sim(words[j].n,toks[k])) score++; else if(score>=2) break; }
+    if(score>bestScore||(score===bestScore&&score>0&&i>best&&i<=wi+12)){bestScore=score;best=i;}
+  }
+  if(best>=0&&bestScore>=1&&(bestScore>=2||best<=wi+8)){ wi=best+1; placeWord(best); }
+}
+window.__feed=feed;
+function startRecog(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition; if(!SR){alert('זיהוי דיבור עובד רק בכרום (עם אינטרנט).');return false;}
+  recog=new SR(); recog.lang='he-IL'; recog.continuous=true; recog.interimResults=true;
+  recog.onresult=e=>{ let t=''; for(let i=e.resultIndex;i<e.results.length;i++) t+=e.results[i][0].transcript+' '; feed(t); };
+  recog.onerror=e=>{ if(e.error==='not-allowed'){alert('צריך לאשר מיקרופון לזיהוי הדיבור.'); stopVoice();} };
+  recog.onend=()=>{ if(listening) try{recog.start();}catch(ex){} };
+  try{recog.start();}catch(ex){return false;} return true;
+}
+function stopVoice(){ listening=false; $('app').classList.remove('listening'); $('voice').textContent='🎙 לעקוב אחרי הקול שלי'; if(recog){recog.onend=null;try{recog.stop();}catch(ex){}} cancelAnimationFrame(followRaf); }
+$('voice').onclick=()=>{ if(listening){stopVoice();return;} if(playing) toggle(); if(!startRecog()) return; listening=true; $('app').classList.add('listening'); $('voice').textContent='🎙 עוקב… (לחיצה לעצירה)'; followY=y; followLoop(); };
 /* מצלמה */
 let stream=null,rec=null,chunks=[];
 async function listCams(){ try{ const devs=await navigator.mediaDevices.enumerateDevices(); const sel=$('camsel'); const cur=sel.value; sel.innerHTML='<option value="">מצלמה: ברירת מחדל</option>'+devs.filter(d=>d.kind==='videoinput').map(d=>`<option value="${d.deviceId}">${esc(d.label||'מצלמה')}</option>`).join(''); const ip=[...sel.options].find(o=>/iphone|אייפון/i.test(o.textContent)); if(!cur&&ip){ sel.value=ip.value; } else sel.value=cur; }catch(e){} }
