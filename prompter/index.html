@@ -61,18 +61,18 @@ a.dl{color:#F5A3CB;font-weight:700}
 <header>
   <b>טלפרומפטר 🎥</b>
   <button class="p" id="play">▶ התחלה (רווח)</button>
-  <button id="voice">🎙 לעקוב אחרי הקול שלי</button>
+  <button id="voice" hidden>🎙 לעקוב אחרי הקול שלי</button>
   <button id="top">⤒ להתחלה</button>
   <label>מהירות <input type="range" id="speed" min="10" max="120" value="42"></label>
   <label>גודל <input type="range" id="size" min="24" max="80" value="44"></label>
   <label><input type="checkbox" id="mirror"> מראה</label>
   <label><input type="checkbox" id="cam" checked> מצלמה</label>
   <select id="camsel" title="איזו מצלמה"><option value="">מצלמה: ברירת מחדל</option></select>
-  <button id="recbtn" class="rec big"><i></i>● להקליט (מתחיל גם את מעקב הקול)</button>
+  <button id="recbtn" class="rec big"><i></i>● להקליט (הטקסט מתחיל לרוץ)</button>
   <span id="timer" class="timer" hidden>00:00</span>
   <button id="savebtn" class="p" hidden>⬇ לשמור את ההקלטה</button>
   <button id="editbtn">✎ לערוך טקסט</button>
-  <span class="hint"><b>לצלם:</b> הכפתור האדום מתחיל הקלטה + מעקב קול, ובסוף "■ לעצור ולשמור". ההקלטה נשמרת גם בדפדפן עצמו, אז רענון לא מוחק אותה. · רווח = גלילה קבועה · חצים = מהירות · <b>לצלם מהאייפון במצב קולנועי:</b> האייפון נעול ליד המחשב (אותו Apple ID ו-Wi-Fi), בוחרים אותו ברשימת המצלמות, ובמק: מרכז הבקרה ← אפקטי וידאו ← <b>פורטרט</b>. ההקלטה נשמרת להורדות.</span>
+  <span class="hint"><b>לצלם:</b> הכפתור האדום מתחיל הקלטה והטקסט מתחיל לרוץ. בסוף "■ לעצור ולשמור". ההקלטה נשמרת גם בדפדפן עצמו, אז רענון לא מוחק אותה. · רווח = עצירה/המשך · חצים = מהירות · <b>לצלם מהאייפון במצב קולנועי:</b> האייפון נעול ליד המחשב (אותו Apple ID ו-Wi-Fi), בוחרים אותו ברשימת המצלמות, ובמק: מרכז הבקרה ← אפקטי וידאו ← <b>פורטרט</b>. ההקלטה נשמרת להורדות.</span>
 </header>
 <div class="stage" id="stage">
   <video id="v" autoplay muted playsinline></video>
@@ -261,10 +261,10 @@ $('recbtn').onclick=async()=>{
   recMime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm','video/mp4;codecs=avc1','video/mp4'].find(m=>window.MediaRecorder&&MediaRecorder.isTypeSupported(m))||'';
   try{ rec=new MediaRecorder(stream,recMime?{mimeType:recMime,videoBitsPerSecond:10e6}:{}); }catch(e){ alert('ההקלטה לא נתמכת בדפדפן הזה: '+e.message); return; }
   rec.ondataavailable=e=>{ if(e.data&&e.data.size) idbAdd(e.data); };
-  rec.onstop=async()=>{ clearInterval(recTimer); $('app').classList.remove('recording'); $('recbtn').innerHTML='<i></i>● להקליט (מתחיל גם את מעקב הקול)'; $('timer').hidden=true; if(listening) stopVoice(); await new Promise(r=>setTimeout(r,400)); const blob=await offerSave(); if(blob){ saveBlob(blob,blob.type); document.querySelector('.hint').innerHTML='<b>ההקלטה נשמרה להורדות</b> ('+(blob.size/1048576).toFixed(1)+' MB). אם לא ראית הורדה, לחצי על הכפתור הוורוד "⬇ לשמור".'; } };
+  rec.onstop=async()=>{ clearInterval(recTimer); $('app').classList.remove('recording'); $('recbtn').innerHTML='<i></i>● להקליט (הטקסט מתחיל לרוץ)'; $('timer').hidden=true; playing=false; $('play').textContent='▶ המשך (רווח)'; await new Promise(r=>setTimeout(r,400)); const blob=await offerSave(); if(blob){ saveBlob(blob,blob.type); document.querySelector('.hint').innerHTML='<b>ההקלטה נשמרה להורדות</b> ('+(blob.size/1048576).toFixed(1)+' MB). אם לא ראית הורדה, לחצי על הכפתור הוורוד "⬇ לשמור".'; } };
   rec.start(1000); recStart=Date.now(); $('app').classList.add('recording'); $('recbtn').innerHTML='<i></i>■ לעצור ולשמור'; $('timer').hidden=false;
   recTimer=setInterval(()=>{ const t=fmt(Date.now()-recStart); $('timer').textContent=t; $('timer2').textContent=t; },500);
-  if(!listening) $('voice').click();
+  if(!playing) toggle();
 };
 /* שחזור: הקלטה שנשארה מפעם קודמת */
 (async()=>{ const parts=await idbAll(); if(!parts.length) return; const size=parts.reduce((a,b)=>a+b.size,0); $('bsize').textContent=(size/1048576).toFixed(1)+' MB'; $('banner').hidden=false;
