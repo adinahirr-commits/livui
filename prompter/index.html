@@ -40,6 +40,14 @@ select{font:inherit;background:#23253B;color:#fff;border:1px solid var(--line);b
 .txt .w.done{opacity:.55}
 .listening #voice{background:var(--pink);border-color:var(--pink)}
 .rec{display:inline-flex;align-items:center;gap:6px}
+.rec.big{background:#E03E3E;border-color:#E03E3E;font-size:15px;padding:9px 16px}
+.recording .rec.big{background:#7a1f1f;border-color:#7a1f1f}
+.timer{font-weight:800;color:#FF6B6B;font-variant-numeric:tabular-nums;font-size:16px}
+.recbadge{position:absolute;top:12px;right:12px;z-index:5;background:rgba(224,62,62,.92);color:#fff;font-weight:800;border-radius:999px;padding:6px 14px;display:none;align-items:center;gap:8px}
+.recording .recbadge{display:inline-flex}
+.recbadge i{width:10px;height:10px;border-radius:50%;background:#fff;animation:bl 1s infinite}
+.banner{position:absolute;inset-inline:12px;top:12px;z-index:6;background:#FFF3C4;color:#3a2a00;border-radius:14px;padding:12px 16px;font-weight:700;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.banner button{background:var(--pink);border-color:var(--pink)}
 .rec i{width:10px;height:10px;border-radius:50%;background:#E03E3E;display:none}
 .recording .rec i{display:inline-block;animation:bl 1s infinite}
 @keyframes bl{50%{opacity:.2}}
@@ -60,14 +68,18 @@ a.dl{color:#F5A3CB;font-weight:700}
   <label><input type="checkbox" id="mirror"> מראה</label>
   <label><input type="checkbox" id="cam" checked> מצלמה</label>
   <select id="camsel" title="איזו מצלמה"><option value="">מצלמה: ברירת מחדל</option></select>
-  <button id="recbtn" class="rec"><i></i>● הקלטה מהמחשב</button>
+  <button id="recbtn" class="rec big"><i></i>● להקליט (מתחיל גם את מעקב הקול)</button>
+  <span id="timer" class="timer" hidden>00:00</span>
+  <button id="savebtn" class="p" hidden>⬇ לשמור את ההקלטה</button>
   <button id="editbtn">✎ לערוך טקסט</button>
-  <span class="hint">רווח = התחלה/עצירה · חצים = מהירות · <b>🎙 עוקב אחרי הקול:</b> הטקסט זז לפי מה שאת אומרת (כרום, עם אינטרנט). · <b>לצלם מהאייפון במצב קולנועי:</b> האייפון נעול ליד המחשב (אותו Apple ID ו-Wi-Fi), בוחרים אותו ברשימת המצלמות, ובמק: מרכז הבקרה ← אפקטי וידאו ← <b>פורטרט</b>. ההקלטה נשמרת להורדות.</span>
+  <span class="hint"><b>לצלם:</b> הכפתור האדום מתחיל הקלטה + מעקב קול, ובסוף "■ לעצור ולשמור". ההקלטה נשמרת גם בדפדפן עצמו, אז רענון לא מוחק אותה. · רווח = גלילה קבועה · חצים = מהירות · <b>לצלם מהאייפון במצב קולנועי:</b> האייפון נעול ליד המחשב (אותו Apple ID ו-Wi-Fi), בוחרים אותו ברשימת המצלמות, ובמק: מרכז הבקרה ← אפקטי וידאו ← <b>פורטרט</b>. ההקלטה נשמרת להורדות.</span>
 </header>
 <div class="stage" id="stage">
   <video id="v" autoplay muted playsinline></video>
   <div class="scroll" id="scroll"><div class="txt" id="txt"></div></div>
   <div class="line"></div>
+  <div class="recbadge"><i></i>מקליטה <span id="timer2">00:00</span></div>
+  <div class="banner" id="banner" hidden>יש כאן הקלטה שעוד לא נשמרה (<span id="bsize"></span>). <button id="brecover">⬇ לשמור אותה עכשיו</button><button id="bdiscard" style="background:#23253B;border-color:var(--line)">למחוק</button></div>
   <div class="edit" id="edit"><div class="bar"><b>עוברים קטע-קטע.</b> הכותרת למעלה, הטקסט מתחת, שורה = נשימה. הנחיית במה בסוגריים. <button id="reset">↺ לחזור לתסריט המקורי</button></div><div id="secs"></div></div>
 </div>
 </div>
@@ -230,18 +242,35 @@ async function cam(on){ const v=$('v'); if(stream){stream.getTracks().forEach(t=
 $('cam').onchange=()=>cam($('cam').checked);
 $('camsel').onchange=()=>{ if($('cam').checked) cam(true); };
 if(navigator.mediaDevices){ navigator.mediaDevices.addEventListener('devicechange',listCams); cam(true); }
-$('recbtn').onclick=()=>{
-  if(!stream){alert('קודם להדליק את המצלמה');return;}
+/* הקלטה עם רשת ביטחון: כל שנייה נשמרת ב-IndexedDB, כך שגם רענון או סגירה לא מאבדים את ההקלטה */
+const DB='livui-prompter-rec';
+function idb(){ return new Promise((res,rej)=>{ const r=indexedDB.open(DB,1); r.onupgradeneeded=()=>r.result.createObjectStore('chunks',{autoIncrement:true}); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }
+async function idbAdd(b){ try{ const d=await idb(); await new Promise((res,rej)=>{ const t=d.transaction('chunks','readwrite'); t.objectStore('chunks').add(b); t.oncomplete=res; t.onerror=()=>rej(t.error); }); }catch(e){} }
+async function idbAll(){ try{ const d=await idb(); return await new Promise((res,rej)=>{ const r=d.transaction('chunks').objectStore('chunks').getAll(); r.onsuccess=()=>res(r.result||[]); r.onerror=()=>rej(r.error); }); }catch(e){ return []; } }
+async function idbClear(){ try{ const d=await idb(); await new Promise((res,rej)=>{ const t=d.transaction('chunks','readwrite'); t.objectStore('chunks').clear(); t.oncomplete=res; t.onerror=()=>rej(t.error); }); }catch(e){} }
+let recMime='',recStart=0,recTimer=0,lastBlob=null;
+function fmt(ms){ const s=Math.floor(ms/1000); return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0'); }
+function saveBlob(blob,mime){ const ext=(mime||'').includes('mp4')?'mp4':'webm'; const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='adi-livui-'+new Date().toISOString().slice(0,16).replace(/[:T]/g,'-')+'.'+ext; document.body.appendChild(a); a.click(); setTimeout(()=>a.remove(),2000); }
+async function offerSave(){ const parts=await idbAll(); if(!parts.length){ $('savebtn').hidden=true; return null; } const blob=new Blob(parts,{type:parts[0].type||recMime||'video/webm'}); lastBlob=blob; $('savebtn').hidden=false; $('savebtn').textContent='⬇ לשמור את ההקלטה ('+(blob.size/1048576).toFixed(1)+' MB)'; return blob; }
+$('savebtn').onclick=async()=>{ const blob=lastBlob||await offerSave(); if(!blob) return; saveBlob(blob,blob.type); const h=document.querySelector('.hint'); h.innerHTML='<b>נשמר להורדות.</b> הקובץ נשאר גם כאן עד שתמחקי: <button id="clearrec" style="padding:3px 10px">למחוק את ההקלטה מהדפדפן</button>'; $('clearrec').onclick=async()=>{ await idbClear(); lastBlob=null; $('savebtn').hidden=true; h.textContent='ההקלטה נמחקה מהדפדפן.'; }; };
+$('recbtn').onclick=async()=>{
   if(rec&&rec.state==='recording'){ rec.stop(); return; }
-  chunks=[]; const mime=['video/mp4;codecs=avc1','video/webm;codecs=vp9','video/webm'].find(m=>MediaRecorder.isTypeSupported(m))||'';
-  rec=new MediaRecorder(stream,mime?{mimeType:mime,videoBitsPerSecond:10e6}:{});
-  rec.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};
-  rec.onstop=()=>{ $('app').classList.remove('recording'); $('recbtn').innerHTML='<i></i>● הקלטה מהמחשב';
-    const blob=new Blob(chunks,{type:rec.mimeType||'video/webm'}); const ext=(rec.mimeType||'').includes('mp4')?'mp4':'webm';
-    const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='adi-livui-'+new Date().toISOString().slice(0,16).replace(/[:T]/g,'-')+'.'+ext; a.textContent='⬇ להוריד את ההקלטה ('+(blob.size/1048576).toFixed(1)+' MB)'; a.className='dl';
-    const h=document.querySelector('.hint'); h.innerHTML=''; h.appendChild(a); a.click(); };
-  rec.start(1000); $('app').classList.add('recording'); $('recbtn').innerHTML='<i></i>■ לעצור ולשמור'; if(!playing) toggle();
+  if(!stream){alert('קודם להדליק את המצלמה');return;}
+  const old=await idbAll(); if(old.length && !confirm('יש כאן הקלטה קודמת שלא נשמרה. להתחיל הקלטה חדשה ולמחוק אותה? (ביטול = קודם לשמור אותה דרך הכפתור הוורוד)')) { offerSave(); return; }
+  await idbClear(); lastBlob=null; $('savebtn').hidden=true;
+  recMime=['video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm','video/mp4;codecs=avc1','video/mp4'].find(m=>window.MediaRecorder&&MediaRecorder.isTypeSupported(m))||'';
+  try{ rec=new MediaRecorder(stream,recMime?{mimeType:recMime,videoBitsPerSecond:10e6}:{}); }catch(e){ alert('ההקלטה לא נתמכת בדפדפן הזה: '+e.message); return; }
+  rec.ondataavailable=e=>{ if(e.data&&e.data.size) idbAdd(e.data); };
+  rec.onstop=async()=>{ clearInterval(recTimer); $('app').classList.remove('recording'); $('recbtn').innerHTML='<i></i>● להקליט (מתחיל גם את מעקב הקול)'; $('timer').hidden=true; if(listening) stopVoice(); await new Promise(r=>setTimeout(r,400)); const blob=await offerSave(); if(blob){ saveBlob(blob,blob.type); document.querySelector('.hint').innerHTML='<b>ההקלטה נשמרה להורדות</b> ('+(blob.size/1048576).toFixed(1)+' MB). אם לא ראית הורדה, לחצי על הכפתור הוורוד "⬇ לשמור".'; } };
+  rec.start(1000); recStart=Date.now(); $('app').classList.add('recording'); $('recbtn').innerHTML='<i></i>■ לעצור ולשמור'; $('timer').hidden=false;
+  recTimer=setInterval(()=>{ const t=fmt(Date.now()-recStart); $('timer').textContent=t; $('timer2').textContent=t; },500);
+  if(!listening) $('voice').click();
 };
+/* שחזור: הקלטה שנשארה מפעם קודמת */
+(async()=>{ const parts=await idbAll(); if(!parts.length) return; const size=parts.reduce((a,b)=>a+b.size,0); $('bsize').textContent=(size/1048576).toFixed(1)+' MB'; $('banner').hidden=false;
+  $('brecover').onclick=async()=>{ const blob=await offerSave(); if(blob) saveBlob(blob,blob.type); $('banner').hidden=true; };
+  $('bdiscard').onclick=async()=>{ if(confirm('למחוק את ההקלטה הזו לצמיתות?')){ await idbClear(); $('banner').hidden=true; } }; })();
+
 </script>
 </body>
 </html>
