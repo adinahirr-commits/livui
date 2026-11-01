@@ -117,6 +117,15 @@ section{padding-block:76px}
 .vframe b{font-size:18px} .vframe small{font-size:13px;opacity:.85}
 .vframe.real{width:min(680px,100%);aspect-ratio:16/9;border-radius:20px;background:#000;box-shadow:0 34px 70px -40px rgba(25,26,46,.45)}
 .vframe.real video,.vframe.real iframe{width:100%;height:100%;display:block;object-fit:cover;border:0}
+/* הנגן שלנו: תמונת פתיחה + כפתור הפעלה, בלי יוטיוב */
+.vplayer video{background:#000 center/cover}
+.vplayer .vstart{position:absolute;inset:0;width:100%;height:100%;border:0;margin:0;padding:0 6% 4.5% 0;background:transparent;cursor:pointer;display:flex;align-items:flex-end;justify-content:flex-start;gap:10px;font-family:var(--f);-webkit-tap-highlight-color:transparent}
+.vplayer .vpb{width:clamp(48px,9vw,72px);height:clamp(48px,9vw,72px);border-radius:50%;background:var(--pink);display:grid;place-items:center;box-shadow:0 0 0 8px rgba(224,64,143,.25),0 10px 24px -8px rgba(25,26,46,.5);transition:transform .15s;flex:none}
+.vplayer .vpb::after{content:"";border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent #fff;margin-left:5px}
+.vplayer .vlbl{background:rgba(25,26,46,.82);color:#fff;font-weight:800;font-size:clamp(13px,2.4vw,16px);padding:7px 14px;border-radius:999px;line-height:1.3}
+.vplayer .vstart:hover .vpb,.vplayer .vstart:focus-visible .vpb{transform:scale(1.08)}
+.vplayer .vstart:focus-visible{outline:3px solid var(--pink);outline-offset:-3px;border-radius:20px}
+.vplayer.on .vstart{display:none}
 /* phones */
 .phone{position:relative;aspect-ratio:390/844;border-radius:34px;border:8px solid var(--night);background:var(--night);overflow:hidden;box-shadow:0 30px 60px -30px rgba(25,26,46,.55)}
 .phone img{width:100%;height:100%;object-fit:cover;object-position:top}
@@ -585,7 +594,7 @@ html.next .hide-next{display:none!important}
 <section class="hero">
   <div class="col">
     <h1>איך כל אמא בישראל יכולה להפוך כמה מאות שקלים אבודים בחודש<br><em>להון של מיליונים</em><br>ולסדר את העתיד של הילדים והמשפחה שלה</h1>
-    <div class="vframe real" style="margin-top:30px" id="heroVideo" data-yt="HmlOwc4_ibM"><video controls playsinline preload="none" poster="video/adi-livui.jpg"><source src="video/adi-livui-web.mp4" type="video/mp4"></video></div>
+    <div class="vframe real vplayer" style="margin-top:30px" id="heroVideo"><video playsinline preload="none" poster="video/poster.jpg" controlslist="nodownload noplaybackrate noremoteplayback" disablepictureinpicture disableremoteplayback oncontextmenu="return false"><source src="video/adi-livui-web.mp4" type="video/mp4"></video><button class="vstart" type="button" aria-label="להפעלת הסרטון של עדי, 4 דקות"><span class="vpb" aria-hidden="true"></span><span class="vlbl">לצפייה בסרטון</span></button></div>
     <p class="brandline">״אמא משקיעה״</p>
     <p class="sub">תכנית של 28 ימים שבסופה יש לך הוראת קבע שרצה כל חודש, מהסכום שהתזרים שלך הגדיר, לתוך הרכב אישי שמתאים למטרות שלך, עם כרית ביטחון במקום נזיל, וכמעט 0 התעסקות</p>
     <div class="act">
@@ -1335,10 +1344,18 @@ html.next .hide-next{display:none!important}
     var lab=el('text',{x:R-slot*6,y:T-6,'text-anchor':'middle',style:'font-size:19px;font-weight:700;fill:'+css('--pink-text')},svg);lab.textContent='אפס הפסדים';
   })();
 
-  /* הסרטון: באתר האמיתי מוטמע מיוטיוב (מהיר, סטרימינג); בתצוגת הטיוטה (claude.ai חוסם iframe) נשאר ה-mp4 */
-  (function(){var w=document.getElementById('heroVideo');if(!w)return;
-    if(/claude\.ai$/.test(location.hostname)||location.protocol==='file:')return;
-    var id=w.getAttribute('data-yt');w.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?rel=0&modestbranding=1&playsinline=1" title="הסרטון של עדי" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>';})();
+  /* הסרטון: נגן משלנו (הקובץ יושב באתר עצמו), בלי יוטיוב. הנגן נטען רק בלחיצה.
+     מדידה כמו בדפי ההקלטה: livui-premium-play בלחיצה, ואז -p10/-p25/-p50/-p75/-p90/-p100 (פעם אחת לכל ביקור). */
+  (function(){var w=document.getElementById('heroVideo');if(!w)return;var v=w.querySelector('video'),b=w.querySelector('.vstart');if(!v||!b)return;
+    var local=/claude\.ai$/.test(location.hostname)||location.protocol==='file:',sent={};
+    function hit(ev){if(local||sent[ev])return;sent[ev]=1;try{var k='mi_hit_livui-premium-'+ev;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,'1');}catch(e){}
+      try{var p=new URLSearchParams(window.miAttrib?window.miAttrib():{});p.set('page','livui-premium-'+ev);var body=p.toString(),T='https://academy.mominvest.co.il/guide-hit';
+        if(!navigator.sendBeacon||!navigator.sendBeacon(T,new Blob([body],{type:'application/x-www-form-urlencoded'})))fetch(T,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body,keepalive:true}).catch(function(){});}catch(e){}}
+    b.addEventListener('click',function(){w.classList.add('on');v.controls=true;v.preload='auto';hit('play');var pr=v.play();if(pr&&pr.catch)pr.catch(function(){});});
+    v.addEventListener('play',function(){if(!w.classList.contains('on')){w.classList.add('on');v.controls=true;}});
+    v.addEventListener('timeupdate',function(){if(!v.duration)return;var pc=v.currentTime/v.duration*100;[10,25,50,75,90].forEach(function(x){if(pc>=x)hit('p'+x);});});
+    v.addEventListener('ended',function(){hit('p100');});
+  })();
   /* שעון הבונוס: אותו דדליין כמו בדף הראשי */
   var until=new Date('2026-10-28T20:00:00+02:00').getTime();
   var D=document.getElementById('cdD'),H=document.getElementById('cdH'),M=document.getElementById('cdM');
