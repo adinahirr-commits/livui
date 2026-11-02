@@ -126,10 +126,11 @@ section{padding-block:76px}
 .vplayer .vstart:hover .vpb,.vplayer .vstart:focus-visible .vpb{transform:scale(1.08)}
 .vplayer .vstart:focus-visible{outline:3px solid var(--pink);outline-offset:-3px;border-radius:20px}
 .vplayer.on .vstart{display:none}
-/* מהירות הסרטון: 1 / 1.5 / 2 (מור, 01/11) */
-.vspeed{display:flex;justify-content:center;align-items:center;gap:8px;margin-top:12px;font-size:14px;font-weight:700;color:var(--night);flex-wrap:wrap}
-.vspeed button{font:inherit;font-weight:800;border:2px solid var(--pink);background:#fff;color:var(--pink);border-radius:999px;padding:6px 14px;min-width:56px;min-height:40px;cursor:pointer;-webkit-tap-highlight-color:transparent}
-.vspeed button[aria-pressed="true"]{background:var(--pink);color:#fff}
+/* מהירות הסרטון בתוך הנגן, בפינה העליונה (מור 01/11, עדי 02/11) */
+.vspeed{position:absolute;top:10px;left:10px;z-index:3;display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(25,26,46,.72);direction:ltr}
+.vspeed button{font:inherit;font-family:var(--f);font-weight:800;font-size:13px;border:0;background:transparent;color:#fff;border-radius:999px;padding:0 10px;min-width:40px;min-height:32px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.vspeed button[aria-pressed="true"]{background:var(--pink)}
+.vspeed button:focus-visible{outline:2px solid #fff;outline-offset:1px}
 /* phones */
 .phone{position:relative;aspect-ratio:390/844;border-radius:34px;border:8px solid var(--night);background:var(--night);overflow:hidden;box-shadow:0 30px 60px -30px rgba(25,26,46,.55)}
 .phone img{width:100%;height:100%;object-fit:cover;object-position:top}
@@ -598,8 +599,7 @@ html.next .hide-next{display:none!important}
 <section class="hero">
   <div class="col">
     <h1>איך כל אמא בישראל יכולה להפוך כמה מאות שקלים אבודים בחודש<br><em>להון של מיליונים</em><br>ולסדר את העתיד של הילדים והמשפחה שלה</h1>
-    <div class="vframe real vplayer" style="margin-top:30px" id="heroVideo"><video playsinline preload="none" poster="video/poster.jpg" controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback oncontextmenu="return false"><source src="video/adi-livui-web.mp4" type="video/mp4"></video><button class="vstart" type="button" aria-label="להפעלת הסרטון של עדי, 4 דקות"><span class="vpb" aria-hidden="true"></span><span class="vlbl">לצפייה בסרטון</span></button></div>
-    <div class="vspeed" id="vSpeed" role="group" aria-label="מהירות הסרטון"><span>מהירות:</span><button type="button" data-r="1" aria-pressed="true">רגילה</button><button type="button" data-r="1.5" aria-pressed="false">×1.5</button><button type="button" data-r="2" aria-pressed="false">×2</button></div>
+    <div class="vframe real vplayer" style="margin-top:30px" id="heroVideo"><video playsinline preload="none" poster="video/poster.jpg" controlslist="nodownload noremoteplayback" disablepictureinpicture disableremoteplayback oncontextmenu="return false"><source src="video/adi-livui-web.mp4" type="video/mp4"></video><button class="vstart" type="button" aria-label="להפעלת הסרטון של עדי, 4 דקות"><span class="vpb" aria-hidden="true"></span><span class="vlbl">לצפייה בסרטון</span></button><div class="vspeed" id="vSpeed" role="group" aria-label="מהירות הסרטון"><button type="button" data-r="1" aria-pressed="true" aria-label="מהירות רגילה">1×</button><button type="button" data-r="1.5" aria-pressed="false">1.5×</button><button type="button" data-r="2" aria-pressed="false">2×</button></div></div>
     <p class="brandline">״אמא משקיעה״</p>
     <p class="sub">תכנית של 28 ימים שבסופה יש לך הוראת קבע שרצה כל חודש, מהסכום שהתזרים שלך הגדיר, לתוך הרכב אישי שמתאים למטרות שלך, עם כרית ביטחון במקום נזיל, וכמעט 0 התעסקות</p>
     <div class="act">
