@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>קריאייטיבים לליד פרימיום</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: one column of ad cards, like a feed; a sticky bar collects the picks. */
+:root{--bg:#FBFAF7;--fg:#191A2E;--muted:#5E5E70;--line:#E6E1D8;--card:#FFFFFF;--pink:#EF55A5;--lime:#CCD537;--sky:#BEE0F2;--soft:#FCE1EF;--good:#2E7D4F;--warn:#B3541E;--font:'Heebo',"Arial Hebrew",Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#15161F;--fg:#F3F1EC;--muted:#B3B3C2;--line:#2C2D3A;--card:#1E1F2B;--soft:#3A2230;--sky:#2B4556;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15161F;--fg:#F3F1EC;--muted:#B3B3C2;--line:#2C2D3A;--card:#1E1F2B;--soft:#3A2230;--sky:#2B4556;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);direction:rtl;margin:0;line-height:1.55;font-size:16px}
+.wrap{max-width:860px;margin:0 auto;padding-block:28px 60px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1{font-size:30px;font-weight:900;margin:0 0 6px;text-wrap:balance;line-height:1.2}
+h2{font-size:21px;font-weight:900;margin:40px 0 12px;text-wrap:balance}
+h3{font-size:18px;font-weight:900;margin:0}
+p{margin:0 0 10px}
+.lead{color:var(--muted);font-size:16px}
+.eyebrow{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--pink);font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat b{display:block;font-size:22px;font-weight:900;font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:14px}
+.won{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.won figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.won img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.won figcaption{padding:10px 12px;font-size:14px}
+.won figcaption b{display:block;font-size:16px;font-variant-numeric:tabular-nums}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;margin:18px 0;overflow:hidden;display:grid;grid-template-columns:300px 1fr}
+.card.rec{border-color:var(--pink);box-shadow:0 0 0 2px var(--soft)}
+.card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+.body{padding:16px 18px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.top{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.num{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--fg);color:var(--bg);font-weight:900;flex:none}
+.rectag{font-size:12px;background:var(--soft);color:var(--pink);font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.pick{display:flex;align-items:center;gap:8px;font-weight:700;cursor:pointer;user-select:none}
+.pick input{width:20px;height:20px;accent-color:var(--pink)}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:15px}
+dt{color:var(--muted);font-weight:500;white-space:nowrap}
+dd{margin:0;min-width:0}
+.why{font-size:14px;color:var(--muted);border-top:1px dashed var(--line);padding-top:8px}
+.flag{font-size:14px;color:var(--warn);background:color-mix(in srgb,var(--warn) 10%,transparent);border-radius:8px;padding:6px 10px}
+.copy{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:14px 0;display:grid;gap:8px}
+.copy pre{white-space:pre-wrap;font-family:var(--font);margin:0;font-size:15.5px;line-height:1.6}
+.copy .h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.copy small{color:var(--muted)}
+ul{padding-right:20px;margin:0 0 10px}li{margin-bottom:6px}
+.bar{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;z-index:5}
+.bar .sel{font-weight:700;min-width:0}
+.bar .sel span{color:var(--muted);font-weight:400}
+button{font:inherit;font-weight:700;border:0;border-radius:999px;padding:9px 16px;background:var(--pink);color:#fff;cursor:pointer}
+button:focus-visible,.pick input:focus-visible{outline:3px solid var(--sky);outline-offset:2px}
+.note{font-size:14px;color:var(--muted)}
+@media (max-width:640px){.card{grid-template-columns:1fr}.card img{aspect-ratio:4/5}dl{grid-template-columns:1fr}dt{margin-top:4px}}
+@media (prefers-reduced-motion:no-preference){.card{transition:box-shadow .2s}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<span class="eyebrow">אמא משקיעה · קמפיין לדף /call</span>
+<h1>7 קריאייטיבים לשיחת הייעוץ</h1>
+<p class="lead">הדף livui.mominvest.co.il/call ממיר, אבל אין אליו תנועה: 152 כניסות וליד אחד בין 24/10 ל-05/11. המודעה מוכרת רק את הקליק לשיחה בלי עלות, לא את הליווי. הדף הזה הוכן כדי לקבל עליו פידבק לפני שהקמפיין עולה.</p>
+
+<h2>מה כבר עבד בחשבון שלך (2026)</h2>
+<p class="lead">שלוש המודעות הכי זולות השנה. המשותף להן: תמונה אמיתית שלך, טקסט בבלוקים על התמונה, מספר מדויק אחד, וקופי שנפתח בסצנה בגוף ראשון. הקריאייטיבים למטה בנויים באותו סגנון.</p>
+<div class="won">
+<figure><img src="won-guide2-h3.jpg" alt="מודעת חיסכון לכל ילד, עדי על הספה עם המחשב"><figcaption><b>1.2 ₪ לליד</b>חיסכון לכל ילד · "רוב ההורים לא נוגעים" · 2,516 לידים, CTR 14%</figcaption></figure>
+<figure><img src="won-guide1-h2.jpg" alt="מודעת הכספים האבודים, עדי ברחוב בפראג עם הבנות"><figcaption><b>2.7 ₪ לליד</b>הכספים האבודים · "לסחוט את הבנק" · 338 לידים, CTR 15.6%</figcaption></figure>
+<figure><img src="won-guide1-h4.jpg" alt="מודעת הכספים האבודים, עדי עם עגלה על הגשר"><figcaption><b>3.1 ₪ לליד</b>הכספים האבודים · "נמאס לי" · 608 לידים, CTR 14.5%</figcaption></figure>
+</div>
+<div class="stats">
+<div class="stat"><b>8.5 ₪</b><span>לנרשמת לוובינר (pic_Dreams, 4.10) · עלה ל-18 ₪ אחרי שלושה מחזורים</span></div>
+<div class="stat"><b>32 ₪</b><span>לליד בקמפיין 500K (סרטון v6) · המודעה שגילגלה הכי הרבה תקציב</span></div>
+<div class="stat"><b>לא נמדד</b><span>ליד לשיחת ייעוץ. זו פעולה כבדה יותר, לצפות ליותר מ-30 ₪ בהתחלה</span></div>
+</div>
+<p class="note">השיטה של יהב רובין בקופי: הוק ← "גם אני הייתי שם" ← מה ניסיתי ולא עבד ← מה גיליתי ← "ארזתי לך את זה" ← קריאה לפעולה אחת. הטקסטים הראשיים למטה בנויים ככה, במילים מהדף שלך.</p>
+
+<h2>הקריאייטיבים</h2>
+<p class="lead">סבב שני (06/11): קריאייטיב 1 אושר, השאר נכתבו מחדש כך שהמסר יהיה ברור בשורה אחת: מה הבעיה, ומה מקבלים (28 יום, הוראת קבע שרצה לבד, שיחת ייעוץ בלי עלות). כל התמונות ב-4:5 (1080×1350), מוכנות להעלאה.</p>
+
+<article class="card rec" id="c1">
+<img src="c-h1.jpg" alt="עדי ברחוב בפריז. כולם אומרים תשקיעי. אף אחד לא אומר מאיפה מתחילים">
+<div class="body">
+<div class="top"><h3><span class="num">1</span> כולם אומרים "תשקיעי"</h3><span class="rectag">מומלץ · ההוק הרחב</span></div>
+<dl><dt>כותרת הקישור</dt><dd>כולם אומרים "תשקיעי". אף אחד לא אומר מאיפה.</dd>
+<dt>טקסט ראשי</dt><dd>גרסה א (הסיפור שלך)</dd>
+<dt>כפתור</dt><dd>מידע נוסף → לשיחת ייעוץ בלי עלות</dd>
+<dt>תמונה</dt><dd>IMG_9176 · הליכה ברחוב, מבט הצידה</dd></dl>
+<p class="why">למה: התסכול מהרעש שבחוץ מוכר לכל אמא, ולא מאשים אותה. מתאים גם למי שלא מכירה אותך.</p>
+</div></article>
+
+<article class="card" id="c2">
+<img src="c-h2.jpg" alt="עדי על הספה עם המחשב והבנות ישנות. הכסף יושב בעו״ש כבר שנים? ב-28 יום הוא מתחיל לעבוד">
+<div class="body">
+<div class="top"><h3><span class="num">2</span> הכסף יושב בעו"ש כבר שנים?</h3><span class="rectag">התמונה של 1.2 ₪ לליד</span></div>
+<dl><dt>כותרת הקישור</dt><dd>ב-28 יום הכסף מתחיל לעבוד. שיחת ייעוץ בלי עלות.</dd>
+<dt>טקסט ראשי</dt><dd>גרסה ג (סוף החודש)</dd>
+<dt>כפתור</dt><dd>מידע נוסף</dd>
+<dt>תמונה</dt><dd>תמונה 1 לוובינר · הספה עם הבנות</dd></dl>
+<p class="why">המסר: הבעיה (כסף שיושב) והפתרון (28 יום) באותו פריים. שאלה שכל אחת עונה עליה "כן" בלי לחשוב.</p>
+</div></article>
+
+<article class="card" id="c3">
+<img src="c-h3.jpg" alt="עדי על הספה עם תינוקת ומחשב. לא יודעת מאיפה מתחילים להשקיע? בונות את זה ביחד, ב-28 יום">
+<div class="body">
+<div class="top"><h3><span class="num">3</span> לא יודעת מאיפה מתחילים?</h3></div>
+<dl><dt>כותרת הקישור</dt><dd>צעד אחד בשבוע, עם אנשי מקצוע לידך</dd>
+<dt>טקסט ראשי</dt><dd>גרסה ב ("אני לא מבינה בהשקעות")</dd>
+<dt>כפתור</dt><dd>מידע נוסף</dd>
+<dt>תמונה</dt><dd>IMG_7178 · ספה, תינוקת, מחשב</dd></dl>
+<p class="why">המסר: החסם הכי נפוץ מהשאלות בדף ("חסר לי ידע"), והתשובה: לא לבד, ולא בבת אחת.</p>
+</div></article>
+
+<article class="card rec" id="c4">
+<img src="c-h4.jpg" alt="עדי עם מחשב בגינה. לא צריך להבין בהשקעות. צריך הוראת קבע אחת שרצה לבד">
+<div class="body">
+<div class="top"><h3><span class="num">4</span> 28 יום, ובסוף הוראת קבע שרצה לבד</h3><span class="rectag">מומלץ · ההצעה עצמה</span></div>
+<dl><dt>כותרת הקישור</dt><dd>בלי להבין בבורסה. עם ליווי ואנשי מקצוע.</dd>
+<dt>טקסט ראשי</dt><dd>גרסה ב</dd>
+<dt>כפתור</dt><dd>מידע נוסף</dd>
+<dt>תמונה</dt><dd>תמונה 2 לוובינר · מחשב בגינה, חיוך</dd></dl>
+<p class="why">המסר: מה מקבלים בסוף, במילה אחת של הדף. כולם מלמדים השקעות, את נותנת מנגנון.</p>
+</div></article>
+
+<article class="card rec" id="c5">
+<img src="c-h5.jpg" alt="עדי מול המראה עם הבנות. ככה עושים סדר בכסף: קרן חירום, כסף לכל מטרה, והוראת קבע להשקעות">
+<div class="body">
+<div class="top"><h3><span class="num">5</span> ככה עושים סדר בכסף</h3><span class="rectag">מומלץ · השיטה</span></div>
+<dl><dt>כותרת הקישור</dt><dd>ב-28 יום, על המספרים שלך. שיחת ייעוץ בלי עלות.</dd>
+<dt>טקסט ראשי</dt><dd>גרסה ב</dd>
+<dt>כפתור</dt><dd>מידע נוסף</dd>
+<dt>תמונה</dt><dd>IMG_8143 · המראה עם הבנות (התמונה מסרטון v6 של 500K)</dd></dl>
+<p class="why">המסר: השיטה בשלוש מילים, כמו בדף. מי שלא יודעת מה זה "סדר בכסף" רואה מיד.</p>
+</div></article>
+
+<article class="card" id="c6">
+<img src="c-h6.jpg" alt="עדי ברחוב בפראג עם הבנות. לפני שמשקיעות שקל: מחפשות כסף שכבר שלך">
+<div class="body">
+<div class="top"><h3><span class="num">6</span> לפני שמשקיעות שקל</h3></div>
+<dl><dt>כותרת הקישור</dt><dd>המשימה הראשונה בליווי: קופות ישנות, החזרי מס, מענקים</dd>
+<dt>טקסט ראשי</dt><dd>גרסה ג</dd>
+<dt>כפתור</dt><dd>מידע נוסף</dd>
+<dt>תמונה</dt><dd>IMG_6599 · פראג עם הבנות (התמונה של 2.7 ₪ לליד)</dd></dl>
+<p class="why">המסר: עונה ל"אין לי כסף להתחיל". ההוק של ציד האוצר עבד במדריך, כאן בלי סכום כדי לא להיתפס כהבטחה.</p>
+</div></article>
+
+<article class="card" id="c7">
+<img src="c-h7.jpg" alt="הבנות מנשקות את עדי על הספה. את חוסכת. אבל הכסף לא עובד. ב-28 יום נותנים לו תפקיד">
+<div class="body">
+<div class="top"><h3><span class="num">7</span> את חוסכת. אבל הכסף לא עובד.</h3></div>
+<dl><dt>כותרת הקישור</dt><dd>ב-28 יום נותנים לכל שקל תפקיד. שיחת ייעוץ בלי עלות.</dd>
+<dt>טקסט ראשי</dt><dd>גרסה ג</dd>
+<dt>כפתור</dt><dd>מידע נוסף</dd>
+<dt>תמונה</dt><dd>IMG_8262 · הנשיקות על הספה</dd></dl>
+<p class="why">המסר: מחמיא על מה שכבר עשתה, ואומר במדויק מה חסר ומה עושים עם זה.</p>
+</div></article>
+
+<h2>שלושת הטקסטים הראשיים</h2>
+<p class="lead">נכתבו בג'מיני לפי בריף שלי ועברו עריכה שלי מול הדף. בלי תאריך, בלי מחיר, בלי תשואות. כל אחד נגמר באותה קריאה לפעולה.</p>
+
+<div class="copy"><div class="h"><h3>גרסה א · הסיפור שלך</h3><small>לקריאייטיב 1</small></div>
+<pre>במרץ 2020 הייתי בהיריון הראשון,
+ונכנסנו לסגר הראשון.
+
+היה לי עסק מלא ועמוס לכלות.
+וביום אחד הכל נעצר.
+כל הביטחון שחשבתי שיש לי נעלם ברגע.
+
+ישבתי בבית והבנתי:
+אף אחד פשוט לא עשה לי סדר בכסף.
+
+אז יצאתי ללמוד, לבדוק,
+ולבנות מנגנון שעובד בשביל המשפחה שלי.
+וגיליתי שהכסף לא צריך עוד מאמץ.
+הוא צריך סדר.
+
+ארזתי את כל הדרך הזאת
+לתהליך פשוט של 28 יום,
+עם אנשי מקצוע בעלי רישיון לידך.
+בלי להפוך למומחית.
+בסוף יש לך הוראת קבע אחת שרצה לבד.
+
+לשיחת ייעוץ בלי עלות, מכאן 👇</pre></div>
+
+<div class="copy"><div class="h"><h3>גרסה ב · "אני לא מבינה בהשקעות"</h3><small>לקריאייטיבים 3, 4 ו-5</small></div>
+<pre>את אחראית. את חוסכת.
+את שומרת על הכסף של המשפחה.
+
+אבל כל פעם שאת מנסה להשקיע אותו,
+את נתקעת בים של מושגים,
+דעות סותרות,
+ואנשים שרוצים למכור לך משהו.
+
+לקח לי שנים להבין
+שלא צריך להיות מומחית
+בשביל שהכסף יעבוד.
+הכסף לא צריך עוד מאמץ. הוא צריך סדר.
+
+בליווי של 28 יום יש משימה אחת בשבוע,
+ואנשי מקצוע בעלי רישיון שמלווים אותך.
+המשימה הראשונה בכלל:
+למצוא כסף שכבר שלך.
+
+בסוף יש הוראת קבע אחת שרצה לבד,
+בזמן שאת ממשיכה בחיים שלך.
+
+לשיחת ייעוץ בלי עלות, מכאן 👇</pre></div>
+
+<div class="copy"><div class="h"><h3>גרסה ג · סוף החודש</h3><small>לקריאייטיבים 2, 6 ו-7</small></div>
+<pre>את יושבת בערב מול האפליקציה של הבנק
+ומסתכלת על העו"ש.
+
+הכסף שם. עבדת קשה בשבילו.
+והוא פשוט יושב.
+
+כל חודש את אומרת לעצמך
+שהחודש תטפלי בזה.
+ואז מגיעים החיים, וזה נדחה.
+לעוד חודש. ועוד אחד.
+
+אז הנה משהו שייקח ממך את הלחץ:
+הכסף לא צריך עוד מאמץ. הוא צריך סדר.
+
+בליווי של 28 יום מתחילות
+דווקא מלמצוא כסף שכבר שלך.
+משימה קצרה אחת בשבוע,
+ושיחה אישית עם אנשי מקצוע בעלי רישיון.
+בסוף יש מסילה אחת שרצה לבד.
+
+לשיחת ייעוץ בלי עלות, מכאן 👇</pre></div>
+
+<h2>לפני שעולים לאוויר</h2>
+<ul>
+<li><b>מדידה:</b> לידים נספרים מ-livui_fit עם source=premium, לא מ"לידים" של מטא. ייחוס קליק בלבד (בלי 1d view), כמו שלמדנו במחזור 13.10.</li>
+<li><b>קהל:</b> נשים 28–45, ישראל, בלי אינטרסים, להחריג רוכשות הליווי ומי שכבר בפורטל. תקציב התחלה 100 ₪ ליום, העלאות של עד 20%.</li>
+<li><b>בלי תאריך בקופי</b> (29.11 נשאר בדף), כדי שהמודעה תמשיך ללמוד גם במחזור הבא.</li>
+<li><b>שתי דליפות פתוחות:</b> מי שהשאירה פרטים ולא קבעה שיחה לא מקבלת הודעה (תבנית call_nobook לא הוגשה למטא), ותזכורת יום לפני לא יוצאת מאז 28/10 (daphne_24h_v2 נדחתה). עם יותר לידים, זה מאבד שיחות. אפשר לטפל במקביל להעלאת הקמפיין.</li>
+</ul>
+</div>
+
+
+
+</body>
+</html>
