@@ -514,7 +514,7 @@ footer p{max-width:var(--col);margin:0 auto 10px}
 .jf{max-width:520px;margin:0 auto;background:var(--white);border:1px solid var(--line);border-radius:22px;padding:26px 22px;box-shadow:0 30px 60px -44px rgba(25,26,46,.45)}
 .jf label.f{display:block;margin-bottom:14px}
 .jf label.f span{display:block;font-weight:700;font-size:var(--t-s);margin-bottom:6px}
-.jf input[type=text],.jf input[type=tel],.jf textarea{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--canvas);color:var(--ink)}
+.jf input[type=text],.jf input[type=tel],.jf input[type=email],.jf textarea{width:100%;font:inherit;font-size:17px;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--canvas);color:var(--ink)}
 .jf input:focus,.jf textarea:focus{outline:none;border-color:var(--pink)}
 .jf textarea{min-height:84px;resize:vertical}
 .jf fieldset{border:0;padding:0;margin:0 0 16px}
@@ -1158,7 +1158,7 @@ html.next .hide-next{display:none!important}
 
 <div class="sticky" id="sticky"><a href="#join"><b>אני רוצה שיחת ייעוץ</b></a></div>
 <script>/* הכפתור הצף מופיע אחרי שעוברים את כפתור הראש */
-(function(){var st=document.getElementById('sticky'),h=document.querySelector('.hero .act');if(!st)return;if(!h||!('IntersectionObserver' in window)){st.classList.add('on');return;}new IntersectionObserver(function(e){var r=e[0];st.classList.toggle('on',!r.isIntersecting&&r.boundingClientRect.top<0);}).observe(h);})();</script>
+(function(){var st=document.getElementById('sticky'),h=document.querySelector('.hero .act');if(!st)return;if(!h||!('IntersectionObserver' in window)){st.classList.add('on');return;}var past=false,atJoin=false,j=document.getElementById('join');function upd(){st.classList.toggle('on',past&&!atJoin);}new IntersectionObserver(function(e){var r=e[0];past=!r.isIntersecting&&r.boundingClientRect.top<0;upd();}).observe(h);if(j)new IntersectionObserver(function(e){atJoin=e[0].isIntersecting;upd();}).observe(j);})();</script>
 </div>
 
 <script>
@@ -1194,9 +1194,9 @@ html.next .hide-next{display:none!important}
   if(!form) return;
   function noSticky(){ var s=document.getElementById('sticky'); if(s) s.style.display='none'; }
   function store(o){ try{ sessionStorage.setItem('livui_premium_done',JSON.stringify(o)); }catch(e){} }
-  function showDone(first){ noSticky(); form.hidden=true; cal.hidden=true; done.hidden=false; document.getElementById('doneName').textContent=first; try{ done.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){} }
+  function showDone(first,quiet){ noSticky(); form.hidden=true; cal.hidden=true; done.hidden=false; document.getElementById('doneName').textContent=first; if(!quiet) try{ done.scrollIntoView({behavior:'smooth',block:'center'}); }catch(e){} }
   /* היומן של דפני, עם השם, המייל והטלפון ממולאים מראש. utm_content = מזהה הטופס */
-  function showCal(o){
+  function showCal(o,quiet){
     noSticky(); form.hidden=true; done.hidden=true; cal.hidden=false;
     cal.querySelector('.calName').textContent=o.first;
     var intl='+972'+o.phone.replace(/^0/,'');
@@ -1204,7 +1204,7 @@ html.next .hide-next{display:none!important}
     var url=CAL+'?'+Object.keys(qp).map(function(k){ return k+'='+encodeURIComponent(qp[k]); }).join('&');
     function mount(){ if(window.Calendly&&Calendly.initInlineWidget){ document.getElementById('calWidget').innerHTML=''; Calendly.initInlineWidget({url:url,parentElement:document.getElementById('calWidget')}); } else { document.getElementById('calWidget').innerHTML='<iframe src="'+url.replace(/"/g,'&quot;')+'&embed_type=Inline" style="width:100%;height:100%;border:0" title="היומן של דפני"></iframe>'; } }
     if(window.Calendly) mount(); else { var s=document.createElement('script'); s.src='https://assets.calendly.com/assets/external/widget.js'; s.async=true; s.onload=mount; s.onerror=mount; document.head.appendChild(s); }
-    try{ cal.scrollIntoView({behavior:'smooth',block:'start'}); }catch(e){}
+    if(!quiet) try{ cal.scrollIntoView({behavior:'smooth',block:'start'}); }catch(e){}
   }
   window.addEventListener('message',function(e){
     if(!e.data||typeof e.data!=='object'||e.data.event!=='calendly.event_scheduled') return;
@@ -1215,7 +1215,7 @@ html.next .hide-next{display:none!important}
     if(!local){ try{ var p=new URLSearchParams(attrib()); p.set('page','livui-premium-booked'); navigator.sendBeacon&&navigator.sendBeacon(TRACK,new Blob([p.toString()],{type:'application/x-www-form-urlencoded'})); }catch(x){} }
     showDone(o.first||'');
   });
-  try{ var prev=JSON.parse(sessionStorage.getItem('livui_premium_done')||'null'); if(prev&&prev.first){ if(prev.booked) showDone(prev.first); else if(prev.email) showCal(prev); } }catch(e){}
+  try{ var prev=JSON.parse(sessionStorage.getItem('livui_premium_done')||'null'); if(prev&&prev.first){ if(prev.booked) showDone(prev.first,true); else if(prev.email) showCal(prev,true); } }catch(e){}
   function fail(msg,el){ err.textContent=msg; err.hidden=false; if(el){ try{ el.scrollIntoView({block:'center'}); el.focus({preventScroll:true}); }catch(e){} } }
   form.addEventListener('submit',function(ev){
     ev.preventDefault(); err.hidden=true;
@@ -1391,11 +1391,15 @@ html.next .hide-next{display:none!important}
 </script>
 
 <script>
+  /* פתיחה מהמודעה תמיד מתחילה בכותרת: בלי שחזור גלילה של הדפדפן */
+  try{ if('scrollRestoration' in history) history.scrollRestoration='manual'; }catch(e){}
+  if(!location.hash) window.scrollTo(0,0);
   document.querySelectorAll('a[href="#join"]').forEach(function(a){
     a.addEventListener('click', function(ev){
       var j=document.getElementById('join'); if(!j) return;
-      ev.preventDefault(); j.scrollIntoView({behavior:'instant',block:'start'});
-      try{ history.replaceState(null,'','#join'); }catch(e){}
+      ev.preventDefault();
+      var t=[document.getElementById('joinForm'),document.getElementById('joinCal'),document.getElementById('joinDone')].filter(function(x){ return x&&!x.hidden; })[0]||j;
+      window.scrollTo({top:Math.max(0,t.getBoundingClientRect().top+window.pageYOffset-16),behavior:'instant'});
       var first=document.getElementById('j-name'); if(first && !document.getElementById('joinForm').hidden){ setTimeout(function(){ first.focus({preventScroll:true}); },50); }
     });
   });
