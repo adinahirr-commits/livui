@@ -1216,19 +1216,30 @@ html.next .hide-next{display:none!important}
     showDone(o.first||'');
   });
   try{ var prev=JSON.parse(sessionStorage.getItem('livui_premium_done')||'null'); if(prev&&prev.first){ if(prev.booked) showDone(prev.first,true); else if(prev.email) showCal(prev,true); } }catch(e){}
+  /* מילוי אוטומטי: פרטים מהקישור (מיילים מסמוב) או מביקור קודם באותו מכשיר. לא דורס מה שכבר הוקלד */
+  (function(){
+    var saved={}; try{ saved=JSON.parse(localStorage.getItem('mi_contact')||'{}')||{}; }catch(e){}
+    [['name','j-name'],['phone','j-phone'],['email','j-email']].forEach(function(f){
+      var el=document.getElementById(f[1]); if(!el||el.value) return;
+      var v=(q.get(f[0])||saved[f[0]]||'').trim();
+      if(v && !/^\[|^\{|^\*\|/.test(v)) el.value=v.slice(0,el.maxLength>0?el.maxLength:120);
+    });
+  })();
   function fail(msg,el){ err.textContent=msg; err.hidden=false; if(el){ try{ el.scrollIntoView({block:'center'}); el.focus({preventScroll:true}); }catch(e){} } }
   form.addEventListener('submit',function(ev){
     ev.preventDefault(); err.hidden=true;
     var name=(document.getElementById('j-name').value||'').trim();
     var phone=(document.getElementById('j-phone').value||'').trim().replace(/[^\d+]/g,'');
     var email=(document.getElementById('j-email').value||'').trim().toLowerCase();
-    if(phone.indexOf('+972')===0) phone='0'+phone.slice(4);
-    if(phone.indexOf('972')===0&&phone.length===12) phone='0'+phone.slice(3);
+    phone=phone.replace(/^\+/,'').replace(/^00/,'');
+    if(phone.indexOf('972')===0&&phone.length>=11) phone='0'+phone.slice(3);
+    phone=phone.replace(/^00/,'0');
     if(name.length<2) return fail('איך קוראים לך? שם מלא בבקשה.',document.getElementById('j-name'));
     if(!/^0\d{8,9}$/.test(phone)) return fail('הטלפון לא נראה תקין. 10 ספרות, למשל 050-0000000.',document.getElementById('j-phone'));
     if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/.test(email)) return fail('המייל לא נראה תקין. למשל name@gmail.com',document.getElementById('j-email'));
     var first=name.split(' ')[0];
     var o={first:first,name:name,phone:phone,email:email,t:Date.now()};
+    try{ localStorage.setItem('mi_contact',JSON.stringify({name:name,phone:phone,email:email})); }catch(x){}
     if(form.querySelector('.hp').value){ showCal(o); return; }
     btn.disabled=true; var old=btn.textContent; btn.textContent='רגע, פותחת את היומן...';
     var payload=Object.assign({name:name,phone:phone,email:email,source:(window.NEXT?'premium-next':'premium'),page:'livui-premium'},attrib(),utm);
